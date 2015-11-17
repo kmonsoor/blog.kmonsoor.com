@@ -10,7 +10,7 @@ import sys
 sys.path.append(os.curdir)
 from pelicanconf import *
 
-SITEURL = 'http://razius.com'
+SITEURL = ''
 FEED_DOMAIN = SITEURL
 RELATIVE_URLS = False
 
@@ -18,5 +18,5 @@ ARTICLE_EXCLUDES = ('drafts',)
 
 # Following items are often useful when publishing
 
-DISQUS_SITENAME = 'razius'
-GOOGLE_ANALYTICS = 'UA-29024708-1'
+DISQUS_SITENAME = 'kmonsoor'
+GOOGLE_ANALYTICS = 'UA-20431143-1'

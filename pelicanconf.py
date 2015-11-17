@@ -3,14 +3,14 @@
 from __future__ import unicode_literals
 
 # Site settings.
-AUTHOR = u'Silviu Tantos'
-AUTHOR_EMAIL = u'me@razius.com'
-SITENAME = u'Silviu Tantos (razius)'
-TAGLINE = 'Toying with the idea of becoming a useful member of society.'
+AUTHOR = u'Khaled Monsoor'
+AUTHOR_EMAIL = u'k@kmonsoor.com'
+SITENAME = u'Khaled Monsoor\'s Tech Posts'
+TAGLINE = 'A techie\'s journey through life ...'
 SITEURL = 'http://localhost:8000'
 DEFAULT_DATE_FORMAT = ('%d-%m-%Y')
 
-TIMEZONE = 'Europe/Copenhagen'
+TIMEZONE = 'Asia/Dacca'
 
 DEFAULT_LANG = u'en'
 DEFAULT_METADATA = (
@@ -20,16 +20,15 @@ DELETE_OUTPUT_DIRECTORY = True
 
 # Blogroll
 LINKS = (
-    ('asda', 'http://razius.com'),
+#    ('asda', 'http://razius.com'),
 )
 
 # Social widget.
 SOCIAL = (
-    ('Github', 'http://github.com/razius'),
-    ('Last.fm', 'http://last.fm/user/razius'),
-    ('Twitter', 'http://twitter.com/razius'),
-    ('PLUS', 'https://plus.google.com/+SilviuTantos?rel=author'),
-    ('RSS', 'http://feeds.feedburner.com/razius'),
+    ('Github', 'http://github.com/kmonsoor'),
+    ('Twitter', 'http://twitter.com/KhaledMonsoor'),
+    ('Plus', 'https://plus.google.com/+KhaledMonsoor?rel=author'),
+    ('Instagram', 'http://feeds.feedburner.com/razius'),
 )
 
 MENUITEMS = (
