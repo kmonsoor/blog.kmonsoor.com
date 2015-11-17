@@ -1,0 +1,38 @@
+Title: কোরিয়ান থেকে বাংলা বর্ণান্তরণ (Korean to Bangla Transliteration) v. 0.6
+Date: 2012-04-23 23:45
+Author: kmonsoor
+Category: Bangla, freeware, Korean, Language
+Tags: bangla, hangeul, 한글, korean, transliteration, unofficial
+Slug: korean-to-bangla-transliteration-v06
+Status: published
+
+কোরিয়ান শেখার এক পর্যায়ে কোরিয়ান থেকে বাংলায় কোনো বর্নান্তকরন বা
+Transliteration এর খুব অভাব বোধ করছিলাম. Net এ অনেক ঘাটাঘাটি করেও কিছু
+পেলাম না :(
+
+তাই আমার মত আম-জনতা যাতে নিজে নিজে কোরিয়ান ভাষার অ-আ-ক-খ  শুরু করতে
+পারে বা অনুশীলন করতে পারে. তাই নিজেই একটা সহজবোধ্য Transliteration চার্ট
+বানানোর সিদ্ধান্ত নিলাম.
+
+<!--more-->
+
+আলহামদুলিল্লাহ, বর্তমানে এটা (আমি মনে করি) Beta-release অবস্থায় আছে.
+কেউ এটা দেখে শুরু করলে একবারে যা-তা অবস্থায় পড়বে না, আশা করি. Image
+file গুলো Download করে Print করে নিলে আপনার সুবিধা হবে.
+
+আপনি আমার ব্লগে পা রেখেছেন বলে ধন্যবাদ. এই ব্লগ আপনার কোনো কাজে লাগলে
+আমার খুব ভালো লাগবে. আপনার যেকোনো মতামত, পরামর্শ, গালি(!), বা প্রশংসা
+আপনি নির্দিধায় আপনি comment এ করতে পারেন.
+
+বি:দ্র: যে শব্দগুলোর অর্থ আমার জানা আছে, সেগুলো আমি চার্টে (বন্ধনীর)
+ভিতরে উল্লেখ করে দিলাম.
+
+(ব্যঞ্জনবর্ণ অংশ)
+=================
+
+[![](http://kmonsoor.files.wordpress.com/2012/04/screenshot037.jpg "transliteration consonant")](http://kmonsoor.files.wordpress.com/2012/04/screenshot037.jpg)
+
+(স্বরবর্ণ অংশ)
+==============
+
+[![](http://kmonsoor.files.wordpress.com/2012/04/screenshot036.jpg "transliteration vowel")](http://kmonsoor.files.wordpress.com/2012/04/screenshot036.jpg)

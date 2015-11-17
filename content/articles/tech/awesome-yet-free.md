@@ -1,0 +1,303 @@
+Title: My Personal List of Awesome-yet-Free Software and Web Services
+Date: 2011-04-09 05:35
+Author: kmonsoor
+Category: freeware, tutorial, Windows 7
+Tags: awesome, free, freeware, personal list, windows
+Slug: awesome-yet-free
+Status: published
+
+Throughout my computing experience since 1993, I have faced, searched,
+installed, tried, loved, hated, and uninstalled quite numerous software.
+Maybe, the number will cross thousand. The list includes pirated,
+licensed, shareware, freeware and what not. Their domain includes
+Windows \*, Linux \*, HP-UX 9i but (bad)luckily not Mac OS or NeXT
+platforms. I am sorry Mr. Jobs.
+
+<!--more-->
+
+<a name="more" target="_blank"></a>
+
+As the sold software including licensed and shareware involve the factor
+of direct cash, they have a lot many guys (and obviously nice gals) to
+talk about their greatness. As a relatively poor guy, I could never love
+them. Rather I loved those ones which I can use legally free. Along with
+that point, here comes Linux, Java etc.
+
+There is a great misconception in mass people, even some tech peoples,
+that the free software are "obviously" of inferior quality. That
+perception is inherently wrong. For example, web servers, research
+facilities, including NASA, just can't rely on purchased Windows for
+their mission-critical applications,[ rather most of them are
+using](http://en.wikipedia.org/wiki/Linux#Servers.2C_mainframes_and_supercomputers) [Linux
+variants](http://en.wikipedia.org/wiki/List_of_Linux_distributions). Not
+only for techies, now Linux
+(especially, [Ubuntu](http://www.ubuntu.com/)) is quite user-friendly
+for mass people, even for your grandma.
+
+Anyway, bragging Linux isn't point of this post. Rather I would like to
+share with you some of the awesome **free software** for everyday use
+that I just **love**.
+
+General browsing: [Google Chrome](http://www.google.com/chrome)
+---------------------------------------------------------------
+
+<div>
+
+<div>
+
+[![Logo\_Google\_Chrome](http://kmonsoor.files.wordpress.com/2011/04/google_chrome.png?w=140 "chrome")](http://kmonsoor.files.wordpress.com/2011/04/google_chrome.png)
+
+</div>
+
+It just started a new era for Internet browsers. Unmatched blitz-like
+speed with no-compromise safety is its main beauty. For giving a test
+result for this blog, I have done a little test. For loading msn.com and
+yahoo.com on my brand new laptop, Chrome(v.10) took approx. 3 seconds
+each whereas our-old-hero Firefox (v.4) took 7 seconds each. What about
+your browser? How many hours you wasted just on waiting for the webpage
+to load?
+
+</div>
+
+<div>
+
+</div>
+
+Operating system: [Ubuntu](http://www.ubuntu.com/)
+--------------------------------------------------
+
+<div>
+
+<div>
+
+![](http://kmonsoor.files.wordpress.com/2011/04/ubuntu.png?w=200)
+
+</div>
+
+Where pirated software are reigning, you may have no headache about
+purchasing price of operating systems. But when the question comes about
+legality, such as in the case of government agencies, business or
+education institutions, they just can't use illegal one's. And Windows
+means a boat-load of cash along with almost no everyday software. Where
+much-better performer Ubuntu comes for free with its cool features and
+sexy user interface and also with a great lot of everyday software
+including [OpenOffice.org](http://www.openoffice.org/). Oh! my personal
+experience about Ubuntu? Just awesome !
+
+</div>
+
+**  
+Email service: [Gmail.com](http://www.gmail.com/)  
+**
+==================================================
+
+<div>
+
+[![](http://4.bp.blogspot.com/-voNASIAeDQc/T3iPw3AZUKI/AAAAAAAADUo/QIRgkdS5Ays/s200/Gmail_logo.png)](www.gmail.com)
+
+</div>
+
+<div>
+
+</div>
+
+<div>
+
+Needless to say, simply greatest. Far ahead from other email services
+regarding user friendliness, speed, forwarding, great spam-filtering and
+a hell lot more features. Many global organizations are using that
+professionally. Personally I use different accounts for different level
+of privacy and also turned on many cool features of
+Gmail [labs](http://gmailblog.blogspot.com/2008/06/introducing-gmail-labs.html).
+
+</div>
+
+<div>
+
+</div>
+
+Reading PDF files: [Sumatra PDF Reader](http://blog.kowalczyk.info/software/sumatrapdf)
+=======================================================================================
+
+<div>
+
+<div>
+
+</div>
+
+<div>
+
+[![](http://4.bp.blogspot.com/-fE2lWD7a4QY/T3iaJrW34AI/AAAAAAAADV8/ghfZn_Tfe6Q/s1600/SumatraPDF.png)](http://blog.kowalczyk.info/software/sumatrapdf/free-pdf-reader.html)
+
+</div>
+
+Extremely fast to load PDF files and extremely light on memory, where on
+the other hand, the default Adobe Acrobat Reader work like a memory hog.
+
+</div>
+
+<div>
+
+</div>
+
+Managing zip files:  [7Zip](http://www.zipgenius.com/index.php?id=33)
+=====================================================================
+
+<div>
+
+<div>
+
+![](http://kmonsoor.files.wordpress.com/2011/04/7zip.png?w=200)
+
+</div>
+
+Very smart and supports almost all archive files. It also has a
+nice integration (with the Right-click-menu on Windows Explorer). It’s
+very fast rather than the built-in compression-handler of Windows.
+
+</div>
+
+<div>
+
+</div>
+
+Advanced Text Editing: [Notepad ++](http://notepad-plus-plus.org/)
+==================================================================
+
+<div>
+
+![](http://kmonsoor.files.wordpress.com/2011/04/notepad_plus.png?w=179)
+
+</div>
+
+<div>
+
+Haven't you ever felt that you need something basic text editing
+software which has advanced feature than the crappy Notepad software
+which comes with Windows. I always feel that way.
+
+</div>
+
+<div>
+
+When I need:
+
+</div>
+
+<div>
+
+Removing text-formatting from some text to paste somewhere else,
+
+</div>
+
+<div>
+
+Edit/delete or insert Vertical block of text in a file
+
+</div>
+
+<div>
+
+analyze some big...really big file which is basically text but size is
+like 1GB in a single file.
+
+</div>
+
+<div>
+
+....
+
+</div>
+
+<div>
+
+and many other operations on basic text. Not only me, a great many
+number of developers, data analysts, and who not use Notepad++
+
+</div>
+
+(E)Mailing:  [Mozilla Thunderbird](http://www.mozillamessaging.com/thunderbird/)
+================================================================================
+
+<div>
+
+<div>
+
+![](http://kmonsoor.files.wordpress.com/2011/04/screenshot001.png?w=190)
+
+</div>
+
+Fast and furiously smart email client. Though some
+unused glossy features of Microsoft Outlook isn't present with that, but
+I am impressed.
+
+</div>
+
+<div>
+
+</div>
+
+Backup of whatever files:  [DropBox](https://www.dropbox.com/referrals/NTc3ODQ5NDE5?src=global9)
+================================================================================================
+
+<div>
+
+<div>
+
+![](http://kmonsoor.files.wordpress.com/2011/04/dropbox_logo.png?w=200)
+
+</div>
+
+Though free 2GB space isn't that much, but quite enough for personal
+documents and important pictures. And continuous, seamless
+and hassle-less device-independent file syncing service and its
+performance is just amazing.
+
+[Image Resizer for Windows](http://imageresizer.codeplex.com/releases/view/82827)
+=================================================================================
+
+</div>
+
+<div>
+
+<div>
+
+![](http://kmonsoor.files.wordpress.com/2011/04/screenshot002.png?w=300)
+
+</div>
+
+Some of us daily need to resize image files easily. But only hope was
+Microsoft Paint. Another was crack-licensed ACDSee. But loading a
+full-fledged software for such a trivial task was a common but great
+pain.  
+**  
+ImageResizer **is their lighthouse of hope. Open-source, free,
+lightweight, just add a option to right-click menu. Just right-click on
+the image and select "Resize Pictures". Select what size you want, and
+see the magic of making tiny-sized-okay-quality image.
+
+</div>
+
+<div>
+
+</div>
+
+<div>
+
+</div>
+
+<div>
+
+For the sake of brevity, here I am just sharing my favorite ones which I
+use for general computing. I would also love to know what are your
+favorites? You can share them with us by leaving some comments below. I
+may also update that in my post.
+
+</div>
+
+<div>
+
+Thanks for visiting my blog post. If this helped you, don't forget to
+click "Like" and/or "+1" button below  :)
+
+</div>

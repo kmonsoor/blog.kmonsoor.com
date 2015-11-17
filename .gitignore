@@ -1,0 +1,7 @@
+*.pyc
+*.pid
+*.log
+*.sublime-workspace
+.virtualenv/
+content/articles/drafts
+output/
