@@ -5,3 +5,4 @@
 .virtualenv/
 content/articles/drafts
 output/
+node_modules/

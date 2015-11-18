@@ -5,34 +5,38 @@ from __future__ import unicode_literals
 # Site settings.
 AUTHOR = u'Khaled Monsoor'
 AUTHOR_EMAIL = u'k@kmonsoor.com'
-SITENAME = u'Khaled Monsoor\'s Tech Posts'
-TAGLINE = 'A techie\'s journey through life ...'
-SITEURL = 'http://localhost:8000'
-DEFAULT_DATE_FORMAT = ('%d-%m-%Y')
+SITENAME = u'kmonsoor\'s online hub'
+TAGLINE = 'my little corner on internet ...'
+SITEURL = ''
+DEFAULT_DATE_FORMAT = ('%Y-%m-%d')
 
-TIMEZONE = 'Asia/Dacca'
+TIMEZONE = 'Asia/Dhaka'
 
 DEFAULT_LANG = u'en'
-DEFAULT_METADATA = (
-)
-
 DELETE_OUTPUT_DIRECTORY = True
+# LOAD_CONTENT_CACHE = True
 
 # Blogroll
-LINKS = (
-#    ('asda', 'http://razius.com'),
-)
+LINKS = (('asda', 'http://kmonsoor.com'),)
 
 # Social widget.
 SOCIAL = (
-    ('Github', 'http://github.com/kmonsoor'),
+    ('Plus', 'http://plus.google.com/+KhaledMonsoor?rel=author'),
     ('Twitter', 'http://twitter.com/KhaledMonsoor'),
-    ('Plus', 'https://plus.google.com/+KhaledMonsoor?rel=author'),
-    ('Instagram', 'http://feeds.feedburner.com/razius'),
+    ('Github', 'http://github.com/kmonsoor'),
+    ('LinkedIn', 'http://www.linkedin.com/in/kmonsoor'),
+    ('Instagram', 'http://www.instagram.com/kmonsoor/'),
+    
 )
-
+TWITTER_USERNAME = 'KhaledMonsoor'
+GITHUB_URL = 'https://github.com/kmonsoor/'
+DISQUS_SITENAME = 'kmonsoor'
+GOOGLE_ANALYTICS = 'UA-20431143-1'
 MENUITEMS = (
 )
+
+# SUMMARY_MAX_LENGTH = 500
+LOAD_CONTENT_CACHE = True
 
 # Content path.
 PATH = 'content'
@@ -52,7 +56,7 @@ EXTRA_PATH_METADATA = {
 PAGINATION_PATTERNS = (
     (1, '{base_name}/', '{base_name}/index.html'),
     (2, '{base_name}/page/{number}/', '{base_name}/page/{number}/index.html'),
-)
+    )   
 ARTICLE_URL = ('articles/{slug}/')
 ARTICLE_SAVE_AS = ('articles/{slug}/index.html')
 PAGE_URL = ('pages/{slug}/')
@@ -73,11 +77,11 @@ CATEGORY_FEED_ATOM = 'feeds/%s.atom.xml'
 TRANSLATION_FEED_ATOM = None
 
 # Theme.
-THEME = 'theme'
-# COVER_IMG_URL = '/images/cover.jpg'
+THEME = 'razius'
+COVER_IMG_URL = '/images/cover.jpg'
 COVER_BG_COLOR = '#375152'
 TYPOGRIFY = True
-DEFAULT_PAGINATION = 10
+DEFAULT_PAGINATION = 5
 
 # Plugin.
 PLUGIN_PATH = 'plugins'

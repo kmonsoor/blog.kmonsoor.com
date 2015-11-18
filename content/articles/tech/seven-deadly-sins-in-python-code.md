@@ -1,29 +1,24 @@
 Title: Se7en Deadly Sins to Do in Python code
 Date: 2015-08-10 17:05
-Author: kmonsoor
 Category: Coding, Python
 Tags: best practices, code quality, deadly, debugging, programming, python, software development, software documentation, worst practices
 Slug: seven-deadly-sins-in-python-code
 Status: published
 
-[**Update**: some of my friends expressed their confusion regarding the
-word used "***Deadly***". To make things clear a bit, i have used the
-word **NOT** to express that this coding bad-practices harm human or any
-other life-form. Rather, i used the word to express the power of these
+[ *Here, i have used the word "deadly" to express the power of these
 to diminish the productivity of a Python programmer or his fellow
-teammate(s) who will work on the same code ]
+teammate(s) who will work on the same code. Please take all these with quite a bit of salt, due to my limited expertise & very limited experience with different types of projects based on Python.
+
+7 is just a catchy number. Of course, this top list is subject to
+change along with my experience. You are also most welcome to suggest
+your own-finding to make into this list.*
+]
 
 There are a lot of ways someone can make his (or her) Python code
 extremely difficult for himself and his fellow developers to work with.
 But, the below ones are in my top-list.
 
-<span style="color:#808080;">Please take all these with quite a bit of
-salt, due to my limited expertise & very limited experience with
-different types of projects based on Python.</span>
 
-**7** is just a catchy number. Of course, this top list is subject to
-change along with my experience. You are also most welcome to suggest
-your own-finding to make into this list.
 
 ### **1. The `try: except: pass` trio**
 
@@ -44,14 +39,13 @@ The below pattern is considered the most deadly anti-pattern in Python
 code. [Aaron Maxwell](http://redsymbol.net/) called it [most
 diabolical](https://realpython.com/blog/python/the-most-diabolical-python-antipattern/)
 or devilish anti-pattern.
+  
+`   try:  
+        subtle\_bug-inside\_operation() \# most possibly with I/O or DB operation  
+    except:
+        pass
+`  
 
-[code language="python"]  
-try:  
-subtle\_bug-inside\_operation() \# most possibly with I/O or DB
-operation  
-except:  
-pass  
-[/code]
 
 You thought to save some development time by "pass"ing them by. But, it
 will take hours, if not days, to find possible bugs, inside the block,
