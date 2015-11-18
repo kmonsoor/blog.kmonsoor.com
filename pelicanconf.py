@@ -104,4 +104,4 @@ SITEMAP = {
 }
 
 # can be useful in development, but set to False when you're ready to publish
-RELATIVE_URLS = False
+RELATIVE_URLS = True
