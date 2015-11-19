@@ -14,7 +14,6 @@ TIMEZONE = 'Asia/Dhaka'
 
 DEFAULT_LANG = u'en'
 DELETE_OUTPUT_DIRECTORY = True
-# LOAD_CONTENT_CACHE = True
 
 # Blogroll
 LINKS = (('asda', 'http://kmonsoor.com'),)
@@ -36,7 +35,7 @@ MENUITEMS = (
 )
 
 # SUMMARY_MAX_LENGTH = 500
-LOAD_CONTENT_CACHE = True
+# LOAD_CONTENT_CACHE = True
 
 # Content path.
 PATH = 'content'
@@ -57,10 +56,10 @@ PAGINATION_PATTERNS = (
     (1, '{base_name}/', '{base_name}/index.html'),
     (2, '{base_name}/page/{number}/', '{base_name}/page/{number}/index.html'),
     )   
-ARTICLE_URL = ('articles/{slug}/')
-ARTICLE_SAVE_AS = ('articles/{slug}/index.html')
-PAGE_URL = ('pages/{slug}/')
-PAGE_SAVE_AS = ('pages/{slug}/index.html')
+ARTICLE_URL = ('{slug}/')
+ARTICLE_SAVE_AS = ('{slug}/index.html')
+PAGE_URL = ('{slug}/')
+PAGE_SAVE_AS = ('{slug}/index.html')
 PAGE_LANG_SAVE_AS = False
 TAG_URL = ('tag/{slug}/')
 TAG_SAVE_AS = ('tag/{slug}/index.html')
@@ -71,7 +70,7 @@ CATEGORY_SAVE_AS = ('category/{slug}/index.html')
 AUTHOR_SAVE_AS = False
 
 # Feed.
-FEED_DOMAIN = SITEURL
+# FEED_DOMAIN = SITEURL
 FEED_ALL_ATOM = 'feeds/all.atom.xml'
 CATEGORY_FEED_ATOM = 'feeds/%s.atom.xml'
 TRANSLATION_FEED_ATOM = None
@@ -85,7 +84,12 @@ DEFAULT_PAGINATION = 5
 
 # Plugin.
 PLUGIN_PATH = 'plugins'
-PLUGINS = ['gzip_cache', 'assets', 'optimize_images', 'sitemap', 'gravatar', 'pelican_youtube']
+PLUGINS = ['gzip_cache',
+            'assets', 
+#            'optimize_images', 
+#            'sitemap', 
+            'pelican_youtube'
+          ]
 PYGMENTS_RST_OPTIONS = {'cssclass': 'codehilite', 'linenos': 'table'}
 
 # Sitemap.
