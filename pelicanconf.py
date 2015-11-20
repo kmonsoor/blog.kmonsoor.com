@@ -16,7 +16,7 @@ DEFAULT_LANG = u'en'
 DELETE_OUTPUT_DIRECTORY = True
 
 # Blogroll
-LINKS = (('asda', 'http://kmonsoor.com'),)
+LINKS = (('asda', 'http://blog.kmonsoor.com'),)
 
 # Social widget.
 SOCIAL = (
@@ -24,15 +24,13 @@ SOCIAL = (
     ('Twitter', 'http://twitter.com/KhaledMonsoor'),
     ('Github', 'http://github.com/kmonsoor'),
     ('LinkedIn', 'http://www.linkedin.com/in/kmonsoor'),
-    ('Instagram', 'http://www.instagram.com/kmonsoor/'),
-    
+    ('Instagram', 'http://www.instagram.com/kmonsoor/'), 
 )
 TWITTER_USERNAME = 'KhaledMonsoor'
 GITHUB_URL = 'https://github.com/kmonsoor/'
 DISQUS_SITENAME = 'kmonsoor'
 GOOGLE_ANALYTICS = 'UA-20431143-1'
-MENUITEMS = (
-)
+MENUITEMS = ()
 
 # SUMMARY_MAX_LENGTH = 500
 # LOAD_CONTENT_CACHE = True
@@ -71,9 +69,9 @@ AUTHOR_SAVE_AS = False
 
 # Feed.
 # FEED_DOMAIN = SITEURL
-FEED_ALL_ATOM = 'feeds/all.atom.xml'
-CATEGORY_FEED_ATOM = 'feeds/%s.atom.xml'
-TRANSLATION_FEED_ATOM = None
+# FEED_ALL_ATOM = 'feeds/all.atom.xml'
+# CATEGORY_FEED_ATOM = 'feeds/%s.atom.xml'
+# TRANSLATION_FEED_ATOM = None
 
 # Theme.
 THEME = 'razius'
@@ -88,7 +86,7 @@ PLUGINS = ['gzip_cache',
             'assets', 
 #            'optimize_images', 
 #            'sitemap', 
-            'pelican_youtube'
+#            'pelican_youtube'
           ]
 PYGMENTS_RST_OPTIONS = {'cssclass': 'codehilite', 'linenos': 'table'}
 
@@ -108,4 +106,4 @@ SITEMAP = {
 }
 
 # can be useful in development, but set to False when you're ready to publish
-RELATIVE_URLS = True
+RELATIVE_URLS = False

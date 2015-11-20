@@ -5,18 +5,24 @@ Tags: best practices, code quality, deadly, debugging, programming, python, soft
 Slug: seven-deadly-sins-in-python-code
 Status: published
 
-[ *Here, i have used the word "deadly" to express the power of these
+
+There are a lot of ways someone can make his (or her) Python code
+extremely difficult for himself and his fellow developers to work with.
+But, these ones are in my top-list.
+
+... 
+*Here, i have used the word "deadly" to express the power of these
 to diminish the productivity of a Python programmer or his fellow
 teammate(s) who will work on the same code. Please take all these with quite a bit of salt, due to my limited expertise & very limited experience with different types of projects based on Python.
 
 7 is just a catchy number. Of course, this top list is subject to
 change along with my experience. You are also most welcome to suggest
-your own-finding to make into this list.*
-]
+your own-finding to make into this list*.
+...
 
 There are a lot of ways someone can make his (or her) Python code
 extremely difficult for himself and his fellow developers to work with.
-But, the below ones are in my top-list.
+But, these ones are in my top-list.
 
 
 
