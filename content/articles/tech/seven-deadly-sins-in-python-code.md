@@ -1,30 +1,19 @@
 Title: Se7en Deadly Sins to Do in Python code
 Date: 2015-08-10 17:05
-Category: Coding, Python
-Tags: best practices, code quality, deadly, debugging, programming, python, software development, software documentation, worst practices
+Modified: 2015-11-21 00:05
+Tags: best practices, code quality, debugging, programming, python, software development, software documentation, worst practices
 Slug: seven-deadly-sins-in-python-code
 Status: published
+Summary: There are a lot of ways someone can make his (or her) Python code extremely difficult for himself and his fellow developers to work with and maintain. But, these ones are in my top-list.
 
+...
+*Here, i have used the word "deadly" to express the potential to diminish the productivity of a Python programmer or his fellow teammate(s) who will work on the same code. Please take all these with quite a bit of salt, due to my limited expertise & limited experience with different types of projects based on Python.*
 
-There are a lot of ways someone can make his (or her) Python code
-extremely difficult for himself and his fellow developers to work with.
-But, these ones are in my top-list.
-
-... 
-*Here, i have used the word "deadly" to express the power of these
-to diminish the productivity of a Python programmer or his fellow
-teammate(s) who will work on the same code. Please take all these with quite a bit of salt, due to my limited expertise & very limited experience with different types of projects based on Python.
-
-7 is just a catchy number. Of course, this top list is subject to
-change along with my experience. You are also most welcome to suggest
-your own-finding to make into this list*.
+*7 is just a catchy number. Of course, this top list is subject to change along with my experience. You are also most welcome to suggest your own-finding to make into this list*
 ...
 
-There are a lot of ways someone can make his (or her) Python code
-extremely difficult for himself and his fellow developers to work with.
+There are a lot of ways someone can make his (or her) Python code extremely difficult for himself and his fellow developers to work with.
 But, these ones are in my top-list.
-
-
 
 ### **1. The `try: except: pass` trio**
 
@@ -39,145 +28,92 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Software_design_pattern),
 > readability for coders and architects who are familiar with the
 > patterns.
 
-Now, think of the complete opposite of design-pattern. It is
-called *anti-pattern* which silently "destroys" your efficiency in code.
-The below pattern is considered the most deadly anti-pattern in Python
-code. [Aaron Maxwell](http://redsymbol.net/) called it [most
-diabolical](https://realpython.com/blog/python/the-most-diabolical-python-antipattern/)
-or devilish anti-pattern.
-  
-`   try:  
-        subtle\_bug-inside\_operation() \# most possibly with I/O or DB operation  
-    except:
-        pass
-`  
+Now, think of the complete opposite of design-pattern. It is called *anti-pattern* which silently "destroys" your efficiency in code. The below pattern is considered the most deadly anti-pattern in Python code. [Aaron Maxwell](http://redsymbol.net/) called it [most diabolical](https://realpython.com/blog/python/the-most-diabolical-python-antipattern/) or devilish anti-pattern.
+
+```Python
+try:
+    subtle_buggy_operation()  # most possibly with I/O or DB operation
+except:
+    pass
+```
 
 
-You thought to save some development time by "pass"ing them by. But, it
-will take hours, if not days, to find possible bugs, inside the block,
-later as all the exceptions are masked by the "pass" and the error
-location will be somewhere else outside this try:except block which may
-look like the most innocent code.  
-Quoting from Aaron ...
+You thought to save some development time by "pass"ing them by. But, it will take hours, if not days, to find possible bugs, inside the block, later as all the exceptions are masked by the "pass" and the error location will be somewhere else outside this try:except block which may look like the most innocent code.
 
-> In my nearly ten years of experience writing applications in Python,
-> both individually and as part of a team, this pattern has stood out as
-> the single greatest drain on developer productivity and application
-> reliability… especially over the long term.
+Again, quoting from Aaron ...
+
+> In my nearly ten years of experience writing applications in Python, both individually and as part of a team, this pattern has stood out as the single greatest drain on developer productivity and application reliability… especially over the long term.
+
 
 ### **2. Wildcard imports (`from module import *`)**
 
-This one single practice can render a nice (clean) module into a
-nightmare. According to a core Python developer [David
-Goodger](http://python.net/~goodger/projects/pycon/2007/idiomatic/handout.html#importing),
+This one single practice can render a nice (clean) module into a nightmare. According to a core Python developer [David Goodger](http://python.net/~goodger/projects/pycon/2007/idiomatic/handout.html#importing),
 
-> Wild-card imports are from the dark side of Python.  
->  **Never!**  
->  The `from module import *` wild-card style leads to namespace
-> pollution. You'll get things in your local namespace that you didn't
-> expect to get. You may see imported names obscuring module-defined
-> local names. You won't be able to figure out where certain names come
-> from. Although a convenient shortcut, this should not be in production
-> code.  
+> Wild-card imports are from the dark side of Python.
+>  **Never!**
+>  The `from module import *` wild-card style leads to namespace pollution. You'll get things in your local namespace that you didn'texpect to get. You may see imported names obscuring module-defined local names. You won't be able to figure out where certain names comefrom. Although a convenient shortcut, this should not be in production code.
 >  *Moral: don't use wild-card imports!*
 
-also, in light of [Yoda's mythical
-conversation](http://www.yodaquotes.net/)s, David also writes:
+also, in light of [Yoda's mythical conversation](http://www.yodaquotes.net/)s, David also writes:
 
-> LUKE: Is from module import \* better than explicit imports?  
->  YODA: No, not better. Quicker, easier, more seductive.  
->  LUKE: But how will I know why explicit imports are better than the
-> wild-card form?  
->  YODA: Know you will when your code you try to read six months from
-> now.
+> LUKE: Is from module import * better than explicit imports?
+> YODA: No, not better. Quicker, easier, more seductive.
+> LUKE: But how will I know why explicit imports are better than the wild-card form?
+> YODA: Know you will when your code you try to read six months from now.
 
-If you use this practice in between inter-connected modules in a
-mid-sized project, worry not, you'll start to get errors due to circular
-references soon enough.
+If you use this practice in between inter-connected modules in a mid-sized project, worry not, you'll start to get errors due to circular references soon enough.
 
 "Nice", isn't it?
 
 ### **3. Thinking that `try:except:else` construct is not a natural control flow**
 
-If you are coming from Java world, I understand your confusion. But,
-Python adopted this construct so much different than Java. It helps to
-realize Python's philosophy <span style="line-height:1.7;">"</span>[Ask
-for Forgiveness than
-Permission](https://docs.python.org/2/glossary.html#term-eafp)<span
-style="line-height:1.7;">, aka "EAFP paradigm".</span>
+If you are coming from Java(or, similar) world, I understand your confusion. But, Python adopted this construct so much different than Java. It helps to realize Python's philosophy [Ask for Forgiveness than Permission](https://docs.python.org/2/glossary.html#term-eafp), aka "EAFP paradigm".
 
-Trying to avoid this will result in a absolutely unnecessary, messy,
-unpythonic code. As this [great answer on
-StackOverflow](http://stackoverflow.com/a/16138864/617185), by a core
-Python developer, on this matter nicely portrays the philosophy behind
-it.
+Trying to avoid this will result in messy, unpythonic code. As this [great answer on StackOverflow](http://stackoverflow.com/a/16138864/617185), by a core Python developer, on this matter nicely portrays the philosophy behind it.
 
 Quoting him :
 
-> In the Python world, using exceptions for flow control is common and
-> normal. Even the Python core developers use exceptions for
-> flow-control and that style is heavily baked into the language (i.e.
-> the iterator protocol uses *StopIteration*to signal loop termination).
-> In addition, the try-except-style is used to prevent the
-> race-conditions inherent in some of the "look-before-you-leap"
-> constructs.
->
-> For example, testing os.path.exists results in information that may be
-> out-of-date by the time you use it. Likewise, Queue.full returns
-> information that may be stale. The try-except-else style will produce
-> more reliable code in these cases. In some other languages, that rule
-> reflects their cultural norms as reflected in their libraries.  
->  The "rule" is also based in-part on performance considerations for
-> those languages.
+> In the Python world, using exceptions for flow control is common and normal. Even the Python core developers use exceptions for flow-control and that style is heavily baked into the language (i.e. the iterator protocol uses *StopIteration*to signal loop termination). In addition, the try-except-style is used to prevent the race-conditions inherent in some of the "look-before-you-leap" constructs.
+> For example, testing os.path.exists results in information that may be out-of-date by the time you use it. Likewise, Queue.full returns information that may be stale. The try-except-else style will produce more reliable code in these cases. In some other languages, that rule reflects their cultural norms as reflected in their libraries. The "rule" is also based in-part on performance considerations for those languages.
 
-Also, consider checking out [this Q&A on
-StackOverflow](http://stackoverflow.com/a/180974/617185) on the same
-premise.
+Also, consider checking out [this Q&A on StackOverflow](http://stackoverflow.com/a/180974/617185) on the same premise.
 
 ### **4. Making everything a Class aka Overusing classes**
 
-What I am referring to is [this talk by Jack
-Diederich](https://www.youtube.com/watch?v=o9pEzgHorH0) on PyCon 2012.
-You should watch this couple of times and then once in every week. His
-summary is like ... Stop creating classes, and modules in every now and
-then. Before creating one, think hard. Probably, what you need is
-writing just a function.
+What I am referring to is [this talk by Jack Diederich](https://www.youtube.com/watch?v=o9pEzgHorH0) on PyCon 2012. You should watch this couple of times and then once in every week. His summary is like ... Stop creating classes, and modules in every now and then. Before creating one, think hard. Probably, what you need is writing just a function.
 
-[Zen of Python](https://www.python.org/dev/peps/pep-0020/) described it
-as below. Read it again,  
-again, and again.
+[Zen of Python](https://www.python.org/dev/peps/pep-0020/) described it as below.
+Read it again, again, and again.
 
-> -   Beautiful is better than ugly.
-> -   Explicit is better than implicit.
-> -   Simple is better than complex.
-> -   Flat is better than nested.
-> -   Readability counts.
-> -   If the implementation is hard to explain, it's a bad idea
+> * Beautiful is better than ugly.
+> * Explicit is better than implicit.
+> * Simple is better than complex.
+> * Flat is better than nested.
+> * Readability counts.
+> * If the implementation is hard to explain, it's a bad idea
 
-Though the below is a perfectly valid class, it is a perfect example
-case of b\*\*\*sh\*t classes:
+Though the below is a perfectly valid class, it is a perfect example case of b**\*sh*t classes:
 
-[code language="python"]  
-class Greeting(object):  
-def \_\_init\_\_(self, greeting='hello'):  
-self.greeting = greeting
+```python
+class Greeting(object):
+    def __init__(self, greeting='hello'):
+        self.greeting = greeting
 
-def greet(self, name):  
-return '%s! %s' % (self.greeting, name)
+    def greet(self, name):
+        return '%s! %s' % (self.greeting, name)
 
-greeting = Greeting('hola')  
-print greeting.greet('bob')  
-[/code]
+greeting = Greeting('hola')
+print greeting.greet('bob')
+```
 
 It is doing exactly same as below:
 
-[code language="python"]  
-def greet(greeting, target):  
-return '%s! %s' % (greeting, target)  
-[/code]
+```python
+def greet(greeting, target):
+    return '%s! %s' % (greeting, target)
+```
 
-He also showed a practical example how he simplified (aka
-re-factored) an API's complete code, consisting:
+He also showed a practical example how he simplified (aka re-factored) an API's complete code, consisting:
 
 -   1 Package, 22 Modules
 -   20 Classes
@@ -185,98 +121,63 @@ re-factored) an API's complete code, consisting:
 
 into this below, a grand total of 8 lines. Yes, just 8 lines !!!
 
-[code language="python"]  
-MUFFIN\_API = url='https://api.wbsrvc.com/%s/%s/'  
-MUFFIN\_API\_KEY = 'SECRET-API-KEY'
+```python
+MUFFIN_API = url='https://api.wbsrvc.com/%s/%s/'
+MUFFIN_API_KEY = 'SECRET-API-KEY'
 
-def request(noun, verb, \*\*params):  
-headers = {'apikey' : MUFFIN\_API\_KEY}  
-request = urllib2.Request(MUFFIN\_API % (noun, verb),  
-urllib.urlencode(params), headers)  
-return json.loads(urllib2.urlopen(request).read())  
-[/code]
+def request(noun, verb, **params):
+    headers = {'apikey' : MUFFIN_API_KEY}
+    request = urllib2.Request(MUFFIN_API % (noun, verb), urllib.urlencode(params), headers)
+    return json.loads(urllib2.urlopen(request).read())
+```
 
-Stop re-inventing the wheel, use more of built-in library functions, use
-much less own long chains of class-hierarchy. Want to see a worst
-scenario of creating classes? Check this:
+Stop re-inventing the wheel, use more of built-in library functions, use much less own long chains of class-hierarchy. Want to see a worst scenario of creating classes? Check this:
 
-[code language="python"]  
-class Flow(object):  
-"""Base class for all Flow objects."""  
-pass
+```python
+class Flow(object):
+    """Base class for all Flow objects."""
+    pass
 
-class Storage(object):  
-def put(self, data): \_abstract()  
-def get(self): \_abstract()
+class Storage(object):
+    def put(self, data): _abstract()
+    def get(self): _abstract()
 
-def \_abstract(): raise NotImplementedError  
-[/code]
+def _abstract(): raise NotImplementedError
+```
 
-Yes, this is a real piece of code from Google API client code. (which,
-in total, has *10,000 SLOC, 115 modules, 207 classes*). Whereas [someone
-did implemented the same](https://github.com/jackdied/python-foauth2),
-well maybe not extremely robust, but in *135 SLOC, 3 classes*.
+Yes, this is a real piece of code from Google API client code. (which, in total, has *10,000 SLOC, 115 modules, 207 classes*). Whereas [someone did implemented the same](https://github.com/jackdied/python-foauth2), well maybe not extremely robust, but in *135 SLOC, 3 classes*.
 
-You see the point, right ? Guido did.  
-[  
-
-![guido-google-comment](https://kmonsoor.files.wordpress.com/2015/02/guido-google-comment.jpg)  
+You see the point, right ? Guido did.
+[
+![guido-google-comment](https://kmonsoor.files.wordpress.com/2015/02/guido-google-comment.jpg)
 ](https://plus.google.com/+JackDiederich/posts/iPiqWHjwcf3)
 
 ### **5. Saving time by not writing any documentation or inline comments**
 
-If you don't write comments with your semi-obfuscated code, and no
-docstrings as well saving time and meeting deadlines, stay assure that
-within a short period you'll hate yourself when you will not remember
-what (& why) you did something while reading your own code.
+If you don't write comments with your semi-obfuscated code, and no docstrings as well saving time and meeting deadlines, stay assure that within a short period you'll hate yourself when you will not remember what (& why) you did something while reading your own code.
 
-Today or tomorrow, you will leave the company. And, that code will haunt
-all the members of your team who will come across this code-like
-zombies; unless they totally cut-off-the-head(e.g. replace) of your
-code. There is just no excuse that you don't do "documentation"
-except you just don't care. If you would care, you would not only write
-minimal doc-strings and comments on complex code-sections, but also name
-your functions, methods, variables to reflect the purpose of the
-component to make them "self-documented".
+Today or tomorrow, you will leave the company. And, that code will haunt all the members of your team who will come across this code-like zombies; unless they totally cut-off-the-head(e.g. replace) of your code. There is just no excuse that you don't do "documentation" except you just don't care. If you would care, you would not only write minimal doc-strings and comments on complex code-sections, but also name your functions, methods, variables to reflect the purpose of the component to make them "self-documented".
 
-Here is a nice guide to properly [documenting your Python
-code.](http://docs.python-guide.org/en/latest/writing/documentation/)
+Here is a nice guide to properly [documenting your Python code.](http://docs.python-guide.org/en/latest/writing/documentation/)
 
 However, there will still be deniers out there ...
 
-[![code-quality](http://imgs.xkcd.com/comics/code_quality.png)  
-](https://xkcd.com/1513/)
+[![code-quality](http://imgs.xkcd.com/comics/code_quality.png)](https://xkcd.com/1513/)
 
 ### **6. Avoiding Unit-tests (and doc-tests) until the doomsday comes**
 
-Yes, the judgement day will come. It will happen on the production
-server, with customer's downtime due to a "completely" manually-tested
-new feature, which will break something "almost" unrelated.
+Yes, the judgement day will come. It will happen on the production server, with customer's downtime due to a "completely" manually-tested new feature, which will break something "almost" unrelated.
 
-Yes, your company can lose millions and [can be out
-of business.](http://dougseven.com/2014/04/17/knightmare-a-devops-cautionary-tale/) Maybe
-after some sleep-less night of the development team, the "bug" would
-have found out.
+Yes, your company can lose millions and [can be out of business.](http://dougseven.com/2014/04/17/knightmare-a-devops-cautionary-tale/) Maybe after some sleep-less night of the development team, the "bug" would have found out.
 
-Maybe, this whole mess could be simply avoided if the developer wrote
-his/her
-modules' [unit-test](https://docs.python.org/2/library/unittest.html) as
-well as [doctests](https://docs.python.org/2/library/doctest.html) for
-the functions or methods. And, after implementing the feature he would
-have run the tests once across the project. The online book
-Dive-in-Python has an excellent introduction on `unittest`. Also, you
-can start with [Hitchhiker's
-guide's introduction](http://docs.python-guide.org/en/latest/writing/tests/#unittest).
+Maybe, this whole mess could be simply avoided if the developer wrote his/her modules' [unit-test](https://docs.python.org/2/library/unittest.html) as well as [doctests](https://docs.python.org/2/library/doctest.html) for the functions or methods. And, after implementing the feature he would have run the tests once across the project. The online book Dive-in-Python has an excellent introduction on `unittest`. Also, you can start with [Hitchhiker's guide's introduction](http://docs.python-guide.org/en/latest/writing/tests/#unittest).
 
 ### **7. Mixing `TAB` and `SPACE` in the same file**
 
-You will need no more reason to curse yourself just a while after. It
-will haunt you whenever you'll need to open the source-code in any
-editor other than your usual one. And, for others, "oh my! I can't
-literally even...".
+You will need no more reason to curse yourself just a while after. It will haunt you whenever you'll need to open the source-code in any editor other than your usual one. And, for others, "oh my! I can't literally even...".
 
 And, while working with your code, some of your fellow programmers will
-"wish" for you like this girl:  
+"wish" for you like this girl:
 
 [![the](https://i.imgur.com/URYofs4.jpg)](https://i.imgur.com/URYofs4.jpg)
 reading
@@ -284,19 +185,11 @@ reading
 > ... you’re weak, your bloodline is weak, and you will not survive the
 > winter.
 
-While Python 3 will simply refuse to interpret this mixed file, in
-Python 2, the interpretation of TAB is as if it is converted to spaces
-using 8-space tab stops. So while executing, you may have no clue where
-a specific-line is being considered as which code-block's part.
+While Python 3 will simply refuse to interpret this mixed file, in Python 2, the interpretation of TAB is as if it is converted to spaces using 8-space tab stops. So while executing, you may have no clue where a specific-line is being considered as which code-block's part.
 
-For any code that you think someday someone else will read or use, to
-avoid confusion, you should stick
-with [PEP-8](http://legacy.python.org/dev/peps/pep-0008/#tabs-or-spaces),
-or your team-specific coding style. PEP-8 strongly discourage mixing TAB
-and Space in a same file.
+For any code that you think someday someone else will read or use, to avoid confusion, you should stick with [PEP-8](http://legacy.python.org/dev/peps/pep-0008/#tabs-or-spaces), or your team-specific coding style. PEP-8 strongly discourage mixing TAB and Space in a same file.
 
-Also, check out this [Q&A on
-StackExchange.](http://programmers.stackexchange.com/a/197839/74557)
+Also, check out this [Q&A on StackExchange.](http://programmers.stackexchange.com/a/197839/74557)
 
 > ​1. The first downside is that it quickly becomes a mess
 >
@@ -306,8 +199,7 @@ StackExchange.](http://programmers.stackexchange.com/a/197839/74557)
 > correctly on other configurations, without forcing developers to think
 > about it.
 
-Also, [remember
-this](http://www.secnetix.de/olli/Python/block_indentation.hawk)
+Also, [remember this](http://www.secnetix.de/olli/Python/block_indentation.hawk)
 
 > Furthermore, it can be a good idea to avoid tabs altogether, because
 > the semantics of tabs are not very well-defined in the computer world,
