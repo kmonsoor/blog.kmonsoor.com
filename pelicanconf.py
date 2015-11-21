@@ -37,8 +37,8 @@ MENUITEMS = ()
 
 # Content path.
 PATH = 'content'
-PAGE_DIR = 'pages'
-ARTICLE_DIR = 'articles'
+PAGE_PATHS = ['pages']
+ARTICLE_PATHS = ['articles']
 STATIC_PATHS = ['images', 'files']
 EXTRA_PATH_METADATA = {
     'files/github/.nojekyll': {'path': '.nojekyll'},
@@ -65,13 +65,13 @@ TAGS_URL = ('tags/')
 TAGS_SAVE_AS = None
 CATEGORY_URL = ('category/{slug}/')
 CATEGORY_SAVE_AS = ('category/{slug}/index.html')
-AUTHOR_SAVE_AS = False
+# AUTHOR_SAVE_AS = False
 
 # Feed.
-# FEED_DOMAIN = SITEURL
-# FEED_ALL_ATOM = 'feeds/all.atom.xml'
-# CATEGORY_FEED_ATOM = 'feeds/%s.atom.xml'
-# TRANSLATION_FEED_ATOM = None
+FEED_DOMAIN = SITEURL
+FEED_ALL_ATOM = 'feeds/all.atom.xml'
+CATEGORY_FEED_ATOM = 'feeds/%s.atom.xml'
+TRANSLATION_FEED_ATOM = None
 
 # Theme.
 THEME = 'razius'
@@ -81,14 +81,17 @@ TYPOGRIFY = True
 DEFAULT_PAGINATION = 5
 
 # Plugin.
-PLUGIN_PATH = 'plugins'
+PLUGIN_PATHS = ['plugins']
 PLUGINS = ['gzip_cache',
-            'assets', 
-#            'optimize_images', 
-#            'sitemap', 
-#            'pelican_youtube'
-          ]
-PYGMENTS_RST_OPTIONS = {'cssclass': 'codehilite', 'linenos': 'table'}
+           'assets', 
+           'optimize_images', 
+           'sitemap', 
+           'pelican_youtube'
+         ]
+
+# for highlighting code-segments
+# PYGMENTS_RST_OPTIONS = {'cssclass': 'codehilite', 'linenos': 'table'}
+MD_EXTENSIONS = ['codehilite(noclasses=True, pygments_style=native)', 'extra']
 
 # Sitemap.
 SITEMAP = {

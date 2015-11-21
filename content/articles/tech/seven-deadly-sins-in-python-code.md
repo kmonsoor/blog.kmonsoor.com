@@ -30,12 +30,11 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Software_design_pattern),
 
 Now, think of the complete opposite of design-pattern. It is called *anti-pattern* which silently "destroys" your efficiency in code. The below pattern is considered the most deadly anti-pattern in Python code. [Aaron Maxwell](http://redsymbol.net/) called it [most diabolical](https://realpython.com/blog/python/the-most-diabolical-python-antipattern/) or devilish anti-pattern.
 
-```Python
+#!python
 try:
     subtle_buggy_operation()  # most possibly with I/O or DB operation
 except:
     pass
-```
 
 
 You thought to save some development time by "pass"ing them by. But, it will take hours, if not days, to find possible bugs, inside the block, later as all the exceptions are masked by the "pass" and the error location will be somewhere else outside this try:except block which may look like the most innocent code.
