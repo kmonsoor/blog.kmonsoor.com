@@ -30,12 +30,12 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Software_design_pattern),
 
 Now, think of the complete opposite of design-pattern. It is called *anti-pattern* which silently "destroys" your efficiency in code. The below pattern is considered the most deadly anti-pattern in Python code. [Aaron Maxwell](http://redsymbol.net/) called it [most diabolical](https://realpython.com/blog/python/the-most-diabolical-python-antipattern/) or devilish anti-pattern.
 
-#!python
+```python
 try:
     subtle_buggy_operation()  # most possibly with I/O or DB operation
 except:
     pass
-
+```
 
 You thought to save some development time by "pass"ing them by. But, it will take hours, if not days, to find possible bugs, inside the block, later as all the exceptions are masked by the "pass" and the error location will be somewhere else outside this try:except block which may look like the most innocent code.
 
@@ -147,9 +147,7 @@ def _abstract(): raise NotImplementedError
 Yes, this is a real piece of code from Google API client code. (which, in total, has *10,000 SLOC, 115 modules, 207 classes*). Whereas [someone did implemented the same](https://github.com/jackdied/python-foauth2), well maybe not extremely robust, but in *135 SLOC, 3 classes*.
 
 You see the point, right ? Guido did.
-[
-![guido-google-comment](https://kmonsoor.files.wordpress.com/2015/02/guido-google-comment.jpg)
-](https://plus.google.com/+JackDiederich/posts/iPiqWHjwcf3)
+[![guido-google-comment](https://kmonsoor.files.wordpress.com/2015/02/guido-google-comment.jpg)](https://plus.google.com/+JackDiederich/posts/iPiqWHjwcf3)
 
 ### **5. Saving time by not writing any documentation or inline comments**
 
@@ -184,7 +182,7 @@ reading
 > ... you’re weak, your bloodline is weak, and you will not survive the
 > winter.
 
-While Python 3 will simply refuse to interpret this mixed file, in Python 2, the interpretation of TAB is as if it is converted to spaces using 8-space tab stops. So while executing, you may have no clue where a specific-line is being considered as which code-block's part.
+While Python 3 will simply refuse to interpret this "half-breed" file, in Python 2, the interpretation of TAB is as if it is converted to spaces using 8-space tab stops. So while executing, you may have no clue where a specific-line is being considered as which code-block's part.
 
 For any code that you think someday someone else will read or use, to avoid confusion, you should stick with [PEP-8](http://legacy.python.org/dev/peps/pep-0008/#tabs-or-spaces), or your team-specific coding style. PEP-8 strongly discourage mixing TAB and Space in a same file.
 
@@ -206,6 +204,9 @@ Also, [remember this](http://www.secnetix.de/olli/Python/block_indentation.hawk)
 > systems and editors. Also, tabs often get destroyed or wrongly
 > converted during copy&paste operations, or when a piece of source code
 > is inserted into a web page or other kind of markup code.
+
+
+### **Fin**
 
 That's all for now. That's my list.
 

@@ -13,7 +13,7 @@ from pelicanconf import *
 SITEURL = 'http://blog.kmonsoor.com'
 RELATIVE_URLS = False
 
-ARTICLE_EXCLUDES = ('drafts',)
+ARTICLE_EXCLUDES = ['drafts',]
 
 # Following items are often useful when publishing
 
