@@ -79,7 +79,7 @@ Also, consider checking out [this Q&A on StackOverflow](http://stackoverflow.c
 
 ### **4. Making everything a Class aka Overusing classes**
 
-What I am referring to is [this talk by Jack Diederich](https://www.youtube.com/watch?v=o9pEzgHorH0) on PyCon 2012. You should watch this couple of times and then once in every week. His summary is like ... Stop creating classes, and modules in every now and then. Before creating one, think hard. Probably, what you need is writing just a function.
+What I am referring to is [this talk by Jack Diederich](https://www.youtube.com/watch?v=o9pEzgHorH0) on PyCon 2012. You should watch this couple of times and then once in every week. His summary is like ... **Stop** creating classes, and modules in every now and then. Before creating one, think hard. Probably, what you need is writing just a function.
 
 [Zen of Python](https://www.python.org/dev/peps/pep-0020/) described it as below.
 Read it again, again, and again.
@@ -89,9 +89,9 @@ Read it again, again, and again.
 > * Simple is better than complex.
 > * Flat is better than nested.
 > * Readability counts.
-> * If the implementation is hard to explain, it's a bad idea
+> * If the implementation is hard to explain, it's a bad idea.
 
-Though the below is a perfectly valid class, it is a perfect example case of b**\*sh*t classes:
+Though the below is a perfectly valid class, it is a perfect example case of b***sh*t classes:
 
 ```python
 class Greeting(object):
@@ -114,9 +114,9 @@ def greet(greeting, target):
 
 He also showed a practical example how he simplified (aka re-factored) an API's complete code, consisting:
 
--   1 Package, 22 Modules
--   20 Classes
--   660 Source Lines of Code
+ *  1 Package, 22 Modules
+ *  20 Classes
+ *  660 Source Lines of Code
 
 into this below, a grand total of 8 lines. Yes, just 8 lines !!!
 
@@ -126,12 +126,17 @@ MUFFIN_API_KEY = 'SECRET-API-KEY'
 
 def request(noun, verb, **params):
     headers = {'apikey' : MUFFIN_API_KEY}
-    request = urllib2.Request(MUFFIN_API % (noun, verb), urllib.urlencode(params), headers)
+    request = urllib2.Request(MUFFIN_API % (noun, verb), \
+                              urllib.urlencode(params), headers)
     return json.loads(urllib2.urlopen(request).read())
 ```
 
-Stop re-inventing the wheel, use more of built-in library functions, use much less own long chains of class-hierarchy. Want to see a worst scenario of creating classes? Check this:
 
+Stop re-inventing the wheel, use more of built-in library functions, use much-less own long chains of class-hierarchy. 
+  
+Want to see a worst scenario of creating classes?  
+Check this:
+  
 ```python
 class Flow(object):
     """Base class for all Flow objects."""
@@ -144,22 +149,27 @@ class Storage(object):
 def _abstract(): raise NotImplementedError
 ```
 
-Yes, this is a real piece of code from Google API client code. (which, in total, has *10,000 SLOC, 115 modules, 207 classes*). Whereas [someone did implemented the same](https://github.com/jackdied/python-foauth2), well maybe not extremely robust, but in *135 SLOC, 3 classes*.
+Yes, this is a real piece of code from Google API client code. (which, in total, has *10,000 SLOC, 115 modules, 207 classes*). Whereas [someone did implemented the same](https://github.com/jackdied/python-foauth2), well maybe not extremely robust, but in *135 SLOC, 3 classes* in total.
 
 You see the point, right ? Guido did.
-[![guido-google-comment](https://kmonsoor.files.wordpress.com/2015/02/guido-google-comment.jpg)](https://plus.google.com/+JackDiederich/posts/iPiqWHjwcf3)
+[![guido-google-comment]('images/guido-google-comment.jpg')](https://plus.google.com/+JackDiederich/posts/iPiqWHjwcf3)
+
 
 ### **5. Saving time by not writing any documentation or inline comments**
 
 If you don't write comments with your semi-obfuscated code, and no docstrings as well saving time and meeting deadlines, stay assure that within a short period you'll hate yourself when you will not remember what (& why) you did something while reading your own code.
 
-Today or tomorrow, you will leave the company. And, that code will haunt all the members of your team who will come across this code-like zombies; unless they totally cut-off-the-head(e.g. replace) of your code. There is just no excuse that you don't do "documentation" except you just don't care. If you would care, you would not only write minimal doc-strings and comments on complex code-sections, but also name your functions, methods, variables to reflect the purpose of the component to make them "self-documented".
+Today or tomorrow, you will leave the company. And, that code will haunt all the members of your team who will come across this code-like zombies; unless they totally cut-off-the-head(e.g. replace) of your code. 
+  
+There is just no excuse that you don't do "documentation" except you just don't care. If you would care, you would not only write minimal doc-strings and comments on complex code-sections, but also name your functions, methods, variables to reflect the purpose of the component to make them "self-documented".
 
 Here is a nice guide to properly [documenting your Python code.](http://docs.python-guide.org/en/latest/writing/documentation/)
 
 However, there will still be deniers out there ...
 
 [![code-quality](http://imgs.xkcd.com/comics/code_quality.png)](https://xkcd.com/1513/)
+                *\[source: https://xkcd.com/1513/\]*
+
 
 ### **6. Avoiding Unit-tests (and doc-tests) until the doomsday comes**
 
@@ -169,20 +179,19 @@ Yes, your company can lose millions and [can be out of business.](http://doug
 
 Maybe, this whole mess could be simply avoided if the developer wrote his/her modules' [unit-test](https://docs.python.org/2/library/unittest.html) as well as [doctests](https://docs.python.org/2/library/doctest.html) for the functions or methods. And, after implementing the feature he would have run the tests once across the project. The online book Dive-in-Python has an excellent introduction on `unittest`. Also, you can start with [Hitchhiker's guide's introduction](http://docs.python-guide.org/en/latest/writing/tests/#unittest).
 
+
 ### **7. Mixing `TAB` and `SPACE` in the same file**
 
 You will need no more reason to curse yourself just a while after. It will haunt you whenever you'll need to open the source-code in any editor other than your usual one. And, for others, "oh my! I can't literally even...".
 
-And, while working with your code, some of your fellow programmers will
-"wish" for you like this girl:
+And, while working with your code, some of your fellow programmers will "wish" for you like this girl:
 
-[![the](https://i.imgur.com/URYofs4.jpg)](https://i.imgur.com/URYofs4.jpg)
+![pineapple slices on pizza](https://i.imgur.com/URYofs4.jpg )
 reading
 
-> ... you’re weak, your bloodline is weak, and you will not survive the
-> winter.
+> ... you’re weak, your bloodline is weak, and you will not survive the winter.
 
-While Python 3 will simply refuse to interpret this "half-breed" file, in Python 2, the interpretation of TAB is as if it is converted to spaces using 8-space tab stops. So while executing, you may have no clue where a specific-line is being considered as which code-block's part.
+While Python3 will simply refuse to interpret this "half-breed" file, in Python 2, the interpretation of TAB is as if it is converted to spaces using 8-space tab stops. So while executing, you may have no clue how a specific-line is being executed as part of which code-block.
 
 For any code that you think someday someone else will read or use, to avoid confusion, you should stick with [PEP-8](http://legacy.python.org/dev/peps/pep-0008/#tabs-or-spaces), or your team-specific coding style. PEP-8 strongly discourage mixing TAB and Space in a same file.
 
@@ -190,25 +199,14 @@ Also, check out this [Q&A on StackExchange.](http://programmers.stackexchange.c
 
 > ​1. The first downside is that it quickly becomes a mess
 >
-> ... Formatting should be the task of the IDE. Developers have already
-> enough work to care about the size of tabs, how much spaces will an
-> IDE insert, etc. The code should be formatted correctly, and displayed
-> correctly on other configurations, without forcing developers to think
-> about it.
-
+> ... Formatting should be the task of the IDE. Developers have already enough work to care about the size of tabs, how much spaces will an IDE insert, etc. The code should be formatted correctly, and displayed correctly on other configurations, without forcing developers to think about it.  
 Also, [remember this](http://www.secnetix.de/olli/Python/block_indentation.hawk)
 
-> Furthermore, it can be a good idea to avoid tabs altogether, because
-> the semantics of tabs are not very well-defined in the computer world,
-> and they can be displayed completely differently on different types of
-> systems and editors. Also, tabs often get destroyed or wrongly
-> converted during copy&paste operations, or when a piece of source code
-> is inserted into a web page or other kind of markup code.
+> Furthermore, it can be a good idea to avoid tabs altogether, because the semantics of tabs are not very well-defined in the computer world, and they can be displayed completely differently on different types of systems and editors. Also, tabs often get destroyed or wrongly converted during *copy-paste* operations, or when a piece of source code is inserted into a web page or other kind of markup code.
 
 
 ### **Fin**
 
-That's all for now. That's my list.
-
-At the end, thanks for visiting my post. Please share your experience
-what you think is the worst "un-pythonic" nightmare in Python code.
+That's all for now. That's my list. This list hopes to evolve with my experience and expertise as well as the ever-changing collective wisdom of all the Python community.
+  
+What's your take on the worst "un-pythonic" nightmares in Python code?  Please feel free to share your 2-cents.
