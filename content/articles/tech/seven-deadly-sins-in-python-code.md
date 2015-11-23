@@ -4,76 +4,76 @@ Modified: 2015-11-21 00:05
 Tags: best practices, code quality, debugging, programming, python, software development, software documentation, worst practices
 Slug: seven-deadly-sins-in-python-code
 Status: published
-Summary: There are a lot of ways someone can make his (or her) Python code extremely difficult for himself and his fellow developers to work with and maintain. But, these ones are in my top-list.
+Summary: There are a lot of ways someone can make his (or her) Python code extremely difficult for himself and his fellow developers to work with and maintain. However, some are quite destructive by virtue. These ones are in my top-list.
 
-...
-*Here, i have used the word "deadly" to express the potential to diminish the productivity of a Python programmer or his fellow teammate(s) who will work on the same code. Please take all these with quite a bit of salt, due to my limited expertise & limited experience with different types of projects based on Python.*
 
-*7 is just a catchy number. Of course, this top list is subject to change along with my experience. You are also most welcome to suggest your own-finding to make into this list*
-...
+### Prelude
 
-There are a lot of ways someone can make his (or her) Python code extremely difficult for himself and his fellow developers to work with.
-But, these ones are in my top-list.
+I have used the word "deadly" to express the potential to diminish the productivity of a Python programmer or his fellow teammate(s) who will work on the same code. Please take all these with quite a bit of salt, due to my limited expertise & limited experience with different types of projects based on Python.*
+
+*7* is just a catchy number. Of course, this top list is subject to change along with my experience. You are also most welcome to suggest your own-finding to make into this list
+
+
+There are a lot of ways someone can make his (or her) Python code extremely difficult for himself and his fellow developers to work with and maintain. However, some are quite destructive by virtue. These ones are in my top-list.
 
 ### **1. The `try: except: pass` trio**
 
-You know about design patterns, right ? At least, you know a little bit.
+You know about design patterns, right ? At least, you know a little bit.  
 From [Wikipedia](https://en.wikipedia.org/wiki/Software_design_pattern),
 
-> Design patterns can speed up the development process by providing
-> tested, proven development paradigms. Effective software design
-> requires considering issues that may not become visible until later in
-> the implementation. Reusing design patterns helps to prevent subtle
-> issues that can cause major problems, and it also improves code
-> readability for coders and architects who are familiar with the
-> patterns.
+> Design patterns can speed up the development process by providing tested, proven development paradigms. Effective software design requires considering issues that may not become visible until later in the implementation. Reusing design patterns helps to prevent subtle issues that can cause major problems, and it also improves code readability for coders and architects who are familiar with the patterns.
 
-Now, think of the complete opposite of design-pattern. It is called *anti-pattern* which silently "destroys" your efficiency in code. The below pattern is considered the most deadly anti-pattern in Python code. [Aaron Maxwell](http://redsymbol.net/) called it [most diabolical](https://realpython.com/blog/python/the-most-diabolical-python-antipattern/) or devilish anti-pattern.
+ 
+Now, think of the complete opposite of design-pattern. It is called *anti-pattern* which silently "destroys" efficiency in code. The below pattern can be considered the most deadly anti-pattern in Python code. [Aaron Maxwell](http://redsymbol.net/) called it [most diabolical](https://realpython.com/blog/python/the-most-diabolical-python-antipattern/) or "evil" anti-pattern.
 
 ```python
 try:
-    subtle_buggy_operation()  # most possibly with I/O or DB operation
+    subtle_buggy_operation()   # possibly with I/O or DB operation
 except:
     pass
 ```
 
-You thought to save some development time by "pass"ing them by. But, it will take hours, if not days, to find possible bugs, inside the block, later as all the exceptions are masked by the "pass" and the error location will be somewhere else outside this try:except block which may look like the most innocent code.
+You thought to save some development time by "pass"ing them by. But, it will take hours, if not days, to find possible bugs, inside the block, later as all the exceptions are masked by the "pass" and the error location will be somewhere else outside this `try:except` block which may look like the most innocent code.
 
 Again, quoting from Aaron ...
 
-> In my nearly ten years of experience writing applications in Python, both individually and as part of a team, this pattern has stood out as the single greatest drain on developer productivity and application reliability… especially over the long term.
+> In my nearly ten years of experience writing applications in Python, both individually and as part of a team, this pattern has stood out as the single greatest drain on developer productivity and application reliability, especially over the long term.
 
 
-### **2. Wildcard imports (`from module import *`)**
+### **2. Wildcard imports i.e. `from module import *` **
 
 This one single practice can render a nice (clean) module into a nightmare. According to a core Python developer [David Goodger](http://python.net/~goodger/projects/pycon/2007/idiomatic/handout.html#importing),
 
-> Wild-card imports are from the dark side of Python.
+>  Wild-card imports are from the dark side of Python.
+>  
 >  **Never!**
->  The `from module import *` wild-card style leads to namespace pollution. You'll get things in your local namespace that you didn'texpect to get. You may see imported names obscuring module-defined local names. You won't be able to figure out where certain names comefrom. Although a convenient shortcut, this should not be in production code.
->  *Moral: don't use wild-card imports!*
+>  
+>  The `from module import *` wild-card style leads to namespace pollution. You'll get things in your local namespace that you didn't expect to get. You may see imported names obscuring module-defined local names. You won't be able to figure out where certain names come from. Although a convenient shortcut, this should not be in production code.
+>
+>  **Moral:** don't use wild-card imports!
 
-also, in light of [Yoda's mythical conversation](http://www.yodaquotes.net/)s, David also writes:
+Also, in light of [Yoda's mythical conversation](http://www.yodaquotes.net/)s, David writes:
 
-> LUKE: Is from module import * better than explicit imports?
-> YODA: No, not better. Quicker, easier, more seductive.
-> LUKE: But how will I know why explicit imports are better than the wild-card form?
-> YODA: Know you will when your code you try to read six months from now.
+> LUKE: Is from module import * better than explicit imports?  
+> YODA: No, not better. Quicker, easier, more seductive.  
+> LUKE: But how will I know why explicit imports are better than the wild-card form?  
+> YODA: Know you will when your code you try to read six months from now.  
 
-If you use this practice in between inter-connected modules in a mid-sized project, worry not, you'll start to get errors due to circular references soon enough.
+If you use this practice in between inter-connected modules in a mid-sized project, worry not. You'll start to get errors due to circular references soon enough.
 
-"Nice", isn't it?
+Sounds great ?
 
-### **3. Thinking that `try:except:else` construct is not a natural control flow**
 
-If you are coming from Java(or, similar) world, I understand your confusion. But, Python adopted this construct so much different than Java. It helps to realize Python's philosophy [Ask for Forgiveness than Permission](https://docs.python.org/2/glossary.html#term-eafp), aka "EAFP paradigm".
+### **3. Thinking that `try:except:else` construct is not a natural control flow in Python**
+
+If you are coming from Java(or, similar) world, I understand your confusion. However, Python adopted this construct so much different than Java. It helps to realize Python's philosophy [Ask for Forgiveness than Permission](https://docs.python.org/2/glossary.html#term-eafp), aka "EAFP paradigm".
 
 Trying to avoid this will result in messy, unpythonic code. As this [great answer on StackOverflow](http://stackoverflow.com/a/16138864/617185), by a core Python developer, on this matter nicely portrays the philosophy behind it.
 
 Quoting him :
 
-> In the Python world, using exceptions for flow control is common and normal. Even the Python core developers use exceptions for flow-control and that style is heavily baked into the language (i.e. the iterator protocol uses *StopIteration*to signal loop termination). In addition, the try-except-style is used to prevent the race-conditions inherent in some of the "look-before-you-leap" constructs.
-> For example, testing os.path.exists results in information that may be out-of-date by the time you use it. Likewise, Queue.full returns information that may be stale. The try-except-else style will produce more reliable code in these cases. In some other languages, that rule reflects their cultural norms as reflected in their libraries. The "rule" is also based in-part on performance considerations for those languages.
+> In the Python world, using exceptions for flow control is common and normal. Even the Python core developers use exceptions for flow-control and that style is heavily baked into the language (i.e. the iterator protocol uses *StopIteration* to signal loop termination). In addition, the try-except-style is used to prevent the race-conditions inherent in some of the "look-before-you-leap" constructs.  
+> For example, testing `os.path.exists` results in information that may be out-of-date by the time you use it. Likewise, `Queue.full` returns information that may be stale. The `try:except:else` style will produce more reliable code in these cases. In some other languages, that rule reflects their cultural norms as reflected in their libraries. The "rule" is also based in-part on performance considerations for those languages.
 
 Also, consider checking out [this Q&A on StackOverflow](http://stackoverflow.com/a/180974/617185) on the same premise.
 
