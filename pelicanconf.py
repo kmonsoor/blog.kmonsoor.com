@@ -84,7 +84,7 @@ DEFAULT_PAGINATION = 5
 PLUGIN_PATHS = ['plugins']
 PLUGINS = ['gzip_cache',
            'assets', 
-           'optimize_images', 
+#          'optimize_images', 
            'sitemap', 
            'pelican_youtube'
          ]
@@ -109,4 +109,4 @@ SITEMAP = {
 }
 
 # can be useful in development, but set to False when you're ready to publish
-RELATIVE_URLS = False
+RELATIVE_URLS = True

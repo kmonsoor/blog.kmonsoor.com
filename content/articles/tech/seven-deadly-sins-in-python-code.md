@@ -19,12 +19,14 @@ There are a lot of ways someone can make his (or her) Python code extremely diff
 ### **1. The `try: except: pass` trio**
 
 You know about design patterns, right ? At least, you know a little bit.  
+
 From [Wikipedia](https://en.wikipedia.org/wiki/Software_design_pattern),
 
 > Design patterns can speed up the development process by providing tested, proven development paradigms. Effective software design requires considering issues that may not become visible until later in the implementation. Reusing design patterns helps to prevent subtle issues that can cause major problems, and it also improves code readability for coders and architects who are familiar with the patterns.
 
  
-Now, think of the complete opposite of design-pattern. It is called *anti-pattern* which silently "destroys" efficiency in code. The below pattern can be considered the most deadly anti-pattern in Python code. [Aaron Maxwell](http://redsymbol.net/) called it [most diabolical](https://realpython.com/blog/python/the-most-diabolical-python-antipattern/) or "evil" anti-pattern.
+Now, think of the complete opposite of design-pattern. It is called *anti-pattern* which silently "destroys" efficiency in code. The below pattern can be considered the most deadly anti-pattern in Python code.  
+[Aaron Maxwell](http://redsymbol.net/) called it [most diabolical](https://realpython.com/blog/python/the-most-diabolical-python-antipattern/) or "evil" anti-pattern.
 
 ```python
 try:
@@ -61,25 +63,29 @@ Also, in light of [Yoda's mythical conversation](http://www.yodaquotes.net/)s, 
 
 If you use this practice in between inter-connected modules in a mid-sized project, worry not. You'll start to get errors due to circular references soon enough.
 
-Sounds great ?
-
-
+Sounds funny ?
+  
+  
 ### **3. Thinking that `try:except:else` construct is not a natural control flow in Python**
 
 If you are coming from Java(or, similar) world, I understand your confusion. However, Python adopted this construct so much different than Java. It helps to realize Python's philosophy [Ask for Forgiveness than Permission](https://docs.python.org/2/glossary.html#term-eafp), aka "EAFP paradigm".
 
-Trying to avoid this will result in messy, unpythonic code. As this [great answer on StackOverflow](http://stackoverflow.com/a/16138864/617185), by a core Python developer, on this matter nicely portrays the philosophy behind it.
+Trying to avoid this will result in messy, unpythonic code. As this [great answer on StackOverflow](http://stackoverflow.com/a/16138864/617185), by a core Python developer, Raymond Hettinger, on this matter where he nicely portrays the philosophy behind it.
 
 Quoting him :
 
 > In the Python world, using exceptions for flow control is common and normal. Even the Python core developers use exceptions for flow-control and that style is heavily baked into the language (i.e. the iterator protocol uses *StopIteration* to signal loop termination). In addition, the try-except-style is used to prevent the race-conditions inherent in some of the "look-before-you-leap" constructs.  
+
 > For example, testing `os.path.exists` results in information that may be out-of-date by the time you use it. Likewise, `Queue.full` returns information that may be stale. The `try:except:else` style will produce more reliable code in these cases. In some other languages, that rule reflects their cultural norms as reflected in their libraries. The "rule" is also based in-part on performance considerations for those languages.
 
 Also, consider checking out [this Q&A on StackOverflow](http://stackoverflow.com/a/180974/617185) on the same premise.
-
+  
+  
+  
 ### **4. Making everything a Class aka Overusing classes**
 
-What I am referring to is [this talk by Jack Diederich](https://www.youtube.com/watch?v=o9pEzgHorH0) on PyCon 2012. You should watch this couple of times and then once in every week. His summary is like ... **Stop** creating classes, and modules in every now and then. Before creating one, think hard. Probably, what you need is writing just a function.
+What I am referring to is [this talk by Jack Diederich](https://www.youtube.com/watch?v=o9pEzgHorH0) on PyCon 2012. You should watch this couple of times and then once in every week.  
+His summary is like ... **Stop** creating classes, and modules in every now and then. Before creating one, think hard. Probably, what you need is writing just a function.
 
 [Zen of Python](https://www.python.org/dev/peps/pep-0020/) described it as below.
 Read it again, again, and again.
@@ -91,7 +97,7 @@ Read it again, again, and again.
 > * Readability counts.
 > * If the implementation is hard to explain, it's a bad idea.
 
-Though the below is a perfectly valid class, it is a perfect example case of b***sh*t classes:
+Though the below is a perfectly valid class, it is a perfect example case of b\*\*\*sh\*t classes:
 
 ```python
 class Greeting(object):
@@ -104,8 +110,8 @@ class Greeting(object):
 greeting = Greeting('hola')
 print greeting.greet('bob')
 ```
-
-It is doing exactly same as below:
+  
+It is doing exactly same as:
 
 ```python
 def greet(greeting, target):
@@ -114,8 +120,8 @@ def greet(greeting, target):
 
 He also showed a practical example how he simplified (aka re-factored) an API's complete code, consisting:
 
- *  1 Package, 22 Modules
- *  20 Classes
+ *  1 Package, 22 Modules,
+ *  20 Classes,
  *  660 Source Lines of Code
 
 into this below, a grand total of 8 lines. Yes, just 8 lines !!!
@@ -131,11 +137,13 @@ def request(noun, verb, **params):
     return json.loads(urllib2.urlopen(request).read())
 ```
 
-
-Stop re-inventing the wheel, use more of built-in library functions, use much-less own long chains of class-hierarchy. 
+**Moral:**
   
-Want to see a worst scenario of creating classes?  
-Check this:
+ * Stop re-inventing the wheel, 
+ * use more of built-in library functions, 
+ * use much-less own long chains of class-hierarchy. 
+  
+Still want to see a worst scenario of creating classes? Check this out:
   
 ```python
 class Flow(object):
@@ -151,8 +159,9 @@ def _abstract(): raise NotImplementedError
 
 Yes, this is a real piece of code from Google API client code. (which, in total, has *10,000 SLOC, 115 modules, 207 classes*). Whereas [someone did implemented the same](https://github.com/jackdied/python-foauth2), well maybe not extremely robust, but in *135 SLOC, 3 classes* in total.
 
-You see the point, right ? Guido did.
-[![guido-google-comment]('images/guido-google-comment.jpg')](https://plus.google.com/+JackDiederich/posts/iPiqWHjwcf3)
+You see the point, right? Guido did. [Check his comment.](https://plus.google.com/+JackDiederich/posts/iPiqWHjwcf3)
+
+![guido-google-comment]({filename}/images/articles/guido-google-comment.jpg)
 
 
 ### **5. Saving time by not writing any documentation or inline comments**
@@ -168,7 +177,7 @@ Here is a nice guide to properly [documenting your Python code.](http://docs.py
 However, there will still be deniers out there ...
 
 [![code-quality](http://imgs.xkcd.com/comics/code_quality.png)](https://xkcd.com/1513/)
-                *\[source: https://xkcd.com/1513/\]*
+                *source: https://xkcd.com/1513/*
 
 
 ### **6. Avoiding Unit-tests (and doc-tests) until the doomsday comes**
@@ -184,14 +193,7 @@ Maybe, this whole mess could be simply avoided if the developer wrote his/her m
 
 You will need no more reason to curse yourself just a while after. It will haunt you whenever you'll need to open the source-code in any editor other than your usual one. And, for others, "oh my! I can't literally even...".
 
-And, while working with your code, some of your fellow programmers will "wish" for you like this girl:
-
-![pineapple slices on pizza](https://i.imgur.com/URYofs4.jpg )
-reading
-
-> ... you’re weak, your bloodline is weak, and you will not survive the winter.
-
-While Python3 will simply refuse to interpret this "half-breed" file, in Python 2, the interpretation of TAB is as if it is converted to spaces using 8-space tab stops. So while executing, you may have no clue how a specific-line is being executed as part of which code-block.
+While Python**3** will simply refuse to interpret this "half-breed" file, in Python**2**, the interpretation of TAB is as if it is converted to spaces using 8-space tab stops. So while executing, you may have no clue how a specific-line is being executed as part of which code-block.
 
 For any code that you think someday someone else will read or use, to avoid confusion, you should stick with [PEP-8](http://legacy.python.org/dev/peps/pep-0008/#tabs-or-spaces), or your team-specific coding style. PEP-8 strongly discourage mixing TAB and Space in a same file.
 
@@ -200,6 +202,8 @@ Also, check out this [Q&A on StackExchange.](http://programmers.stackexchange.c
 > ​1. The first downside is that it quickly becomes a mess
 >
 > ... Formatting should be the task of the IDE. Developers have already enough work to care about the size of tabs, how much spaces will an IDE insert, etc. The code should be formatted correctly, and displayed correctly on other configurations, without forcing developers to think about it.  
+
+
 Also, [remember this](http://www.secnetix.de/olli/Python/block_indentation.hawk)
 
 > Furthermore, it can be a good idea to avoid tabs altogether, because the semantics of tabs are not very well-defined in the computer world, and they can be displayed completely differently on different types of systems and editors. Also, tabs often get destroyed or wrongly converted during *copy-paste* operations, or when a piece of source code is inserted into a web page or other kind of markup code.
