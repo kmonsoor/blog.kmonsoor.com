@@ -176,7 +176,7 @@ Here is a nice guide to properly [documenting your Python code.](http://docs.py
 
 However, there will still be deniers out there ...
 
-[![code-quality](http://imgs.xkcd.com/comics/code_quality.png)](https://xkcd.com/1513/)
+![code-quality](https://googledrive.com/host/0B_IybRcQsDwaTGduUi1jR3h6aDQ/blog/code_quality.png)
                 *source: https://xkcd.com/1513/*
 
 
