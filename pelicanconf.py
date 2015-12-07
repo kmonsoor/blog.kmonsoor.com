@@ -8,7 +8,7 @@ from __future__ import unicode_literals
 AUTHOR = u'Khaled Monsoor'
 AUTHOR_EMAIL = u'k@kmonsoor.com'
 SITENAME = u'kmonsoor\'s online hub'
-TAGLINE = 'my little corner on internet ...'
+TAGLINE = 'my corner on internet ...'
 
 SITEURL = ''
 DEFAULT_DATE_FORMAT = ('%Y-%m-%d')
@@ -24,7 +24,7 @@ DELETE_OUTPUT_DIRECTORY = True
 
 LINKS_WIDGET_NAME = "Professional profiles"
 LINKS = (
-    ('PDF resume', GOOGLE_DRIVE_ROOT+'Resume__KhaledMonsoor.pdf'),
+    ('Resume PDF', GOOGLE_DRIVE_ROOT+'Resume__KhaledMonsoor.pdf'),
     ('Careers 2.0', 'http://careers.stackoverflow.com/kmonsoor'),
     ('LinkedIn', 'http://linkedin.com/in/kmonsoor'),
     ('Github', 'http://github.com/kmonsoor'),
@@ -41,6 +41,7 @@ TWITTER_USERNAME = 'KhaledMonsoor'
 GITHUB_URL = 'https://github.com/kmonsoor/'
 DISQUS_SITENAME = 'kmonsoor'
 GOOGLE_ANALYTICS = 'UA-20431143-1'
+# GOOGLE_SEARCH = '004448780615517808510:fuhqdksguwg'
 
 # SUMMARY_MAX_LENGTH = 500
 # LOAD_CONTENT_CACHE = True
@@ -94,6 +95,11 @@ THEME = 'plumage'
 # COVER_BG_COLOR = '#375152'
 
 DEFAULT_PAGINATION = 5
+#COPYRIGHT =  'All contents are under The MIT License (MIT).'
+DISCLAIMER = 'All opinions expressed in this site are my own personal opinions \
+              and are not endorsed by, nor do they represent the opinions of my \
+              previous, current and future employers or any of its affiliates, \
+              partners or customers.'
 
 # Plugin.
 PLUGIN_PATHS = ['plugins']
@@ -118,8 +124,8 @@ WITH_FUTURE_DATES = False
 FILENAME_METADATA = '(?P<slug>.*)'
 
 ### Plugin-specific settings
-RELATED_POSTS_MAX = 3
-SITESUBTITLE = "my little corner on internet"
+RELATED_POSTS_MAX = 5
+SITESUBTITLE = "my corner on internet"
 
 
 # for highlighting code-segments
@@ -207,8 +213,6 @@ DEFAULT_TEMPLATE = """<a href="{url}" class="zoomable" title="{filename}">
 MENUITEMS = (
      ('Home', '/'),
      ('Tech', '/category/tech/'),
-#    ('Photogra', '/code/'),
-#    ('Themes', '/themes/'),
      ('About', '/about/'),
 )
 
