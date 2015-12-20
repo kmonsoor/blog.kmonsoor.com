@@ -19,9 +19,6 @@ TIMEZONE = 'Asia/Dhaka'
 DEFAULT_LANG = u'en'
 DELETE_OUTPUT_DIRECTORY = True
 
-# Blogroll
-# LINKS = (('asda', 'http://blog.kmonsoor.com'),)
-
 LINKS_WIDGET_NAME = "Professional profiles"
 LINKS = (
     ('Resume PDF', GOOGLE_DRIVE_ROOT+'Resume__KhaledMonsoor.pdf'),
@@ -31,7 +28,7 @@ LINKS = (
 )
 
 # Social widget.
-SOCIAL_WIDGET_NAME = "Contact"
+SOCIAL_WIDGET_NAME = "Social"
 SOCIAL = (
     ('Twitter', 'http://twitter.com/KhaledMonsoor'),
     ('Google Plus', 'http://plus.google.com/+KhaledMonsoor?rel=author'),
@@ -40,11 +37,11 @@ SOCIAL = (
 TWITTER_USERNAME = 'KhaledMonsoor'
 GITHUB_URL = 'https://github.com/kmonsoor/'
 DISQUS_SITENAME = 'kmonsoor'
+
+# Analytics
 GOOGLE_ANALYTICS = 'UA-20431143-1'
 # GOOGLE_SEARCH = '004448780615517808510:fuhqdksguwg'
 
-# SUMMARY_MAX_LENGTH = 500
-# LOAD_CONTENT_CACHE = True
 
 # Content path.
 PATH = 'content'
@@ -87,8 +84,6 @@ CATEGORY_FEED_ATOM = 'feeds/%s.atom.xml'
 TRANSLATION_FEED_ATOM = None
 
 
-
-
 # Theme.
 THEME = 'plumage'
 # COVER_IMG_URL = '/images/cover.jpg'
@@ -121,28 +116,20 @@ WITH_FUTURE_DATES = False
 
 # Force Pelican to use the file name as the slug, instead of derivating it from
 # the title.
-FILENAME_METADATA = '(?P<slug>.*)'
+#FILENAME_METADATA = '(?P<slug>.*)'
 
 ### Plugin-specific settings
 RELATED_POSTS_MAX = 5
-SITESUBTITLE = "my corner on internet"
+SITESUBTITLE = "my internet corner"
 
 
 # for highlighting code-segments
 # PYGMENTS_RST_OPTIONS = {'cssclass': 'codehilite', 'linenos': 'table'}
 MD_EXTENSIONS = ['codehilite(noclasses=True, pygments_style=native)',
                  'mdx_video',
-#                 'mdx_titlecase',
                  'extra',
                  ]
 TYPOGRIFY = True
-
-
-TEMPLATE_PAGES = {
-#    'templates/videos.html': 'video/index.html',
-#    'templates/code.html': 'code/index.html',
-#    'templates/themes.html': 'themes/index.html',
-}
 
 DIRECT_TEMPLATES = ['index', 'categories', 'authors', 'archives', 'search']
 
@@ -166,21 +153,18 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
-# http://kevin.deldycke.com/tag/openerp/feed/
+
 TAG_FEED_RSS = 'tag/%s/feed/index.html'
 TAG_FEED_ATOM = 'tag/%s/feed/atom/index.html'
-
-# http://example.com/category/categoryname/feed
 CATEGORY_FEED_RSS = 'category/%s/feed/index.html'
 CATEGORY_FEED_ATOM = 'category/%s/feed/atom/index.html'
 
-FEED_MAX_ITEMS = 5
-USE_FOLDER_AS_CATEGORY = False
+FEED_MAX_ITEMS = 10
+USE_FOLDER_AS_CATEGORY = True
 DEFAULT_CATEGORY = 'Tech'
 DEFAULT_DATE_FORMAT = '%b. %d, %Y'
 REVERSE_ARCHIVE_ORDER = True
-DISPLAY_PAGES_ON_MENU = False
-
+DISPLAY_PAGES_ON_MENU = True
 
 
 # Sitemap.
@@ -213,7 +197,7 @@ DEFAULT_TEMPLATE = """<a href="{url}" class="zoomable" title="{filename}">
 MENUITEMS = (
      ('Home', '/'),
      ('Tech', '/category/tech/'),
-     ('About', '/about/'),
+#     ('About', '/about/'),
 )
 
 
