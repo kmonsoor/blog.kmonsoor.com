@@ -105,6 +105,7 @@ PLUGINS = ['gzip_cache',
            'related_posts',
            'tipue_search',
            'neighbors',
+           'pelican_gist',
            # 'optimize_images',
            # Core plugins
            # 'thumbnailer',
