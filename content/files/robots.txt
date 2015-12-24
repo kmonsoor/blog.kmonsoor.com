@@ -1,4 +1,4 @@
-Sitemap: http://razius.com/sitemap.xml
+Sitemap: http://blog.kmonsoor.com/sitemap.xml
 
 # Google Image
 User-agent: Googlebot-Image
