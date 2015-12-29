@@ -8,7 +8,7 @@ from __future__ import unicode_literals
 AUTHOR = u'Khaled Monsoor'
 AUTHOR_EMAIL = u'k@kmonsoor.com'
 SITENAME = u'kmonsoor\'s online hub'
-TAGLINE = 'my corner on internet ...'
+TAGLINE = 'my writing corner ...'
 
 SITEURL = ''
 DEFAULT_DATE_FORMAT = ('%Y-%m-%d')
@@ -21,7 +21,7 @@ DELETE_OUTPUT_DIRECTORY = True
 
 LINKS_WIDGET_NAME = "Professional profiles"
 LINKS = (
-    ('Resume PDF', GOOGLE_DRIVE_ROOT+'Resume__KhaledMonsoor.pdf'),
+    ('Resume PDF', GOOGLE_DRIVE_ROOT + 'Resume__KhaledMonsoor.pdf'),
     ('Careers 2.0', 'http://careers.stackoverflow.com/kmonsoor'),
     ('LinkedIn', 'http://linkedin.com/in/kmonsoor'),
     ('Github', 'http://github.com/kmonsoor'),
@@ -40,6 +40,7 @@ DISQUS_SITENAME = 'kmonsoor'
 
 # Analytics
 GOOGLE_ANALYTICS = 'UA-20431143-1'
+GOOGLE_ANALYTICS_PROPERTY = 'auto'
 # GOOGLE_SEARCH = '004448780615517808510:fuhqdksguwg'
 
 
@@ -102,11 +103,11 @@ PLUGINS = ['gzip_cache',
            'assets', 
            'sitemap', 
            'pelican_youtube',
-           'related_posts',
+           # 'related_posts',
            'tipue_search',
            'neighbors',
            'pelican_gist',
-           # 'optimize_images',
+           # 'optimize_images',  # generates error while optimizing JPG
            # Core plugins
            # 'thumbnailer',
 ]
