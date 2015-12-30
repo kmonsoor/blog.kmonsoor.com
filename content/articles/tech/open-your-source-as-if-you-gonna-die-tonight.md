@@ -106,4 +106,4 @@ _[dear reader, thanks a lot for reading up to here. I am sure there are many poi
 |                                               	|                          	|
 |-----------------------------------------------	|--------------------------	|
 | [Khaled Monsoor](https://github.com/kmonsoor) 	| initial author, maintainer           	|
-| [Wayne Werner](https://github.com/waynew)     	| editor (v.0.0.3 :fast_forward: v.0.0.4) 	|
+| [Wayne Werner](https://github.com/waynew)     	| editor (v.0.0.3 --> v.0.0.4) 	|
