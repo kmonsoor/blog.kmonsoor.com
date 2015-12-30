@@ -6,7 +6,8 @@ Slug: open-source-as-if-you-gonna-die-tonight
 status: published
 Summary: You should open-source as-if you gonna die tonight. Literally.
 
-***[ To keep the spirit of this post honest, I am going to publish this blog, immidiately. No __draft__-ing. This post will be, I hope, under improvement continuously. This post is, right now, in version 0.0.4 - Also it's available [on GitHub](https://github.com/kmonsoor/blog.kmonsoor.com/edit/master/content/articles/tech/open-your-source-as-if-you-gonna-die-tonight.md) ]***
+***[ To keep the spirit of this post honest, I am going to publish this blog, immidiately. No __draft__-ing. This post will be, I hope, under continuous improvement.  
+This post is [available for edit on GitHub](https://github.com/kmonsoor/blog.kmonsoor.com/edit/master/content/articles/tech/open-your-source-as-if-you-gonna-die-tonight.md), currently in its version 0.0.5 ]***
 
 
 
@@ -42,20 +43,20 @@ Publishing your stuff is free, no matter how many times you update it.
 
 Frequently shared confusions (FSQ)
 ------------------------------------
- *** What if this, my thing, is just plain crap ?**  
- **A.** Are you sure? You never know for sure. Throw it in the wild. If it is really crap, nobody will remember or hold you responsible for it. How many crappy DaVinci paintings you know? I guess, ***none.** But the [Mona Lisa](https://en.wikipedia.org/wiki/Mona_Lisa) didn't just appear from thin air. Did it?
+ * **What if this, my thing, is just plain crap ?**  
+ **A.** Are you sure? You never know for sure. Throw it in the wild. If it is really crap, nobody will remember or hold you responsible for it. How many crappy DaVinci paintings you know? I guess, ***none.*** But the [Mona Lisa](https://en.wikipedia.org/wiki/Mona_Lisa) didn't just appear from thin air. Did it?
    
- *  **This is my toy(or pet) project.**
+ *  **This is my toy(or pet) project.**  
  **A.** Don't be that selfish kid from the school who don't let others touch it just because. If you are having fun building something why not let others join in the fun?
    
- * **This is a one-off script on this *COBOL* platform, no one is going to need it. Ever.**
+ * **This is a one-off script on this ancient *COBOL* platform, no one is going to need it. Ever.**  
  **A.** You never know. You are a human. You can't imagine what people gonna need. Throw it in a [gist](https://gist.github.com/), just include a suitable title. Add in some comments if you please. May be couple of years later, your script will save someone's job, and he can still put food on the table. You never know.  
    
- * **If I publish this now some genius with free time will steal my idea and make it something grand without me.**
+ * **If I publish this now some genius with free time will steal my idea and make it something grand without me.**  
  **A.** Unless you are a big hot-shot with a ground-breaking idea, no one will even notice it. Most _genius'_ mind is already filled with their own to-do list. Even if they take your idea, let them. Move on. 
  Don't be a muddy pond, rather be like a river. Rivers don't dry off due to peasants "stealing" some water.  
    
- * **I haven't collected my thoughts enough to make this post a grand one. **
+ * **I haven't collected my thoughts enough to make this post a grand one yet.**  
  **A.** Don't think too high yourself. Let others do that for you.  
  No project is born grand, and no great man born great. Your contributions is what goes ahead. You the person? Not so much. Time passed along "Romeo & Juliet", but Shakespeare is dead and gone.  
  
@@ -96,3 +97,13 @@ Open-source mainstream hosting platforms e.g. Github, Bitbucket, GitLab etc. cou
   
   
 _[dear reader, thanks a lot for reading up to here. I am sure there are many points missing on this post. Also, as English is not my first language, hence there must some misused words or phrase. But you get the idea. Please comment/criticise/point out the missing stuff. I will try to discuss, update, correct that.]_
+
+---------------------------------------
+
+
+## Contributors
+
+|                                               	|                          	|
+|-----------------------------------------------	|--------------------------	|
+| [Khaled Monsoor](https://github.com/kmonsoor) 	| initial author, maintainer           	|
+| [Wayne Werner](https://github.com/waynew)     	| editor (v.0.0.3 :fast_forward: v.0.0.4) 	|
