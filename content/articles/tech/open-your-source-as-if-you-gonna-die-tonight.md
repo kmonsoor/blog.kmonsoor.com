@@ -7,7 +7,7 @@ status: published
 Summary: You should open-source as-if you gonna die tonight. Literally.
 
 ***[ To keep the spirit of this post honest, I am going to publish this blog, immidiately. No __draft__-ing. This post will be, I hope, under continuous improvement.  
-This post is [available for edit on GitHub](https://github.com/kmonsoor/blog.kmonsoor.com/edit/master/content/articles/tech/open-your-source-as-if-you-gonna-die-tonight.md), currently in its version 0.0.5 ]***
+This post is [available for edit on GitHub](https://github.com/kmonsoor/blog.kmonsoor.com/edit/master/content/articles/tech/open-your-source-as-if-you-gonna-die-tonight.md), currently in its version 0.0.6 ]***
 
 
 
