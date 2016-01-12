@@ -107,3 +107,10 @@ _[dear reader, thanks a lot for reading up to here. I am sure there are many poi
 |-----------------------------------------------	|--------------------------	|
 | [Khaled Monsoor](https://github.com/kmonsoor) 	| initial author, maintainer           	|
 | [Wayne Werner](https://github.com/waynew)     	| editor (v.0.0.3 --> v.0.0.4) 	|
+
+
+## Some related inspirations from some open-source jedis
+
+ * [Raymond Hettinger :: Open Source Challenge: Open Your Source, More](https://rhettinger.wordpress.com/2011/01/28/open-your-source-more/)
+ * [Jeff Knupp :: Open Sourcing a Python Project the Right Way](https://www.jeffknupp.com/blog/2013/08/16/open-sourcing-a-python-project-the-right-way/)
+ * [Aaron Swartz :: Guerilla Open Access Manifesto](https://archive.org/stream/GuerillaOpenAccessManifesto/Goamjuly2008_djvu.txt)
