@@ -41,5 +41,5 @@ If not possible at all, like your company have license only to use Korean versio
  * After completion, you may find trouble using Microsoft's **Internet Explorer 9**. I don't know why **Internet Explorer 9** don't work properly on Windows 7.  
 If you face problem after installing it like "I.E. is not responding....", "I.E. closed unexpectedly" etc. **uninstall that**.  
 
-But how? [Please visit my relevant post.](http://blog.kmonsoor.com/uninstall-ie-9)
+But how? [Please visit my relevant post.](https://blog.kmonsoor.com/uninstall-ie-9)
   
