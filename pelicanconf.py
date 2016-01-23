@@ -90,7 +90,7 @@ TRANSLATION_FEED_ATOM = None
 # Theme
 THEME = 'plumage'
 
-DEFAULT_PAGINATION = 5
+DEFAULT_PAGINATION = 20
 #COPYRIGHT =  'All contents are under The MIT License (MIT).'
 DISCLAIMER = 'All opinions expressed in this site are my own personal opinions \
               and are not endorsed by, nor do they represent the opinions of my \
