@@ -7,9 +7,10 @@ from __future__ import unicode_literals
 # Site settings.
 AUTHOR = u'Khaled Monsoor'
 AUTHOR_EMAIL = u'k@kmonsoor.com'
-SITENAME = u'kmonsoor\'s online hub'
-TAGLINE = 'my writing corner ...'
+SITENAME = u'KMonsoor\'s Blog'
+# TAGLINE = 'my writing corner ...'
 
+# SITEURL = 'https://blog.kmonsoor.com'
 SITEURL = ''
 DEFAULT_DATE_FORMAT = ('%Y-%m-%d')
 GOOGLE_DRIVE_ROOT = 'https://googledrive.com/host/0B_IybRcQsDwaTGduUi1jR3h6aDQ/blog/'
@@ -21,19 +22,21 @@ DELETE_OUTPUT_DIRECTORY = True
 
 LINKS_WIDGET_NAME = "Professional profiles"
 LINKS = (
-    ('Resume PDF', GOOGLE_DRIVE_ROOT + 'Resume__KhaledMonsoor.pdf'),
+    ('PDF resume', GOOGLE_DRIVE_ROOT + 'Resume__KhaledMonsoor.pdf'),
     ('Careers 2.0', 'http://careers.stackoverflow.com/kmonsoor'),
     ('LinkedIn', 'http://linkedin.com/in/kmonsoor'),
     ('Github', 'http://github.com/kmonsoor'),
 )
 
+
 # Social widget.
 SOCIAL_WIDGET_NAME = "Social"
 SOCIAL = (
-    ('Twitter', 'http://twitter.com/KhaledMonsoor'),
-    ('Google Plus', 'http://plus.google.com/+KhaledMonsoor?rel=author'),
-    ('Instagram', 'http://www.instagram.com/kmonsoor/'), 
+    ('@KhaledMonsoor', 'http://twitter.com/KhaledMonsoor'),
+    ('+KhaledMonsoor', 'http://plus.google.com/+KhaledMonsoor?rel=author'),
+    # ('Instagram', 'http://www.instagram.com/kmonsoor/'), 
 )
+
 TWITTER_USERNAME = 'KhaledMonsoor'
 GITHUB_URL = 'https://github.com/kmonsoor/'
 DISQUS_SITENAME = 'kmonsoor'
@@ -41,7 +44,6 @@ DISQUS_SITENAME = 'kmonsoor'
 # Analytics
 GOOGLE_ANALYTICS = 'UA-20431143-1'
 GOOGLE_ANALYTICS_PROPERTY = 'auto'
-# GOOGLE_SEARCH = '004448780615517808510:fuhqdksguwg'
 
 
 # Content path.
@@ -78,17 +80,15 @@ CATEGORY_URL = ('category/{slug}/')
 CATEGORY_SAVE_AS = ('category/{slug}/index.html')
 
 
-# Feed.
+# Feed
 FEED_DOMAIN = SITEURL
 FEED_ALL_ATOM = 'feeds/all.atom.xml'
 CATEGORY_FEED_ATOM = 'feeds/%s.atom.xml'
 TRANSLATION_FEED_ATOM = None
 
 
-# Theme.
+# Theme
 THEME = 'plumage'
-# COVER_IMG_URL = '/images/cover.jpg'
-# COVER_BG_COLOR = '#375152'
 
 DEFAULT_PAGINATION = 5
 #COPYRIGHT =  'All contents are under The MIT License (MIT).'
@@ -97,7 +97,7 @@ DISCLAIMER = 'All opinions expressed in this site are my own personal opinions \
               previous, current and future employers or any of its affiliates, \
               partners or customers.'
 
-# Plugin.
+# Plugin
 PLUGIN_PATHS = ['plugins']
 PLUGINS = ['gzip_cache',
            'assets', 
@@ -105,7 +105,7 @@ PLUGINS = ['gzip_cache',
            'pelican_youtube',
            # 'related_posts',
            'tipue_search',
-           'neighbors',
+           # 'neighbors',
            'pelican_gist',
            # 'optimize_images',  # generates error while optimizing JPG
            # Core plugins
@@ -121,17 +121,16 @@ WITH_FUTURE_DATES = False
 #FILENAME_METADATA = '(?P<slug>.*)'
 
 ### Plugin-specific settings
-RELATED_POSTS_MAX = 5
-SITESUBTITLE = "my internet corner"
+# RELATED_POSTS_MAX = 5
+# SITESUBTITLE = "my internet corner"
 
 
 # for highlighting code-segments
 # PYGMENTS_RST_OPTIONS = {'cssclass': 'codehilite', 'linenos': 'table'}
 MD_EXTENSIONS = ['codehilite(noclasses=True, pygments_style=native)',
-                 'mdx_video',
+                 # 'mdx_video',
                  'extra',
                  ]
-TYPOGRIFY = True
 
 DIRECT_TEMPLATES = ['index', 'categories', 'authors', 'archives', 'search']
 
@@ -170,8 +169,6 @@ DISPLAY_PAGES_ON_MENU = True
 
 
 # Sitemap.
-# TODO: align default SITEMAP config to
-# http://wordpress.org/extend/plugins/google-sitemap-generator/stats/
 SITEMAP = {
     'format': 'xml',
     'priorities': {
@@ -204,24 +201,5 @@ MENUITEMS = (
 
 
 TIPUE_SEARCH = True
-
-# LEFT_SIDEBAR = """
-#     <!--<div data-spy="affix" data-offset-top="0">-->
-#     <!--<h4>Sponsors</h4>-->
-#     <script type="text/javascript"><!--
-#         google_ad_client = "pub-0142056597033291";
-#         google_ad_slot = "9501596707";
-#         google_ad_width = 160;
-#         google_ad_height = 600;
-#         //-->
-#     </script>
-#     <script type="text/javascript"
-#         src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
-#     <!--</div>-->
-#     """
-
-# ARTICLE_EDIT_LINK = 'https://github.com/kdeldycke/kevin-deldycke-blog/edit/master/content/posts/%(slug)s.md'
-
-
 # can be useful in development, but set to False when you're ready to publish
 RELATIVE_URLS = True
