@@ -39,9 +39,9 @@ If not possible at all, like your company have license only to use Korean versio
  
 
 ## Postscript  
- * If now you are in trouble with Microsoft Office's Korean package, check out [my relevant post.](install-english-language-on-microsoft-office-2007-2010/index.html)  
+ * If now you are in trouble with Microsoft Office's Korean package, check out [my relevant post.](https://blog.kmonsoor.com/install-english-language-on-microsoft-office-2007-2010/)  
  * After completion, you may find trouble using Microsoft's **Internet Explorer 9**. I don't know why **Internet Explorer 9** don't work properly on Windows 7.  
 If you face problem after installing it like "I.E. is not responding....", "I.E. closed unexpectedly" etc. **uninstall that**. 
 
-But how? [Please visit my relevant post.](uninstall-ie-9/index.html)
+But how? [Please visit my relevant post.](https://blog.kmonsoor.com/uninstall-ie-9/)
   
