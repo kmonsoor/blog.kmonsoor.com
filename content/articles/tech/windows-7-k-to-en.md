@@ -1,10 +1,11 @@
+---
 Title: Windows 7 Enterprise/Ultimate "K" to "EN" (aka English): Conversion Step-by-step
 Date: 2012-01-29 12:48
 Tags: english, korean, unofficial, windows, configuration, Korean, South Korea, tutorial, Windows 7, conversion
 Slug: convert-windows-7-k-to-en
 Status: published
 Summary: Ended up with Windows 7 Enterprise in Korean language? What you are seeing, all are in Korean language or any other foreign language? I am here to share my own experience. It may help you out. 
-
+---
 
 Ended up with Windows 7 Enterprise in Korean language? What you are seeing, all are in Korean or any other foreign language? I am here to share my own experience. It may help you out.
 
