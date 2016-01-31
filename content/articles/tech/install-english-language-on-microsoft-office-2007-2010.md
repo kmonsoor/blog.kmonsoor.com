@@ -1,14 +1,15 @@
+---
 Title: Install English (or another) Language Pack of Microsoft Office 2007, 2010 Enterprise : Step by step
 Date: 2012-01-19 13:49
 Tags: 2007, 2010, arabic, Bangladesh, blog, Bokmål, brazilian, bulgarian, chinese, croatian, Czech, danish, dutch, english, estonian, finnish, free, french, german, greek, hebrew, hindi, hungarian, Italian, 한글, 언어 팩, 정품키, japanese, Kazakh, korean, Latvian, Lithuanian, microsoft, Norwegian, office, Polish, Portuguese, russian, serbian, slovak, slovanian, software, spanish, swedish, taiwanese, thai, Turkish, Ukrainian, windows
 Slug: install-english-language-on-microsoft-office-2007-2010
 Status: published
+Summary: Trouble with unknown foreign language on your Microsoft Office? Look no further for installing your language ...
+---
 
-![Microsoft-office-2010-logo](https://googledrive.com/host/0B_IybRcQsDwaTGduUi1jR3h6aDQ/blog/microsoft-office-2010-logo.png)
 
-
-### NOTE
-If you are stuck with **Windows 7** in a foreign language, this is not what you are looking for. Please check out [my relevant post](convert-windows-7-k-to-en/index.html).
+### Please Note
+If you are stuck with **Windows 7**, operating system of your PC, in a foreign language, this is not what you are looking for. Please check out [my relevant post](https://blog.kmonsoor.com/convert-windows-7-k-to-en/).
 
 
  
@@ -18,7 +19,7 @@ As I have worked for a giant Korean conglomerate, I have to install Office 2007 
  
 But, now, I got it. Here's how.
 
-
+![Microsoft-office-2010-logo](https://googledrive.com/host/0B_IybRcQsDwaTGduUi1jR3h6aDQ/blog/microsoft-office-2010-logo.png)
 
 ## Process
 
