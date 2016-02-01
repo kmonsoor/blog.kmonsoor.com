@@ -18,8 +18,11 @@ You can read it here. You can also download it ... But I will strongly prohibit 
 
 If it helps, please consider leaving a comment and/or hit the "Recommend" button below.
 
-<div id="embed-pdf">
-<object data="https://googledrive.com/host/0B_IybRcQsDwaTGduUi1jR3h6aDQ/blog/SOP.pdf" type="application/pdf" width="80%" >
-  alt : <a href="https://googledrive.com/host/0B_IybRcQsDwaTGduUi1jR3h6aDQ/blog/SOP.pdf">SOP.pdf</a>
-</object>
+<hr/>
+
+<div>
+
+    <embed src="https://googledrive.com/host/0B_IybRcQsDwaTGduUi1jR3h6aDQ/blog/SOP.pdf" width="500" height="675" type='application/pdf'>
+
 </div>
+
