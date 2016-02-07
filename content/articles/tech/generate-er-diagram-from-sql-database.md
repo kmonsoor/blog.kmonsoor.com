@@ -1,11 +1,13 @@
+---
 Title: [Step-by-step][How to] Generate ER diagram from a PostgreSQL (or any) database
 Date: 2014-12-18
-Modified: 2015-12-01
+Modified: 2016-02-07
 Category: Tech
-Tags: db, db-schema, dbms, diagram, ER-diagram, graphviz, java, postgresql, programming, rdbms, schema, schemaspy, visualization
+Tags: sql, db, dbms, diagram, ER-diagram, graphviz, java, postgresql, programming, rdbms, schema, schemaspy, visualization
 Slug: generate-er-diagram-from-sql-database
 Status: published
 Summary: When you are "study"-ing someone else's database, and the database has more than 20 tables, you are in trouble to understand what goes where. Now, imagine a database with 300+ tables. It's like spaghetti, but not enjoyable. Rather, horrific.
+---
 
 When you are "study"-ing (for whatever reason) someone else's database, and the database has more than 20 tables, you are in trouble to understand what goes where.
  
@@ -45,28 +47,36 @@ Quoting from the author:
   
   
 For convenience, i kept the .jar files (JDBC-connector, and SchemaSpy) in my home folder.  
-Now, in my case, My OS is Linux, my DB-host address is: 127.0.0.1, running PostgreSQL-9.3 at port 5432 . So, i run the command like this:
+Now, in my case, my OS is Linux, database is host address is `127.0.0.1`, running `PostgreSQL-9.3` at port `5432`. 
+So, i run the command like this:
  
 ```
-  $ java -jar ./schemaSpy_5.0.0.jar -t pgsql -host 127.0.0.1:5432 -db your_database_name \
-                                    -u your_DB_user_name -p your_password -s public \
-                                    -dp ./postgresql-9.3-1102.jdbc3.jar 
-                                    -o output_folder
+ $ java -jar ./schemaSpy_5.0.0.jar -t pgsql -host 127.0.0.1:5432 -db your_database_name \
+                                   -u your_DB_user_name -p your_password -s public \
+                                   -dp ./postgresql-9.3-1102.jdbc3.jar \
+                                   -o output_folder
 ```
 
 It may take a little while, depending on the size of the schema of the database.  
 After that, you will find the output folder/directory named `output_folder`.  
-You'll see some output when the magic is going on, like this.
+You'll see some output when the magic is going on, similar to this below.
 
 ``` 
-  Using database properties: [./schemaSpy_5.0.0.jar]/net/sourceforge/schemaspy/dbTypes/pgsql.properties 
-  Gathering schema details................(6sec) 
-  Writing/graphing summary......(2sec) 
-  Writing/diagramming details..........................(31sec) 
-  Wrote relationship details of 113 tables/views to directory 'output' in 41 seconds. 
+Using database properties: [./schemaSpy_5.0.0.jar]/net/sourceforge/schemaspy/dbTypes/pgsql.properties 
+Gathering schema details....................(6sec) 
+Writing/graphing summary....................(2sec) 
+Writing/diagramming detail..................(31sec) 
+Wrote relationship details of 113 tables/views to directory 'output' in 41 seconds. 
   
-  View the results by opening output_folder/index.html
+View the results by opening output_folder/index.html
 ```
+Now, all the generated files are in the `output_folder`.
+Start your journey by starting from the `index.html` in the output folder. Open it by using any browser you want.
 
-Now, start browsing the generated docs from "index.html" in the output folder.  
-Good luck. :) 
+Good luck. :)  
+
+**P.S.** I am not a native English speaker. So, if you see any oddly worded or phrased staff, please be kind to suggest an edit. Also, there can be a typo, or a dead link. Please help me by mentioning it in a comment, or directly suggest by editing the source of this article, linked below. Thanks in advance.
+
+Link to the source of this article: [https://github.com/kmonsoor/blog.kmonsoor.com/...](https://github.com/kmonsoor/blog.kmonsoor.com/blob/master/content/articles/tech/generate-er-diagram-from-sql-database.md)  
+  
+  
