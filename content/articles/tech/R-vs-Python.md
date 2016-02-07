@@ -1,5 +1,5 @@
 ---
-Title: R-vs-Python : A Summary Comparison in Tabular Format
+Title: R vs Python : A Summary Comparison in Tabular Format
 Date: 2016-02-08 08:02
 Tags: R, Python, coding, comparison, programming, Language, unofficial, tabular, summary, paradigm, datascience, statistical-analytics, analytics
 Slug: R-vs-Python
