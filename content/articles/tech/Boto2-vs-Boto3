@@ -1,0 +1,14 @@
+---
+Title: Boto2 vs Boto3 : A Summary Comparison in Tabular Format
+Date: 2016-03-07
+Tags: boto, aws, boto3, python-sdk, coding, comparison, programming, unofficial, tabular, summary, porting
+Slug: Boto2-vs-Boto3
+Status: Draft
+Summary: A tabular, objective, comparative summary view between Boto(2) vs. Boto3, the de-facto SDK for developing for AWS in Python. Difference matters.
+---
+
+   ..     |    Boto2             |    Boto3
+----------|-------------------------|---------------------
+ Home     | https://github.com/boto/boto    | https://github.com/boto/boto3
+ [Birth][0] |       2010            |     2014
+ 
