@@ -1,3 +1,4 @@
+---
 Title: Se7en Deadly Sins to Do in Python code
 Date: 2015-08-10 17:05
 Modified: 2015-11-21 00:05
@@ -5,7 +6,7 @@ Tags: best practices, code quality, debugging, programming, python, software dev
 Slug: seven-deadly-sins-in-python-code
 Status: published
 Summary: There are a lot of ways someone can make his (or her) Python code extremely difficult for himself and his fellow developers to work with and maintain. However, some are quite destructive by virtue. These ones are in my top-list.
-
+---
 
 ### Prelude
 
