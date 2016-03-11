@@ -1,10 +1,9 @@
-Title: Python: How to Create All Possible Numbers Using Same Digits
+---
+Title: [Python][How to] Create All Possible Numbers Using Same Digits
 Date: 2014-01-31 15:00
-Tags: python, coding, syntax
-Slug: python-how-to-create-all-possible-numbers-using-same-digits
+Tags: python, coding, syntax, combination
 status: published
-Summary: You should open-source as-if you gonna die tonight. Literally.
-
+---
 
 Let's say the number is 123.
 
