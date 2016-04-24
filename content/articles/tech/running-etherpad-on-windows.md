@@ -13,7 +13,7 @@ What you'd need beforehand:
 
 **1.** Properly install system-wide Node.js, and of course NPM with it. Get the latest-and-stable from here: https://nodejs.org/en/download/.
  After installing, check it from command prompt.
- ````
+```
 C:\users\alpha\> node -v  
 v5.11.0
  
@@ -28,14 +28,14 @@ openssl: '1.0.2g',
 uv: '1.8.0',
 v8: '4.6.85.31',
 zlib: '1.2.8' }
-````
+```
 Version(s) in your output may not be same but nothing to worry.
 
  
 **2.** Download and install latest Python 2.7 from [Python.org](https://www.python.org/downloads/). Please note that **Python2** is needed as system-default, NOT **Python 3**.  
  Check it by running Python interpreter from command-prompt.
 
-````
+```
 C:\users\alpha\> python
 Python 2.7.11 (v2.7.11:6d1b6a68f775, Dec  5 2015, 20:32:19) [MSC v.1500 32 bit (Intel)] on win32
 Type "help", "copyright", "credits" or "license" for more information.
@@ -52,4 +52,8 @@ Type "help", "copyright", "credits" or "license" for more information.
 **Download** the zip, **unzip** it, **move** it to your desired folder, and then run `start.bat` in the folder.
 
 You will never know how much time i just saved you ... ;)
- 
+
+
+----------
+*This blog lives on Github. You can suggest an edit by [editing this on Github.*
+](https://github.com/kmonsoor/blog.kmonsoor.com/edit/master/content/articles/tech/running-etherpad-on-windows.md)
