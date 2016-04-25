@@ -1,7 +1,7 @@
 ---
 Title: Running Etherpad on Windows
 Date: 2016-04-22
-Tags: etherpad, collaborative, document, editing, etherpad-lite, windows, build-tools
+Tags: javascript, etherpad, collaborative, document, editing, etherpad-lite, windows, build-tools
 Slug: running-etherpad-on-windows
 Status: Published
 Summary: Though it's not a big deal, but running Etherpad as hosted on Windows is troublesome. Here's how to make it predictable and easy.
@@ -42,10 +42,10 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>>
 ```
 
-**3.** Now, make sure you have **Microsoft Build Tools 2013** or newer properly installed on you system. Grab it here: http://go.microsoft.com/fwlink/?LinkID=320711.  
- If the given link don't work, look for it under `Tools for Visual Studio 2013` in https://www.visualstudio.com/downloads.
+**3.** Now, make sure you have **Microsoft Build Tools 2013** or newer properly installed on you system. Grab it here: [http://go.microsoft.com/fwlink/?LinkID=320711](http://go.microsoft.com/fwlink/?LinkID=320711).  
+ If the given link don't work, look for it under `Tools for Visual Studio 2013` in [https://www.visualstudio.com/downloads](https://www.visualstudio.com/downloads).
  
- Only after you have done these well, proceed to download `Etherpad-lite` from http://etherpad.org/#download.
+ Only after you have done these well, proceed to download `Etherpad-lite` from [etherpad.org](http://etherpad.org/#download)
  The download size should be over **50MB**.  
  Do **NOT** go for building from the source unless you must.
  
@@ -55,5 +55,5 @@ You will never know how much time i just saved you ... ;)
 
 
 ----------
-*This blog lives on Github. You can suggest an edit by [editing this on Github.*
-](https://github.com/kmonsoor/blog.kmonsoor.com/edit/master/content/articles/tech/running-etherpad-on-windows.md)
+_This blog lives on Github. You can suggest an edit by [editing this on Github.
+](https://github.com/kmonsoor/blog.kmonsoor.com/edit/master/content/articles/tech/running-etherpad-on-windows.md)_
