@@ -2,12 +2,10 @@
 Title: A Near-Perfect Day of a Muslim Professional
 Date: 2016-05-10
 Tags:  daily-life, islam, muslim, professional, dicipline, career 
-Slug:  a-near-perfect-day-of-a-muslim-guy
+Slug:  a-near-perfect-day-of-a-muslim-Professional
 Summary:  Each of our decisions make or break the path for the next opportunity or disaster. Be it for our worldly life or the life-after.
 Status: Published
 ---
-
-# A Near-Perfect Day of a Muslim Professional
 
 Life is all about the choices we make. We go through new experiences every single day. 
 Each of our decisions make or break the path for the next opportunity or disaster. Be it for our worldly life or the life-after.
