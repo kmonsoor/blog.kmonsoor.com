@@ -108,3 +108,6 @@ Ok, without much ado, here is the sketch-up for a ideal working day.
 > TODO  
 
 > TODO
+
+[*p.s.* Thanks for reading. However, please remember that this post is in very-very-draft stage.  
+Please suggest a change via the comments section below, or by editing it on Github as the [source for this post lives on Github.](https://github.com/kmonsoor/blog.kmonsoor.com/edit/master/content/articles/toughts/a-near-perfect-day-of-a-muslim-professional.md) ]
