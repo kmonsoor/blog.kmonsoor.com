@@ -10,16 +10,20 @@ Status: Published
 Life is all about the choices we make. We go through new experiences every single day. 
 Each of our decisions make or break the path for the next opportunity or disaster. Be it for our worldly life or the life-after.
 
-As a somewhat-practising Muslim guy, who happened to be a software engineer, I feel that my schedule or planning of daily life or work cannot be the same of a non-practising colleague whose life-plan is somewhat undefined.
+As a somewhat-practicing Muslim guy, who happened to be a software engineer, I feel that my schedule or planning of daily life or work cannot be the same of a non-practising colleague whose life-plan is somewhat undefined.
 Just can't.
 
 So, in light of my current understanding of Islam, and the sunnah of Muhammad (ﷺ: peace be upon him), as well as all my gathered life-hacks, I planned to design a optimal timeline or schedule of my 24H daily life which enhances both my dun'yaa and akhiraat fulfilling all my physical & spiritual needs. This also should boost your career, nonetheless, due to cutting out the slack and distractions from our working time.
 
-#### P.S.
-Colleagues from any other religion can benefit from this schedule as well. Just replace Islam-specific mentions with your spiritual activities or self-realization related engagement. People from other professions can also benefit from this, but may require some job-specific tuning.
+#### Please note
+ * Though this is designed keeping Muslim values in center, readers from any other religions or beliefs can benefit from this schedule as well.  
+Just replace Islam-specific mentions(prayer, dua, salat, tilawaat, tahajjud, prayer etc.) with your spiritual activities or self-realization related engagement, remember to keep your gadgets away. 
 
-
-Ok, without much ado, here is the sketchup for a ideal working day.
+ * People from other professions can also benefit from this, but may or may not require some his domain-specific tuning.
+ * Though I used the terms "he", "him", "his" etc. but this post is agnostic about sexual orientation.
+ * Remember that this is far from being perfect. So, read or use it with quite a bit of salt. :)
+ 
+Ok, without much ado, here is the sketch-up for a ideal working day.
 
 ## The Schedule
 
@@ -45,17 +49,17 @@ Ok, without much ado, here is the sketchup for a ideal working day.
 
 ### At work
 
-8.00 AM  :  Entering workplace. Don't go for coffee, chit-chat or Facebook. Don't even check work email. Start your working hours with your most difficult/critical task at hand while it's still quiet in the office. If you have any diffcult concept to grasp or painstaking bug you need to fix, start that now. This is your golden moment.
+8.00 AM  :  Entering workplace. Don't go for coffee, chit-chat or Facebook. Don't even check work email. Start your working hours with your most difficult/critical task at hand while it's still quiet in the office. If you have any difficult concept to grasp or painstaking bug you need to fix, start that now. This is your golden moment.
 
 ... _below timings are needed to  be expanded_
 
 09:30 AM :  Open work email. Answer emails that needs no discussion. Postpone discussion-needing emails for the next slot.
 
-10:00 AM :  Now starts your team-play time. Complete statnd-up or whatever for your team's daily plan. Address any issue that your teammate is stuck on. Give your teammate from this slot.
+10:00 AM :  Now starts your team-play time. Complete stand-up or whatever for your team's daily plan. Address any issue that your teammate is stuck on. Give your teammate from this slot.
 
 11:00 AM :  Have a coffee. Have some chit-chat with colleagues around. Attend inter-team issues. Sync-up with other departments.
 
-12:00 PM :  Lunch time. Focus on vitamins, and fiber-rich foods. Avoid oil,sugar,salt rich foods. Call wife, sync up with her during lunch. Sometimes lunch with team-mates, sometimes with peers from other departments. Listen more, talk less.
+12:00 PM :  Lunch time. Focus on vitamins, and fiber-rich foods. Avoid oil, sugar, salt-rich foods. Call wife, sync up with her during lunch. Sometimes lunch with team-mates, sometimes with peers from other departments. Listen more, talk less.
 
 12:40 PM :  Zuhr salat. Keep jikr and dua' at minimal.
 
@@ -96,10 +100,11 @@ Ok, without much ado, here is the sketchup for a ideal working day.
 
 10.15 PM  :  Go to bed. Pillow talk with wife. Avoid arguments. Rather thank Allah ta'ala for this awesome day.
 
-10.30 PM  :  Go to sleep. Rememember you need to wake up at 4:00 AM ?
+10.30 PM  :  Go to sleep. Remember you need to wake up at 4:00 AM ?
 
 
 ## Reference / Sources / Discussion
 
 > TODO  
+
 > TODO
