@@ -19,7 +19,7 @@ Yes, you can do the selection on Ubuntu using its GUI tool. But, the problem is 
 
 > It works on geolocation, giving me the local server, which is waaaayy slower where I am. The network temporal distance is the important factor here, not spatial distance (http://askubuntu.com/a/9035/113604)
 
-<blockquote class="imgur-embed-pub" lang="en" data-id="a/5a7iX"><a href="//imgur.com/5a7iX"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+![Ubuntu-select-update-server-GUI](http://i.imgur.com/sCWr0zrl.png)
 
 ## so, what else do we have ?
 
@@ -40,7 +40,7 @@ It will choose one using the latency & ping time, and also show servers' bandwid
 For example in my case, it shows:
 
 ```
-5:09:26 [khaled:~] 1 $ apt-select -c -t 3 -m one-week-behind
+[khaled:~] $ apt-select -c -t 3 -m one-week-behind
 Getting list of mirrors...done.
 Testing latency to mirror(s)
 [3/3] 100%
