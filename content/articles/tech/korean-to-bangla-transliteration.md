@@ -16,13 +16,14 @@ Status: Published
 আপনি আমার ব্লগে পা রেখেছেন বলে ধন্যবাদ. এই ব্লগ আপনার কোনো কাজে লাগলে আমার খুব ভালো লাগবে. আপনার যেকোনো মতামত, পরামর্শ, গালি(!), বা প্রশংসা আপনি নির্দিধায় আপনি comment এ করতে পারেন
   
 বি:দ্র: যে শব্দগুলোর অর্থ আমার জানা আছে, সেগুলো আমি চার্টে (বন্ধনীর) ভিতরে উল্লেখ করে দিলাম.
-  
-
-## (ব্যঞ্জনবর্ণ অংশ)
-
-![korean-consonents-transliteration](https://googledrive.com/host/0B_IybRcQsDwaTGduUi1jR3h6aDQ/blog/korean-consonents.jpg)
 
 
 ## (স্বরবর্ণ অংশ)
 
-![korean-vowels-transliteration](https://googledrive.com/host/0B_IybRcQsDwaTGduUi1jR3h6aDQ/blog/korean-vowels.jpg)
+![korean-vowels-transliteration](http://i.imgur.com/UfvNM0C.jpg)
+
+
+## (ব্যঞ্জনবর্ণ অংশ)
+
+![korean-consonents-transliteration](http://i.imgur.com/M40LGrX.jpg)
+
