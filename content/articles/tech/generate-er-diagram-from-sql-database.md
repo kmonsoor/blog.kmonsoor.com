@@ -18,7 +18,7 @@ I faced a similar challenge recently with a database of 250+ tables. Yes, i felt
 Then, I found [SchemaSpy](http://schemaspy.sourceforge.net/), originally authored by [John Currier](https://sites.google.com/site/johncurrier/). It generate a complete in-depth HTML-based description (of course, including clickable ER-diagram) of the database, which you can then browse with your browser. My this post is on it's basic usage.
 
 The output will be kind of like this:
-![schemapy output sample](https://googledrive.com/host/0B_IybRcQsDwaTGduUi1jR3h6aDQ/blog/schemapy_sample.png)
+![schemapy output sample](http://i.imgur.com/K1yYBID.png)
 
 It is based on Java technologies, but can work its magic on most of the major database technologies. But, you would need a appropriate JDBC connector for that database. 
   
