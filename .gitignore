@@ -3,6 +3,7 @@
 *.log
 *.sublime-workspace
 .virtualenv/
+.idea/
 content/articles/drafts
 output/
 node_modules/

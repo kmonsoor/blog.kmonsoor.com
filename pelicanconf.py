@@ -13,8 +13,6 @@ SITENAME = u'KMonsoor\'s Blog'
 # SITEURL = 'https://blog.kmonsoor.com'
 SITEURL = ''
 DEFAULT_DATE_FORMAT = ('%Y-%m-%d')
-GOOGLE_DRIVE_ROOT = 'https://googledrive.com/host/0B_IybRcQsDwaTGduUi1jR3h6aDQ/blog/'
-
 TIMEZONE = 'Asia/Dhaka'
 
 DEFAULT_LANG = u'en'
@@ -22,7 +20,7 @@ DELETE_OUTPUT_DIRECTORY = True
 
 LINKS_WIDGET_NAME = "Professional profiles"
 LINKS = (
-    ('PDF resume', GOOGLE_DRIVE_ROOT + 'Resume__KhaledMonsoor.pdf'),
+    ('PDF resume', 'https://drive.google.com/open?id=0B_IybRcQsDwaSTY0VUotbkRiSFk'),
     ('Careers 2.0', 'http://careers.stackoverflow.com/kmonsoor'),
     ('LinkedIn', 'http://linkedin.com/in/kmonsoor'),
     ('Github', 'http://github.com/kmonsoor'),
@@ -34,7 +32,7 @@ SOCIAL_WIDGET_NAME = "Social"
 SOCIAL = (
     ('@KhaledMonsoor', 'http://twitter.com/KhaledMonsoor'),
     ('+KhaledMonsoor', 'http://plus.google.com/+KhaledMonsoor?rel=author'),
-    # ('Instagram', 'http://www.instagram.com/kmonsoor/'), 
+    # ('Instagram', 'http://www.instagram.com/kmonsoor/'),
 )
 
 TWITTER_USERNAME = 'KhaledMonsoor'
@@ -66,7 +64,7 @@ EXTRA_PATH_METADATA = {
 PAGINATION_PATTERNS = (
     (1, '{base_name}/', '{base_name}/index.html'),
     (2, '{base_name}/page/{number}/', '{base_name}/page/{number}/index.html'),
-    )   
+    )
 ARTICLE_URL = ('{slug}/')
 ARTICLE_SAVE_AS = ('{slug}/index.html')
 PAGE_URL = ('{slug}/')
@@ -100,16 +98,18 @@ DISCLAIMER = 'All opinions expressed in this site are my own personal opinions \
 # Plugin
 PLUGIN_PATHS = ['plugins']
 PLUGINS = ['gzip_cache',
-           'assets', 
-           'sitemap', 
+           'assets',
+           'sitemap',
            'pelican_youtube',
            # 'related_posts',
            'tipue_search',
+           'yuicompressor',
            # 'neighbors',
            # 'pelican_gist',
            # 'optimize_images',  # generates error while optimizing JPG
            # Core plugins
            # 'thumbnailer',
+
 ]
 
 
