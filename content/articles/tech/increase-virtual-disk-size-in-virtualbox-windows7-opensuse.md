@@ -1,5 +1,5 @@
 ---
-Title: Increase virtual disk size in VirtualBox on Windows 7: Step-by-step
+Title: Increase virtual disk size in VirtualBox on Windows 7:Step-by-step
 Date: 2012-05-26 08:02
 Tags: R, Python, coding, comparison, programming, Language, unofficial, tabular, summary, paradigm, datascience, statistical-analytics, analytics
 Slug: increase-virtual-disk-size-in-virtualbox-windows7-opensuse
