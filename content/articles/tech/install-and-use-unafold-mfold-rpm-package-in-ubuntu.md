@@ -4,7 +4,7 @@ Date: 2011-02-17
 Updated: 2016-12-22
 Tags: bioinformatics, algorithm, ubuntu, package
 Slug: install-and-use-unafold-mfold-rpm-package-in-ubuntu
-Status: Draft
+Status: Published
 Summary: I failed to install UNAFold/mfold in Ubuntu 10.10 as the supplied binary package was in rpm (RedHat) format. How to solve it?
 ---
 
