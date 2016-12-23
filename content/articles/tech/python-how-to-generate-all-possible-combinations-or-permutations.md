@@ -1,10 +1,12 @@
 ---
-Title: Python - How to Create All Possible Combinations (aka Permutations)
+Title: Python - How to Create All Possible Combinations (a.k.a Permutations)
 Date: 2014-01-31
 Updated: 2016-12-22
 Tags: python, coding, syntax, combination
 Status: published
-Version: 1.1
+Slug: python-how-to-generate-all-possible-combinations-or-permutations
+Version: 1.1.1
+Summary: Let's say we have a string, or number. And, we want to generate all the combinations of all the characters of the string or the number
 ---
 
 Let's say the number is 123.
