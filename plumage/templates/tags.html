@@ -8,7 +8,7 @@
 
 {% block top_center %}
   <h1>
-      <a href="{{ SITEURL }}/{{ TAGS_SAVE_AS }}" rel="bookmark" title="Permalink to tag list">Tags</a>
+    <a href="{{ SITEURL }}/{{ TAGS_SAVE_AS }}" rel="bookmark" title="Permalink to tag list">Tags</a>
   </h1>
 {% endblock %}
 
@@ -36,9 +36,11 @@
 
   {% for (tier_name, tier_tags) in [("Top", tier_1), ("Middle", tier_2), ("Lower", tier_3)] %}
     <h2>{{ tier_name }} tier</h2>
-    {% for tag in tier_tags %}
-      {{ m.render_tag(tag) }}
-    {% endfor %}
+    <p>
+      {% for tag in tier_tags %}
+        {{ m.render_tag(tag) }}
+      {% endfor %}
+    </p>
   {% endfor %}
 
 {% endblock %}
