@@ -8,10 +8,10 @@ from __future__ import unicode_literals
 AUTHOR = u'Khaled Monsoor'
 AUTHOR_EMAIL = u'k@kmonsoor.com'
 SITENAME = u'KMonsoor\'s Blog'
-# TAGLINE = 'my writing corner ...'
+TAGLINE = 'khaled monsoor says ...'
 
-# SITEURL = 'https://blog.kmonsoor.com'
-SITEURL = ''
+SITEURL = 'https://blog.kmonsoor.com'
+# SITEURL = ''
 DEFAULT_DATE_FORMAT = ('%Y-%m-%d')
 TIMEZONE = 'Asia/Dhaka'
 
@@ -78,6 +78,7 @@ CATEGORY_URL = ('category/{slug}/')
 CATEGORY_SAVE_AS = ('category/{slug}/index.html')
 
 
+
 # Feed
 FEED_DOMAIN = SITEURL
 FEED_ALL_ATOM = 'feeds/all.atom.xml'
@@ -102,7 +103,7 @@ PLUGINS = ['gzip_cache',
            'sitemap',
            'pelican_youtube',
            # 'related_posts',
-           'tipue_search',
+           # 'tipue_search',
            'yuicompressor',
            # 'neighbors',
            # 'pelican_gist',
@@ -196,10 +197,11 @@ DEFAULT_TEMPLATE = """<a href="{url}" class="zoomable" title="{filename}">
 MENUITEMS = (
      ('Home', '/'),
      ('Tech', '/category/tech/'),
+     ('Thoughts', '/category/thoughts/')
 #     ('About', '/about/'),
 )
 
 
-TIPUE_SEARCH = True
+TIPUE_SEARCH = False
 # can be useful in development, but set to False when you're ready to publish
-RELATIVE_URLS = True
+RELATIVE_URLS = False

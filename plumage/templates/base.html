@@ -9,16 +9,23 @@
             window.location.protocol = "https";
     </script>
 
-    <link rel="canonical" href="{{ SITEURL }}/{{ SLUG }}"/>
-    <title>Blog :: Khaled Monsoor</title>
+    {% if article %}
+    <link rel="canonical" href="{{ SITEURL }}/{{ article.url }}"/>
+    <title>{{ article.title }} -- khaled monsoor says</title>
+    {% else %}
+    <title>khaled monsoor says</title>
+    {% endif%}
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="Khaled Monsoor"/>
 
     <link rel="image_src" href="https://blog.kmonsoor.com/favicon.ico"/>
     <meta property="og:image" content="https://blog.kmonsoor.com/favicon.ico"/>
-    <meta property="og:title" content="Blog - Khaled Monsoor"/>
 
+    {% if article %}
+    <meta property="og:title" content="{{ article.title }} -- khaled monsoor says"/>
+    {% endif%}  
+  
     <!-- Bootstrap -->
     <link rel="stylesheet" href="//cdn.jsdelivr.net/bootstrap/2.3.2/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="//cdn.jsdelivr.net/bootstrap/2.3.2/css/bootstrap-responsive.min.css"/>
@@ -96,9 +103,9 @@
                 </div>
             </a>
             {% endif %}
-            <h1><a href="{{ SITEURL }}">{{ SITENAME }}</a>
+            <h3><a href="{{ SITEURL }}">{{ SITENAME }}</a>
                 <small>{{ SITESUBTITLE }}</small>
-            </h1>
+            </h3>
         </div>
 
         <div class="navbar">
@@ -176,7 +183,7 @@
 
 </div>
 
-<!-- TODO: make footer sticky -->
+
 <footer class="container-fluid">
     <div class="container">
         <div class="row">
