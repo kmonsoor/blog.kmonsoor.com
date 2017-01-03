@@ -11,7 +11,6 @@ SITENAME = u'KMonsoor\'s Blog'
 TAGLINE = 'khaled monsoor says ...'
 
 SITEURL = 'https://blog.kmonsoor.com'
-# SITEURL = ''
 DEFAULT_DATE_FORMAT = ('%Y-%m-%d')
 TIMEZONE = 'Asia/Dhaka'
 
@@ -204,4 +203,4 @@ MENUITEMS = (
 
 TIPUE_SEARCH = False
 # can be useful in development, but set to False when you're ready to publish
-RELATIVE_URLS = False
+RELATIVE_URLS = True

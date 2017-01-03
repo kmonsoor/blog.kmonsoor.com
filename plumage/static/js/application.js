@@ -2,8 +2,9 @@
     $(function () {
 
         // Activate Bootstrap's tooltips
-        $("[rel*=tooltip]").tooltip();
+        $(function () { $("[data-toggle='tooltip']").tooltip(); });
 
+        
         // Subnav fixing code from https://github.com/thomaspark/bootswatch/blob/gh-pages/js/application.js
         var $win = $(window),
             $nav = $('.navbar'),

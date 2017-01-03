@@ -3,49 +3,57 @@
 <html lang="{{ DEFAULT_LANG }}">
 <head>
     <meta charset="utf-8"/>
-    <script type="text/javascript">
-        var host = "blog.kmonsoor.com";
-        if ((host == window.location.host) && (window.location.protocol != "https:"))
-            window.location.protocol = "https";
+    <script type="text/javascript">var host="blog.kmonsoor.com";if((host==window.location.host)&&(window.location.protocol!="https:"))
+window.location.protocol="https"
     </script>
-
+   
     {% if article %}
     <link rel="canonical" href="{{ SITEURL }}/{{ article.url }}"/>
-    <title>{{ article.title }} -- khaled monsoor says</title>
+    <title>{{ article.title }} -- {{ TAGLINE }}</title>
     {% else %}
-    <title>khaled monsoor says</title>
+    <title>{{ TAGLINE }}</title>
     {% endif%}
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="author" content="Khaled Monsoor"/>
-
+    <meta name="author" content="{{ AUTHOR }}"/>
     <link rel="image_src" href="https://blog.kmonsoor.com/favicon.ico"/>
     <meta property="og:image" content="https://blog.kmonsoor.com/favicon.ico"/>
+    {% if article and article.summary %}<meta name="description" content="{{ article.summary|striptags }}"/>{% endif%}  
 
-    {% if article %}
-    <meta property="og:title" content="{{ article.title }} -- khaled monsoor says"/>
-    {% endif%}  
+
+    <!-- OpenGraph protocol tags: http://ogp.me/ -->
+    <meta property="og:site_name" content="{{ SITENAME }}" />
+    <meta property="og:type" content="article" />
+    {% if article and article.language %}<meta property="og:locale" content="{{ article.language }}"/>
+    {% else %}<meta property="og:locale" content="en_US"/>{% endif%}
+    
+    {% if article and article.title %}    
+    <meta property="og:title" content="{{ article.title }} -- {{ TAGLINE }}" />
+    <meta property="og:url" content="{{ SITEURL }}/{{ article.url }}" />
+    {% endif%}
+    {% if article and article.summary %} <meta property="og:description" content="{{ article.summary|striptags }}" /> {% endif%}
+    {% if article and article.date %} <meta property="article:published_time" content="{{ article.date }}" /> {% endif%}
+    {% if article and article.modified %} <meta property="article:modified_time" content="{{ article.modified }}" /> {% endif%}
+    
+    <!-- End of OpenGraph protocol tags -->
   
-    <!-- Bootstrap -->
+    <!-- JS  -->
+
+    <!-- CSS -->
     <link rel="stylesheet" href="//cdn.jsdelivr.net/bootstrap/2.3.2/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="//cdn.jsdelivr.net/bootstrap/2.3.2/css/bootstrap-responsive.min.css"/>
     <link rel="stylesheet" href="//cdn.jsdelivr.net/fontawesome/4.0.3/css/font-awesome.min.css"/>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.0.0/magnific-popup.min.css"/>
     <link rel="stylesheet" href="/theme/css/jquery.mglass.css"/>
-    <link rel="stylesheet" href="/theme/css/pygment-solarized-dark.css"/>
-    <link rel="stylesheet" href="/theme/css/style.css"/>
+    <link rel="stylesheet" href="/theme/css/pygment-solarized-dark.min.css"/>
+    <link rel="stylesheet" href="/theme/css/style.min.css"/>
 
     <!-- Fonts -->
     <link href='//fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'/>
     <link href='//fonts.googleapis.com/css?family=Istok+Web' rel='stylesheet' type='text/css'/>
     <link href='//fonts.googleapis.com/css?family=Droid+Sans+Mono' rel='stylesheet' type='text/css'/>
-    {% if TYPOGRIFY %}
-    <link href='//fonts.googleapis.com/css?family=Expletus+Sans' rel='stylesheet' type='text/css'>
-    {% endif %}
-
-
+    
     {% block extra_css %}{% endblock %}
-
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
@@ -254,12 +262,16 @@
 </footer>
 
 {% include "analytics.html" %}
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.0.0/jquery.magnific-popup.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/fitvids/1.1.0/jquery.fitvids.min.js"></script>
-<script src="/theme/js/jquery.mglass.js"></script>
-<script src="/theme/js/application.js"></script>
+
+<!-- JS -->
+<script data-rocketsrc="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js" type="text/rocketscript"></script>
+<script data-rocketsrc="//cdnjs.cloudflare.com/ajax/libs/fitvids/1.1.0/jquery.fitvids.min.js" type="text/rocketscript"></script>
+<script data-rocketsrc="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/js/bootstrap.min.js" type="text/rocketscript"></script>
+<script data-rocketsrc="//cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.0.0/jquery.magnific-popup.min.js" type="text/rocketscript"></script>
+<script src="/theme/js/jquery.mglass.min.js"></script>
+<script src="/theme/js/application.min.js"></script>
+
+
 {% block extra_js %}{% endblock %}
 
 </body>
