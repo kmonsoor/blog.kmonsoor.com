@@ -27,7 +27,7 @@ Now, edit that post and blog away.
 
 Here's the script:
 
-[gist:id=942d661b4666ddce352f]
+<script src="https://gist.github.com/kmonsoor/942d661b4666ddce352f.js"></script>
   
   
 Thanks for being here. Got any improvement suggestions? Plz let me know by comment on either here or on the Github gist.

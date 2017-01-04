@@ -9,6 +9,7 @@ AUTHOR = u'Khaled Monsoor'
 AUTHOR_EMAIL = u'k@kmonsoor.com'
 SITENAME = u'KMonsoor\'s Blog'
 TAGLINE = 'khaled monsoor says ...'
+SITE_SUMMARY = "Khaled Monsoor here. In this personal writing-space, i usually write about coding, Islam, life or just rambling"
 
 SITEURL = 'https://blog.kmonsoor.com'
 DEFAULT_DATE_FORMAT = ('%Y-%m-%d')
@@ -191,6 +192,7 @@ SITE_THUMBNAIL = "/logo.png"
 DEFAULT_TEMPLATE = """<a href="{url}" class="zoomable" title="{filename}">
 <img src="{thumbnail}" alt="{filename}"></a>"""
 
+ARTICLE_EDIT_LINK = "https://github.com/kmonsoor/blog.kmonsoor.com/edit/master/content/articles"
 
 
 MENUITEMS = (
