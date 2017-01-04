@@ -54,7 +54,7 @@
 
     {% if ARTICLE_EDIT_LINK %}
       <p>Found a typo ? Want to fix it ?</p>
-      <a class="btn btn-info btn-block" href="{{ ARTICLE_EDIT_LINK % {'slug': article.slug} }}"><i class="fa fa-random fa-white fa-fw"></i> Edit article on GitHub</a>
+      <a class="btn btn-info btn-block" href="{{ ARTICLE_EDIT_LINK }}/{{ article.category }}/{{ article.slug }}.md"><i class="fa fa-random fa-white fa-fw"></i> Edit article on GitHub</a>
       <hr/>
     {% endif %}
 
@@ -91,15 +91,7 @@
     <div class="comments">
       <div id="disqus_thread"></div>
       <script type="text/javascript">
-        var disqus_shortname = '{{ DISQUS_SITENAME }}';
-        var disqus_identifier = "{{ article.url }}";
-        var disqus_title = "{{ article.title|striptags|e }}";
-        var disqus_url = "{{ SITEURL }}/{{ article.url }}";
-        (function() {
-          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
+        var disqus_config=function(){this.page.url="{{ SITEURL }}/{{ article.url }}",this.page.identifier="{{ article.url }}"};!function(){var e=document,t=e.createElement("script");t.src="//{{ DISQUS_SITENAME }}.disqus.com/embed.js",t.setAttribute("data-timestamp",+new Date),(e.head||e.body).appendChild(t)}();
       </script>
       <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus</a>.</noscript>
     </div>
