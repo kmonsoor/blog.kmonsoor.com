@@ -3,10 +3,12 @@
 <html lang="{{ DEFAULT_LANG }}">
 <head>
     <meta charset="utf-8"/>
-    <script type="text/javascript">var host="blog.kmonsoor.com";if((host==window.location.host)&&(window.location.protocol!="https:"))
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript">if(("blog.kmonsoor.com"==window.location.host)&&(window.location.protocol!="https:"))
 window.location.protocol="https"
     </script>
-   
+
     {% if article %}
     <link rel="canonical" href="{{ SITEURL }}/{{ article.url }}"/>
     <title>{{ article.title }} -- {{ TAGLINE }}</title>
@@ -14,15 +16,15 @@ window.location.protocol="https"
     <title>{{ TAGLINE }}</title>
     {% endif%}
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="author" content="{{ AUTHOR }}"/>
+
+    <meta name="author" content="{{ AUTHOR|e }}"/>
     <link rel="image_src" href="https://blog.kmonsoor.com/favicon.ico"/>
     <meta property="og:image" content="https://blog.kmonsoor.com/favicon.ico"/>
     {% if article and article.summary %}
     <meta name="description" content="{{ article.summary|striptags }}"/>
     {% else %}
     <meta name="description" content="{{ SITE_SUMMARY }}"/>
-    {% endif%}  
+    {% endif%}
 
 
     <!-- OpenGraph protocol tags: http://ogp.me/ -->
@@ -33,8 +35,8 @@ window.location.protocol="https"
     {% else %}
     <meta property="og:locale" content="en_US"/>
     {% endif%}
-    
-    {% if article and article.title %}    
+
+    {% if article and article.title %}
     <meta property="og:title" content="{{ article.title }} -- {{ TAGLINE }}" />
     <meta property="og:url" content="{{ SITEURL }}/{{ article.url }}" />
     {% endif%}
@@ -51,7 +53,7 @@ window.location.protocol="https"
     {% endif%}
 
     <!-- End of OpenGraph protocol tags -->
-  
+
     {% if TWITTER_USERNAME %}
     <meta name="twitter:site" content="@{{ TWITTER_USERNAME }}" />
     <meta name="twitter:creator" content="@{{ TWITTER_USERNAME }}" />
@@ -65,177 +67,226 @@ window.location.protocol="https"
 
 
     <!-- CSS -->
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/bootstrap/2.3.2/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/bootstrap/2.3.2/css/bootstrap-responsive.min.css"/>
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/fontawesome/4.0.3/css/font-awesome.min.css"/>
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.0.0/magnific-popup.min.css"/>
-    <link rel="stylesheet" href="/theme/css/jquery.mglass.css"/>
-    <link rel="stylesheet" href="/theme/css/pygment-solarized-dark.min.css"/>
-    <link rel="stylesheet" href="/theme/css/style.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css"/>
+    <link rel="stylesheet" href="{{ SITEURL }}/theme/css/jquery.mglass.css"/>
+    <link rel="stylesheet" href="{{ SITEURL }}/theme/css/pygment-solarized-dark.css"/>
+    <link rel="stylesheet" href="{{ SITEURL }}/theme/css/style.css"/>
 
     <!-- Fonts -->
-    <link href='//fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'/>
-    <link href='//fonts.googleapis.com/css?family=Droid+Sans+Mono' rel='stylesheet' type='text/css'/>
-    
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'/>
+    <link href='https://fonts.googleapis.com/css?family=Istok+Web' rel='stylesheet' type='text/css'/>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Sans+Mono' rel='stylesheet' type='text/css'/>
+
     {% block extra_css %}{% endblock %}
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="{{ SITEURL }}/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ SITEURL }}/favicon.ico" type="image/x-icon">
 
     <!-- Feeds -->
+    {% set all_feeds = [] %}
     {% if FEED_ALL_ATOM %}
-    <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate"
-          title="{{ SITENAME|e }} Full Atom Feed"/>
+      {% if all_feeds.append({'kind': 'Atom', 'url': FEED_ALL_ATOM, 'name': 'All posts'}) %}{% endif %}
     {% endif %}
     {% if FEED_ALL_RSS %}
-    <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}" type="application/rss+xml" rel="alternate"
-          title="{{ SITENAME|e }} Full RSS Feed"/>
+      {% if all_feeds.append({'kind': 'RSS', 'url': FEED_ALL_RSS, 'name': 'All posts'}) %}{% endif %}
     {% endif %}
     {% if FEED_ATOM %}
-    <link href="{{ FEED_DOMAIN }}/{{ FEED_ATOM }}" type="application/atom+xml" rel="alternate"
-          title="{{ SITENAME|e }} Atom Feed"/>
+      {% if all_feeds.append({'kind': 'Atom', 'url': FEED_ATOM, 'name': 'Latest posts'}) %}{% endif %}
     {% endif %}
     {% if FEED_RSS %}
-    <link href="{{ FEED_DOMAIN }}/{{ FEED_RSS }}" type="application/rss+xml" rel="alternate"
-          title="{{ SITENAME|e }} RSS Feed"/>
+      {% if all_feeds.append({'kind': 'RSS', 'url': FEED_RSS, 'name': 'Latest posts'}) %}{% endif %}
     {% endif %}
     {% if CATEGORY_FEED_ATOM and category is defined %}
-    <link href="{{ FEED_DOMAIN }}/{{ CATEGORY_FEED_ATOM|format(category.slug) }}" type="application/atom+xml"
-          rel="alternate" title="{{ SITENAME|e }} Categories Atom Feed"/>
+      {% if all_feeds.append({'kind': 'Atom', 'url': CATEGORY_FEED_ATOM|format(category.slug), 'name': 'Category: ' + category.name}) %}{% endif %}
     {% endif %}
     {% if CATEGORY_FEED_RSS and category is defined %}
-    <link href="{{ FEED_DOMAIN }}/{{ CATEGORY_FEED_RSS|format(category.slug) }}" type="application/rss+xml"
-          rel="alternate" title="{{ SITENAME|e }} Categories RSS Feed"/>
+      {% if all_feeds.append({'kind': 'RSS', 'url': CATEGORY_FEED_RSS|format(category.slug), 'name': 'Category: ' + category.name}) %}{% endif %}
     {% endif %}
     {% if TAG_FEED_ATOM and tag is defined %}
-    <link href="{{ FEED_DOMAIN }}/{{ TAG_FEED_ATOM|format(tag.slug) }}" type="application/atom+xml" rel="alternate"
-          title="{{ SITENAME|e }} Tags Atom Feed"/>
+      {% if all_feeds.append({'kind': 'Atom', 'url': TAG_FEED_ATOM|format(tag.slug), 'name': 'Tag: ' + tag.name}) %}{% endif %}
     {% endif %}
     {% if TAG_FEED_RSS and tag is defined %}
-    <link href="{{ FEED_DOMAIN }}/{{ TAG_FEED_RSS|format(tag.slug) }}" type="application/rss+xml" rel="alternate"
-          title="{{ SITENAME|e }} Tags RSS Feed"/>
+      {% if all_feeds.append({'kind': 'RSS', 'url': TAG_FEED_RSS|format(tag.slug), 'name': 'Tag: ' + tag.name}) %}{% endif %}
     {% endif %}
+    {% for feed in all_feeds %}
+      <link href="{{ FEED_DOMAIN }}/{{ feed.url }}" type="application/{{ feed.kind|lower }}+xml" rel="alternate" title="{{ SITENAME|e }} - {{ feed.name|e }} - {{ feed.kind }} Feed"/>
+    {% endfor %}
 
     {% block head %}
     {% endblock %}
-
 </head>
 
 <body>
 <div class="container">
 
-    <header>
-        <div class="page-header">
-            {% if SITE_THUMBNAIL %}
-            <a href="{{ SITEURL }}" class="avatar-container">
-                <div class="avatar {% if SITE_THUMBNAIL_TEXT %} animate {% endif %}">
-                    <div class="side"><img src="{{ SITE_THUMBNAIL }}"/></div>
-                    {% if SITE_THUMBNAIL_TEXT %}
-                    <div class="side back"><p class="text-center">{{ SITE_THUMBNAIL_TEXT }}</p></div>
-                    {% endif %}
-                </div>
-            </a>
-            {% endif %}
-            <h3><a href="{{ SITEURL }}">{{ SITENAME }}</a>
-                <small>{{ SITESUBTITLE }}</small>
-            </h3>
+  <div class="page-header">
+    {% if SITE_THUMBNAIL %}
+      <a href="{{ SITEURL }}" class="avatar-container pull-left">
+        <div class="avatar {% if SITE_THUMBNAIL_TEXT %} animate {% endif %}">
+          <div class="side"><img src="{{ SITE_THUMBNAIL }}" class="img-responsive"/></div>
+          {% if SITE_THUMBNAIL_TEXT %}
+            <div class="side back"><p class="text-center">{{ SITE_THUMBNAIL_TEXT }}</p></div>
+          {% endif %}
         </div>
+      </a>
+    {% endif %}
+    <h1><a href="{{ SITEURL }}">{{ SITENAME }}</a> <small>{{ SITESUBTITLE }}</small></h1>
+  </div>
 
-        <div class="navbar">
-            <div class="navbar-inner">
-                <a class="brand" href="blog.kmonsoor.com" title="{{ SITESUBTITLE|e }}">{{ SITENAME }}</a>
-                <ul class="nav">
-                    {% for title, link in MENUITEMS %}
-                    {% set active_page = page is defined and link == "/%s"|format(page.url) -%}
-                    <li {% if active_page %} class="active" {% endif %}><a href="{{ link }}">{{ title }}</a></li>
-                    {% endfor %}
-                    {% if DISPLAY_PAGES_ON_MENU %}
-                    {% for p in PAGES %}
-                    <li {% if p== page %} class="active" {% endif %}><a href="{{ SITEURL }}/{{ p.url }}">{{ p.title
-                        }}</a></li>
-                    {% endfor %}
-                    {% endif %}
-                </ul>
-                {% if GOOGLE_SEARCH %}
-                <form class="navbar-search pull-right" action="http://www.google.com" target="_blank">
-                    <input type="text" name="q" class="search-query span2" placeholder="Search"/>
-                    <i class="fa fa-search fa-fw"></i>
-                    <input type="hidden" name="cx" value="{{ GOOGLE_SEARCH }}"/>
-                    <input type="hidden" name="ie" value="UTF-8"/>
-                </form>
-                {% endif %}
-                {% if TIPUE_SEARCH %}
-                <form class="navbar-search pull-right" action="{{ SITEURL }}/search.html"
-                      onsubmit="return validateForm(this.elements['q'].value);">
-                    <input type="text" name="q" id="tipue_search_input" class="search-query span2" placeholder="search"
-                           required/>
-                    <i class="fa fa-search fa-fw"></i>
-                </form>
-                {% endif %}
+  <nav class="navbar navbar-default">
+
+    <!-- Hamburger menu for mobile -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#plumage-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="{{ SITEURL }}" title="{{ SITESUBTITLE|e }}">{{ SITENAME }}</a>
+    </div>
+
+    <!-- Menus and search forms -->
+    <div class="collapse navbar-collapse" id="plumage-navbar-collapse-1">
+
+      <ul class="nav navbar-nav">
+        {% for title, link in MENUITEMS %}
+          {% set active_page = link == ("/%s"|format(output_file)).strip('index.html') -%}
+          <li {% if active_page %} class="active" {% endif %}>
+            <a href="{{ link }}">{{ title }}{% if active_page %} <span class="sr-only">(current)</span>{% endif %}</a>
+          </li>
+        {% endfor %}
+        {% if DISPLAY_PAGES_ON_MENU %}
+          {% for p in pages %}
+            {% set active_page = (p == page) -%}
+            <li {% if active_page %} class="active" {% endif %}>
+              <a href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}{% if active_page %} <span class="sr-only">(current)</span>{% endif %}</a>
+            </li>
+          {% endfor %}
+        {% endif %}
+        {% if DISPLAY_CATEGORIES_ON_MENU %}
+          {% for c, null in categories %}
+            {% set active_category = (c == category) -%}
+            <li {% if active_category %} class="active" {% endif %}>
+              <a href="{{ SITEURL }}/{{ c.url }}">{{ c.name }}{% if active_category %} <span class="sr-only">(current)</span>{% endif %}</a>
+            </li>
+          {% endfor %}
+        {% endif %}
+      </ul>
+
+      {% if GOOGLE_SEARCH %}
+        <form class="navbar-form navbar-right" role="search" action="https://www.google.com" target="_blank">
+          <div class="form-group">
+            <div class="input-group">
+              <input type="text" name="q" class="form-control search-query" placeholder="Search" required />
+              <span class="input-group-btn">
+                <button class="btn btn-default" type="button"><i class="fa fa-search fa-fw"></i></button>
+              </span>
             </div>
-        </div>
-    </header>
+            <input type="hidden" name="cx" value="{{ GOOGLE_SEARCH }}" />
+            <input type="hidden" name="ie" value="UTF-8" />
+          </div>
+        </form>
+      {% endif %}
 
-    <section>
-        {% set has_left_content = has_left or LEFT_SIDEBAR is defined %}
-        {% set has_right_content = has_right or RIGHT_SIDEBAR is defined %}
-
-        <div class="row">
-            <div class="{% if (has_left_content and has_right_content) or LAYOUT == 'full-width' %} span6 {% elif has_left_content or has_right_content%} span9 {% else %} span12 {% endif %} {% if has_left_content %} offset3 {% endif %}">
-                {% block top_center %}
-                {% endblock %}
+      {% if TIPUE_SEARCH %}
+        <form class="navbar-form navbar-right" role="search" action="{{ SITEURL }}/search.html" onsubmit="return validateForm(this.elements['q'].value);">
+          <div class="form-group">
+            <div class="input-group">
+              <input type="text" name="q" id="tipue_search_input" class="form-control search-query" placeholder="Search" required />
+              <span class="input-group-btn">
+                <button class="btn btn-default" type="submit"><i class="fa
+                    fa-search fa-fw"></i></button>
+              </span>
             </div>
-        </div>
+          </div>
+        </form>
+      {% endif %}
 
-        <div class="row">
+    </div>
 
-            {% if LAYOUT != 'full-width' and has_left_content %}
-            <div class="span3">
-                {% block left_sidebar %}
-                {% endblock %}
-                {{ LEFT_SIDEBAR }}
-            </div>
-            {% endif %}
+  </nav>
 
-            <div class="{% if LAYOUT == 'full-width' %} offset1 {% elif has_left_content and has_right_content %} span6 {% elif has_left_content or has_right_content %} span9 {% else %} span12 {% endif %}"
-                 id="content" role="main">
-                {% block content %}
-                {% endblock %}
-            </div>
+</div>
 
-            {% if LAYOUT != 'full-width' and has_right_content %}
-            <div class="span3">
-                {% block right_sidebar %}
-                {% endblock %}
-                {{ RIGHT_SIDEBAR }}
-            </div>
-            {% endif %}
 
-        </div>
-    </section>
+<div class="container main">
+
+  {% set has_left_content = has_left or LEFT_SIDEBAR is defined %}
+  {% set has_right_content = has_right or RIGHT_SIDEBAR is defined %}
+
+  <div class="row">
+    <div class="{% if (has_left_content and has_right_content) or LAYOUT == 'full-width' %} col-md-6 {% elif has_left_content or has_right_content%} col-md-9 {% else %} col-md-12 {% endif %} {% if has_left_content %} col-md-offset-3 {% endif %}">
+      {% block top_center %}
+      {% endblock %}
+    </div>
+  </div>
+
+  <div class="row">
+
+    {% if LAYOUT != 'full-width' and has_left_content %}
+      <div class="col-md-3">
+        {% block left_sidebar %}
+        {% endblock %}
+        {{ LEFT_SIDEBAR }}
+      </div>
+    {% endif %}
+
+    <div class="{% if LAYOUT == 'full-width' %} col-md-offset-1 {% elif has_left_content and has_right_content %} col-md-6 {% elif has_left_content or has_right_content %} col-md-9 {% else %} col-md-12 {% endif %}" id="content" role="main">
+      {% block content %}
+      {% endblock %}
+    </div>
+
+    {% if LAYOUT != 'full-width' and has_right_content %}
+      <div class="col-md-3">
+        {% block right_sidebar %}
+        {% endblock %}
+        {{ RIGHT_SIDEBAR }}
+      </div>
+    {% endif %}
+
+  </div>
 
 </div>
 
 
 <footer class="container-fluid">
-    <div class="container">
-        <div class="row">
+  <div class="container">
+    <div class="row">
 
-            {% set SOCIAL_WIDGET_NAME = SOCIAL_WIDGET_NAME or 'Social' %}
-            {% set LINKS_WIDGET_NAME = LINKS_WIDGET_NAME or 'Links' %}
-            {% for group_title, group_links in ((SOCIAL_WIDGET_NAME, SOCIAL), (LINKS_WIDGET_NAME, LINKS)) %}
-            <div class="span2">
-                {% if group_links %}
-                <h5>{{ group_title }}</h5>
-                <ul class="unstyled">
-                    {% for title, link in group_links %}
-                    <li>{{ m.render_link_icon(link, title, GRAB_ICONS) }}</li>
-                    {% endfor %}
-                </ul>
-                {% endif %}
-            </div>
+      {% set SOCIAL_WIDGET_NAME = SOCIAL_WIDGET_NAME or 'Social' %}
+      {% set LINKS_WIDGET_NAME = LINKS_WIDGET_NAME or 'Links' %}
+      {% for group_title, group_links in ((SOCIAL_WIDGET_NAME, SOCIAL), (LINKS_WIDGET_NAME, LINKS)) %}
+        <div class="col-md-2">
+          {% if group_links %}
+            <h5>{{ group_title }}</h5>
+            <ul class="list-unstyled">
+            {% for title, link in group_links %}
+              <li>{{ m.render_link_icon(link, title, FAVICON_LINKS) }}</li>
             {% endfor %}
+            </ul>
+          {% endif %}
+        </div>
+      {% endfor %}
 
-            <div class="span2">
+            <div class="col-md-2">
+              <h5>Browse content by</h5>
+              <ul class="list-unstyled">
+                {% if CATEGORIES_SAVE_AS %}
+                  <li><a href="{{ SITEURL }}/{{ CATEGORIES_SAVE_AS }}"><i class="fa fa-tags"></i> Categories</a></li>
+                {% endif %}
+                {% if ARCHIVES_SAVE_AS %}
+                  <li><a href="{{ SITEURL }}/{{ ARCHIVES_SAVE_AS }}"><i class="fa fa-calendar"></i> Dates</a></li>
+                {% endif %}
+                {% if TAGS_SAVE_AS %}
+                  <li><a href="{{ SITEURL }}/{{ TAGS_SAVE_AS }}"><i class="fa fa-tag"></i> Tags</a></li>
+                {% endif %}
+              </ul>
+            </div>
+
+
+            <div class="col-md-2">
                 <h5>Support Author</h5>
 
                 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
@@ -247,18 +298,17 @@ window.location.protocol="https"
                 </form>
             </div>
 
-            <div class="span2 muted">
-                <h5>Copyright notice</h5>
-                {% set date_start = dates[-1].date.year if dates else None %}
-                {% set date_end = dates[0].date.year if dates else None %}
-                <p>© Copyright {{ date_start if date_start }}{{ '-%s' % date_end if date_end and date_end != date_start
-                    }} {{ AUTHOR }}.</p>
-                {% if COPYRIGHT %}
-                <p>{{ COPYRIGHT }}</p>
-                {% endif %}
-            </div>
+            <div class="col-md-2 text-muted">
+            <h5>Copyright notice</h5>
+            {% set date_start = dates[-1].date.year if dates else None %}
+            {% set date_end   = dates[0].date.year if dates else None %}
+            <p>© Copyright {{ date_start if date_start }}{{ '-%s' % date_end if date_end and date_end != date_start }} {{ AUTHOR }}.</p>
+            {% if COPYRIGHT %}
+              <p>{{ COPYRIGHT }}</p>
+            {% endif %}
+          </div>
 
-            <div class="span2 muted">
+            <div class="col-md-2 text-muted">
                 <h5>Disclaimer</h5>
                 {% if DISCLAIMER %}
                 <p>{{ DISCLAIMER }}</p>
@@ -286,16 +336,12 @@ window.location.protocol="https"
 </footer>
 
 {% include "analytics.html" %}
-
-<!-- JS -->
-<script data-rocketsrc="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js" type="text/rocketscript"></script>
-<script data-rocketsrc="//cdnjs.cloudflare.com/ajax/libs/fitvids/1.1.0/jquery.fitvids.min.js" type="text/rocketscript"></script>
-<script data-rocketsrc="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/js/bootstrap.min.js" type="text/rocketscript"></script>
-<script data-rocketsrc="//cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.0.0/jquery.magnific-popup.min.js" type="text/rocketscript"></script>
-<script src="/theme/js/jquery.mglass.min.js"></script>
-<script src="/theme/js/application.min.js"></script>
-
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fitvids/1.1.0/jquery.fitvids.min.js"></script>
+<script src="{{ SITEURL }}/theme/js/jquery.mglass.js"></script>
+<script src="{{ SITEURL }}/theme/js/application.js"></script>
 {% block extra_js %}{% endblock %}
 
 </body>
