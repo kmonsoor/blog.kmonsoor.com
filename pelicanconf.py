@@ -18,7 +18,7 @@ TIMEZONE = 'Asia/Dhaka'
 DEFAULT_LANG = u'en'
 DELETE_OUTPUT_DIRECTORY = True
 
-LINKS_WIDGET_NAME = "Professional profiles"
+LINKS_WIDGET_NAME = "Professional"
 LINKS = (
     ('PDF resume', 'https://drive.google.com/open?id=0B_IybRcQsDwaSTY0VUotbkRiSFk'),
     ('Careers 2.0', 'http://careers.stackoverflow.com/kmonsoor'),
@@ -89,7 +89,14 @@ TRANSLATION_FEED_ATOM = None
 # Theme
 THEME = 'plumage'
 
-DEFAULT_PAGINATION = 20
+EXTRA_PATH_METADATA = {
+    'extra/favicon.ico': {'path': 'favicon.ico'},
+    'extra/robots.txt': {'path': 'robots.txt'},
+    'extra/htaccess': {'path': '.htaccess'},
+    'extra/htaccess-static': {'path': 'documents/.htaccess'},
+}
+
+DEFAULT_PAGINATION = 5
 #COPYRIGHT =  'All contents are under The MIT License (MIT).'
 DISCLAIMER = 'All opinions expressed in this site are my own personal opinions \
               and are not endorsed by, nor do they represent the opinions of my \
@@ -97,14 +104,15 @@ DISCLAIMER = 'All opinions expressed in this site are my own personal opinions \
               partners or customers.'
 
 # Plugin
-PLUGIN_PATHS = ['plugins']
+PLUGIN_PATHS = ['plugins', 'plugins/pelican-deadlinks']
 PLUGINS = ['gzip_cache',
-           'assets',
+           'deadlinks',
            'sitemap',
-           'pelican_youtube',
+           'yuicompressor',
+        #    'assets', # buggy, gives fatal error
+        #    'pelican_youtube',
            # 'related_posts',
            # 'tipue_search',
-           'yuicompressor',
            # 'neighbors',
            # 'pelican_gist',
            # 'optimize_images',  # generates error while optimizing JPG
@@ -113,27 +121,37 @@ PLUGINS = ['gzip_cache',
 
 ]
 
+DEADLINK_VALIDATION = False
 
 # Do not publish articles set in the future
 WITH_FUTURE_DATES = False
 
-# Force Pelican to use the file name as the slug, instead of derivating it from
-# the title.
-#FILENAME_METADATA = '(?P<slug>.*)'
-
-### Plugin-specific settings
-# RELATED_POSTS_MAX = 5
-# SITESUBTITLE = "my internet corner"
-
 
 # for highlighting code-segments
 # PYGMENTS_RST_OPTIONS = {'cssclass': 'codehilite', 'linenos': 'table'}
-MD_EXTENSIONS = ['codehilite(noclasses=True, pygments_style=native)',
-                 # 'mdx_video',
-                 'extra',
-                 ]
+# MD_EXTENSIONS = ['codehilite(noclasses=True, pygments_style=native)',
+#                  # 'mdx_video',
+#                  'extra',
+#                  ]
 
-DIRECT_TEMPLATES = ['index', 'categories', 'authors', 'archives', 'search']
+TIMEZONE = 'Asia/Dhaka'
+MARKDOWN = {
+    'extension_configs': {
+        'markdown.extensions.codehilite': {'css_class': 'highlight'},
+        'markdown.extensions.extra': {},
+        'markdown.extensions.meta': {},
+    },
+    'output_format': 'html5',
+    # Allow numbered lists to not start with 1. Used in following article:
+    # https://kevin.deldycke.com/2016/12/falsehoods-programmers-believe-about-falsehoods-lists/
+    # See: https://pythonhosted.org/Markdown/reference.html#lazy_ol
+    'lazy_ol': False,
+}
+
+
+
+
+DIRECT_TEMPLATES = ['index', 'tags', 'categories', 'authors', 'archives', 'search']
 
 YEAR_ARCHIVE_SAVE_AS = '{date:%Y}/index.html'
 MONTH_ARCHIVE_SAVE_AS = '{date:%Y}/{date:%m}/index.html'
@@ -162,7 +180,7 @@ CATEGORY_FEED_RSS = 'category/%s/feed/index.html'
 CATEGORY_FEED_ATOM = 'category/%s/feed/atom/index.html'
 
 FEED_MAX_ITEMS = 10
-USE_FOLDER_AS_CATEGORY = True
+USE_FOLDER_AS_CATEGORY = False
 DEFAULT_CATEGORY = 'Tech'
 DEFAULT_DATE_FORMAT = '%b. %d, %Y'
 REVERSE_ARCHIVE_ORDER = True
@@ -197,9 +215,9 @@ ARTICLE_EDIT_LINK = "https://github.com/kmonsoor/blog.kmonsoor.com/edit/master/c
 
 MENUITEMS = (
      ('Home', '/'),
-     ('Tech', '/category/tech/'),
-     ('Thoughts', '/category/thoughts/')
-#     ('About', '/about/'),
+    #  ('Tech', '/category/tech/'),
+    #  ('Thoughts', '/category/thoughts/')
+    #  ('About', '/about/'),
 )
 
 

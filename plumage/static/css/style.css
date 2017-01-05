@@ -1,15 +1,15 @@
-body, input, button, select, textarea, li, .navbar-search .search-query {
+body, input, button, select, textarea, li, .navbar-form .search-query {
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
     line-height: 24px;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Istok Web', sans-serif;
 }
 
 code, pre {
-    font-family: "Droid Sans Mono", Consolas, "Courier New", monospace;
+    font-family: "Droid Sans Mono", Monaco, Menlo, Consolas, "Courier New", monospace;
     font-size: 15px;
     line-height: 21px;
     white-space: pre;
@@ -28,6 +28,7 @@ body {
 
 .page-header {
     margin: 0;
+    padding-bottom: 0;
     border-bottom: none;
 }
 
@@ -40,19 +41,23 @@ body {
     text-decoration: none;
 }
 
-/* Card flip inspired by http://learn.shayhowe.com/advanced-html-css/transitions-animations */
+
+/* Card flip inspired by https://learn.shayhowe.com/advanced-html-css/transitions-animations */
+
+
 /* Possible alternative: use https://github.com/mintchaos/flippant.js */
+
 .page-header .avatar-container {
-    float: left;
+    z-index: 10;
     width: 80px;
     height: 80px;
     margin: 0 20px;
     position: relative;
-    perspective: 600px;
-    -webkit-perspective: 600px;
-    -moz-perspective: 600px;
+    -webkit-perspective: 600;
+    -moz-perspective: 600;
     -ms-perspective: 600;
     -o-perspective: 600;
+    perspective: 600;
 }
 
 .page-header .avatar {
@@ -115,53 +120,45 @@ body {
     padding-top: 8px;
 }
 
-/* Only display site's name in the navbar if it's fixed */
-.navbar .brand {
-    display: none;
-}
-
-.navbar .navbar-inner {
+.navbar {
     box-shadow: 0 2px 10px rgba(0, 0, 0, .25);
 }
 
-.navbar.navbar-fixed-top .brand {
+
+/* Only display site's name in the navbar if the latter is fixed. */
+
+.navbar .navbar-brand {
+    display: none;
+}
+
+.navbar.navbar-fixed-top .navbar-brand {
     display: block;
 }
 
-.navbar.navbar-fixed-top .navbar-inner {
-    padding-right: 20px;
-    padding-left: 20px;
-}
-
-/* Add a search icon in navbar's search field */
-.navbar-search .search-query {
-    padding-left: 32px;
-    height: inherit;
-}
-
-.navbar-search .fa-search {
-    position: absolute;
-    top: 8px;
-    left: 10px;
+.navbar.navbar-fixed-top .navbar-right {
+    margin-right: inherit;
 }
 
 h1, h2 {
     text-shadow: 1px 1px 1px #ddd;
 }
 
-section h1 {
+.main.container h1 {
     margin-bottom: 1em;
     margin-top: 1em;
 }
 
+
 /* Typogrify's ampersands */
+
 span.amp {
-    font-family: 'Expletus Sans', sans-serif;
+    font-family: 'Expletus Sans';
 }
 
 code {
     color: inherit;
-    background-color: rgb(236, 236, 236); /* same as body's background-color */
+    background-color: rgb(236, 236, 236);
+    /* same as body's background-color */
     border-color: rgb(224, 224, 235);
 }
 
@@ -173,7 +170,7 @@ a {
     transition: all 0.2s ease-out;
 }
 
-.muted a {
+.text-muted a {
     color: #999;
 }
 
@@ -198,8 +195,7 @@ a {
     background-image: url(/theme/img/play-button.png);
 }
 
-.mfp-with-zoom .mfp-container,
-.mfp-with-zoom.mfp-bg {
+.mfp-with-zoom .mfp-container, .mfp-with-zoom.mfp-bg {
     opacity: 0;
     -webkit-backface-visibility: hidden;
     -moz-backface-visibility: hidden;
@@ -221,17 +217,20 @@ a {
     opacity: 0.8;
 }
 
-.mfp-with-zoom.mfp-removing .mfp-container,
-.mfp-with-zoom.mfp-removing.mfp-bg {
+.mfp-with-zoom.mfp-removing .mfp-container, .mfp-with-zoom.mfp-removing.mfp-bg {
     opacity: 0;
 }
 
+
 /*a.label, a.badge,*/
+
 a.link-circle {
     background-color: rgb(228, 228, 228);
 }
 
+
 /*a.label:hover, a.badge:hover,*/
+
 a.link-circle:hover {
     background-color: #999;
 }
@@ -264,7 +263,7 @@ a.link-circle:hover {
     border: 0;
 }
 
-.thumbnail > img {
+.thumbnail> img {
     max-height: 180px;
     box-shadow: 0 4px 10px -4px rgba(0, 0, 0, .3);
 }
@@ -305,11 +304,11 @@ footer {
     margin-top: 50px;
     background: url(/theme/img/creampaper.png);
     padding: 20px;
-    text-shadow: 0 1px 1px white;
+    text-shadow: 0px 1px 1px white;
     box-shadow: inset 0 30px 30px -30px rgba(0, 0, 0, 0.5);
 }
 
-footer .container .span12 {
+footer .container .col-md-12 {
     margin-top: 20px;
 }
 
@@ -317,14 +316,11 @@ footer, footer li {
     font-size: 14px;
 }
 
-footer .muted {
+footer .text-muted {
     font-size: 12px;
     line-height: 13px;
 }
 
 blockquote {
-    border-left: 5px solid #008bcc;
-    font-size: 13px;
-    line-height: 24px;
-    color: rgba(150, 150, 150, 1);
+    border-left: 5px solid #0088CC;
 }

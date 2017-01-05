@@ -1,11 +1,11 @@
 ---
-Title: Increase virtual disk size in VirtualBox on Windows 7:Step-by-step
+Title: Increase virtual disk size in VirtualBox on Windows 7
 Date: 2012-05-26 08:02
-Tags: virtualbox, vpc, ubuntu, linux, windows
-Slug: increase-virtual-disk-size-in-virtualbox-windows7-opensuse
+Update: 2017-01-01 11:59
+Tags: virtualbox, vpc, ubuntu, linux, windows, storage
+Slug: increase-virtual-disk-size-in-virtualbox
 Status: Published
-Summary: Stuck with your small virtual disk partition for VirtualBox? You created for some testing & practicing, now it needs space. I also stuck with same problem; researched many forums, and here is the gist. Find out how.
-
+Summary: Stuck with your small virtual disk partition for VirtualBox? I also stuck with same problem; researched many forums, and here is the gist. Find out how.
 ---
  
 Stuck with your small virtual disk partition for VirtualBox? You created for some testing & practicing, now it needs space. I also stuck with same problem; researched many forums, and here is the gist.
@@ -39,12 +39,12 @@ Stuck with your small virtual disk partition for VirtualBox? You created for som
 
  * Boot the Guest OS; from the boot menu, select CD/DVD drive, then it will be booted in GParted tiny OS. Now the PartitionManager tool will come up automatically, like below:
 
-![](http://i.imgur.com/aK9kAtK.jpg)
+![Gparted partition-manager](http://i.imgur.com/aK9kAtK.jpg)
 
  * Now "shrink/Grow" or "Move" your desired partion, but be careful. Don't rename any of them. Be careful about your data.
  * Don't worry, unless you clicked Apply, nothing has happened really. When you are done with moving and resizing, you have to click `Apply` to commit the change
 
-![](http://i.imgur.com/wUMCHVQ.jpg)
+![just before applying](http://i.imgur.com/wUMCHVQ.jpg)
 
  * when completed, close Gparted, and then shutdown the OS
  * Unload the ISO aka virtual CD from virtual OS
