@@ -1,30 +1,30 @@
 ---
-Title: Increase virtual disk size in VirtualBox on Windows 7
+Title: Increase virtual-disk size in VirtualBox on Windows 7
 Date: 2012-05-26 08:02
 Update: 2017-01-01 11:59
 Tags: virtualbox, vpc, ubuntu, linux, windows, storage
-Slug: increase-virtual-disk-size-in-virtualbox
+Slug: increase-virtual-disk-size-in-virtualbox-windows
 Status: Published
 Summary: Stuck with your small virtual disk partition for VirtualBox? I also stuck with same problem; researched many forums, and here is the gist. Find out how.
 ---
- 
+
 Stuck with your small virtual disk partition for VirtualBox? You created for some testing & practicing, now it needs space. I also stuck with same problem; researched many forums, and here is the gist.
 
-[Note: This procedure won't work for VM with snapshots. So, plz take note about your system beforehand.]
+[Note: This procedure won't work for VM with snapshots. So, please take note about your system beforehand.]
 
- * Download Gparted, disk manager for Linux. It'll come as an ISO file.
+ * Download [Gparted](http://gparted.org/download.php), disk manager for Linux. It'll come as an ISO file.
  * Boot into your guest OS, check,  with df command,  which partition you need to grow. Take note of that specific mounted HD, such as /dev/hdb/sda3
  * Take backup of your existing data, as I WILL NOT TAKE ANY RESPONSIBILITY IF YOU DAMAGE YOUR DATA.
  * In host OS, Goto the command prompt by running, cmd.exe
  * Navigate to the Virtualbox installation folder
- * Execute command: 
-     
+ * Execute command:
+
 `VBoxManage modifyhd X:\yourVM_DiskPath_InHost\yourVM_Disk.vdi  --resize 40960`
-     
+
   you will see progress as below:
 
 ![10% ... 20% .. .. 100%](http://i.imgur.com/iYORelg.png)
- 
+
   If you fail with message like
 
 > "VBoxManage.exe: error: Resize hard disk operation for this format is not implemented yet!"

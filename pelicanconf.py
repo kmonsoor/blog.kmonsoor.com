@@ -42,6 +42,7 @@ DISQUS_SITENAME = 'kmonsoor'
 # Analytics
 GOOGLE_ANALYTICS = 'UA-20431143-1'
 GOOGLE_ANALYTICS_PROPERTY = 'auto'
+SEARCH = '004448780615517808510:fuhqdksguwg'
 
 
 # Content path.

@@ -1,32 +1,33 @@
 ---
 Title: A Near-Perfect Day of a Muslim Professional
 Date: 2016-05-10
-Tags:  daily-life, islam, muslim, professional, dicipline, career 
+Tags:  daily-life, Islam, muslim, professional, discipline, career
 Slug:  a-near-perfect-day-of-a-muslim-Professional
 Summary:  Each of our decisions make or break the path for the next opportunity or disaster. Be it for our worldly life or the life-after.
 Version: 0.1.4
+Category: Thoughts
 Status: Published
 ---
 
-Life is all about the choices we make. We go through new experiences every single day. 
+Life is all about the choices we make. We go through new experiences every single day.
 Each of our decisions make or break the path for the next opportunity or disaster. Be it for our worldly life or the life-after.
 
-As a somewhat-practicing Muslim guy, who happened to be a software engineer, I feel that my schedule or planning of daily life or work cannot be the same of a non-practising colleague whose life-plan is somewhat undefined.
+As a somewhat-practicing Muslim guy, who happened to be a software engineer, I feel that my schedule or planning of daily life or work cannot be the same of a non-practicing colleague whose life-plan is somewhat undefined.
 Just can't.
 
 So, in light of my current understanding of Islam, and the sunnah of Muhammad (ﷺ: peace be upon him), as well as all my gathered life-hacks, I planned to design a optimal timeline or schedule of my 24H daily life which enhances both my dun'yaa and akhiraat fulfilling all my physical & spiritual needs. This also should boost your career, nonetheless, due to cutting out the slack and distractions from our working time.
 
 #### Please note
  * Though this is designed keeping Muslim values in center, readers from any other religions or beliefs can benefit from this schedule as well.  
-Just replace Islam-specific mentions(prayer, dua, salat, tilawaat, tahajjud, prayer etc.) with your spiritual activities or self-realization related engagement, remember to keep your gadgets away. 
+Just replace Islam-specific mentions(prayer, dua, salat, tilawaat, tahajjud, prayer etc.) with your spiritual activities or self-realization related engagement, just remember to keep your gadgets away.
 
  * People from other professions can also benefit from this, but may or may not require some his domain-specific tuning.
  * Though I used the terms "he", "him", "his" etc. but this post is agnostic about sexual orientation.
  * Remember that this is far from being perfect. Actually, I didn't write it up to make it so. Rather, it's a basic structure about what perfection may look like.
  So, please read or use it with quite a bit of salt. :)
  * This post itself is not complete. Rather, it's in very-very-draft stage (take v.0.1.4). Each of the timing decision which i described below should or will have reference/source/direction to back its reasoning or legitimacy.
- 
-Ok, without much ado, here is the sketch-up for a ideal working day.
+
+Ok, without further ado, here is the sketch-up for a ideal working day.
 
 ---
 
