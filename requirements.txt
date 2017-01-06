@@ -6,3 +6,4 @@ typogrify
 beautifulsoup4
 Fabric
 s3cmd
+yuicompressor

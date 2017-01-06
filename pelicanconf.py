@@ -2,14 +2,12 @@
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 
-#  TODO Cleanup needed
-
 # Site settings.
 AUTHOR = u'Khaled Monsoor'
 AUTHOR_EMAIL = u'k@kmonsoor.com'
-SITENAME = u'KMonsoor\'s Blog'
+SITENAME = u'Khaled Monsoor says...'
 TAGLINE = 'khaled monsoor says ...'
-SITE_SUMMARY = "Khaled Monsoor here. In this personal writing-space, i usually write about coding, Islam, life or just rambling"
+SITE_SUMMARY = "Khaled Monsoor here. In this personal writing-space, i usually write about coding, Islam, life or just rambling."
 
 SITEURL = 'https://blog.kmonsoor.com'
 DEFAULT_DATE_FORMAT = ('%Y-%m-%d')
@@ -25,7 +23,6 @@ LINKS = (
     ('LinkedIn', 'http://linkedin.com/in/kmonsoor'),
     ('Github', 'http://github.com/kmonsoor'),
 )
-
 
 # Social widget.
 SOCIAL_WIDGET_NAME = "Social"
@@ -60,22 +57,45 @@ EXTRA_PATH_METADATA = {
     'images/logo.png': {'path': 'logo.png'}
 }
 
+
+# EXTRA_PATH_METADATA = {
+#     'extra/favicon.ico': {'path': 'favicon.ico'},
+#     'extra/robots.txt': {'path': 'robots.txt'},
+#     'extra/htaccess': {'path': '.htaccess'},
+#     'extra/htaccess-static': {'path': 'documents/.htaccess'},
+# }
+
+
 # URL settings
-PAGINATION_PATTERNS = (
-    (1, '{base_name}/', '{base_name}/index.html'),
-    (2, '{base_name}/page/{number}/', '{base_name}/page/{number}/index.html'),
-    )
 ARTICLE_URL = ('{slug}/')
 ARTICLE_SAVE_AS = ('{slug}/index.html')
 PAGE_URL = ('{slug}/')
 PAGE_SAVE_AS = ('{slug}/index.html')
 PAGE_LANG_SAVE_AS = False
+
 TAG_URL = ('tag/{slug}/')
 TAG_SAVE_AS = ('tag/{slug}/index.html')
 TAGS_URL = ('tags/')
 TAGS_SAVE_AS = None
+
 CATEGORY_URL = ('category/{slug}/')
 CATEGORY_SAVE_AS = ('category/{slug}/index.html')
+
+# Tags, categories and archives are Direct Templates, so they don't have a
+# <NAME>_URL option.
+TAGS_SAVE_AS = 'tags/index.html'
+TAG_URL = 'tag/{slug}/'
+TAG_SAVE_AS = TAG_URL + 'index.html'
+CATEGORY_URL = 'category/{slug}/'
+CATEGORY_SAVE_AS = CATEGORY_URL + 'index.html'
+YEAR_ARCHIVE_SAVE_AS = '{date:%Y}/index.html'
+MONTH_ARCHIVE_SAVE_AS = '{date:%Y}/{date:%m}/index.html'
+TAGS_SAVE_AS = 'tags/index.html'
+CATEGORIES_SAVE_AS = 'categories/index.html'
+ARCHIVES_SAVE_AS = 'archives/index.html'
+
+
+
 
 
 
@@ -89,14 +109,10 @@ TRANSLATION_FEED_ATOM = None
 # Theme
 THEME = 'plumage'
 
-EXTRA_PATH_METADATA = {
-    'extra/favicon.ico': {'path': 'favicon.ico'},
-    'extra/robots.txt': {'path': 'robots.txt'},
-    'extra/htaccess': {'path': '.htaccess'},
-    'extra/htaccess-static': {'path': 'documents/.htaccess'},
-}
 
 DEFAULT_PAGINATION = 5
+DEFAULT_ORPHANS = 2
+
 #COPYRIGHT =  'All contents are under The MIT License (MIT).'
 DISCLAIMER = 'All opinions expressed in this site are my own personal opinions \
               and are not endorsed by, nor do they represent the opinions of my \
@@ -104,24 +120,12 @@ DISCLAIMER = 'All opinions expressed in this site are my own personal opinions \
               partners or customers.'
 
 # Plugin
-PLUGIN_PATHS = ['plugins', 'plugins/pelican-deadlinks']
+PLUGIN_PATHS = ['plugins']
 PLUGINS = ['gzip_cache',
-           'deadlinks',
            'sitemap',
            'yuicompressor',
-        #    'assets', # buggy, gives fatal error
-        #    'pelican_youtube',
-           # 'related_posts',
-           # 'tipue_search',
-           # 'neighbors',
-           # 'pelican_gist',
-           # 'optimize_images',  # generates error while optimizing JPG
-           # Core plugins
-           # 'thumbnailer',
+           ]
 
-]
-
-DEADLINK_VALIDATION = False
 
 # Do not publish articles set in the future
 WITH_FUTURE_DATES = False
@@ -142,19 +146,12 @@ MARKDOWN = {
         'markdown.extensions.meta': {},
     },
     'output_format': 'html5',
-    # Allow numbered lists to not start with 1. Used in following article:
-    # https://kevin.deldycke.com/2016/12/falsehoods-programmers-believe-about-falsehoods-lists/
-    # See: https://pythonhosted.org/Markdown/reference.html#lazy_ol
-    'lazy_ol': False,
+    'lazy_ol': False,  # See: https://pythonhosted.org/Markdown/reference.html#lazy_ol
 }
 
-
-
-
-DIRECT_TEMPLATES = ['index', 'tags', 'categories', 'authors', 'archives', 'search']
-
-YEAR_ARCHIVE_SAVE_AS = '{date:%Y}/index.html'
-MONTH_ARCHIVE_SAVE_AS = '{date:%Y}/{date:%m}/index.html'
+DIRECT_TEMPLATES = ['index', 'tags',
+                    'categories', 'authors',
+                    'archives', 'search']
 
 # Deactivate author URLs
 AUTHOR_SAVE_AS = False
@@ -202,7 +199,7 @@ SITEMAP = {
     }
 }
 
-### Theme-specific settings
+# Theme-specific settings
 IMAGE_PATH = "images/"
 THUMBNAIL_DIR = "images/"
 SITE_THUMBNAIL = "/logo.png"
@@ -214,7 +211,7 @@ ARTICLE_EDIT_LINK = "https://github.com/kmonsoor/blog.kmonsoor.com/edit/master/c
 
 
 MENUITEMS = (
-     ('Home', '/'),
+    ('Home', '/'),
     #  ('Tech', '/category/tech/'),
     #  ('Thoughts', '/category/thoughts/')
     #  ('About', '/about/'),
