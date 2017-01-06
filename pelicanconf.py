@@ -95,10 +95,6 @@ CATEGORIES_SAVE_AS = 'categories/index.html'
 ARCHIVES_SAVE_AS = 'archives/index.html'
 
 
-
-
-
-
 # Feed
 FEED_DOMAIN = SITEURL
 FEED_ALL_ATOM = 'feeds/all.atom.xml'
@@ -108,7 +104,6 @@ TRANSLATION_FEED_ATOM = None
 
 # Theme
 THEME = 'plumage'
-
 
 DEFAULT_PAGINATION = 5
 DEFAULT_ORPHANS = 2
