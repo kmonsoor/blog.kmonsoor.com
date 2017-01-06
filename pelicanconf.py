@@ -5,7 +5,7 @@ from __future__ import unicode_literals
 # Site settings.
 AUTHOR = u'Khaled Monsoor'
 AUTHOR_EMAIL = u'k@kmonsoor.com'
-SITENAME = u'KMonsoor\'s Blog'
+SITENAME = u'Khaled Monsoor says...'
 TAGLINE = 'khaled monsoor says ...'
 SITE_SUMMARY = "Khaled Monsoor here. In this personal writing-space, i usually write about coding, Islam, life or just rambling."
 
