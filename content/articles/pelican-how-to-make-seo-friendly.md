@@ -3,7 +3,7 @@ Title: Pelican Static sites - SEO Optimization
 Date: 2017-01-07
 Tags: pelican, python, static-site, seo-friendly
 Slug: pelican-how-to-make-seo-friendly
-Status: Draft
+Status: published
 Summary: Usually `Pelican` static-site generator is not very concerned about SEO of the generated site. Related themes and their templates also don't take it much seriously. But you shouldn't loose SEO, right?
 ---
 Usually `Pelican` static-site generator is not very concerned about SEO of the generated site. Related themes and their templates also don't take it much seriously. But you shouldn't loose SEO just because you migrated from Wordpress or whatever you were using previously, right?
