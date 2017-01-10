@@ -5,9 +5,9 @@ from __future__ import unicode_literals
 # Site settings.
 AUTHOR = u'Khaled Monsoor'
 AUTHOR_EMAIL = u'k@kmonsoor.com'
-SITENAME = u'Khaled Monsoor says...'
-TAGLINE = 'khaled monsoor says ...'
-SITE_SUMMARY = "Khaled Monsoor here. In this personal writing-space, i usually write about coding, Islam, life or just rambling."
+SITENAME = u'Khaled Monsoor :: Blog'
+TAGLINE = u'khaled monsoor says ...'
+SITE_SUMMARY = u"Khaled Monsoor here. I usually write about programming, Islam, life, travel or just personal babbling ..."
 
 SITEURL = 'https://blog.kmonsoor.com'
 DEFAULT_DATE_FORMAT = ('%Y-%m-%d')
@@ -16,25 +16,27 @@ TIMEZONE = 'Asia/Dhaka'
 DEFAULT_LANG = u'en'
 DELETE_OUTPUT_DIRECTORY = True
 
+TWITTER_USERNAME = 'KhaledMonsoor'
+GITHUB_URL = 'https://github.com/kmonsoor/'
+DISQUS_SITENAME = 'kmonsoor'
+
+
 LINKS_WIDGET_NAME = "Professional"
 LINKS = (
     ('PDF resume', 'https://drive.google.com/open?id=0B_IybRcQsDwaSTY0VUotbkRiSFk'),
-    ('Careers 2.0', 'http://careers.stackoverflow.com/kmonsoor'),
-    ('LinkedIn', 'http://linkedin.com/in/kmonsoor'),
-    ('Github', 'http://github.com/kmonsoor'),
+    ('Careers 2.0', 'https://careers.stackoverflow.com/kmonsoor'),
+    ('LinkedIn', 'https://linkedin.com/in/kmonsoor'),
+    ('Github', GITHUB_URL),
 )
 
 # Social widget.
 SOCIAL_WIDGET_NAME = "Social"
 SOCIAL = (
-    ('@KhaledMonsoor', 'http://twitter.com/KhaledMonsoor'),
-    ('+KhaledMonsoor', 'http://plus.google.com/+KhaledMonsoor?rel=author'),
-    # ('Instagram', 'http://www.instagram.com/kmonsoor/'),
+    ('@KhaledMonsoor', 'https://twitter.com/KhaledMonsoor'),
+    ('+KhaledMonsoor', 'https://plus.google.com/+KhaledMonsoor?rel=author'),
+    # ('Instagram', 'https://www.instagram.com/kmonsoor/'),
 )
 
-TWITTER_USERNAME = 'KhaledMonsoor'
-GITHUB_URL = 'https://github.com/kmonsoor/'
-DISQUS_SITENAME = 'kmonsoor'
 
 # Analytics
 GOOGLE_ANALYTICS = 'UA-20431143-1'
@@ -56,14 +58,6 @@ EXTRA_PATH_METADATA = {
     'images/favicon.ico': {'path': 'favicon.ico'},
     'images/logo.png': {'path': 'logo.png'}
 }
-
-
-# EXTRA_PATH_METADATA = {
-#     'extra/favicon.ico': {'path': 'favicon.ico'},
-#     'extra/robots.txt': {'path': 'robots.txt'},
-#     'extra/htaccess': {'path': '.htaccess'},
-#     'extra/htaccess-static': {'path': 'documents/.htaccess'},
-# }
 
 
 # URL settings
@@ -145,7 +139,8 @@ MARKDOWN = {
 }
 
 DIRECT_TEMPLATES = ['index', 'tags',
-                    'categories', 'authors',
+                    'categories',
+                    # 'authors',
                     'archives', 'search']
 
 # Deactivate author URLs
@@ -183,8 +178,8 @@ DISPLAY_PAGES_ON_MENU = True
 SITEMAP = {
     'format': 'xml',
     'priorities': {
-        'articles': 0.5,
-        'indexes': 0.5,
+        'articles': 0.8,
+        'indexes': 0.4,
         'pages': 0.5,
     },
     'changefreqs': {
