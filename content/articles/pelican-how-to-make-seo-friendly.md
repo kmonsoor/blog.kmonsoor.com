@@ -143,7 +143,12 @@ RewriteCond %{HTTPS} !on
 RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI}
 ```
 
+**Or**, if you are using CloudFlare CDN, you can create a page-rule for that as I have shown below.
 
+![always-https by CloudFlare page-rules](http://i.imgur.com/9ISFbtvm.png)
+
+
+  
 #### Check index-status
 Once in a while Check for Google's index status of your site on the `search-console`. Look for error messages or suggestions.
 
