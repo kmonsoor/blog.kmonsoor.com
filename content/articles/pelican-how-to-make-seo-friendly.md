@@ -1,24 +1,25 @@
 ---
-Title: Pelican Static sites - SEO Optimization
+Title: Pelican Static Sites - SEO Optimization
 Date: 2017-01-07
-Tags: pelican, python, static-site, seo-friendly
+Tags: pelican, python, static-site, seo-friendly, SEO
 Slug: pelican-how-to-make-seo-friendly
 Status: published
-Summary: Usually `Pelican` static-site generator is not very concerned about SEO of the generated site. Related themes and their templates also don't take it much seriously. But you shouldn't loose SEO, right?
+Summary: Usually Pelican static-site generator is not very concerned about SEO of the generated site. Related themes and their templates also don't take it much seriously. But you shouldn't loose SEO, right?
 ---
-Usually `Pelican` static-site generator is not very concerned about SEO of the generated site. Related themes and their templates also don't take it much seriously. But you shouldn't loose SEO just because you migrated from Wordpress or whatever you were using previously, right?
+
+Usually **Pelican** static-site generator is not very concerned about SEO of the generated site. Related themes and their templates also don't take it much seriously. But you shouldn't loose SEO just because you migrated from Wordpress or whatever you were using previously, right?
 
 Often times theme-authors focus on look-n-feel of the theme, but not so much on the SEO concerns. Not a big deal; let's get our hands dirty.
 
 
-#### Note 1: About other static-site generators
+**Note 1: About other static-site generators**  
 Although the following discussions & codes mostly are specific to [Pelican](https://github.com/getpelican/pelican) templates which uses [jinja2](http://jinja.pocoo.org/) templating language, the concepts and concerns here are applicable to most static-site generators and their themes.
 
-#### Note 2: I'm, in no way, an SEO expert
+**Note 2: I'm, in no way, an SEO expert**  
 This writeup is just a collection of my findings while correcting my blog's SEO course; fixing the stupid mistakes. Also, this isn't a commercial site. There are lot more and in-depth aspects of SEO optimization other than the following, that can be very important for commercial projects.
 
 ## Getting started
- - Make sure all the linked resources(links, images, CSS & JS files) that you've used in your pages are valid. For that check browser's `console` in `Developers tools` for any errors e.g. unavailable urls, faulty html/css etc.
+ - Make sure all the linked resources(links, images, CSS & JS files) that you've used in your pages are valid. For that check browser's **console** inside **Developers tools** for any errors e.g. unavailable urls, faulty html/css etc.
 
 
 ### Know the critical spots
@@ -213,11 +214,11 @@ The below snippet that [I use myself](https://github.com/kmonsoor/blog.kmonsoor.
 
 #### Compress everything
   
-  * PageSpeed impacts SEO directly. Google punishes slow-site especially when search is made on a mobile device. Mobile-optimized sites will definitely rank higher on searches from mobile-devices.
+  * Loading speed of pages impacts SEO directly. Google punishes slow sites especially when search is made on a mobile device. Mobile-optimized sites will definitely rank higher on searches from mobile-devices.
 
-   So, make sure all static files are compressed. If not, compress your themes theme's JS, CSS files yourself to a *.min.* version and then replace those in the template files of the theme.
+   So, make sure all static files are being served as compressed. If not, compress your theme's JS, CSS files yourself to a *.min.* version and then replace those in the template files of the theme.
    
-   Or, better to use `[gzip_cache](https://github.com/getpelican/pelican-plugins/tree/master/gzip_cache)` for gzipping all the HTML files statically, also and `[yuicompressor](https://github.com/getpelican/pelican-plugins/tree/master/yuicompressor)` plugin for compressing JS & CSS files for Pelican. Those will make sure that, upon build, everything is compressed.
+   Or, better to use [gzip_cache](https://github.com/getpelican/pelican-plugins/tree/master/gzip_cache) for gzipping all the HTML files statically, also and [yuicompressor](https://github.com/getpelican/pelican-plugins/tree/master/yuicompressor) plugin for compressing JS & CSS files for Pelican. Those will make sure that, upon build, everything is compressed.
    
 
 #### Utilize CDN if you can
