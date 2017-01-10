@@ -99,7 +99,7 @@ TRANSLATION_FEED_ATOM = None
 # Theme
 THEME = 'plumage'
 
-DEFAULT_PAGINATION = 5
+DEFAULT_PAGINATION = 7
 DEFAULT_ORPHANS = 2
 
 #COPYRIGHT =  'All contents are under The MIT License (MIT).'
@@ -193,11 +193,11 @@ SITEMAP = {
 IMAGE_PATH = "images/"
 THUMBNAIL_DIR = "images/"
 SITE_THUMBNAIL = "/logo.png"
-# THUMBNAIL_SIZES = {'thumbnail': '462x?',}
+THUMBNAIL_SIZES = {'thumbnail': '462x?',}
 DEFAULT_TEMPLATE = """<a href="{url}" class="zoomable" title="{filename}">
 <img src="{thumbnail}" alt="{filename}"></a>"""
 
-ARTICLE_EDIT_LINK = "https://github.com/kmonsoor/blog.kmonsoor.com/edit/master/content/articles"
+ARTICLE_EDIT_LINK = "https://github.com/kmonsoor/blog.kmonsoor.com/edit/live/content/articles"
 
 
 MENUITEMS = (
