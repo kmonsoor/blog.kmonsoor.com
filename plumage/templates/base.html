@@ -162,7 +162,13 @@ window.location.protocol="https"
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="{{ SITEURL }}" title="{{ SITESUBTITLE|e }}">{{ article.title|e }}</a>
+        
+        {% if article %}
+          <a class="navbar-brand" href="{{ SITEURL }}" title="{{ SITESUBTITLE|e }}">{{ article.title|e }}</a>
+        {% else %}
+          <a class="navbar-brand" href="{{ SITEURL }}" title="{{ SITESUBTITLE|e }}">{{ SITENAME }}</a>
+        {% endif%}
+
     </div>
 
     <!-- Menus and search forms -->
