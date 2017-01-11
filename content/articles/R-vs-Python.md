@@ -34,16 +34,6 @@ Latest release    | 2015-12-10 (Main:  R-3.2.3)                    | 2015-12-21 
  * 
 
 
-
-**P.S.**  
-I am not a native English speaker. So, if you see any oddly worded or phrased staff, please be kind to suggest an edit. Also, there can be a typo, or a dead link. Please help me by mentioning it in a comment, or directly suggest by editing the source of this article, linked below. Thanks in advance.
-
-Link to the source of this article: [https://github.com/kmonsoor/blog.kmonsoor.com/...](https://github.com/kmonsoor/blog.kmonsoor.com/blob/master/content/articles/tech/R-vs-Python.md) 
-
-
-
-
-
 [0]: http://githut.info/
 [1]: http://www.tiobe.com/index.php/content/paperinfo/tpci/index.html
 [2]: https://github.com/bedatadriven/renjin
