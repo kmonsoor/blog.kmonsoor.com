@@ -1,6 +1,7 @@
 ---
 Title: Pelican Static Sites - SEO Optimization
 Date: 2017-01-07
+Modified: 2017-01-11
 Tags: pelican, python, static-site, seo-friendly, SEO
 Slug: pelican-how-to-make-seo-friendly
 Status: published
@@ -43,10 +44,10 @@ For example, Github.com's [robot.txt](https://github.com/robots.txt) allows Goog
 
  1. Create a new "master"
 
-  ```
-  $ git checkout -b new-master
-  $ git push -u origin new-master
-  ```
+    ```
+    $ git checkout -b new-master
+    $ git push -u origin new-master
+    ```
 
  2. Tell Github about new move
 
@@ -54,10 +55,10 @@ For example, Github.com's [robot.txt](https://github.com/robots.txt) allows Goog
 
  3. Now, delete `master` branch from your repo.
 
-  ```
-  $ git branch -d master
-  $ git push origin :master
-  ```
+    ```
+    $ git branch -d master
+    $ git push origin :master
+    ```
 
 
 
@@ -68,17 +69,17 @@ This will also defend you against automatic content-scraping schemes by always h
 
 To utilize it on Pelican, add or make sure that a `<link>` element with the attribute `rel="canonical"` to the `<head>` section of your base template named `base.html`.
 
-```
-{% if article %}
-<link rel="canonical" href="{{ SITEURL }}/{{ article.url }}"/>
-{% endif%}
-```
+  ```
+  {% if article %}
+  <link rel="canonical" href="{{ SITEURL }}/{{ article.url }}"/>
+  {% endif%}
+  ```
 
 For example, if you see this page's source (pressing CTRL+u), you should see something like
 
-```
-<link rel="canonical" href="https://blog.kmonsoor.com/pelican-how-to-make-seo-friendly/"/>
-```
+  ```
+  <link rel="canonical" href="https://blog.kmonsoor.com/pelican-how-to-make-seo-friendly/"/>
+  ```
 
 ### Proper **\<title\>** of each page
 Every page on your site should have a proper title.
@@ -87,13 +88,13 @@ But try to keep it less 60 characters or search-engines will truncate it. Use ea
 
 It may look like this in your `base.html`.
 
-```
-{% if article %}
-<title>{{ article.title }} -- {{ TAGLINE }}</title>
-{% else %}
-<title>{{ TAGLINE }}</title>
-{% endif%}
-```
+  ```
+  {% if article %}
+  <title>{{ article.title }} -- {{ TAGLINE }}</title>
+  {% else %}
+  <title>{{ TAGLINE }}</title>
+  {% endif%}
+  ```
 The **else** clause here is to ensure that non-article pages also get a title, even it's just your "tagline" defined in `pelicanconf.py`.
 
 
@@ -104,22 +105,22 @@ The **else** clause here is to ensure that non-article pages also get a title, e
  So, user should get a proper glimpse of what your page gonna talk about.
  Make sure your theme uses Pelican's `summary`-tagged text for this purpose. Else, ensure it yourself by editing `base.html`.
 
-```
-{% if article and article.summary %}
-<meta name="description" content="{{ article.summary|striptags }}"/>
-{% else %}
-<meta name="description" content="{{ SITE_SUMMARY }}"/>
-{% endif%}  
-```
+  ```
+  {% if article and article.summary %}
+  <meta name="description" content="{{ article.summary|striptags }}"/>
+  {% else %}
+  <meta name="description" content="{{ SITE_SUMMARY }}"/>
+  {% endif%}  
+  ```
 
-
-### Use `search-console` extensively
+  
+## Use `search-console` extensively
 Google's [Search-console, previously known as webmaster-tools](https://www.google.com/webmasters/tools/home) is your friend. Utilize it as far as you can go. 
 
-#### Extensively use [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)
+### Extensively use [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)
 To understand where are current bottlenecks of your site, this tools gives quite a lot insights. Address those one-by-one.
 
-#### Set preferred version of your site
+### Set preferred version of your site
 If you have `www`, `http` and `https` versions of your site, tell Google here which one is preferred. It's only applicable to your domain-root. Once applied and Google re-indexed your site, all the search-results from your site will show that preferred version of your site.
 
 ![setting preference for www or non-www version](http://i.imgur.com/51JY1oel.png)
@@ -128,74 +129,75 @@ You have to add and do it same both for `http` and `https` version of your site,
 
 If you have both, **either** you can use a javascript-code snippet in the `<head>` of `base.html` to redirect any `http` page to its `https` counterpart.
 
-```
-<script type="text/javascript">
-  var host = "your-site.com";
-  if ((host == window.location.host) && (window.location.protocol != "https:"))
-    window.location.protocol = "https";
-</script>
-```
+  ```
+  <script type="text/javascript">
+    var host = "your-site.com";
+    if ((host == window.location.host) && (window.location.protocol != "https:"))
+      window.location.protocol = "https";
+  </script>
+  ```
 
 **or**, if your site is served through NGINX or Apache, you can do it through site's `.htaccess` file, by adding the following.
 
-```
-RewriteEngine On
-RewriteCond %{HTTPS} !on
-RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI}
-```
+  ```
+  RewriteEngine On
+  RewriteCond %{HTTPS} !on
+  RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI}
+  ```
 
 **Or**, if you are using CloudFlare CDN, you can create a page-rule for that as I have shown below.
 
 ![always-https by CloudFlare page-rules](http://i.imgur.com/9ISFbtvm.png)
 
-
   
-#### Check index-status
+  
+### Check index-status
 Once in a while Check for Google's index status of your site on the `search-console`. Look for error messages or suggestions.
 
 After every major change in your site's structure, make sure Google bots "know" about it. You can somewhat expedite the process by [manually submitting](https://www.google.com/webmasters/tools/submit-url) your site.
 
 
-### Include `OpenGraph` data
+  
+## Include `OpenGraph` and other tags
 Make sure each of your pages is including proper [OpenGraph](http://ogp.me/) tags, e.g. `og:title`, `og:content` etc., in your template.
 
 Though, OpenGraph originated from facebook Inc., these tags are now widely used by other social engines, even by Google+. In absence of Twitter tags, Twitter also uses these `og` tags. Try to include both `og:` and `twitter:` tags. Proper data in these tags makes your article cleanly-sharable in these social sites.
 
 The below snippet that [I use myself](https://github.com/kmonsoor/blog.kmonsoor.com/blob/pelican-how-to-make-seo-friendly/plumage/templates/base.html) can serve as a starting point.
 
-```
-<!-- OpenGraph protocol tags: http://ogp.me/ -->
-<!-- originally adopted to be used for: https://blog.kmonsoor.com -->
-<meta property="og:site_name" content="{{ SITENAME }}" />
-<meta property="og:type" content="article" />
-{% if article and article.title %}    
-<meta property="og:title" content="{{ article.title }} -- {{ TAGLINE }}" />
-<meta property="og:url" content="{{ SITEURL }}/{{ article.url }}" />
-{% endif%}
-{% if article and article.summary %}
-<meta property="og:description" content="{{ article.summary|striptags }}" />
-{% else %}
-<meta name="og:description" content="{{ SITE_SUMMARY }}"/>
-{% endif%}
-{% if article and article.date %}
-<meta property="article:published_time" content="{{ article.date }}" />
-{% endif%}
-{% if article and article.modified %}
-<meta property="article:modified_time" content="{{ article.modified }}" />
-{% endif%}
-<!-- End of OpenGraph protocol tags -->
+  ```
+  <!-- OpenGraph protocol tags: http://ogp.me/ -->
+  <!-- originally adopted to be used for: https://blog.kmonsoor.com -->
+  <meta property="og:site_name" content="{{ SITENAME }}" />
+  <meta property="og:type" content="article" />
+  {% if article and article.title %}    
+  <meta property="og:title" content="{{ article.title }} -- {{ TAGLINE }}" />
+  <meta property="og:url" content="{{ SITEURL }}/{{ article.url }}" />
+  {% endif%}
+  {% if article and article.summary %}
+  <meta property="og:description" content="{{ article.summary|striptags }}" />
+  {% else %}
+  <meta name="og:description" content="{{ SITE_SUMMARY }}"/>
+  {% endif%}
+  {% if article and article.date %}
+  <meta property="article:published_time" content="{{ article.date }}" />
+  {% endif%}
+  {% if article and article.modified %}
+  <meta property="article:modified_time" content="{{ article.modified }}" />
+  {% endif%}
+  <!-- End of OpenGraph protocol tags -->
 
-{% if TWITTER_USERNAME %}
-<meta name="twitter:site" content="@{{ TWITTER_USERNAME }}" />
-<meta name="twitter:creator" content="@{{ TWITTER_USERNAME }}" />
-{% endif%}
-<meta name="twitter:image" content="INSERT-YOUR-TWITTER-IMAGE-LINK" />
-{% if article and article.summary %}
-<meta name="twitter:card" content="{{ article.summary|striptags }}" />
-{% else %}
-<meta name="twitter:card" content="{{ SITE_SUMMARY }}"/>
-{% endif%}
-```
+  {% if TWITTER_USERNAME %}
+  <meta name="twitter:site" content="@{{ TWITTER_USERNAME }}" />
+  <meta name="twitter:creator" content="@{{ TWITTER_USERNAME }}" />
+  {% endif%}
+  <meta name="twitter:image" content="INSERT-YOUR-TWITTER-IMAGE-LINK" />
+  {% if article and article.summary %}
+  <meta name="twitter:card" content="{{ article.summary|striptags }}" />
+  {% else %}
+  <meta name="twitter:card" content="{{ SITE_SUMMARY }}"/>
+  {% endif%}
+  ```
 
 #### Notes
 
@@ -204,44 +206,46 @@ The below snippet that [I use myself](https://github.com/kmonsoor/blog.kmonsoor.
    - Right-click on your profile picture
    - Select "Copy image address" / "Copy image link"
  
- * For `OpenGraph` tags you may also consider to use [pelican-opengraph](https://github.com/whiskyechobravo/pelican-open_graph/tree/master) plugin.
+ * To automate `OpenGraph` tags, you may also consider to use [pelican-opengraph](https://github.com/whiskyechobravo/pelican-open_graph/tree/master) plugin.
  
  * For all these to work properly, make sure `SITEURL`, `TAGLINE`, `SITE_SUMMARY`, `TWITTER_USERNAME` are properly defined in your `pelicanconf.py` alongwith in `publishconf.py` files. Please remember that definitions in `publishconf.py` only apply when you using `make publish` command.
-
-
-
-### Loading Performance
-
-#### Compress everything
   
-  * Loading speed of pages impacts SEO directly. Google punishes slow sites especially when search is made on a mobile device. Mobile-optimized sites will definitely rank higher on searches from mobile-devices.
+  
 
-   So, make sure all static files are being served as compressed. If not, compress your theme's JS, CSS files yourself to a *.min.* version and then replace those in the template files of the theme.
+## Loading Performance
+
+### Compress everything
+  
+Loading speed of pages impacts SEO directly. Google punishes slow sites especially when search is made on a mobile device. Mobile-optimized sites will definitely rank higher on searches from mobile-devices.
+
+So, make sure all static files are being served as compressed. If not, compress your theme's JS, CSS files yourself to a *.min.* version and then replace those in the template files of the theme.
    
-   Or, better to use [gzip_cache](https://github.com/getpelican/pelican-plugins/tree/master/gzip_cache) for gzipping all the HTML files statically, also and [yuicompressor](https://github.com/getpelican/pelican-plugins/tree/master/yuicompressor) plugin for compressing JS & CSS files for Pelican. Those will make sure that, upon build, everything is compressed.
+**Or**, to authomate things, better to use [gzip_cache](https://github.com/getpelican/pelican-plugins/tree/master/gzip_cache) for gzipping all the HTML files statically, also and [yuicompressor](https://github.com/getpelican/pelican-plugins/tree/master/yuicompressor) plugin for compressing JS & CSS files for Pelican. Those will make sure that, upon build, everything is compressed.
    
 
-#### Utilize CDN if you can
+### Utilize CDN if you can
 
  * Use CDN-ed versions of common libraries(e.g. jQuery, Bootstrap etc.) rather than hosting your own copy, unless your theme actively modified it. Look it up on [CloudFlare cdnjs](cdnjs.cloudflare.com),  [cdnjs](https://cdnjs.com), or on [jsdelivr](https://www.jsdelivr.com) etc. and use those links.
  
  * Try to use a CDN for edge-distribution of your site. I only know of CloudFlare that provide this service for free for a single site. There might be others. CF also make managing DNS configuration little breezy.
 
 
-### Engage commenting
+
+### Page-headers (it's a controversial one)
+Don't use multiple 1st-level headers `H1` style. The main title link probably already have used it once. Look it up.
+So, avoid it anymore, meaning avoid underlined-style(`=======`) or hash-style(single '#') headers in your markdown files.
+
+However, 2nd-level `H2` tags can be (read 'should be') used multiple times. In case of markdown files, that's `---------` underlines, or line starting with double-hash('##').
+
+## Engage commenting
 
 While serving a static site, integrating a commenting-system looks a little far-fetched. However, blogs without proper commenting system feels kinda lame sometimes. Of course, YMMV.
 
 But, it's not difficult; easily can be done by systems like `[Disqus](https://disqus.com/)` etc. I'm not affiliated with them, by the way.
 
 
-### Page-headers (controversial)
- * Don't use multiple 1st-level headers `H1` style. The main title link probably already have used it once. Look it up.
-  So, avoid it anymore, meaning avoid underlined-style(`=======`) or hash-style(single '#') headers in your markdown files.
 
-  However, 2nd-level `H2` tags can be (read 'should be') used multiple times. In case of markdown files, that's `---------` underlines, or line starting with double-hash('##').
-
-### And, there's lot more ... ;)
+## And, there's lot more ... ;)
 
 As I'll gain more insights, I hope to grow this post. For now, this is a work-in-progress.  
 Thanks for reading down so far. Adios !
