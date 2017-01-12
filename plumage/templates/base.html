@@ -68,7 +68,7 @@ window.location.protocol="https"
 
     <!-- JS -->
     <script async src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <script async src="{{ SITEURL }}/theme/js/application.js"></script>
+    <script defer src="{{ SITEURL }}/theme/js/application.js"></script>
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/fitvids/1.1.0/jquery.fitvids.min.js"></script>
@@ -79,12 +79,13 @@ window.location.protocol="https"
     <link async rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css"/>
     <link defer rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css"/>
     <link defer rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css"/>
-    <link defer rel="stylesheet" href="{{ SITEURL }}/theme/css/jquery.mglass.css"/>
-    <link defer rel="stylesheet" href="{{ SITEURL }}/theme/css/pygment-solarized-dark.css"/>
-    <link async rel="stylesheet" href="{{ SITEURL }}/theme/css/style.css"/>
+    <!-- <link defer rel="stylesheet" href="{{ SITEURL }}/theme/css/jquery.mglass.css"/> -->
+    <!-- <link defer rel="stylesheet" href="{{ SITEURL }}/theme/css/pygment-solarized-dark.css"/> -->
+    <!-- <link async rel="stylesheet" href="{{ SITEURL }}/theme/css/style.css"/> -->
+    <link defer rel="stylesheet" href="{{ SITEURL }}/theme/css/all.css"/>
 
     <!-- Fonts -->
-    <link async href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'/>
+    <link defer href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'/>
     <link defer href='https://fonts.googleapis.com/css?family=Istok+Web' rel='stylesheet' type='text/css'/>
     <link defer href='https://fonts.googleapis.com/css?family=Droid+Sans+Mono' rel='stylesheet' type='text/css'/>
     {% if TYPOGRIFY %}
@@ -97,10 +98,9 @@ window.location.protocol="https"
     <link rel="shortcut icon" href="{{ SITEURL }}/favicon.ico" type="image/x-icon">
 
 
-
     {% include "analytics.html" %}
 
-    
+
     <!-- Feeds -->
     {% set all_feeds = [] %}
     {% if FEED_ALL_ATOM %}
@@ -162,7 +162,7 @@ window.location.protocol="https"
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-        
+
         {% if article %}
           <a class="navbar-brand" href="{{ SITEURL }}" title="{{ SITESUBTITLE|e }}">{{ article.title|e }}</a>
         {% else %}
