@@ -68,7 +68,7 @@ window.location.protocol="https"
 
     <!-- JS -->
     <script async src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <script async src="{{ SITEURL }}/theme/js/application.js"></script>
+    <script defer src="{{ SITEURL }}/theme/js/application.js"></script>
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/fitvids/1.1.0/jquery.fitvids.min.js"></script>
@@ -96,7 +96,6 @@ window.location.protocol="https"
     {% block extra_css %}{% endblock %}
     <link rel="icon" href="{{ SITEURL }}/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="{{ SITEURL }}/favicon.ico" type="image/x-icon">
-
 
 
     {% include "analytics.html" %}
