@@ -13,6 +13,7 @@ window.location.protocol="https"
     {% if article %}
     <link rel="canonical" href="{{ SITEURL }}/{{ article.url }}"/>
     <title>{{ article.title|e }} -- {{ SITENAME }}</title>
+    <meta name="robots" content="nofollow" />
     {% else %}
     <title>{{ SITENAME }}</title>
     {% endif%}
@@ -67,30 +68,26 @@ window.location.protocol="https"
     {% endif%}
 
     <!-- JS -->
-    <script async src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script defer src="{{ SITEURL }}/theme/js/application.js"></script>
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/fitvids/1.1.0/jquery.fitvids.min.js"></script>
-    <script defer src="{{ SITEURL }}/theme/js/jquery.mglass.js"></script>
 
 
     <!-- CSS -->
-    <link async rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css"/>
-    <link defer rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css"/>
-    <link defer rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="{{ SITEURL }}/theme/css/all.css"/>
+
     <!-- <link defer rel="stylesheet" href="{{ SITEURL }}/theme/css/jquery.mglass.css"/> -->
     <!-- <link defer rel="stylesheet" href="{{ SITEURL }}/theme/css/pygment-solarized-dark.css"/> -->
     <!-- <link async rel="stylesheet" href="{{ SITEURL }}/theme/css/style.css"/> -->
-    <link defer rel="stylesheet" href="{{ SITEURL }}/theme/css/all.css"/>
+
 
     <!-- Fonts -->
-    <link defer href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'/>
+    <!-- <link defer href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'/>
     <link defer href='https://fonts.googleapis.com/css?family=Istok+Web' rel='stylesheet' type='text/css'/>
     <link defer href='https://fonts.googleapis.com/css?family=Droid+Sans+Mono' rel='stylesheet' type='text/css'/>
     {% if TYPOGRIFY %}
       <link defer href='https://fonts.googleapis.com/css?family=Expletus+Sans' rel='stylesheet' type='text/css'>
-    {% endif %}
+    {% endif %} -->
 
 
     {% block extra_css %}{% endblock %}
@@ -359,7 +356,14 @@ window.location.protocol="https"
 
 </footer>
 
-{% block extra_js %}{% endblock %}
 
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/fitvids/1.1.0/jquery.fitvids.min.js"></script>
+<script defer src="{{ SITEURL }}/theme/js/jquery.mglass.js"></script>
+
+<link defer rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css"/>
+<link defer rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css"/>
+{% block extra_js %}{% endblock %}
 </body>
 </html>

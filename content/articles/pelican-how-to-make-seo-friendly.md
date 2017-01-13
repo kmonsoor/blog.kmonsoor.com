@@ -1,6 +1,7 @@
 ---
 Title: Pelican Static sites - SEO Optimization
 Date: 2017-01-07
+Updated: 2017-01-13
 Tags: pelican, python, static-site, seo-friendly
 Slug: pelican-how-to-make-seo-friendly
 Status: published
@@ -224,7 +225,7 @@ The below snippet that [I use myself](https://github.com/kmonsoor/blog.kmonsoor.
 
    So, make sure all static files are compressed. If not, compress your themes theme's JS, CSS files yourself to a *.min.* version and then replace those in the template files of the theme.
 
-   Or, better to use `[gzip_cache](https://github.com/getpelican/pelican-plugins/tree/master/gzip_cache)` for gzipping all the HTML files statically, also and `[yuicompressor](https://github.com/getpelican/pelican-plugins/tree/master/yuicompressor)` plugin for compressing JS & CSS files for Pelican. Those will make sure that, upon build, everything is compressed.
+   Or, better to use [gzip_cache](https://github.com/getpelican/pelican-plugins/tree/master/gzip_cache) for gzipping all the HTML files statically, also and [yuicompressor](https://github.com/getpelican/pelican-plugins/tree/master/yuicompressor) plugin for compressing JS & CSS files for Pelican. Those will make sure that, upon build, everything is compressed.
 
 
 #### Utilize CDN if you can
@@ -238,7 +239,7 @@ The below snippet that [I use myself](https://github.com/kmonsoor/blog.kmonsoor.
 
 While serving a static site, integrating a commenting-system looks a little far-fetched. However, blogs without proper commenting system feels kinda lame sometimes. Of course, YMMV.
 
-But, it's not difficult; easily can be done by systems like `[Disqus](https://disqus.com/)` etc. I'm not affiliated with them, by the way.
+But, it's not difficult; easily can be done by systems like [Disqus](https://disqus.com/) etc. I'm not affiliated with them, by the way.
 
 
 ### Host images separately
@@ -256,7 +257,7 @@ But, why? Because, these services provide couple of benefits besides being free.
 ## Other tips
 
 ### Name your images properly
-Because search enginges index images too. With proper names, images becomes relevant with the topic, hence poetntial to draw traffic.
+Because search-engines index images too. With proper names, images becomes relevant with the topic, hence potential to draw traffic.
 
 
 ### Use Google Keyword planner
