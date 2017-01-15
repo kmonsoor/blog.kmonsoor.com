@@ -28,3 +28,14 @@ For any query, please feel free to send email to: `k (at) kmonsoor (dot) com`
 <h3>StackExchange</h3>
 <div align="left"><a href="http://stackexchange.com/users/306439/kmonsoor"><img src="http://stackexchange.com/users/flair/306439.png" width="240" alt="profile for kmonsoor on Stack Exchange, a network of free, community-driven Q&amp;A sites" title="profile for kmonsoor on Stack Exchange, a network of free, community-driven Q&amp;A sites" /></a></div>
 
+------------
+
+## Mentions
+* [Python brings us the LIGO gravity wave sound](https://software.intel.com/en-us/blogs/2016/02/14/python-brings-us-the-ligo-gravity-wave-sound)
+* [Interview with Khaled Monsoor](https://www.picfair.com/blog/photographer-focus/interview-with-khaled-monsoor)
+* [How a parking project in Bhutan contributes to Gross National Happiness](http://blogs.worldbank.org/ppps/how-parking-project-bhutan-contributes-gross-national-happiness)
+* [6 reasons Bhutan might be the world’s most liveable country](https://www.intrepidtravel.com/adventures/bhutan-liveable/)
+* [The best photography on Picfair:adventure - The joy of summit](https://www.roughguides.com/article/the-best-photography-on-picfair-adventure/)
+* [Airports You Wouldn’t Mind Being Stuck In For Hours - Incheon](http://world-warotter.com/archives/10435)
+* [10 Surprising facts about Bhutan - 6: no traffic lights](http://travelscapism.com/10-facts-bhutan/)
+* [Linux Best Practices and Tips by Toptal Developers](https://www.toptal.com/linux/tips-and-practices)
