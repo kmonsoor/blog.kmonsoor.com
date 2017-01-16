@@ -7,3 +7,10 @@
 content/articles/drafts
 output/
 node_modules/
+
+# for virtualenv environment        
+bin/
+include/
+lib/
+local/
+pip-selfcheck.json
