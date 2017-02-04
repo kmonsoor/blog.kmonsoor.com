@@ -25,8 +25,16 @@ For any query, please feel free to send email to: `k (at) kmonsoor (dot) com`
 
 -----------
 
-<h3>StackExchange</h3>
-<div align="left"><a href="http://stackexchange.com/users/306439/kmonsoor"><img src="http://stackexchange.com/users/flair/306439.png" width="240" alt="profile for kmonsoor on Stack Exchange, a network of free, community-driven Q&amp;A sites" title="profile for kmonsoor on Stack Exchange, a network of free, community-driven Q&amp;A sites" /></a></div>
+## Profiles
+### StackExchange
+[kmonsoor](https://stackexchange.com/users/306439/kmonsoor)  
+![stackExchange profile](https://stackexchange.com/users/flair/306439.png){: .noZoom}
+
+### Python libraries
+ * [My Python libraries on PyPI](https://pypi.org/user/kmonsoor/)
+
+### JavaScript libraries
+ * [My JavaScript libraries](https://www.npmjs.com/~kmonsoor)
 
 ------------
 
