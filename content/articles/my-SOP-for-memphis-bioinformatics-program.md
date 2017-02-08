@@ -1,14 +1,14 @@
 ---
-Title: My Statement-of-Purpose for Bioinformatics program
+Title: My Statement-of-Purpose(SOP) for Bioinformatics program
 Date: 2010-11-17
 Updated: 2016-10-10
-Categories: Misc
-Tags:  personal, statement, purpose, SOP, memphis, bioinformatics, tennessee
-Slug:  my-statement-of-purpose-for-bioinformatics-program
-Summary:  Here is my 'Statement of Purpose' what I submitted for getting admission in Bioinformatics program, U.Memphis, TN, USA
+
+Tags:  personal, SOP, memphis, bioinformatics
+Slug:  my-SOP-for-memphis-bioinformatics
+Summary:  Here is my 'Statement of Purpose' that I had  submitted for getting admission in Bioinformatics program, U.Memphis, TN, USA
 ---
 
-Here is my 'Statement of Purpose' what I submitted for getting admission in [Bioinformatics program](http://www.memphis.edu/bioinformatics/) of University of Memphis at Tennessee, USA.
+Here is my 'Statement of Purpose' that I had  submitted for getting admission in [Bioinformatics program](http://www.memphis.edu/bioinformatics/) of University of Memphis at Tennessee, USA.
 
 Writing this SOP was started while I was getting back home through my office bus.
 The first draft was written on my mobile,LG KU990, as a note within 1000 characters limit.
