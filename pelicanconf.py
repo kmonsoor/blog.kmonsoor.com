@@ -18,7 +18,7 @@ DELETE_OUTPUT_DIRECTORY = True
 
 TWITTER_USERNAME = 'KhaledMonsoor'
 GITHUB_URL = 'https://github.com/kmonsoor/'
-DISQUS_SITENAME = 'kmonsoor'
+# DISQUS_SITENAME = 'kmonsoor'
 
 
 LINKS_WIDGET_NAME = "Professional"
@@ -39,8 +39,8 @@ SOCIAL = (
 
 
 # Analytics
-GOOGLE_ANALYTICS = 'UA-20431143-1'
-GOOGLE_ANALYTICS_PROPERTY = 'auto'
+# GOOGLE_ANALYTICS = 'UA-20431143-1'
+# GOOGLE_ANALYTICS_PROPERTY = 'auto'
 
 
 # Content path.

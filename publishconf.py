@@ -17,5 +17,5 @@ ARTICLE_EXCLUDES = ['drafts',]
 
 # Following items are often useful when publishing
 
-DISQUS_SITENAME = 'kmonsoor'
-GOOGLE_ANALYTICS = 'UA-20431143-1'
+# DISQUS_SITENAME = 'kmonsoor'
+# GOOGLE_ANALYTICS = 'UA-20431143-1'
