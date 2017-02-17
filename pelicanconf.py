@@ -23,8 +23,8 @@ GITHUB_URL = 'https://github.com/kmonsoor/'
 
 LINKS_WIDGET_NAME = "Professional"
 LINKS = (
-    ('PDF resume', 'https://drive.google.com/open?id=0B_IybRcQsDwaSTY0VUotbkRiSFk'),
-    ('Careers 2.0', 'https://careers.stackoverflow.com/kmonsoor'),
+    # ('PDF resume', 'https://drive.google.com/open?id=0B_IybRcQsDwaSTY0VUotbkRiSFk'),
+    ('Careers 2.0', 'https://stackoverflow.com/story/kmonsoor'),
     ('LinkedIn', 'https://linkedin.com/in/kmonsoor'),
     ('Github', GITHUB_URL),
 )
@@ -32,14 +32,14 @@ LINKS = (
 # Social widget.
 SOCIAL_WIDGET_NAME = "Social"
 SOCIAL = (
-    ('@KhaledMonsoor', 'https://twitter.com/KhaledMonsoor'),
+    ('@KhaledMonsoor', 'https://twitter.com/' + TWITTER_USERNAME),
     ('+KhaledMonsoor', 'https://plus.google.com/+KhaledMonsoor?rel=author'),
     # ('Instagram', 'https://www.instagram.com/kmonsoor/'),
 )
 
 
 # Analytics
-# GOOGLE_ANALYTICS = 'UA-20431143-1'
+GOOGLE_ANALYTICS = 'UA-20431143-1'
 # GOOGLE_ANALYTICS_PROPERTY = 'auto'
 
 
