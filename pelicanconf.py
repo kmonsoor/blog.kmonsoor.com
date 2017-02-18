@@ -34,6 +34,7 @@ SOCIAL_WIDGET_NAME = "Social"
 SOCIAL = (
     ('@KhaledMonsoor', 'https://twitter.com/' + TWITTER_USERNAME),
     ('+KhaledMonsoor', 'https://plus.google.com/+KhaledMonsoor?rel=author'),
+    ('Keybase.io', 'https://keybase.io/kmonsoor'),
     # ('Instagram', 'https://www.instagram.com/kmonsoor/'),
 )
 
