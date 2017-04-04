@@ -74,3 +74,11 @@ Now, all the generated files are in the `output_folder`.
 Start your journey by starting from the `index.html` in the output folder. Open it by using any browser you want.
 
 Good luck. :)
+
+----------------------------
+
+## You may find these interesting
+
+ * [Ubuntu - Update APT-GET Server to Use Fastest Mirror](https://blog.kmonsoor.com/ubuntu-update-apt-get-server-to-use-fastest-mirror/?utm_source=related_footer&utm_keyword=linux)
+ * [Open Source as-if You Gonna Die Tonight](https://blog.kmonsoor.com/open-source-as-if-you-gonna-die-tonight/?utm_source=related_footer&utm_keyword=coding)
+ * [Pelican Static sites - SEO Optimization](https://blog.kmonsoor.com/pelican-how-to-make-seo-friendly/?utm_source=related_footer&utm_keyword=python)
