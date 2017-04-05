@@ -82,3 +82,10 @@ However, I highly recommend to run `update` once right away.
 Also, if you want, run `upgrade`:
     
     sudo apt-get upgrade
+
+--------------------------
+
+## You may also like
+ * [Open Source as-if You Gonna Die Tonight](https://blog.kmonsoor.com/open-source-as-if-you-gonna-die-tonight/?utm_source=related_footer&utm_keyword=coding)
+ * [Pelican Static sites - SEO Optimization](https://blog.kmonsoor.com/pelican-how-to-make-seo-friendly/?utm_source=related_footer&utm_keyword=python)
+ * [Generate ER diagram from a SQL-based database](https://blog.kmonsoor.com/generate-er-diagram-from-sql-database/?utm_source=related_footer&utm_keyword=coding)
