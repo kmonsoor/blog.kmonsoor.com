@@ -38,12 +38,28 @@ How this method works
  Downloads, you must
  -------------------
  In sequence by when you will need it:
-  * Tool to boot into EDL-download mode. Here.
-  * Custom TWRP recovery image, ZCX_TWRP_0917.zip. Here.
-  * MIUI Developer ROM for Kenzo. Version 6.11.3_20161103 is proven to be working. Other version may not. Get it here.
-  * Updated firmware for kenzo. Get it here. Details here.
-  * The main OS; LineageOS 14.1, get the latest one from this page.
-  * Google Playstore and other necessary services packed in one, possible by Open GApps Project. Get yours here. Make sure you have selected Arm64-7.1-Pico package.
+  * Tool to boot into EDL-download mode. [Here](https://www.androidfilehost.com/?fid=24591000424940129).
+  * Mi Flash tool. [Here](http://api.bbs.miui.com/url/MiFlash). [To learn more](http://en.miui.com/thread-345974-1-1.html)
+  * Custom TWRP recovery image, ZCX_TWRP_0917.zip. [Here](https://www.androidfilehost.com/?fid=24727332921017084).
+  * MIUI Developer ROM for Kenzo. Version 6.11.3_20161103 is proven to be working. Other version may not. [Get it here](http://bigota.d.miui.com/6.11.3/kenzo_global_images_6.11.3_20161103.0000.00_6.0_global_f7309f8161.tgz).
+  * Updated firmware for kenzo. [Get it here](https://www.androidfilehost.com/?fid=817550096634761596). Details [here](https://forum.xda-developers.com/redmi-note-3/how-to/cm14-14-1-aosp-n-firmware-kenzo-kate-t3507789).
+  * The main target OS; LineageOS 14.1, get the latest one from [this page](https://download.lineageos.org/kenzo).
+  * Google Playstore and other necessary services packed in one, possible by Open GApps Project. Get yours here. Make sure you have selected **Arm64-7.1-Pico** package.
   * (optional) SU package to able to use your device as "rooted"
+ 
+ 
+ Prepare your PC and Phone
+ -------------------------
+ * Make sure phone can be properly connected to PC through USB
+ * Install Mi Flash tool on your PC. Make sure it can detect your phone properly after the setup.
+ * Copy all the binaries to a external SD-card. If you have an OTG cable, you can also use a USB drive; however, you have to make sure that the USB drive is formatted in FAT32 format. Formatted using NTFS format or anything else will NOT be usable.
+ * Enable Developer options on the phone. Then, enable `Anvanced Rebbot`, and ADB access.
+ 
+ 
+ Install the Recovery Image
+ --------------------------
+  * Reboot your phone to download mode
+  * using the EDL tool, go to EDL mode on phone. This step is critical; without EDL mode, this method wont work.
+  * Flash the MIUI dev edition with other recovery
   
  
