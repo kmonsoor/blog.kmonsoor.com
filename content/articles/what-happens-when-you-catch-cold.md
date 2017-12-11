@@ -1,14 +1,14 @@
 ---
 Title: What happens when you catch cold
 Date: 2017-12-11
-Tags: computing, daily-life, communication
+Tags: health, daily-life, common-cold, virus, antibiotic, fever
 Slug: what-happens-when-you-catch-cold
 Status: Published
-Summary: What happens when you catch cold
+Summary: What happens when you catch cold ? Learn the amazing mechanisms in-depth, human body goes through to fight it off and win. 
 ---
 
 {   Please note that I'm NOT the author.  
-    Yesterday an anonymous person (***Ornlu_Wolfjarl***) on Internet described our "common cold and fever" in such an amazing, yet factual way that it boggle my mind. 
+    Yesterday an anonymous person (with username **Ornlu_Wolfjarl**) on Internet described our "common cold and fever" in such an amazing, yet factual way that it boggle my mind. 
     It was highly appreciated by doctors, and biologists alike.  
     However, unfortunately user deleted the response. Donno why.  
     I recovered it from Google's snapshot. And, decided to "save" it myself.
