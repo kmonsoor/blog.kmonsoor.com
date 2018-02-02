@@ -1,10 +1,10 @@
 ---
 Title: HA(High-Availablity) Setup for InfluxDB
-Date: 2017-09-09
+Date: 2018-01-18
 Tags: influxdb, influx-relay, haproxy, monitoring, computing, time-series, database, open-source, reliability 
 Slug: the-great-title-slug
 Status: Draft
-Summary: Create a robust, highly-available, time-series database setup with open-source version of InfluxDB
+Summary: Create a robust, highly-available, time-series database cluster with free version of InfluxDB
 ---
 
 HA setup for InfluxDB
