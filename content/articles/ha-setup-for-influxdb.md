@@ -1,10 +1,10 @@
 ---
 Title: HA(High-Availablity) Setup for InfluxDB
 Date: 2018-01-18
-Tags: influxdb, influx-relay, haproxy, monitoring, computing, time-series, database, open-source, reliability 
+Tags: influxdb, influx-relay, haproxy, monitoring, computing, time-series, database, open-source, reliability, architecture 
 Slug: ha-setup-for-influxdb
 Status: Published
-Summary: Create a robust, highly-available, time-series database cluster with free version of InfluxDB
+Summary: Create a robust, highly-available, time-series InfluxDB cluster with free version of it
 ---
 
 HA setup for InfluxDB
@@ -35,6 +35,8 @@ Here were my trade-offs.
 ### Write
 
 From a birds' eye view, I decided to use two instances to run parallelly, hosting InfluxDB on them independently and then send exactly same data over to them for storing. This scheme mostly look like [RAID-1 systems](https://en.wikipedia.org/wiki/Standard_RAID_levels#RAID_1).
+
+![Overall architecture](https://i.imgur.com/I4Zgt6d.png)
 
 That brings up couple of challenges.
 * None of the agents I used on the sender side could multiplex output. Meaning they were able to send data to single destination, not multuple. 
