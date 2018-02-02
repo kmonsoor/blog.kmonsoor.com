@@ -1,5 +1,5 @@
 ---
-Title: HA(High-Availablity) Setup for InfluxDB
+Title: HA(High-Availability) Setup for InfluxDB
 Date: 2018-01-18
 Tags: influxdb, influx-relay, haproxy, monitoring, computing, time-series, database, open-source, reliability, architecture 
 Slug: ha-setup-for-influxdb
@@ -19,7 +19,7 @@ Anyways, InfluxDB then promised, and later introduced `Influx Relay` as a compli
 
 ## Premise
 
-For my needs, I have to try to create a reliable HA(high-availablility) setup  from available free options, hence InfluxDB and the relay. It's definitely far from a InfluxDB-cluster in terms of robustness or ease of setup, but it's gets the job done, at least for me.
+For my needs, I have to try to create a reliable HA(High-Availability) setup  from available free options, hence InfluxDB and the relay. It's definitely far from a InfluxDB-cluster in terms of robustness or ease of setup, but it's gets the job done, at least for me.
 
 I needed a setup to receive system-stats from at least 500+ instances and to store them for a while; but without breaking the bank in bills from AWS. Meaning I could ask for and use only couple of instances for my solution.
 
@@ -39,8 +39,8 @@ From a birds' eye view, I decided to use two instances to run parallelly, hostin
 ![Overall architecture](https://i.imgur.com/I4Zgt6d.png)
 
 That brings up couple of challenges.
-* None of the agents I used on the sender side could multiplex output. Meaning they were able to send data to single destination, not multuple. 
-	On the Windows front, I've used `Telegraf` which is able randomly switch between pre-listed destinations, but not multiple at-once. 
+* None of the agents I used on the sender side could multiplex output. Meaning they were able to send data to single destination, not multiple. 
+	On the Windows front, I've used `Telegraf` which is able randomly switch between pre-listed destinations, but NOT multiple at-once.
 	In the case of Linux hosts, I used `Netdata` which is excellent on its own right, but unable to send stats to multiple destinations.
   Here comes `Influx-relay`. It can receive time-series data-stream from hosts on a TCP or UDP port, buffer for a while, and then re-send those received and buffered data to multiple receive ends which can either be an InfluxDB instance or another listening Influx-relay instances. This chaining can broaden the relaying scheme even further. However, for my purpose, this relay-chaining was not necessary. Rather, from relay, i am sending data to the separate InfluxDB instances, running on two separate instances.
 
@@ -60,10 +60,13 @@ As I've already noted in the "" section that reading the data, meaning to fetch 
 
 ### Ports
 
-As all the READ requests are routed though HAProxy running on each of the instances, to the external world only HAProxy's port should be opened for this purpose. 
-On the other hand, for WRITE requests, InfluxDBs  are receiving data from relays, one of its own instance and other one on other instance, so InfluxDB should listen on its own port for WRITE requests only. But, this must be accessible only from own VPS zone, but not open to the outside world.
-In case of HAProxy as well as InfluxDB you can use the default ports, obviously, which is 8086 & 8088 respectively. Or, you can choose to go for other ports (security through obfuscation). Your call. In this writing, I'll go with the defaults.
+ * As all the READ requests are routed through `HAProxy` running on each of the instances, to the external world only HAProxy's port should be opened for this purpose. 
+ * On the other hand, for WRITE requests, InfluxDBs  are receiving data from relays, one of its own instance and other one on other instance, so InfluxDB should listen on its own port for WRITE requests only. But, this must be accessible only from own VPS zone, but not open to the outside world.
+ * In case of HAProxy as well as InfluxDB, you can use the default ports, obviously, which is 8086 & 8088 respectively. Or, you can choose to go for other ports (security through obfuscation). Your call. In this writing, I'll go with the defaults.
 
 ### Authentication, SSL
 
 You can configure SSL with your own server certificates through the HAProxy configs. You can even go for SSL from the relays to InfluxDB writes. If your sender hosts are connecting to your HAProxy through public internet, you should at least go for password-based authentication, better to utilize SSL. However, for brevity's sake, I'll skip them in this post.
+
+**Note :**
+Please bear in mind, this is an "in-progress" post; prematurely published to force myself to work on it. I have plan to add all the necessary configurations & commands, that I used, here.
