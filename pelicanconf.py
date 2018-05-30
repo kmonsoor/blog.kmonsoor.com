@@ -16,7 +16,7 @@ TIMEZONE = 'Asia/Dhaka'
 DEFAULT_LANG = u'en'
 DELETE_OUTPUT_DIRECTORY = True
 
-TWITTER_USERNAME = 'KhaledMonsoor'
+TWITTER_USERNAME = 'kmonsoor'
 GITHUB_URL = 'https://github.com/kmonsoor/'
 # DISQUS_SITENAME = 'kmonsoor'
 
