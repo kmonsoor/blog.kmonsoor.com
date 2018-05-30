@@ -9,11 +9,11 @@ Status: published
 
 Hello there! Welcome to my little corner on the internet.
 
-I am Khaled, hailing from Dhaka, Bangladesh.
+I am Khaled, born & brought up in Dhaka, Bangladesh.
 I am a techie, photographer, humanitarian, Muslim, traveler, and a blogger.
 I love to share my experience, knowledge, love, criticism, passion, idea, and feelings.
 
-In general, my online pseudonym is `kmonsoor`. Only on Twitter, i am [KhaledMonsoor](https://twitter.com/KhaledMonsoor)
+In general, my online pseudonym is `kmonsoor`. Also on [Twitter](https://twitter.com/kmonsoor).
 
 Professionally, I am full-stack software engineer and currently working for [Augmedix Inc.](http://www.augmedix.com/) as a R&D engineer. i love simplicity of Python, articulacy of JS, and raw power of C. An data-science enthusiast.
 I created & manage the biggest Facebook group of [data-science enthusiasts of Bangladesh](https://www.facebook.com/groups/BigDataBangladesh).
