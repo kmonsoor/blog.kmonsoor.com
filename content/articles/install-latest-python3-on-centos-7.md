@@ -29,7 +29,9 @@ Start with installing pre-requisite utilities for compilation and development su
 
 ```bash
 $ sudo yum update && sudo yum groupinstall -y "development tools"  
-$ sudo yum install -y zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel expat-devel
+$ sudo yum install -y zlib-devel bzip2-devel openssl-devel ncurses-devel \
+       sqlite-devel readline-devel tk-devel gdbm-devel \
+       db4-devel libpcap-devel xz-devel expat-devel
 ```
 
 ### Download latest Python source code from Python.org
@@ -75,7 +77,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>>
 ``` 
 
-## ~~Install wheel and pip~~
+## <del>Install wheel and pip</del>
 You don't need to, because `Python 3.6.6` includes these necessary tools included.
 ```bash
 $ pip3.6 -V
