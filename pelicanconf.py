@@ -7,7 +7,7 @@ AUTHOR = u'Khaled Monsoor'
 AUTHOR_EMAIL = u'k@kmonsoor.com'
 SITENAME = u'Khaled Monsoor :: Blog'
 TAGLINE = u'khaled monsoor says ...'
-SITE_SUMMARY = u"Khaled Monsoor here. I usually write about programming, Islam, life, travel or just personal babbling ..."
+SITE_SUMMARY = u"Khaled Monsoor here. I usually write about programming, system-design, Islam, life, travel or just personal thoughts ..."
 
 SITEURL = 'https://blog.kmonsoor.com'
 DEFAULT_DATE_FORMAT = ('%Y-%m-%d')
@@ -40,8 +40,9 @@ SOCIAL = (
 
 
 # Analytics
-GOOGLE_ANALYTICS = 'UA-20431143-1'
+# GOOGLE_ANALYTICS = 'UA-20431143-1'
 # GOOGLE_ANALYTICS_PROPERTY = 'auto'
+GOOGLE_TAG_MANAGER_ID = 'GTM-M3VHWXC'
 
 
 # Content path.
@@ -136,7 +137,6 @@ WITH_FUTURE_DATES = False
 #                  'extra',
 #                  ]
 
-TIMEZONE = 'Asia/Dhaka'
 MARKDOWN = {
     'extension_configs': {
         'markdown.extensions.codehilite': {'css_class': 'highlight'},
