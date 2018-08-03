@@ -1,0 +1,23 @@
+[[source]]
+
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+
+[dev-packages]
+
+
+
+[packages]
+
+pelican = ">=3.7"
+Markdown = "*"
+mdx_video = "*"
+mdx_titlecase = "*"
+typogrify = "*"
+"beautifulsoup4" = "*"
+Fabric = "*"
+yuicompressor = "*"
+ghp-import = "*"
+pelican-minify = "*"
