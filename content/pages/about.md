@@ -1,7 +1,7 @@
 ---
 Title: About Me
 Date: 2014-12-31 23:59
-Updated: 2016-12-22 11:59
+Updated: 2020-04-24 11:59
 Slug: about
 Status: published
 ---
@@ -9,17 +9,15 @@ Status: published
 
 Hello there! Welcome to my little corner on the internet.
 
-I am Khaled, born & brought up in Dhaka, Bangladesh.
+I am Khaled, born & brought up in Dhaka, Bangladesh. Currently living in the Lion city, Singapore.
 I am a techie, photographer, humanitarian, Muslim, traveler, and a blogger.
 I love to share my experience, knowledge, love, criticism, passion, idea, and feelings.
 
 In general, my online pseudonym is `kmonsoor`. Also on [Twitter](https://twitter.com/kmonsoor).
 
-Professionally, I am full-stack software engineer and currently working for [Augmedix Inc.](http://www.augmedix.com/) as a R&D engineer. i love simplicity of Python, articulacy of JS, and raw power of C. An data-science enthusiast.
-I created & manage the biggest Facebook group of [data-science enthusiasts of Bangladesh](https://www.facebook.com/groups/BigDataBangladesh).
-
-My professional profile is available on [Career 2.0](http://stackoverflow.com/cv/kmonsoor) and [Linkedin.com](http://linkedin.com/in/kmonsoor/).  
-[A PDF version](https://drive.google.com/open?id=0B_IybRcQsDwaSTY0VUotbkRiSFk) is also available.
+Currently, I work for Grab Singapore, as a Technical Program Manager, [since 2018](http://linkedin.com/in/kmonsoor/).
+Previously, I was a full-stack software engineer and were working for [Augmedix Inc.](http://www.augmedix.com/) as a R&D engineer. i love simplicity of Python, articulacy of JS, and raw power of C. An data-science enthusiast.
+I created & manage the biggest Facebook group of [data-science enthusiasts of Bangladesh](https://www.facebook.com/groups/BigDataBangladesh) and [mechanical keyboard enthusiasts of Bangladesh](https://www.facebook.com/groups/BDMKB)
 
 For any query, please feel free to send email to: `k (at) kmonsoor (dot) com`
 
@@ -32,9 +30,6 @@ For any query, please feel free to send email to: `k (at) kmonsoor (dot) com`
 
 ### Python libraries
  * [My Python libraries on PyPI](https://pypi.org/user/kmonsoor/)
-
-### JavaScript libraries
- * [My JavaScript libraries](https://www.npmjs.com/~kmonsoor)
 
 ------------
 
