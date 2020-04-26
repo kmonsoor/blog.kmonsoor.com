@@ -11,7 +11,11 @@ install:
 - pelican-themes -s ./plumage/
 script:
 - make publish github
-env:
-  global:
-    secure: "TFA/3DWmwNpntX4lggKPrn6Tn2g0/TZd/rgSohBYS78szPhRo9wFn3mFzfsXwUs7UI4YJvmffznZsrdf8e6tLKdoHghfXC+sqtKxOIc/90lanH7x3/93YHScgdYxGlHaRO2S9RB3Jd1dzK70KVSxOkYCUXHCpdyWXFHULFhkpT5NVNTofYPGPR9v0QrOptan35dabeFDvmeJPPEc2nJG+fRu1akGf86cvKPn8OsScCpofZv20jM8zyF+vkUHzJmYogQYqxoYUDrqV4oiYnF6E/CyU8p5OFg7NKoiG9aT+hfAJYeMnthA45k5v53kY9+FVnYxsFYTEpGGyQVrTzrDx1Znt0mCW/bCzSvhdIfCPnJFxESYKkYLjTPdAQuevW2jShMbBP22IkmkbNznbXfyF7I0q20IEriKd2KP9EHCMTn5HbvV6stJv365d9syeoSM/pvVrVILRJyLCkj++Ux/HE16yyAEpNCT3DWaUtG90hVbUxu3LnfJD1YWyrSk775rbBO7ij3BkyM7984gizq3hjB4pTKUoWwnYFP4Pxvby8cnmer4nEqPIuPUezBRNKHE6TU/wUqJ3FGfXa4NTBsGIR+BBcXpoPdsW72ul6hlg72YVSBjaOtgcykKonxu6Ytpvb9Z0ufoezaxmqH936xFVZcK4BQbWlDP6uvJGti/w/I="
-    
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
+  keep_history: true
+  on:
+    branch: gh-pages
