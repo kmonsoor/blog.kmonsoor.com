@@ -7,10 +7,11 @@ AUTHOR = u'Khaled Monsoor'
 AUTHOR_EMAIL = u'k@kmonsoor.com'
 SITENAME = u'Khaled Monsoor :: Blog'
 TAGLINE = u'khaled monsoor says ...'
-SITE_SUMMARY = u"Khaled Monsoor here. I usually write about programming, system-design, Islam, life, travel or just personal thoughts ..."
+SITE_SUMMARY = u"Khaled Monsoor here. I usually write about programming, system-design, Islam, life, travel or just " \
+               u"personal thoughts ... "
 
 SITEURL = 'https://blog.kmonsoor.com'
-DEFAULT_DATE_FORMAT = ('%Y-%m-%d')
+DEFAULT_DATE_FORMAT = '%Y-%m-%d'
 TIMEZONE = 'Asia/Dhaka'
 
 DEFAULT_LANG = u'en'
@@ -33,11 +34,10 @@ LINKS = (
 SOCIAL_WIDGET_NAME = "Social"
 SOCIAL = (
     ('@KhaledMonsoor', 'https://twitter.com/' + TWITTER_USERNAME),
-    ('+KhaledMonsoor', 'https://plus.google.com/+KhaledMonsoor?rel=author'),
+    # ('+KhaledMonsoor', 'https://plus.google.com/+KhaledMonsoor?rel=author'),
     ('Keybase.io', 'https://keybase.io/kmonsoor'),
     # ('Instagram', 'https://www.instagram.com/kmonsoor/'),
 )
-
 
 # Analytics
 GOOGLE_ANALYTICS = 'UA-20431143-1'
@@ -61,21 +61,20 @@ EXTRA_PATH_METADATA = {
     'images/logo.png': {'path': 'logo.png'}
 }
 
-
 # URL settings
-ARTICLE_URL = ('{slug}/')
-ARTICLE_SAVE_AS = ('{slug}/index.html')
-PAGE_URL = ('{slug}/')
-PAGE_SAVE_AS = ('{slug}/index.html')
+ARTICLE_URL = '{slug}/'
+ARTICLE_SAVE_AS = '{slug}/index.html'
+PAGE_URL = '{slug}/'
+PAGE_SAVE_AS = '{slug}/index.html'
 PAGE_LANG_SAVE_AS = False
 
-TAG_URL = ('tag/{slug}/')
-TAG_SAVE_AS = ('tag/{slug}/index.html')
-TAGS_URL = ('tags/')
+TAG_URL = 'tag/{slug}/'
+TAG_SAVE_AS = 'tag/{slug}/index.html'
+TAGS_URL = 'tags/'
 TAGS_SAVE_AS = None
 
-CATEGORY_URL = ('category/{slug}/')
-CATEGORY_SAVE_AS = ('category/{slug}/index.html')
+CATEGORY_URL = 'category/{slug}/'
+CATEGORY_SAVE_AS = 'category/{slug}/index.html'
 
 # Tags, categories and archives are Direct Templates, so they don't have a
 # <NAME>_URL option.
@@ -90,13 +89,11 @@ TAGS_SAVE_AS = 'tags/index.html'
 CATEGORIES_SAVE_AS = 'categories/index.html'
 ARCHIVES_SAVE_AS = 'archives/index.html'
 
-
 # Feed
 FEED_DOMAIN = SITEURL
 FEED_ALL_ATOM = 'feeds/all.atom.xml'
-CATEGORY_FEED_ATOM = 'feeds/%s.atom.xml'
+CATEGORY_FEED_ATOM = 'feeds/{slug}.atom.xml'
 TRANSLATION_FEED_ATOM = None
-
 
 # Theme
 THEME = 'plumage'
@@ -104,7 +101,7 @@ THEME = 'plumage'
 DEFAULT_PAGINATION = 7
 DEFAULT_ORPHANS = 2
 
-#COPYRIGHT =  'All contents are under The MIT License (MIT).'
+# COPYRIGHT =  'All contents are under The MIT License (MIT).'
 DISCLAIMER = 'All opinions expressed in this site are my own personal opinions \
               and are not endorsed by, nor do they represent the opinions of my \
               previous, current and future employers or any of its affiliates, \
@@ -118,17 +115,14 @@ PLUGINS = ['gzip_cache',
            'minify',
            ]
 
-           
 MINIFY = {
-  'remove_comments': True,
-  'remove_all_empty_space': True,
-  'remove_optional_attribute_quotes': False
+    'remove_comments': True,
+    'remove_all_empty_space': True,
+    'remove_optional_attribute_quotes': False
 }
-
 
 # Do not publish articles set in the future
 WITH_FUTURE_DATES = False
-
 
 # for highlighting code-segments
 # PYGMENTS_RST_OPTIONS = {'cssclass': 'codehilite', 'linenos': 'table'}
@@ -169,11 +163,10 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
-
-TAG_FEED_RSS = 'tag/%s/feed/index.html'
-TAG_FEED_ATOM = 'tag/%s/feed/atom/index.html'
-CATEGORY_FEED_RSS = 'category/%s/feed/index.html'
-CATEGORY_FEED_ATOM = 'category/%s/feed/atom/index.html'
+TAG_FEED_RSS = 'tag/{slug}/feed/index.html'
+TAG_FEED_ATOM = 'tag/{slug}/feed/atom/index.html'
+CATEGORY_FEED_RSS = 'category/{slug}/feed/index.html'
+CATEGORY_FEED_ATOM = 'category/{slug}/feed/atom/index.html'
 
 FEED_MAX_ITEMS = 10
 USE_FOLDER_AS_CATEGORY = False
@@ -181,7 +174,6 @@ DEFAULT_CATEGORY = 'Tech'
 DEFAULT_DATE_FORMAT = '%b. %d, %Y'
 REVERSE_ARCHIVE_ORDER = True
 DISPLAY_PAGES_ON_MENU = True
-
 
 # Sitemap.
 SITEMAP = {
@@ -202,12 +194,11 @@ SITEMAP = {
 IMAGE_PATH = "images/"
 THUMBNAIL_DIR = "images/"
 SITE_THUMBNAIL = "/logo.png"
-THUMBNAIL_SIZES = {'thumbnail': '462x?',}
+THUMBNAIL_SIZES = {'thumbnail': '462x?', }
 DEFAULT_TEMPLATE = """<a href="{url}" class="zoomable" title="{filename}">
 <img src="{thumbnail}" alt="{filename}"></a>"""
 
 ARTICLE_EDIT_LINK = "https://github.com/kmonsoor/blog.kmonsoor.com/edit/live/content/articles"
-
 
 MENUITEMS = (
     ('Home', '/'),
@@ -216,7 +207,7 @@ MENUITEMS = (
     #  ('About', '/about/'),
 )
 
-
 TIPUE_SEARCH = False
+RELATIVE_URLS = True
 # can be useful in development, but set to False when you're ready to publish
 RELATIVE_URLS = True

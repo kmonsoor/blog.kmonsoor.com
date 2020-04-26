@@ -116,7 +116,7 @@ class Greeting(object):
         return '%s! %s' % (self.greeting, name)
 
 greeting = Greeting('hola')
-print greeting.greet('bob')
+print(greeting.greet('bob'))
 ```
 
 It is doing exactly same as:
@@ -169,7 +169,7 @@ Yes, this is a real piece of code from Google API client code. (which, in total,
 
 You see the point, right? Guido did. [Check his comment.](https://plus.google.com/+JackDiederich/posts/iPiqWHjwcf3)
 
-![guido-google-comment]({filename}/images/articles/guido-google-comment.jpg)
+![guido-google-comment]({static}/images/articles/guido-google-comment.jpg)
 
 
 
