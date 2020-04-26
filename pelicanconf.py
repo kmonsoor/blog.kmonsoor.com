@@ -3,12 +3,12 @@
 from __future__ import unicode_literals
 
 # Site settings.
-AUTHOR = u'Khaled Monsoor'
-AUTHOR_EMAIL = u'k@kmonsoor.com'
-SITENAME = u'Khaled Monsoor :: Blog'
-TAGLINE = u'khaled monsoor says ...'
-SITE_SUMMARY = u"Khaled Monsoor here. I usually write about programming, system-design, Islam, life, travel or just " \
-               u"personal thoughts ... "
+AUTHOR = 'Khaled Monsoor'
+AUTHOR_EMAIL = 'k@kmonsoor.com'
+SITENAME = 'Khaled Monsoor :: Blog'
+TAGLINE = 'khaled monsoor says ...'
+SITE_SUMMARY = "Khaled Monsoor here. I usually write about programming, system-design, Islam, life, travel or just " \
+               "personal thoughts ... "
 
 SITEURL = 'https://blog.kmonsoor.com'
 DEFAULT_DATE_FORMAT = '%Y-%m-%d'
@@ -34,9 +34,9 @@ LINKS = (
 SOCIAL_WIDGET_NAME = "Social"
 SOCIAL = (
     ('@KhaledMonsoor', 'https://twitter.com/' + TWITTER_USERNAME),
+    ('kmonsoor', 'http://instagram.com/kmonsoor/'),
     # ('+KhaledMonsoor', 'https://plus.google.com/+KhaledMonsoor?rel=author'),
-    ('Keybase.io', 'https://keybase.io/kmonsoor'),
-    # ('Instagram', 'https://www.instagram.com/kmonsoor/'),
+    # ('Keybase.io', 'https://keybase.io/kmonsoor'),
 )
 
 # Analytics
@@ -111,7 +111,6 @@ DISCLAIMER = 'All opinions expressed in this site are my own personal opinions \
 PLUGIN_PATHS = ['plugins']
 PLUGINS = ['gzip_cache',
            'sitemap',
-           'yuicompressor',
            'minify',
            ]
 
@@ -211,3 +210,5 @@ TIPUE_SEARCH = False
 RELATIVE_URLS = True
 # can be useful in development, but set to False when you're ready to publish
 RELATIVE_URLS = True
+
+COMMENTBOX_PROJECT = '5722781509484544-proj'

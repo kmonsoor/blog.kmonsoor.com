@@ -278,8 +278,12 @@ window.location.protocol="https"
     {% endif %}
 
   </div>
-
 </div>
+
+<footer class="container">
+    <div class="commentbox"></div>
+</footer>
+
 
 
 <footer class="container-fluid">
@@ -294,7 +298,7 @@ window.location.protocol="https"
             <h5>{{ group_title }}</h5>
             <ul class="list-unstyled">
             {% for title, link in group_links %}
-              <li>{{ m.render_link_icon(link, title, FAVICON_LINKS) }}</li>
+              <li>{{ m.render_link_icon(link, title, [FAVICON_LINKS]) }}</li>
             {% endfor %}
             </ul>
           {% endif %}
@@ -363,10 +367,9 @@ window.location.protocol="https"
                 href="https://github.com/kdeldycke/plumage">Plumage</a> theme.
         </div>
     </div>
-
 </footer>
 
-
+<script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/fitvids/1.1.0/jquery.fitvids.min.js"></script>
@@ -375,5 +378,9 @@ window.location.protocol="https"
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css"/>
 {% block extra_js %}{% endblock %}
+
+<script>
+    commentBox('{{ COMMENTBOX_PROJECT }}');
+</script>
 </body>
 </html>
