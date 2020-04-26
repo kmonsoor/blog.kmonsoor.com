@@ -1,9 +1,9 @@
 ---
 Title: Why to do it, rather than how to do it
-Date: 2020-04-04
+Date: 2020-04-26
 Tags: process, communication, organization
-Slug: emphasize-on-why-not-how
-Status: Draft
+Slug: process-emphasize-on-why-not-how
+Status: Published
 Summary: Focusing on why to do it, rather than how to do it
 ---
 
