@@ -1,17 +1,17 @@
 # -*- coding: utf-8 -*-
-'''Core plugins unit tests'''
+"""Core plugins unit tests"""
 
 import os
 import tempfile
-import unittest
 import time
-
+import unittest
 from contextlib import contextmanager
-from tempfile import mkdtemp
-from shutil import rmtree
 from hashlib import md5
+from shutil import rmtree
+from tempfile import mkdtemp
 
-import gzip_cache
+from . import gzip_cache
+
 
 @contextmanager
 def temporary_folder():
@@ -45,11 +45,11 @@ class TestGzipCache(unittest.TestCase):
 
     def test_should_overwrite(self):
         # Default to false if GZIP_CACHE_OVERWRITE is not set
-        settings = { }
+        settings = {}
         self.assertFalse(gzip_cache.should_overwrite(settings))
-        settings = { 'GZIP_CACHE_OVERWRITE': False }
+        settings = {'GZIP_CACHE_OVERWRITE': False}
         self.assertFalse(gzip_cache.should_overwrite(settings))
-        settings = { 'GZIP_CACHE_OVERWRITE': True }
+        settings = {'GZIP_CACHE_OVERWRITE': True}
         self.assertTrue(gzip_cache.should_overwrite(settings))
 
     def test_creates_gzip_file(self):
@@ -89,7 +89,7 @@ class TestGzipCache(unittest.TestCase):
             gzip_cache.create_gzip_file(a_html_filename, True)
             self.assertFalse(os.path.exists(a_html_filename + '.gz'))
 
+
 def get_md5(filepath):
     with open(filepath, 'rb') as fh:
         return md5(fh.read()).hexdigest()
-

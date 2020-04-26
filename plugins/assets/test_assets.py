@@ -4,11 +4,10 @@
 import hashlib
 import locale
 import os
-from codecs import open
-from tempfile import mkdtemp
-from shutil import rmtree
 import unittest
-import subprocess
+from codecs import open
+from shutil import rmtree
+from tempfile import mkdtemp
 
 from pelican import Pelican
 from pelican.settings import read_settings
@@ -28,7 +27,7 @@ class TestWebAssets(unittest.TestCase):
     """Base class for testing webassets."""
 
     def setUp(self, override=None):
-        import assets
+        from . import assets
         self.temp_path = mkdtemp(prefix='pelicantests.')
         settings = {
             'PATH': os.path.join(os.path.dirname(CUR_DIR), 'test_data', 'content'),
@@ -54,12 +53,11 @@ class TestWebAssets(unittest.TestCase):
         link_tag = ('<link rel="stylesheet" href="{css_file}">'
                     .format(css_file=css_file))
         html = open(html_file).read()
-        self.assertRegexpMatches(html, link_tag)
+        self.assertRegex(html, link_tag)
 
 
 class TestWebAssetsRelativeURLS(TestWebAssets):
     """Test pelican with relative urls."""
-
 
     def setUp(self):
         TestWebAssets.setUp(self, override={'RELATIVE_URLS': True})

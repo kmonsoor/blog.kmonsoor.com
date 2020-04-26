@@ -14,7 +14,7 @@ setting. This requires the use of SITEURL in the templates::
 .. _webassets: https://webassets.readthedocs.org/
 
 """
-from __future__ import unicode_literals
+
 
 import os
 import logging
