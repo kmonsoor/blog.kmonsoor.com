@@ -3,7 +3,7 @@ Title: Some tips I learned managing weekly release for 50M+ users’ app
 Date: 2020-08-22
 Tags: computing, daily-life, communication
 Slug: some-tips-on-weekly-release
-Status: Draft
+Status: Published
 Summary: Some tips I learned managing weekly release for 50M+ users’ app
 ---
 
