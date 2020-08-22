@@ -1,17 +1,19 @@
 ---
 Title: What I learned managing weekly release for a 50M+ users’ app
 Date: 2020-08-22 12:12
-Tags: computing, daily-life, communication
+Tags: release, management, tips
 Slug: some-tips-on-apps-release
-Status: published
 Summary: What I learned managing weekly release for a 50M+ users’ app
+Version: 1.0.0
+Status: Published
 ---
 
-
+..
 _Everything here is just my **personal **observation, experience, commentary or “wisdom”. My past, present or future employers shouldn’t be held responsible for it.  \
 Also, take in or apply the suffs below “with a grain of salt”._ \
+..
 
-
+## Prelude
 In any war, game, or enterprise resource management, the last thing you want is to underestimate your opponent(s). In release management, the opponent is “chaos”.  \
 The last thing a release manager should expect is that everything, from bug-free features to timely completion of production builds will be done as per the cadence schedule.
 
