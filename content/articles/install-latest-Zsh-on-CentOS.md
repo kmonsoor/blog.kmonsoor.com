@@ -1,5 +1,5 @@
 ---
-Title: Install latest Zsh on CentOS
+Title: Install the latest Zsh on CentOS
 Date: 2020-10-20
 Tags: zsh, centos, linux, upgrade, server
 Slug: install-latest-Zsh-on-CentOS
@@ -12,7 +12,7 @@ As the **default** Zsh on CentOS is usually a older version, many cool stuffs ar
 if you'd like to have the latest Zsh on board.   
 Easy peasy !! 
 
-  
+**Note**: Please remember to remove the "sudo" from the commands if you are already in "root" or sudo-er mode  
 
 * Install the pre-requisites i.e. GCC and other related stuffs for building Zsh from source.  
 `$ sudo yum groupinstall "Development tools"`  
@@ -29,7 +29,7 @@ Easy peasy !!
 `$ cd zsh-5.8`  
 `$ sudo ./configure && sudo make && sudo make install`
 
-* Add Zsh to the login shells by adding '/usr/local/bin/zsh' to last line of the config file, `/etc/shells`  
+* Add Zsh to the login shells by adding '/usr/local/bin/zsh' on the last line of the config file, `/etc/shells`  
 `$ sudo -e /etc/shells`  
 `$ sudo chsh kmonsoor  # change it to your username`
 
