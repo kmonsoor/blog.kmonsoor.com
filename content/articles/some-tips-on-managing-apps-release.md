@@ -8,35 +8,14 @@ Status: Published
 Summary: In any war, game, or enterprise resource management, the last thing you want is to underestimate your opponent(s). In release management, the opponent is “chaos”. The last thing a release manager should expect is that everything, from bug-free features to timely completion of production builds will be done as per the cadence schedule.
 ---
 
-<!-- Copy and paste the converted output. -->
-
-<!-----
-NEW: Check the "Suppress top comment" option to remove this info from the output.
-
-Conversion time: 0.596 seconds.
-
-
-Using this Markdown file:
-
-1. Paste this output into your source file.
-2. See the notes and action items below regarding this conversion run.
-3. Check the rendered output (headings, lists, code blocks, tables) for proper
-   formatting and use a linkchecker before you publish this page.
-
-Conversion notes:
-
-* Docs to Markdown version 1.0β29
-* Sun Aug 23 2020 07:30:33 GMT-0700 (PDT)
-* Source doc: What did I learn managing weekly Release app update for 50M+ users
------>
-
-
 
 # What I learned managing weekly release for 50M+ users’ app
 
 _Everything here is just my observation, experience, commentary, or “wisdom”. My past, present, or future employers shouldn’t be held responsible for it.
 Also, take in or apply the stuff below “with a grain of salt”._
 
+![releases](https://i.imgur.com/BE87UxPl.jpg)  
+_Photo by [Ankush Minda on Unsplash](https://unsplash.com/photos/zTCUKKI8QVA)_
 
 In any war, game, or enterprise resource management, the last thing you want is to underestimate your opponent(s). In release management, the opponent is “chaos”.  \
 The last thing a release manager should expect is that everything, from bug-free features to timely completion of production builds will be done as per the cadence schedule.
