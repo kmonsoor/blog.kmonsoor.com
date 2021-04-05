@@ -1,14 +1,12 @@
-pelican >= 3.7
+pelican
 Markdown
 mdx_video
 mdx_titlecase
 typogrify
 beautifulsoup4>=4.9.0
 Fabric
-yuicompressor>=2.4.8
 ghp-import
 pelican-minify
-
 pytz>=2019.3
 htmlmin>=0.1.12
 joblib>=0.14.1
