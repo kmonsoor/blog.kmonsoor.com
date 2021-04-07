@@ -11,13 +11,13 @@ Summary: In any war, game, or enterprise resource management, the last thing you
 
 # What I learned managing weekly release for 50M+ users’ app
 
-_Everything here is just my observation, experience, commentary, or “wisdom”. My past, present, or future employers shouldn’t be held responsible for it.
+_Disclaimer: Everything here are my personal observations, experiences, commentary, or “wisdom”. My past, present, or future employers shouldn’t be held responsible for it.
 Also, take in or apply the stuff below “with a grain of salt”._
 
-![releases](https://i.imgur.com/BE87UxPl.jpg)  
-_Photo by [Ankush Minda on Unsplash](https://unsplash.com/photos/zTCUKKI8QVA)_
+![releases](https://i.imgur.com/BE87UxPl.jpg){: .noZoom}
 
-In any war, game, or enterprise resource management, the last thing you want is to underestimate your opponent(s). In release management, the opponent is “chaos”.  \
+> In any war, game, or enterprise resource management, the last thing you want is to underestimate your opponent(s). In release management, the opponent is “chaos”.
+
 The last thing a release manager should expect is that everything, from bug-free features to timely completion of production builds will be done as per the cadence schedule.
 
 Here is something that I had to learn over time. It might help someone, somewhere.
@@ -33,13 +33,13 @@ Ask the questions across the company who are involved or have a vested interest 
 
 
 
-*   Who are the primary users? And who can be considered secondary?
+*   Who are the primary users? And, who can be considered secondary?
 *   Are the primary audience tech-savvy enough to be excited to navigate the new changes, or will they be pissed about the frequent changes?
 *   How frequently may the product teams push out new features?
 *   How resilient the quality assurance team is to exhaustively verify the new features and look out for new bugs that are going to break the old, stable features?
 *   How much automation is in place to support a more frequent build, release, and rollout?
 
-Particularly, if your QA/testing team isn’t well-distributed as per the app scopes, to provide final sign-off on that specific scope, avoid intense weekly releases. Having a shiny process, just for the sake of having it, is an easy recipe for disaster.
+Particularly, if your QA/testing team isn’t well-distributed as per the app scopes, to provide the final sign-off on that specific scope, avoid intense weekly releases. Having a shiny process, just for the sake of having it, is an easy recipe for disaster.
 
 
 ### Is the process well-documented & communicated?
@@ -47,8 +47,6 @@ Particularly, if your QA/testing team isn’t well-distributed as per the app sc
 Well-accepted process documents should work as the org-wide “release” manifesto, well discussed among the contributing teams and agreed by the stakeholders. 
 
 Once the process and agreed upon process timeline is there, in case of confusion or conflict between the teams, the release team will have two clear paths to move forward.
-
-
 
 *   It’s already in the doc, point to it.
 *   If it’s not in the doc or not clear enough, an opportunity to improve
@@ -131,12 +129,12 @@ Here comes the necessity for continuous feedback from the participants, stakehol
 
 If the app is in the center of revenue of your company, keep a close eye on the regular comm from the app stores, i.e., Google Play and Apple Appstore. It’s very easy to miss these communications, among other day-to-day stuff.
 
-Regardless of how ridiculous your company feels about some policies on the app stores, please read between the lines. In case of confusion, read again. Especially if you’re one of the big fishes.  \
+Regardless of how ridiculous your company feels about some policies on the app stores, please read between the lines. In case of confusion, read again. Especially if you’re one of the big fishes.  
 If a particular app store weren’t strictly monitoring or enforcing some policies last month, don’t even think they aren’t going to enforce tomorrow and reject your app. 
 
 The release manager or the team, being the interface with the app stores, should frequently communicate with the stakeholders and the product team to carefully go through relevant app store policies long before they invest company time and resources into a feature or a roadmap. Trust me; it happens more than anyone likes to admit that after month-long design and development, the app update with the feature gets rejected on the app stores, solely due to this new feature.
 
-If possible, try to get hold of and build a working relationship with the business development or dev support teams of Google and Apple. It might help in case of any misunderstanding and/or some negotiations about the compliance timeline.  \
+If possible, try to get hold of and build a working relationship with the business development or dev support teams of Google and Apple. It might help in case of any misunderstanding and/or some negotiations about the compliance timeline.  
 I can’t go into any more detail though ;)
 
 
