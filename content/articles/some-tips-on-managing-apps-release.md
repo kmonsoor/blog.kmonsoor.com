@@ -14,10 +14,11 @@ Summary: In any war, game, or enterprise resource management, the last thing you
 _Everything here is just my observation, experience, commentary, or “wisdom”. My past, present, or future employers shouldn’t be held responsible for it.
 Also, take in or apply the stuff below “with a grain of salt”._
 
-![releases](https://i.imgur.com/BE87UxPl.jpg)  
+![releases](https://i.imgur.com/BE87UxPl.jpg){: .noZoom}  
 _Photo by [Ankush Minda on Unsplash](https://unsplash.com/photos/zTCUKKI8QVA)_
 
-In any war, game, or enterprise resource management, the last thing you want is to underestimate your opponent(s). In release management, the opponent is “chaos”.  \
+> In any war, game, or enterprise resource management, the last thing you want is to underestimate your opponent(s). In release management, the opponent is “chaos”.
+
 The last thing a release manager should expect is that everything, from bug-free features to timely completion of production builds will be done as per the cadence schedule.
 
 Here is something that I had to learn over time. It might help someone, somewhere.
