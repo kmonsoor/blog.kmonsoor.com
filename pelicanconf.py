@@ -34,9 +34,7 @@ LINKS = (
 SOCIAL_WIDGET_NAME = "Social"
 SOCIAL = (
     ('@KhaledMonsoor', 'https://twitter.com/' + TWITTER_USERNAME),
-    ('kmonsoor', 'http://instagram.com/kmonsoor/'),
-    # ('+KhaledMonsoor', 'https://plus.google.com/+KhaledMonsoor?rel=author'),
-    # ('Keybase.io', 'https://keybase.io/kmonsoor'),
+    ("GitHub", "https://github.com/kmonsoor"),
 )
 
 # Analytics
@@ -207,7 +205,6 @@ MENUITEMS = (
 )
 
 TIPUE_SEARCH = False
-RELATIVE_URLS = True
 # can be useful in development, but set to False when you're ready to publish
 RELATIVE_URLS = True
 
