@@ -9,14 +9,14 @@ Summary: In any war, game, or enterprise resource management, the last thing you
 ---
 
 
-# What I learned managing weekly release for 50M+ users’ app
-
 _Disclaimer: Everything here are my personal observations, experiences, commentary, or “wisdom”. My past, present, or future employers shouldn’t be held responsible for it.
 Also, take in or apply the stuff below “with a grain of salt”._
 
-![releases](https://i.imgur.com/BE87UxPl.jpg){: .noZoom}
 
 > In any war, game, or enterprise resource management, the last thing you want is to underestimate your opponent(s). In release management, the opponent is “chaos”.
+ 
+  
+![releases](https://i.imgur.com/BE87UxPl.jpg){: .noZoom}
 
 The last thing a release manager should expect is that everything, from bug-free features to timely completion of production builds will be done as per the cadence schedule.
 
