@@ -33,8 +33,9 @@ LINKS = (
 # Social widget.
 SOCIAL_WIDGET_NAME = "Social"
 SOCIAL = (
-    ('@KhaledMonsoor', 'https://twitter.com/' + TWITTER_USERNAME),
-    ("GitHub", "https://github.com/kmonsoor"),
+    ('kmonsoor', "https://twitter.com/kmonsoor"),
+    ("kmonsoor", "https://github.com/kmonsoor"),
+    ("kmonsoor", "https://stackoverflow.com/users/617185/kmonsoor"),
 )
 
 # Analytics
