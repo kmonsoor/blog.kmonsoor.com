@@ -17,21 +17,22 @@ This is the end goal.
 Assuming I'm on a standard Linux machine with Ubuntu and I have CLI access. For other Linux distros or MacOS, some commands might be slightly different.
 
 Step-1: Confirm that Zsh is up-to-date
-------------------------------
-While on some Linux system, Zsh is present by default, on some it's not the case. 
+--------------------------------------
+While on some Linux system, Zsh is present by default, on some it's not the case. So, let's make sure about it.
 
 `$ sudo apt install zsh`
 
-Confirm the version. Oh-my-zsh recommends it to be `5.0.8` or higher.
+Confirm the version. Oh-my-zsh recommends Zsh to be `5.0.8` or higher.
 
 `$ zsh --version`
 `zsh 5.8 (x86_64-ubuntu-linux-gnu)`
 
 Also, gotta make sure that `git` (recommended v2.4.11 or higher) is also installed.
 
-
+  
+  
 Step-2: Install Oh-my-zsh, the fun "configuration" framework
-----------------------------------------------------
+------------------------------------------------------------
 Directly from the source.
 
 `$ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
@@ -44,6 +45,10 @@ Now we have the default prompt from Oh-my-zsh.
 ![After successful installation of Oh-my-zsh](https://i.imgur.com/HOVqqvi.png)
 
 Now, let's pimp up the prompt. Shall we?
+  
+  
+Step-3: Install `powerlevel10k`, a powerful prompt theme
+--------------------------------------------------------
 
 I love the powerful Zsh theme `powerlevel10k`. More about [why this theme](https://github.com/romkatv/powerlevel10k#features) is awesome.
 
@@ -51,7 +56,12 @@ Let's install it on top of `oh-my-zsh`.
 
 `$ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k`
 
-Now, gotta set ZSH_THEME="powerlevel10k/powerlevel10k" in ~/.zshrc.
+Now, gotta set `ZSH_THEME="powerlevel10k/powerlevel10k"` in `~/.zshrc` by adding that manually.
+
+  
+  
+Step-4: Make sure the prompt looks like as you want
+---------------------------------------------------
 In this step, I'm gonna bring in my already open-sourced Zsh config file aka `.zshrc`. 
 
 `# deleting the current one & get my personal one from GitHub`
