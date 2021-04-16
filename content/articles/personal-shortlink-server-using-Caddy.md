@@ -1,9 +1,9 @@
 ---
 Title: Personal short-link server using only Caddyserver
-Date: 2020-08-22
+Date: 2021-04-16
 Tags: caddyserver, url-shortener, Caddyfile, web-link
 Slug: personal-shortlink-server-using-only-Caddyserver
-Status: Draft
+Status: Published
 Summary: Yeah, there are tons of open-source, full-fledged link-shorteners. But, none were exactly what I wanted. Hence, the minimal approach only ulitizing the amazing webserver, `Caddy`. Here, we go ...
 ---
 
@@ -27,24 +27,39 @@ Given my previous experience with `Caddy` webserver, which is an amazing one([wh
 What you gonna need?
 --------------------
  * your own domain which will be the root of the shortlinks. While sub-domained URL like `go.yourname.com/*`is quite common, if you have some short domain, like you.co/*, only for this purpose, that's fine as well.
- * A webhost server or public-facing instance with its own, public IPv4 address.
+ * A webhost server or public-facing instance with its own, **public** IPv4 address.
  * working knowledge of Linux
 
 
 Step-1: Point your subdomain to the right place
 -----------------------------------------------
+ * Find out what's the pulic IPv4 address of your instance that'll act as the webserver. It's usually on the cloud management dashboard.
+    * make sure that, regardless of your cloud architecture (e.g. VPC, subnet, firewall etc), the SSL port (`:443`) of the instance is reachable from the public internet.
+ * now go to your domain name registrar (or, DNS management provider which in my case is Cloudflare). There you need to point shortlink subdomain (`go.`)to the webserver's IP address.
+
+Actually, you can do this step at the last. But for some reason, I prefer it to do it first. Sometimes, DNS propagation takes some time. But, after the webservice is up and running, I like to see the result instaneously :)
 
 Step-2: Install Caddy, your mighty webserver
 --------------------------------------------
+Depending on your host OS (mine is Ubuntu 20.04 LTS), you need to install the `Caddy` webserver. While there are some hacky solutions to run, I think running Caddy as a background server is the best.
+In fact, the documentation of Caddy is excellent, I'm better to leave that part to you. After running with the default config(`Caddyfile`) which is in Ubuntu's case located as `/etc/caddy/Caddyfile`, it should have status somewhat like this. Please, in many cases, if running without `sudo` Caddy cannot attach itself with the SSL port (`:443`) which is neccessary for `https://`.  So, check for that error message in the "status" log.
+
+![Caddy service on Ubuntu](https://i.imgur.com/cfS5nvZ.png?1)
+
 
 Step-3: Tell Caddy your short-links to redirect
 -----------------------------------------------
+Now, it's time to configure Caddy to actually do the job.
+
+Caddy has it's native `redir` "directive" to redirect incoming web-request from one to another. While the `map` directive is relatively new, it makes the config file i.e. Caddyfile look elegant in case you have (or, will have in the long run) long list of short-links.
 
 
 Here's mine which is working ...
 
 ```
-go.kmonsoor.com {
+# /etc/caddy/Caddyfile
+
+go.kmonsoor.com {   # replace it your web-url
 
     map {path} {redirect-uri} {
         /blog    https://blog.kmonsoor.com
@@ -59,17 +74,23 @@ go.kmonsoor.com {
         # ...
     }
 
+    # this below code is required to actually make the above `map` work
+
     @hasRedir expression `{redirect-uri} != ""`
     redir @hasRedir {redirect-uri}
 
-    respond "Thas's a short URL that we don't know of ... :("  # default response if the requested shortlink isn't here
+    # code below is to set the default response if the requested shortlink isn't here
+    respond "Thas's an unknown short URL ... :("  
 }
 ```
 
+Note: Don't forget to restart the `caddy` service to let the new config to take effect.
+
 Step-4: Profit !
 ----------------
+Yeah, that's it. Now, add some own personal stuffs with some cool shortlinks, and proudly share with the world.
 
 
 What's next ?
 -------------
-I'm thinking that given the very low workload my shortlink resolver needs, unless I'm becoming an overnight internet sensesation, using an instance for this purpose is an overkill. My next goal is to have the same service using some serverless "function" or using the "[worker on the edge](https://developers.cloudflare.com/workers/examples/redirect)" thing from Cloudflare. Let's see ;)
+I'm thinking that given the very low workload my shortlink resolver needs, unless I'm becoming an overnight internet sensesation, using an instance for this purpose is an overkill. My next goal is to have the same service using some "serverless" function or using the "[worker on the edge](https://developers.cloudflare.com/workers/examples/redirect)" thing from Cloudflare. Let's see ;)
