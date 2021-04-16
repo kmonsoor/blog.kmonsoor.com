@@ -2,7 +2,7 @@
 Title: Personal short-link server using only Caddyserver
 Date: 2021-04-16
 Tags: caddyserver, url-shortener, Caddyfile, web-link
-Slug: personal-shortlink-server-using-only-Caddyserver
+Slug: personal-shortlink-server-using-Caddy
 Status: Published
 Summary: Yeah, there are tons of open-source, full-fledged link-shorteners. But, none were exactly what I wanted. Hence, the minimal approach only ulitizing the amazing webserver, `Caddy`. Here, we go ...
 ---
@@ -16,7 +16,8 @@ There are many free (unbranded) and commercial (branded) option as well, but I w
 
 Before jumped into this solution, I tried (deployed & tested) few others myself, mainly [kellegous/go](https://github.com/kellegous/go), [kutt.it](kutt.it) and [adamyi/golinks](https://github.com/adamyi/golinks). But, all of them too featureful for my needs. 
 
-What I wanted is able to:
+What I wanted is able to:  
+
  * resolve only my custom shortlinks (hence, no need for url-shortener)
  * not a public, internet-facing service (hence, any frontend, authentication and email verification would be overkill )
  * minimal setup (if possible, no webapp at all)
@@ -26,6 +27,7 @@ Given my previous experience with `Caddy` webserver, which is an amazing one([wh
 
 What you gonna need?
 --------------------
+
  * your own domain which will be the root of the shortlinks. While sub-domained URL like `go.yourname.com/*`is quite common, if you have some short domain, like you.co/*, only for this purpose, that's fine as well.
  * A webhost server or public-facing instance with its own, **public** IPv4 address.
  * working knowledge of Linux
@@ -33,6 +35,7 @@ What you gonna need?
 
 Step-1: Point your subdomain to the right place
 -----------------------------------------------
+
  * Find out what's the pulic IPv4 address of your instance that'll act as the webserver. It's usually on the cloud management dashboard.
     * make sure that, regardless of your cloud architecture (e.g. VPC, subnet, firewall etc), the SSL port (`:443`) of the instance is reachable from the public internet.
  * now go to your domain name registrar (or, DNS management provider which in my case is Cloudflare). There you need to point shortlink subdomain (`go.`)to the webserver's IP address.
@@ -54,7 +57,8 @@ Now, it's time to configure Caddy to actually do the job.
 Caddy has it's native `redir` "directive" to redirect incoming web-request from one to another. While the `map` directive is relatively new, it makes the config file i.e. Caddyfile look elegant in case you have (or, will have in the long run) long list of short-links.
 
 
-Here's mine which is working ...
+Here's mine which is working ...  
+
 
 ```
 # /etc/caddy/Caddyfile
