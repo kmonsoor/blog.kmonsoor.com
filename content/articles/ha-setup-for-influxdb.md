@@ -1,25 +1,29 @@
 ---
 Title: HA(High-Availability) Setup for InfluxDB
 Date: 2018-01-18
-Tags: influxdb, influx-relay, haproxy, monitoring, computing, time-series, database, open-source, reliability, architecture 
+Tags: Linux, influxdb, influx-relay, haproxy, monitoring, computing, time-series, database, open-source, reliability, architecture 
 Slug: ha-setup-for-influxdb
 Status: Published
-Summary: Create a robust, highly-available, time-series InfluxDB cluster with community(free) version of it
+Summary: Create a robust, highly-available, time-series InfluxDB cluster with the community(free) version of it
 ---
 
-HA setup for InfluxDB
-=====================
+**NOTE**
+*Since I have written this article, all the components used in this below architecture have gone through many updates and releases. While the general premise involving `influxdb-relay` and the multiplexing might still hold, please sync up with the latest release docs before jumping into some serious system design.*
+
+--------------------------------------------------------------------
+
 
 Currently, from version 0.9, you cannot create an InfluxDB cluster from the open-sourced free edition. Only commercially available InfluxDB Enterprise can do that for now. That stirred up the early-adopter enthusiast users, especially for their usage in professional setups. They complained that InfluxData, the company behind InfluxDB, is trying to milk the OSS solution for profit.
 
-I can't blame InfluxData guys much, as they gotta pay their bills too. So far, we the users of OSS systems couldn't show much promise about commercial realities of the projects. Bearing OSS future only depending on donations, patrons or enterprise sponsorship is far too rare and unpredictable, even for the projects that many successful organizations heavily rely on.
+I can't blame the InfluxData guys much, as they gotta pay their bills too. So far, we — the users of open-source systems — couldn't show much promise about the financial realities of the projects. Continuing development of OSS future by only depending on donations, patrons, or enterprise sponsorship is far too rare and unpredictable, even for the projects that many successful organizations heavily rely on.
 
 Anyways, InfluxDB then promised and later introduced `Influx Relay` as a complimentary consolation for missing HA parts of InfluxDB. You can get the details here and here about that. 
 
 
-## Premise
+Premise
+-------
 
-For my needs, I have to try to create a reliable HA(High-Availability) setup from available free options, hence InfluxDB and the relay. It's definitely far from an InfluxDB-cluster in terms of robustness or ease of setup, but it's got the job done, at least for me.
+For my needs, I have to try to create a reliable HA(High-Availability) setup from available free options, hence InfluxDB and the relay. It's quite a bit far from an InfluxDB-cluster in terms of robustness or ease of setup, but it's got the job done, at least for me.
 
 I needed a setup to receive system-stats from at least 500+ instances and to store them for a while, but without breaking the bank in bills from AWS. Meaning, I could ask for and could use only couple of instances for my solution.
 
@@ -77,5 +81,5 @@ So, the read requests, reaching the HAProxy end, needed not much routing, other 
 
 You can configure SSL with your own server certificates through the HAProxy configs. You can even go for SSL from the relays to InfluxDB writes. If your sender hosts are connecting to your HAProxy through public internet, you should at least go for password-based authentication, better to utilize SSL. However, for brevity's sake, I'll skip them in this post.
 
-** Note: **
+**Note: *
 Please bear in mind, this is an "in-progress" post; prematurely published to force me to work on it. I have the plan to add all the necessary configurations & commands, that I used, here.
