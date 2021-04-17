@@ -1,16 +1,16 @@
 ---
 Title: How do I Pimp up My Terminal on Linux
 Date: 2021-03-31
-Tags: computing, linux, terminal, CLI, Zsh, "Oh My Zsh", macOS
+Tags: computing, Linux, terminal, CLI, Zsh, "Oh My Zsh", macOS
 Slug: pimp-up-my-terminal
 Status: Published
-Summary: How do I pimp up my Linux terminal? A quick trip through Zsh, Oh-my-zsh, and other power tools to make the command-line based workflow smooth and cool.
+Summary: How do I pimp up my Linux terminal? A quick trip through Zsh, Oh-my-zsh, and other power tools to make the command-line-based workflow smooth and cool.
 ---
 
-Basically, the purpose of this post is to be my quick, copy-paste source of the commands that I use to set up my terminal, on a new *nix terminal.
+The purpose of this post is to be my quick, copy-paste source of the commands that I use to set up my terminal on a new *nix system.
 However, if someone else finds it useful, that'd be some cherries on top.
 
-This is the end goal.
+This command prompt in the below image is the end goal.
 
 ![The end goal of this post](https://i.imgur.com/YqnBifw.png)
 
@@ -31,7 +31,7 @@ $ zsh --version
 zsh 5.8 (x86_64-ubuntu-linux-gnu)
 ```
 
-Also, gotta make sure that `git` (recommended v2.4.11 or higher) is also installed.
+Also, you gotta make sure that `git` (recommended v2.4.11 or higher) is also installed on the system.
 
   
   
@@ -39,8 +39,9 @@ Step-2: Install Oh-my-zsh, the fun "configuration" framework
 ------------------------------------------------------------
 Install directly from the source.
 
-`$ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
-
+```
+$ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
 
 In the last step of this installation, it will ask to set Zsh as THE shell. Go ahead.
 
@@ -54,17 +55,19 @@ Now, let's pimp up the prompt. Shall we?
 Step-3: Install `powerlevel10k`, a powerful prompt theme
 --------------------------------------------------------
 
-I love the powerful Zsh theme `powerlevel10k`. More about [why this theme](https://github.com/romkatv/powerlevel10k#features) is awesome.
+I love the powerful Zsh theme `powerlevel10k`. More on [why this theme](https://github.com/romkatv/powerlevel10k#features) is awesome.
 
 Let's install it on top of `oh-my-zsh`.
 
 ```
-$ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+$ git clone --depth=1 \
+  https://github.com/romkatv/powerlevel10k.git \
+  ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 ```
 
 Now, gotta set `ZSH_THEME="powerlevel10k/powerlevel10k"` in `~/.zshrc` by adding that manually in the file.
 
-  
+
   
 Step-4: Make sure the prompt looks like as you want
 ---------------------------------------------------
