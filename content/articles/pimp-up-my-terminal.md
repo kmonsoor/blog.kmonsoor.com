@@ -1,24 +1,24 @@
 ---
 Title: How do I Pimp up My Terminal on Linux
 Date: 2021-03-31
-Tags: computing, linux, terminal, CLI, Zsh, "Oh My Zsh"
+Tags: computing, linux, terminal, CLI, Zsh, "Oh My Zsh", macOS
 Slug: pimp-up-my-terminal
 Status: Published
 Summary: How do I pimp up my Linux terminal? A quick trip through Zsh, Oh-my-zsh, and other power tools to make the command-line based workflow smooth and cool.
 ---
 
-Basically, purpose of this post is to be my quick, copy-paste source of the commands that I use to set up my terminal, on a new *nix terminal.
-But, if someone else finds it useful, that'd be cherry on top.
+Basically, the purpose of this post is to be my quick, copy-paste source of the commands that I use to set up my terminal, on a new *nix terminal.
+However, if someone else finds it useful, that'd be some cherries on top.
 
 This is the end goal.
 
 ![The end goal of this post](https://i.imgur.com/YqnBifw.png)
 
-Assuming I'm on a standard Linux machine with Ubuntu and I have CLI access. For other Linux distros or MacOS, some commands might be slightly different.
+Assuming I'm on a standard Linux machine with Ubuntu and I have CLI access. For other Linux distros or *MacOS*, some commands might be slightly different.
 
 Step-1: Confirm that Zsh is up-to-date
 --------------------------------------
-While on some Linux system, Zsh is present by default, on some it's not the case. So, let's make sure about it.
+While on some Linux systems, Zsh is present by default, on some it's not the case. So, let's make sure about it.
 
 `$ sudo apt install zsh`
 
@@ -68,7 +68,7 @@ In this step, I'm gonna bring in my already open-sourced Zsh config file aka `.z
 `$ rm .zshrc` 
 `$ wget https://raw.githubusercontent.com/kmonsoor/dot-files/master/.zshrc`
 
-I kept the powerlevel10k configs in comment, so that Zsh doesn't complain if i use the config file early.
+I kept the powerlevel10k configs as comments so that Zsh doesn't complain if I use the config file early.
 Have to set `ZSH_THEME="powerlevel10k/powerlevel10k"` in the `~/.zshrc` as well.
 
 Otherwise, once the `powerlevel10k` theme will run for the first time by Zsh, a very friendly step-by-step prompt will run you through towards a desirable prompt for you. Also, at any time you can invoke the config-wizard by executing `p10k configure` on the shell.
