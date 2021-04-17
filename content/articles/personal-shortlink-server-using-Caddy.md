@@ -56,6 +56,7 @@ After running with the default config(`Caddyfile`) which is in Ubuntu's case loc
 
 ![Caddy service on Ubuntu](https://i.imgur.com/cfS5nvZ.png?1)
 
+***P.S.** By the way, want your console and command prompt to look 🚀 like mine? Here's the guide: [How do I pimp up my terminal on Linux](https://blog.kmonsoor.com/pimp-up-my-terminal/)*
 
 Step-3: Tell Caddy your short-links to redirect
 -----------------------------------------------

@@ -1,5 +1,5 @@
 ---
-Title: How I Pimp up My Terminal on Linux systems
+Title: How do I Pimp up My Terminal on Linux
 Date: 2021-03-31
 Tags: computing, linux, terminal, CLI, Zsh, "Oh My Zsh"
 Slug: pimp-up-my-terminal
