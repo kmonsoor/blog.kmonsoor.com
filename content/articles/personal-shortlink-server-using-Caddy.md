@@ -23,7 +23,7 @@ What I wanted is able to:
  * minimal setup (if possible, no webapp at all)
 
 Given my previous experience with `Caddy` webserver, which is an amazing one([why?](https://caddyserver.com/docs/)), I knew Caddy has something for me under the sleeve to meet my minimal set of requirements. Thankfully, I managed to find it.
-
+I believe NGINX, currently the most popular webserver, has some kind of similar mechanism as well. But, I'm not an expert and once I was genuinely intimidated by its config file syntax. YMMV.
 
 What you gonna need?
 --------------------
