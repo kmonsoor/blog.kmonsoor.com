@@ -1,27 +1,25 @@
 ---
 Title: Install latest Python 3 on Linux CentOS 7
 Date: 2018-07-07
-Tags: linux, centos, python, centos7, python3, software-development, coding
+Tags: Linux, centos, python, centos7, python3, software-development, coding
 Slug: install-latest-python3-on-centos-7
 Status: Published
-Summary: Install latest and greatest Python 3 on CentOS 7 systems 
+Summary: Install the latest and greatest Python 3 on CentOS 7 systems 
 ---
 
 ## Why
 
 Not all distro created equal.   
-Some are created to join the space-race, some are to hold unto the leagcy. Some are cutting-edge, some are cutting edge. Some born to boot-up IoT devices, some are to pull up heavy-graphics.
+Some are created to join the space race, some are to hold unto the leagcy, some are cutting-edge, some are cutting edge. Some are born to boot-up IoT devices some are to push out heavy graphics.
 
 That's the fun (albeit, power) of Linux.
 
-![An uber, cool image by Ash Edmonds](https://i.imgur.com/3lUdFA4.jpg)
+![CentOS 7 logo](https://i.imgur.com/6ZFCdoM.jpg){: .noZoom}
 
->Photo by [Ash Edmonds](https://unsplash.com/@badashproducts) on Unsplash
+CentOS 7 is a powerful and stable distro that runs on thousands (probably, millions) production-grade servers.  
+In the matter of stability, it's a beast. However, it doesn't ship with Python 3, by default. You can install it via EPEL repository, or the below simple steps.
 
-CentOS 7 is a powerful and stable distro which runs on thousands (probably, millions) production-grade servers.  
-In stability, it's a beast. However, it don't ship with Python 3, by default. You can install it via EPEL repository, or this below simple steps.
-
-Also, take a note. The Python **2** comes with the system, which is probably 2.7.5, do **NOT** mess with it. Many system components rely on that specific version. If you need later version of 2, use virtualenv or pipenv.
+Also, take a note. The Python **2** comes with the system, which is probably 2.7.5, do **NOT** mess with it. Many system components rely on that specific version. If you need the latest versions of 2, use `virtualenv` or `pipenv`.
 
 ### Prepare your system
 
