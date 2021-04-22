@@ -33,7 +33,7 @@ I believe NGINX, currently the most popular webserver, has some kind of similar 
 What you gonna need?
 --------------------
 
- * your own domain which will be the root of the shortlinks. While sub-domained URL like `go.yourname.com/*`is quite common, if you have some short domain, like you.co/*, only for this purpose, that's fine as well.
+ * your own domain which will be the root of the shortlinks. While sub-domained URL like `go.yourname.com/*` is quite common, if you have some short domain, like you.co/*, only for this purpose, that's fine as well.
  * A webhost server or public-facing instance with its own, **public** IPv4 address.
  * working knowledge of Linux
 
@@ -45,7 +45,7 @@ Step-1: Point your subdomain to the right place
     * make sure that, regardless of your cloud architecture (e.g. VPC, subnet, firewall etc.), the SSL port (`:443`) of the instance is reachable from the public internet.
  * now go to your domain name registrar (or, DNS management provider which in my case is Cloudflare). There, you need to point shortlink subdomain (`go.`)to the webserver's IP address.
 
-Actually, you can do this step at the last. But for some reason, I prefer it to do it first. Because sometimes, [DNS propagation](https://blog.cloudflare.com/never-deal-with-dns-propagation-again/) takes some time. But, once my webservice is up and running, I like to see the result instantaneously. ;)
+Actually, you can do this step at the last. But for some reason, I prefer it to do first. Because sometimes, [DNS propagation](https://blog.cloudflare.com/never-deal-with-dns-propagation-again/) takes some time. But, once my webservice is up and running, I like to see the result instantaneously. ;)
 
 Step-2: Install Caddy, the mighty webserver
 -------------------------------------------
@@ -100,9 +100,9 @@ Note: Don't forget to restart the `caddy` service to let the new config to take 
 
 Step-4: Profit !
 ----------------
-Yeah, that's it. Now, add some own personal stuff with some cool shortlinks, and proudly share with the world.
+Yeah, that's it. Now, add some own personal stuff with some cool short-links, and proudly share with the world.
 
 
 What's next ?
 -------------
-I'm thinking that given the very low workload my shortlink resolver needs — unless I'm becoming an overnight internet sensation — using an server instance only for this purpose is overkill. My next goal is to have the same service using some "serverless" function or using the "[worker on the edge](https://developers.cloudflare.com/workers/examples/redirect)" thing from Cloudflare. Let's see ;)
+I'm thinking that given the very low workload my shortlink resolver needs — unless I'm becoming an overnight internet sensation — using a server instance only for this purpose is overkill. My next goal is to have the same service using some "serverless" function or using the "[worker on the edge](https://developers.cloudflare.com/workers/examples/redirect)" thing from Cloudflare. Let's see ;)
