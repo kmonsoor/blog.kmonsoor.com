@@ -19,6 +19,7 @@ There are many free (unbranded) and commercial (branded) options as well, but I 
 
 Before jumped into this solution, I tried (deployed & tested) few others myself, mainly [kellegous/go](https://github.com/kellegous/go), [kutt.it](kutt.it) and [adamyi/golinks](https://github.com/adamyi/golinks). But, all of them "too featureful" for my needs. 
 
+![Simple, on-prem short-link server using Caddy webserver](https://i.imgur.com/4nZbnUE.png)
 
 What I wanted is to be able to:
 
