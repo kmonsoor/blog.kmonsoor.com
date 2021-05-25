@@ -3,7 +3,7 @@ Title: Creating a free short-link server "on edge" using Cloudflare KV with Work
 Date: 2021-05-25
 Tags: cloud, computing, url-shortener, url-forwarder, Cloudflare, Cloudflare Worker, Cloudflare KV, Workers KV, on edge, free
 Slug: on-edge-shortlink-server-cloudflare-kv-worker.md
-Status: Draft
+Status: Published
 Summary: Among quite a few ways to implement a url-forwarder, here I'm going to show you how to use free-tier Cloudflare Worker (& KV) to create an in-house, on-edge, no-webserver url-forwarder
 ---
 
@@ -54,3 +54,8 @@ Pointing a DNS record to it
 Voila ! Now, test some of the short-urls that you've mapped via the KV. Enjoy !
 Watch out for the target usage though [against the limit](https://developers.cloudflare.com/workers/platform/limits#worker-limits).  
 I think you'll be fine ;)
+
+
+Related
+=======
+ * If you want to do this url-direction on your own webserver, but only using webserver, try this: [Personal short-link server using only Caddyserver](https://blog.kmonsoor.com/personal-shortlink-server-using-Caddy/)
