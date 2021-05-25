@@ -29,13 +29,28 @@ Mapping a KV to a Worker variable
 ![created webworker](https://i.imgur.com/XSdKB56.png)
 
 
-Handle a route with webworker
------------------------------
+Handling a route with webworker
+-------------------------------
 
 ![Handling a route with webworker](https://i.imgur.com/KohHRfR.png)
+
+
+The webworker
+-------------
+Here comes the worker code that runs on V8-runtime on an nearest(from the requesting user) edge location of Cloudflare to complete the functionality and deliver it to the user. Tn this case, that would be to redirect user's requested address to the mapped one by you, in the KV above.
+
+[The code editor for Cloudflare worker](https://i.imgur.com/pb9AE9v.png)
+
+If you rather prefer to copy-paste, please feel free.
+
+<script src="http://gist-it.appspot.com/https://gist.github.com/kmonsoor/dc9f96660423c96471f8574ba018d867#file-url-forwarder-worker-cloudflare-js"></script>
 
 
 Pointing a DNS record to it
 ---------------------------
 
 ![Pointing a DNS record to it](https://i.imgur.com/62bk7pe.png)
+
+Voila ! Now, test some of the short-urls that you've mapped via the KV. Enjoy !
+Watch out for the target usage though [against the limit](https://developers.cloudflare.com/workers/platform/limits#worker-limits).  
+I think you'll be fine ;)
