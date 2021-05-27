@@ -9,18 +9,37 @@ Summary: Among quite a few ways to implement a url-forwarder, here I'm going to 
 
 Among quite a few ways to implement a url-forwarder, here I'm going to show you how to use free-tier Cloudflare Worker (& KV) to create an in-house, on-edge, **no-webserver** url-forwarder.
 
+For example,
+'/latest' may point to 'https://www.yourcompany.com/about/news' which is a public page
+'/hr-help' may point to 'https://www.company-internal.com/intranet/portal/docs/hr/contact.html' which is an internal human resources help portal
+'/cnypromo' may point to 'https://shop.yourcompany.com/sales/promotions/?marketing-promo=2021-cny' which is a temporary sales promotions page targeting the shoppers during the Chinese new year of 2021.
+
+Please note that using the setup & code below , it'll be possible resolve shortlinks via a single sub-domain, e.g. go.your-domain.co/latest, or go.your-domain.co/cnypromo, but it's totally possible (with changing the code) to resolve/re-direct via any number of domains (your own, of course) towards any other public or private URL, and all sorts of novelties. However, for brevity's sake, I'm going to discuss the first one, single sub-domain usecase.
+
+
 Pre-requisites
 ==============
-* The DNS resolver for the root domain needs to be Cloudflare. Because the core of the solution, the "worker" runs on the edge of Cloudserver using a common KV(key-value) mapping.
-* Write access to the DNS configuration as you need to create a new AAAA DNS record.
-* Some knowledge of Javascript, as we gonna write the worker in JS
+* The DNS resolver for the root domain (in the below example, `kmonsoor.com`) needs to be Cloudflare. Because the core of the solution, the "worker", runs on the nearest (from the user) edge of Cloudflare using a common KV (key-value) mapping.
+* Write permission to the DNS configuration as you'd need to create a new AAAA DNS record.
+* Some knowledge of Javascript(ES6), as we gonna write the worker in that language.
 
 
 Create the short-link map as a KV
 ---------------------------------
+We'll start the setup by creating the short-link map, the list between the short-link segments that you (or, someone in your org) define and the actual URLs they needed to point to.
+
+Find the KV stuff in the `Workers` section. From the screenshot, please ignore the "Route" section for now.  
+
+![Find the KV stuff in the Workers section](https://i.imgur.com/b2Rk45u.png)
+
+ * you'd need to create a KV "Namespace". Name the namespace as you seem makes sense. I named it `REDIRECTS` (in all caps just as convention, not required). 
+ * List the short-links & their respective target URLs. From the examples in the intro, 'latest', 'hr-help', 'cnypromo' etc. would be in as the "key", and the target full links as the respective "value".
+ * Remember NOT to start the short part with '/'. In the code, it'll be taken care of.
+
 
 ![Create the short-link map as a KV](https://i.imgur.com/jkC8bSr.png)
 
+Once you've listed all your desired (short-link, target-link) combinations, now we have a KV on CLoudflare. But yet, it's not referencable from your Worker code, not yet. Hence the next step.
 
 Mapping a KV to a Worker variable
 ---------------------------------
