@@ -7,8 +7,7 @@ AUTHOR = 'Khaled Monsoor'
 AUTHOR_EMAIL = 'k@kmonsoor.com'
 SITENAME = 'Khaled Monsoor :: Blog'
 TAGLINE = 'khaled monsoor says ...'
-SITE_SUMMARY = "Khaled Monsoor here. I usually write about programming, system-design, Islam, life, travel or just " \
-               "personal thoughts ... "
+SITE_SUMMARY = "Khaled Monsoor here. I usually write about programming, system-design, Islam, life, travel or just personal thoughts ... "
 
 SITEURL = 'https://blog.kmonsoor.com'
 DEFAULT_DATE_FORMAT = '%Y-%m-%d'
@@ -24,8 +23,7 @@ GITHUB_URL = 'https://github.com/kmonsoor/'
 
 LINKS_WIDGET_NAME = "Professional"
 LINKS = (
-    # ('PDF resume', 'https://drive.google.com/open?id=0B_IybRcQsDwaSTY0VUotbkRiSFk'),
-    ('Careers 2.0', 'https://stackoverflow.com/story/kmonsoor'),
+    ('StackOverflow', 'https://stackoverflow.com/users/617185/kmonsoor'),
     ('LinkedIn', 'https://linkedin.com/in/kmonsoor'),
     ('Github', GITHUB_URL),
 )
@@ -33,9 +31,8 @@ LINKS = (
 # Social widget.
 SOCIAL_WIDGET_NAME = "Social"
 SOCIAL = (
-    ('kmonsoor', "https://twitter.com/kmonsoor"),
-    ("kmonsoor", "https://github.com/kmonsoor"),
-    ("kmonsoor", "https://stackoverflow.com/users/617185/kmonsoor"),
+    ('Twitter', "https://twitter.com/kmonsoor"),
+    ("Photos", "https://photos.kmonsoor.com"),
 )
 
 # Analytics
