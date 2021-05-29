@@ -1,7 +1,7 @@
 body, input, button, select, textarea, li, .navbar-form .search-query {
   font-family: 'Merriweather', 'Baloo Da 2', 'Open Sans', sans-serif;
   /*font-size: 16px;*/
-  line-height: 24px;
+  line-height: 31px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -11,7 +11,7 @@ h1, h2, h3, h4, h5, h6 {
 code, pre {
   font-family: "Droid Sans Mono", Monaco, Menlo, Consolas, "Courier New", monospace;
   /*font-size: 15px;*/
-  line-height: 24px;
+  line-height: 31px;
   white-space: pre;
   overflow: auto;
   color: inherit;
