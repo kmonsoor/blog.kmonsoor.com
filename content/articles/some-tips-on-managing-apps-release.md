@@ -1,5 +1,5 @@
 ---
-Title: What I learned managing weekly release for a 50M+ users’ app
+Title: What I learned managing weekly release of a 50M+ users’ app
 Date: 2020-08-22 12:12
 Tags: release, management, tips
 Slug: some-tips-on-managing-apps-release
