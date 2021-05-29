@@ -1,5 +1,5 @@
 body, input, button, select, textarea, li, .navbar-form .search-query {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Merriweather', 'Baloo Da 2', 'Open Sans', sans-serif;
   /*font-size: 16px;*/
   line-height: 24px;
 }
@@ -349,7 +349,31 @@ blockquote {
 .codehilite .vi, .highlight .vi { color: #268bd2 } /* Name.Variable.Instance */
 .codehilite .il, .highlight .il { color: #2aa198 } /* Literal.Number.Integer.Long */
 
-
+/* Fetched as https://fonts.googleapis.com/css2?family=Merriweather:wght@300 */
+/* cyrillic */
+@font-face {
+  font-family: 'Merriweather';
+  font-style: normal;
+  font-weight: 300;
+  src: url(https://fonts.gstatic.com/s/merriweather/v22/u-4n0qyriQwlOrhSvowK_l521wRZXMf6lvg.woff2) format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Merriweather';
+  font-style: normal;
+  font-weight: 300;
+  src: url(https://fonts.gstatic.com/s/merriweather/v22/u-4n0qyriQwlOrhSvowK_l521wRZVsf6lvg.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Merriweather';
+  font-style: normal;
+  font-weight: 300;
+  src: url(https://fonts.gstatic.com/s/merriweather/v22/u-4n0qyriQwlOrhSvowK_l521wRZWMf6.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
 
 /* cyrillic-ext */
 @font-face {
@@ -367,88 +391,30 @@ blockquote {
   src: local('Open Sans'), local('OpenSans'), url(https://fonts.gstatic.com/s/opensans/v13/RjgO7rYTmqiVp7vzi-Q5URJtnKITppOI_IvcXXDNrsc.woff2) format('woff2');
   unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
 }
-/* greek-ext */
+
+/* For Bangla/Bengali */
+/* bengali */
 @font-face {
-  font-family: 'Open Sans';
+  font-family: 'Baloo Da 2';
   font-style: normal;
   font-weight: 400;
-  src: local('Open Sans'), local('OpenSans'), url(https://fonts.gstatic.com/s/opensans/v13/LWCjsQkB6EMdfHrEVqA1KRJtnKITppOI_IvcXXDNrsc.woff2) format('woff2');
-  unicode-range: U+1F00-1FFF;
-}
-/* greek */
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Open Sans'), local('OpenSans'), url(https://fonts.gstatic.com/s/opensans/v13/xozscpT2726on7jbcb_pAhJtnKITppOI_IvcXXDNrsc.woff2) format('woff2');
-  unicode-range: U+0370-03FF;
+  src: url(https://fonts.gstatic.com/s/balooda2/v2/2-ci9J9j0IaUMQZwAJyJQvvdoKFD.woff2) format('woff2');
+  unicode-range: U+0964-0965, U+0981-09FB, U+200C-200D, U+20B9, U+25CC;
 }
 
 /* latin-ext */
 @font-face {
-  font-family: 'Open Sans';
+  font-family: 'Baloo Da 2';
   font-style: normal;
   font-weight: 400;
-  src: local('Open Sans'), local('OpenSans'), url(https://fonts.gstatic.com/s/opensans/v13/u-WUoqrET9fUeobQW7jkRRJtnKITppOI_IvcXXDNrsc.woff2) format('woff2');
-  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+  src: url(https://fonts.gstatic.com/s/balooda2/v2/2-ci9J9j0IaUMQZwAJyJQufdoKFD.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 /* latin */
 @font-face {
-  font-family: 'Open Sans';
+  font-family: 'Baloo Da 2';
   font-style: normal;
   font-weight: 400;
-  src: local('Open Sans'), local('OpenSans'), url(https://fonts.gstatic.com/s/opensans/v13/cJZKeOuBrn4kERxqtaUH3VtXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
-}
-
-
-/* cyrillic-ext */
-@font-face {
-  font-family: 'Istok Web';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Istok Web Regular'), local('IstokWeb-Regular'), url(https://fonts.gstatic.com/s/istokweb/v10/-i4CkQRnTrQUASpkOzB5JhJtnKITppOI_IvcXXDNrsc.woff2) format('woff2');
-  unicode-range: U+0460-052F, U+20B4, U+2DE0-2DFF, U+A640-A69F;
-}
-/* cyrillic */
-@font-face {
-  font-family: 'Istok Web';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Istok Web Regular'), local('IstokWeb-Regular'), url(https://fonts.gstatic.com/s/istokweb/v10/EyYQiCAfMk0ApvfCJfs4nBJtnKITppOI_IvcXXDNrsc.woff2) format('woff2');
-  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Istok Web';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Istok Web Regular'), local('IstokWeb-Regular'), url(https://fonts.gstatic.com/s/istokweb/v10/bFTnH16NdZ5qlv4Xg5Q0aRJtnKITppOI_IvcXXDNrsc.woff2) format('woff2');
-  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Istok Web';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Istok Web Regular'), local('IstokWeb-Regular'), url(https://fonts.gstatic.com/s/istokweb/v10/EvPKapBawcLZ3hbihjhqAVtXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
-}
-
-/* latin */
-@font-face {
-  font-family: 'Droid Sans Mono';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Droid Sans Mono'), local('DroidSansMono'), url(https://fonts.gstatic.com/s/droidsansmono/v7/ns-m2xQYezAtqh7ai59hJYdJ2JT0J65PSe7wdxAnx_I.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
-}
-
-/* latin */
-@font-face {
-  font-family: 'Expletus Sans';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Expletus Sans'), local('ExpletusSans'), url(https://fonts.gstatic.com/s/expletussans/v9/gegTSDBDs5le3g6uxU1ZscmBRJoLbs7X6hY7yFEc97Q.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+  src: url(https://fonts.gstatic.com/s/balooda2/v2/2-ci9J9j0IaUMQZwAJyJQundoA.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
