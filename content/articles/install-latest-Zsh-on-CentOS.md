@@ -14,32 +14,62 @@ Easy peasy !!
 
 **Note**: Please remember to remove the "sudo" from the commands if you are already in "root" or sudo-er mode  
 
-* Install the pre-requisites i.e. GCC and other related stuffs for building Zsh from source.  
-`$ sudo yum groupinstall "Development tools"`  
-`$ gcc -v  # Check if GCC is installed properly`  
-`$ sudo yum install ncurses-devel`
+We'll be following these steps:
 
+[TOC]
 
-* Download the latest source file of Zsh. Please update the link with the latest by checking [this web-folder](https://www.zsh.org/pub/).  
-`$ cd /usr/local/src`  
-`$ sudo curl -L https://www.zsh.org/pub/zsh-5.8.tar.xz -o zsh-5.8.tar.xz   # update the link & filename if needed` 
+# Install the pre-requisites
+We need GCC (C++ compiler) and other related stuffs for building Zsh from the source code.  
 
-* Unzip the file, "dig in" to the folder, and build & install from the source.   
-`$ sudo tar -xf zsh-5.8.tar.xz`  
-`$ cd zsh-5.8`  
-`$ sudo ./configure && sudo make && sudo make install`
+```bash
+$ sudo yum groupinstall "Development tools"  
+$ sudo yum install ncurses-devel
+```
 
-* Add Zsh to the login shells by adding '/usr/local/bin/zsh' on the last line of the config file, `/etc/shells`  
-`$ sudo -e /etc/shells`  
-`$ sudo chsh kmonsoor  # change it to your username`
+Now, check if GCC is installed properly, by  
+`$ gcc -v`  
 
-* Update the system default symlink to the new Zsh version.  
-`$ sudo ln -sf /usr/local/bin/zsh /bin/zsh`
-`$ zsh --version`
- 
-* It's always a good habit clea up after doing stuffs.  
-`$ sudo make clean`
+# Download the latest source
+Now, we gonna get the latest code of Zsh.  
+Please update the link (in the shown command) with the latest by checking [this web-folder](https://www.zsh.org/pub/).  
+Don't forget to update the filename as well, if needed.
+```bash
+$ cd /usr/local/src
+$ sudo curl -L https://www.zsh.org/pub/zsh-5.8.tar.xz \
+-o zsh-5.8.tar.xz
+```
 
+# Build & Install
+Unzip the file, "dig in" to the folder, and build & install from the source.   
 
+```bash
+$ sudo tar -xf zsh-5.8.tar.xz
+$ cd zsh-5.8
+$ sudo ./configure && sudo make && sudo make install
+```
 
+# Final steps
+ Add Zsh to the login shells by adding '/usr/local/bin/zsh' on the last line of the config file, `/etc/shells`  
+
+```bash 
+$ sudo -e /etc/shells
+# Please don't forget to replace 'kmonsoor' with your username
+$ sudo chsh kmonsoor
+```
+
+Update the system's default symlink to the new Zsh version.  
+```bash
+$ sudo ln -sf /usr/local/bin/zsh /bin/zsh
+$ zsh --version
+``` 
+
+It's always a good habit to clean up after doing stuffs.  ;)
+```bash
+$ sudo make clean
+```
+  
 ![voila](https://i.imgur.com/BEFIOXf.jpg)
+
+# Related
+Want to have a super, cool-looking command shell? Gotcha, fam. 
+Check out my blog on **[How do I Pimp up My Terminal on Linux](https://blog.kmonsoor.com/pimp-up-my-terminal/)**.
