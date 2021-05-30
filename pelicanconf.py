@@ -131,7 +131,9 @@ WITH_FUTURE_DATES = False
 MARKDOWN = {
     'extension_configs': {
         'markdown.extensions.codehilite': {'css_class': 'highlight'},
-        'markdown.extensions.toc': {'permalink': 'true'},
+        'markdown.extensions.toc': {
+            # 'permalink': 'true'
+            },
         'markdown.extensions.extra': {},
         'markdown.extensions.meta': {},
     },
