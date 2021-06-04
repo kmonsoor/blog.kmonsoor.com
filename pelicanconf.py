@@ -1,6 +1,15 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
+from dotenv import load_dotenv
+load_dotenv()
+
+import os
+ALGOLIA_ADMIN_API_KEY = os.getenv('ALGOLIA_ADMIN_API_KEY')
+
+ALGOLIA_APP_ID = "TTN85YIFVC"
+ALGOLIA_SEARCH_API_KEY = "646e97567ea3b5ff9c6a1cb076dd6f4d"
+ALGOLIA_INDEX_NAME = 'kmonsoor-blog'
 
 # Site settings.
 AUTHOR = 'Khaled Monsoor'
@@ -110,6 +119,7 @@ PLUGIN_PATHS = ['plugins']
 PLUGINS = ['gzip_cache',
            'sitemap',
            'minify',
+        #    'algolia_search',
            ]
 
 MINIFY = {
