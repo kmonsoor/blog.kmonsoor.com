@@ -67,10 +67,13 @@ The code editor looks like this:
 
 ![The code editor for Cloudflare worker](https://i.imgur.com/pb9AE9v.png)
 
-If you rather prefer to copy-paste, please feel free.
+If you rather prefer to copy-paste, please feel free to do it from the below GitHub Gist.
 
-<script src="http://gist-it.appspot.com/https://gist.github.com/kmonsoor/dc9f96660423c96471f8574ba018d867#file-url-forwarder-worker-cloudflare-js"></script>
+<div class="gist">
+<script src="https://gist.github.com/kmonsoor/dc9f96660423c96471f8574ba018d867.js"></script>
+</div>
 
+Once done, it should look like ...
 ![created webworker](https://i.imgur.com/XSdKB56.png)
 
 # Pointing a DNS record to the Worker

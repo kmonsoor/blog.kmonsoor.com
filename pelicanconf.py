@@ -32,7 +32,7 @@ LINKS = (
 SOCIAL_WIDGET_NAME = "Social"
 SOCIAL = (
     ('Twitter', "https://twitter.com/kmonsoor"),
-    ("Photos", "https://photos.kmonsoor.com"),
+    # ("Photos", "https://photos.kmonsoor.com"),
 )
 
 # Analytics
