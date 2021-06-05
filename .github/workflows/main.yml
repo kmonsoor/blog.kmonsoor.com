@@ -1,0 +1,23 @@
+name: Pelican site Builder
+
+on:
+  # Trigger the workflow on push or pull request,
+  # but only for the master branch
+  push:
+    branches:
+      - live
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - uses: nelsonjchen/gh-pages-pelican-action@0.1.5
+      env:
+        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        PELICAN_THEME_FOLDER: plumage
+        PELICAN_CONTENT_FOLDER: content
+        GH_PAGES_CNAME: blog.kmonsoor.com
+        PELICAN_CONFIG_FILE: publishconf.py
