@@ -1,29 +1,29 @@
 ---
 Title: Creating a free short-link server "on edge" using Cloudflare KV with Worker
-Date: 2021-05-25
+Date: 2021-06-06
 Tags: cloud, computing, url-shortener, url-forwarder, Cloudflare, Cloudflare Worker, Cloudflare KV, Workers KV, on edge, free, go-link
-Slug: on-edge-shortlink-server-cloudflare-kv-worker
+Slug: golink-server-using-cloudflare-worker-kv
 Status: Published
-Summary: Among quite a few ways to implement a url-forwarder, here I'm going to show you how to use free-tier Cloudflare Worker (& KV) to create an in-house, on-edge, no-webserver url-forwarder
+Summary: Among quite a few ways to implement a go-link server (i.e. url-forwarder, short-url server etc.), here I'm going to show you how to use free-tier Cloudflare Worker (& KV) to create an in-house, on-edge, **no-webserver** go-link server.
 ---
 
-Among quite a few ways to implement a url-forwarder, here I'm going to show you how to use free-tier Cloudflare Worker (& KV) to create an in-house, on-edge, **no-webserver** url-forwarder.
+Among quite a few ways to implement a go-link server (i.e. url-forwarder, short-url server etc.), here I'm going to show you how to use free-tier Cloudflare Worker (& KV) to create an in-house, on-edge, **no-webserver** go-link server.
 
-For example,
+For example, the short-link for this article is `go.kmonsoor.com/golink-kv`
 
 * `/latest` (by which I mean `go.yourdomain.co/latest`) may point to `https://www.yourcompany.com/about/news` which is a public page
-* `/hr-help` may point to `https://www.company-internal.com/intranet/portal/docs/hr/contact.html` which is an internal human resources help portal
+* `/hr-help` may point to `https://www.company-internal.com/long-link/hr/contact.html` which is company's internal human-resources help portal
 * `/cnypromo` may point to `https://shop.yourcompany.com/sales/promotions/?marketing-promo=2021-cny` which is a temporary sales promotions page targeting the shoppers during the Chinese new year of 2021.
 
-Please note that using the setup & code below , it'll be possible resolve shortlinks via a single sub-domain, e.g. `go.your-domain.co/latest`, or `go.your-domain.co/cnypromo`, but it's totally possible (with changing the code) to resolve/re-direct via any number of domains (your own, of course) towards any other public or private URL, and all sorts of novelties. However, for brevity's sake, I'm going to discuss the first one, single sub-domain usecase.
+Please note that using the setup and the code below, it'll be possible resolve shortlinks via a **single** sub-domain, e.g. `go.your-domain.co`. However, it's totally possible (with some modification of the code) to resolve/re-direct via *any number of domains* (your own, of course) towards any other public or private URL, and all sorts of novelties. However, for brevity's sake, I'm going to discuss the first one, single sub-domain usecase.
 
-To setup a short-URL resolver via proper KV+Worker combination, we'll go through these steps:
+To setup a go-link server or short-URL resolver via a proper KV+Worker combination, we'll go through these steps:
 
 [TOC]
 
 # Pre-requisites
- * The DNS resolver for the root domain (in the example below, `kmonsoor.com`) needs to be Cloudflare. Because the core of the solution, the "worker", runs on the nearest (from the user) edge of Cloudflare using a common KV (key-value) mapping.
- * Write permission to the DNS configuration as you'd need to create a new AAAA DNS record.
+ * The DNS resolver for the **root** domain (in the example below, *`kmonsoor.com`*) needs to be Cloudflare. Because the core of the solution, the "worker", runs on the nearest (from the user) edge of Cloudflare using a common KV ("key, value") list.
+ * Write permission to the DNS configuration as you'd need to add a new AAAA DNS record.
  * Some knowledge of Javascript(ES6), as we gonna write the worker in that language.
 
 
@@ -35,7 +35,7 @@ Find the KV stuff in the `Workers` section. From the screenshot, please ignore t
 
 ![Find the KV stuff in the Workers section](https://i.imgur.com/b2Rk45u.png)
 
-  * you'd need to create a KV "Namespace". Name the namespace as you seem makes sense. I named it `REDIRECTS` (in all caps just as convention, not required). 
+  * you'd need to create a Worker KV "Namespace". Name the namespace as you seem fit. I named it `REDIRECTS` (in all caps just as convention, not required). 
   * List the short-links & their respective target URLs. From the examples in the intro, the keys `latest`, `hr-help`, `cnypromo` etc. would be in as the "key", and the target full links as the respective "value".
   * Remember NOT to start the short part with '/'. In the code, it'll be taken care of.
 
@@ -77,16 +77,20 @@ Once done, it should look like ...
 ![created webworker](https://i.imgur.com/XSdKB56.png)
 
 # Pointing a DNS record to the Worker
+Finally, we need to point a DNS record that'll redirect all requests to your re-soutign sub-domain (e.g. `go.your-domain.com`) to the Cloudflare Worker that we just created.
 
+According to the Cloudflare docs, the DNNS record must be an AAAA record, pointing to the IPv6 address `100:`. The "Name" here is the "sub-domain" part of your choice which is better be short to serve our goal here.  
+  
 ![Pointing a DNS record to it](https://i.imgur.com/62bk7pe.png)
 
 Voila ! Now, test some of the short-urls that you've mapped via the KV. Enjoy !
 Watch out for the target usage though [against the limit](https://developers.cloudflare.com/workers/platform/limits#worker-limits).  
-I think you'll be fine ;)
+  
+I think you'll be fine, unnless you're some kind of celebrity ;)
 
-# Next improvements
+# Next step
 
-In future, I may work on a generic `Go/Link` type resolver as a browser extension. 
+As the next next step, I'm thinking to create a generic `Go/Link` resolver browser extension. Then, someone can set their own default domain or company domain of choice as short-domain host. In that case, entering just `go/hr-help` on the browser will take to `https://www.company-internal.com/.../hr/contact.html` that we have discussed at the beginning (remember the example case of an internal human resources help portal?).
 
 # Related
  * If you want to do this url-direction **on your own webserver, but only using webserver**, try this: [Personal short-link server using only Caddyserver](https://blog.kmonsoor.com/personal-shortlink-server-using-Caddy/)
