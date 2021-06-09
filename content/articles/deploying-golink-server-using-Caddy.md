@@ -1,8 +1,8 @@
 ---
-Title: Personal short-link server using only Caddyserver
+Title: Deploying a short-link aka go-link server using only Caddyserver
 Date: 2021-04-16
-Tags: caddyserver, url-shortener, Caddyfile, web-link
-Slug: personal-shortlink-server-using-Caddy
+Tags: caddy, webserver, url-shortener, Caddyfile, web-link, go-link
+Slug: deploying-golink-server-using-Caddy
 Status: Published
 Summary: Yeah, there are tons of open-source, full-fledged link-shorteners. But, none were exactly what I wanted. Hence, the minimal approach only utilizing the amazing webserver, `Caddy`. Here we go ...
 ---
