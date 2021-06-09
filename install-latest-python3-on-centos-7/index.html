@@ -1,32 +1,294 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="canonical" href="https://blog.kmonsoor.com/install-latest-python3-on-centos-7/"><title>Install latest Python 3 on Linux CentOS 7 -- Khaled Monsoor :: Blog</title><meta name="robots" content="nofollow"><meta name="author" content="Khaled Monsoor"><link rel="image_src" href="https://blog.kmonsoor.com/favicon.ico"><meta property="og:image" content="https://blog.kmonsoor.com/favicon.ico"><meta name="description" content="Install latest and greatest Python 3 on CentOS 7 systems"><meta property="og:site_name" content="Khaled Monsoor :: Blog"><meta property="og:type" content="article"><meta property="og:locale" content="en_US"><meta property="og:title" content="Install latest Python 3 on Linux CentOS 7 -- Khaled Monsoor :: Blog"><meta property="og:url" content="https://blog.kmonsoor.com/install-latest-python3-on-centos-7/"><meta property="og:description" content="Install latest and greatest Python 3 on CentOS 7 systems"><meta property="article:published_time" content="2018-07-07 00:00:00+06:00"><meta name="twitter:site" content="@kmonsoor"><meta name="twitter:creator" content="@kmonsoor"><meta name="twitter:image" content="https://pbs.twimg.com/profile_images/681426835092029440/ZxuFAKOY_400x400.png"><meta name="twitter:card" content="Install latest and greatest Python 3 on CentOS 7 systems"><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script><script defer src="https://blog.kmonsoor.com/theme/js/application.js"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css"><link rel="stylesheet" href="https://blog.kmonsoor.com/theme/css/all.css"><link rel="icon" href="https://blog.kmonsoor.com/favicon.ico" type="image/x-icon"><link rel="shortcut icon" href="https://blog.kmonsoor.com/favicon.ico" type="image/x-icon"><script> window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;ga('create','UA-20431143-1','auto');ga('send','pageview');</script><script async src="https://www.google-analytics.com/analytics.js"></script><link href="https://blog.kmonsoor.com/feed/atom/index.html" type="application/atom+xml" rel="alternate" title="Khaled Monsoor :: Blog - Latest posts - Atom Feed"><link href="https://blog.kmonsoor.com/feed/index.html" type="application/rss+xml" rel="alternate" title="Khaled Monsoor :: Blog - Latest posts - RSS Feed"><link href="https://blog.kmonsoor.com/category/tech/feed/atom/index.html" type="application/atom+xml" rel="alternate" title="Khaled Monsoor :: Blog - Category: Tech - Atom Feed"><link href="https://blog.kmonsoor.com/category/tech/feed/index.html" type="application/rss+xml" rel="alternate" title="Khaled Monsoor :: Blog - Category: Tech - RSS Feed"></head><body><div class="container"><div class="page-header"><a href="https://blog.kmonsoor.com" class="avatar-container pull-left"><div class="avatar "><div class="side"><img src="/logo.png" class="img-responsive"></div></div></a><h1><a href="https://blog.kmonsoor.com">Khaled Monsoor :: Blog</a><small></small></h1></div><nav class="navbar navbar-default"><div class="navbar-header"><button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#plumage-navbar-collapse-1" aria-expanded="false"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a class="navbar-brand" href="https://blog.kmonsoor.com" title>Install latest Python 3 on Linux CentOS 7</a></div><div class="collapse navbar-collapse" id="plumage-navbar-collapse-1"><ul class="nav navbar-nav"><li><a href="/">Home</a></li><li><a href="https://blog.kmonsoor.com/about/">About Me</a></li><li><a href="https://blog.kmonsoor.com/category/language/">Language</a></li><li class="active"><a href="https://blog.kmonsoor.com/category/tech/">Tech <span class="sr-only">(current)</span></a></li><li><a href="https://blog.kmonsoor.com/category/thoughts/">Thoughts</a></li></ul></div></nav></div><div class="container main"><div class="row"><div class=" col-md-9  "><h1><a href="https://blog.kmonsoor.com/install-latest-python3-on-centos-7/" rel="bookmark" title="Permalink to Install latest Python 3 on Linux CentOS 7">Install latest Python 3 on Linux CentOS 7</a></h1></div></div><div class="row"><div class=" col-md-9 " id="content" role="main"><div><h2>Why</h2><p>Not all distro created equal. <br> Some are created to join the space-race, some are to hold unto the leagcy. Some are cutting-edge, some are cutting edge. Some born to boot-up IoT devices, some are to pull up heavy-graphics.</p><p>That's the fun (albeit, power) of Linux.</p><p><img alt="An uber, cool image by Ash Edmonds" src="https://i.imgur.com/3lUdFA4.jpg"></p><blockquote><p>Photo by <a href="https://unsplash.com/@badashproducts">Ash Edmonds</a> on Unsplash</p></blockquote><p>CentOS 7 is a powerful and stable distro which runs on thousands (probably, millions) production-grade servers.<br> In stability, it's a beast. However, it don't ship with Python 3, by default. You can install it via EPEL repository, or this below simple steps.</p><p>Also, take a note. The Python <strong>2</strong> comes with the system, which is probably 2.7.5, do <strong>NOT</strong> mess with it. Many system components rely on that specific version. If you need later version of 2, use virtualenv or pipenv.</p><h3>Prepare your system</h3><p>Start with installing pre-requisite utilities for compilation and development support.</p><div class="highlight"><pre><span></span>$ sudo yum update <span class="o">&amp;&amp;</span> sudo yum groupinstall -y <span class="s2">&quot;development tools&quot;</span>  
-$ sudo yum install -y zlib-devel bzip2-devel openssl-devel ncurses-devel <span class="se">\</span>
-       sqlite-devel readline-devel tk-devel gdbm-devel <span class="se">\</span>
-       db4-devel libpcap-devel xz-devel expat-devel
-</pre></div><h3>Download latest Python source code from Python.org</h3><div class="highlight"><pre><span></span>$ wget https://www.python.org/ftp/python/3.6.6/Python-3.6.6.tar.xz
-$ tar xf Python-3.6.6.tar.xz
-$ <span class="nb">cd</span> Python-3.6.6
-</pre></div><h3>Enable performance optimizations (optional, but highly recommended)</h3><div class="highlight"><pre><span></span>$ ./configure --prefix<span class="o">=</span>/usr/local --enable-shared <span class="nv">LDFLAGS</span><span class="o">=</span><span class="s2">&quot;-Wl,-rpath /usr/local/lib&quot;</span>  
-$ ./configure --enable-optimizations
-</pre></div><h3>Build and install</h3><div class="highlight"><pre><span></span>$ make
-$ sudo make altinstall
-</pre></div><p>Now, Python 3.6.6 is ready to be used in your system; located in <code>/usr/local/bin/python3.6</code></p><div class="highlight"><pre><span></span>$ which python3.6
-/usr/local/bin/python3.6
-
-$ python3.6
-Python <span class="m">3</span>.6.6 <span class="o">(</span>default, Jul <span class="m">10</span> <span class="m">2018</span>, <span class="m">14</span>:04:26<span class="o">)</span>
-<span class="o">[</span>GCC <span class="m">4</span>.8.5 <span class="m">20150623</span> <span class="o">(</span>Red Hat <span class="m">4</span>.8.5-28<span class="o">)]</span> on linux
-Type <span class="s2">&quot;help&quot;</span>, <span class="s2">&quot;copyright&quot;</span>, <span class="s2">&quot;credits&quot;</span> or <span class="s2">&quot;license&quot;</span> <span class="k">for</span> more information.
-&gt;&gt;&gt;
-</pre></div><p>For convenience, you can create a symbolic-link with a shorter name. If you had system-installed Python3 (unlikely), <strong>don't</strong> do this, as some system-components may depend on that specific older version of Python 3.</p><div class="highlight"><pre><span></span>$ sudo ln -s /usr/local/bin/python3.6 /usr/local/bin/python3
-$ python3
-Python <span class="m">3</span>.6.6 <span class="o">(</span>default, Jul <span class="m">10</span> <span class="m">2018</span>, <span class="m">14</span>:04:26<span class="o">)</span>
-<span class="o">[</span>GCC <span class="m">4</span>.8.5 <span class="m">20150623</span> <span class="o">(</span>Red Hat <span class="m">4</span>.8.5-28<span class="o">)]</span> on linux
-Type <span class="s2">&quot;help&quot;</span>, <span class="s2">&quot;copyright&quot;</span>, <span class="s2">&quot;credits&quot;</span> or <span class="s2">&quot;license&quot;</span> <span class="k">for</span> more information.
-&gt;&gt;&gt;
-</pre></div><h2><del>Install wheel and pip</del></h2><p>You don't need to, because <code>Python 3.6.6</code> includes these necessary tools included.</p><div class="highlight"><pre><span></span>$ pip3.6 -V
-pip <span class="m">10</span>.0.1 from /usr/local/lib/python3.6/site-packages/pip <span class="o">(</span>python <span class="m">3</span>.6<span class="o">)</span>
-$ wheel version
-wheel <span class="m">0</span>.29.0
-</pre></div></div></div><div class="col-md-3"><div class="well"><p><abbr title="2018-07-07T00:00:00+06:00"><i class="fa fa-calendar"></i> Jul. 07, 2018</abbr></p><hr><p><a href="https://blog.kmonsoor.com/category/tech/" rel="tag" data-toggle="tooltip" class="label label-info" title="22 articles in this category">Tech</a><a href="/tag/python/" data-toggle="tooltip" class="label label-default" title="5 articles with this tag">python</a><a href="/tag/coding/" data-toggle="tooltip" class="label label-default" title="4 articles with this tag">coding</a><a href="/tag/linux/" data-toggle="tooltip" class="label label-default" title="2 articles with this tag">linux</a><a href="/tag/software-development/" data-toggle="tooltip" class="label label-default" title="2 articles with this tag">software-development</a><a href="/tag/centos/" data-toggle="tooltip" class="label label-default" title="1 article with this tag">centos</a><a href="/tag/centos7/" data-toggle="tooltip" class="label label-default" title="1 article with this tag">centos7</a><a href="/tag/python3/" data-toggle="tooltip" class="label label-default" title="1 article with this tag">python3</a></p><hr><p>Found a typo ? Want to fix it ?</p><a class="btn btn-info btn-block" href="https://github.com/kmonsoor/blog.kmonsoor.com/edit/live/content/articles/install-latest-python3-on-centos-7.md"><i class="fa fa-random fa-white fa-fw"></i> Suggest edit on GitHub</a><hr></div></div></div></div><footer class="container"><div class="commentbox"></div></footer><footer class="container-fluid"><div class="container"><div class="row"><div class="col-md-2"><h5>Social</h5><ul class="list-unstyled"><li><a href="https://twitter.com/kmonsoor"><i class="fa fa-twitter"></i> @KhaledMonsoor </a></li><li><a href="http://instagram.com/kmonsoor/"><img src="https://icons.better-idea.org/icon?url=instagram.com&size=16" width="16" height="16" class="icon" alt="instagram.com icon"> kmonsoor </a></li></ul></div><div class="col-md-2"><h5>Professional</h5><ul class="list-unstyled"><li><a href="https://stackoverflow.com/story/kmonsoor"><i class="fa fa-stack-overflow"></i> Careers 2.0 </a></li><li><a href="https://linkedin.com/in/kmonsoor"><i class="fa fa-linkedin-square"></i> LinkedIn </a></li><li><a href="https://github.com/kmonsoor/"><i class="fa fa-github"></i> Github </a></li></ul></div><div class="col-md-2"><h5>Browse content by</h5><ul class="list-unstyled"><li><a href="https://blog.kmonsoor.com/categories/index.html"><i class="fa fa-tags"></i> Categories</a></li><li><a href="https://blog.kmonsoor.com/archives/index.html"><i class="fa fa-calendar"></i> Dates</a></li><li><a href="https://blog.kmonsoor.com/tags/index.html"><i class="fa fa-tag"></i> Tags</a></li></ul></div><div class="col-md-2"><h4><a target="_blank" href="https://paypal.me/kmonsoor/">Support Author</a></h4></div><div class="col-md-2 text-muted"><h5>Copyright notice</h5><p>© Copyright 2010-2020 Khaled Monsoor.</p></div><div class="col-md-2 text-muted"><h5>Disclaimer</h5><p>All opinions expressed in this site are my own personal opinions and are not endorsed by, nor do they represent the opinions of my previous, current and future employers or any of its affiliates, partners or customers.</p></div><div class="span2"><h5 class="pull-right"><a href="#" class="fa fa-arrow-up"> Back to top</a></h5></div></div></div><div class="container"><div class="row span12 muted text-center"> Site generated by <a href="http://getpelican.com"> Pelican</a> with modified <a href="https://github.com/kdeldycke/plumage">Plumage</a> theme. </div></div></footer><script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script><script defer src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script><script defer src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script><script defer src="https://cdnjs.cloudflare.com/ajax/libs/fitvids/1.1.0/jquery.fitvids.min.js"></script><script defer src="https://blog.kmonsoor.com/theme/js/jquery.mglass.js"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css"><script>
-    commentBox('5722781509484544-proj');
-</script></body></html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>    Install latest Python 3 on Linux CentOS 7
+ | I think ...</title>
+<meta content="Khaled Monsoor" name="author"/>
+<meta content="Pelican v4.6.0" name="generator"/>
+<link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css" integrity="sha512-oc9+XSs1H243/FRN9Rw62Fn8EtxjEYWHXRvjS43YtueEewbS6ObfXcJNyohjHqVKFPoXXUxwc+q1K7Dee6vv9g==" rel="stylesheet"/>
+<link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" rel="stylesheet"/>
+<link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" integrity="sha512-+EoPw+Fiwh6eSeRK7zwIKG2MA8i3rV/DGa3tdttQGgWyatG/SkncT53KHQaS5Jh9MNOT3dmFL0FjTY08And/Cw==" rel="stylesheet"/>
+<link href="../theme/css/main.min.css?c3e3f661" rel="stylesheet"/>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-20431143-1"></script>
+<script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-20431143-1');
+    </script>
+<script crossorigin="anonymous" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script crossorigin="anonymous" integrity="sha512-iceXjjbmB2rwoX93Ka6HAHP+B76IY1z0o3h+N1PeDtRSsyeetU3/0QKJqGyPJcX63zysNehggFwMC/bi7dvMig==" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/js/bootstrap.bundle.min.js"></script>
+<script crossorigin="anonymous" integrity="sha512-IsNh5E3eYy3tr/JiX2Yx4vsCujtkhwl7SLqgnwLNgf04Hrt9BT9SXlLlZlWx+OK4ndzAoALhsMNcCmkggjZB1w==" src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+<script crossorigin="anonymous" integrity="sha512-/2sZKAsHDmHNoevKR/xsUKe+Bpf692q4tHNQs9VWWz0ujJ9JBM67iFYbIEdfDV9I2BaodgT5MIg/FTUmUv3oyQ==" src="https://cdnjs.cloudflare.com/ajax/libs/fitvids/1.2.0/jquery.fitvids.min.js"></script>
+<script src="../theme/webassets-external/9c7dcf71957efaca317d5233af56d4f0_jquery.mglass.js"></script>
+<script src="../theme/webassets-external/d9c86f33b63c3c484c04107bdbaa0c73_application.js"></script>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="/site.webmanifest" rel="manifest"/>
+<link color="#5bbad5" href="/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#ffc40d" name="msapplication-TileColor"/>
+<meta content="#ffffff" name="theme-color"/>
+<!-- Feeds -->
+<link href="https://blog.kmonsoor.com/feed/atom/index.html" rel="alternate" title="I think ... - Latest posts - Atom Feed" type="application/atom+xml"/>
+<link href="https://blog.kmonsoor.com/feed/index.html" rel="alternate" title="I think ... - Latest posts - RSS Feed" type="application/rss+xml"/>
+<link href="https://blog.kmonsoor.com/category/tech/feed/atom/index.html" rel="alternate" title="I think ... - Category: Tech - Atom Feed" type="application/atom+xml"/>
+<link href="https://blog.kmonsoor.com/category/tech/feed/index.html" rel="alternate" title="I think ... - Category: Tech - RSS Feed" type="application/rss+xml"/>
+<meta content="Linux, centos, python, centos7, python3, software-development, coding" name="keywords"/>
+<link href="https://blog.kmonsoor.com/install-latest-python3-on-centos-7/" rel="canonical"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "I think ...", "item": "https://blog.kmonsoor.com"}, {"@type": "ListItem", "position": 2, "name": "Install latest python3 on centos 7", "item": "https://blog.kmonsoor.com/install-latest-python3-on-centos-7"}, {"@type": "ListItem", "position": 3, "name": "Index", "item": "https://blog.kmonsoor.com/install-latest-python3-on-centos-7/index.html"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "author": {"@type": "Person", "name": "Khaled Monsoor"}, "publisher": {"@type": "Organization", "name": "I think ..."}, "headline": "Install latest Python 3 on Linux CentOS&nbsp;7", "about": "Tech", "datePublished": "2018-07-07 00:00"}</script></head>
+<body class="bg-transparent pt-4">
+<div class="container">
+<a class="avatar-container float-left mx-4" href="..">
+<div class="avatar animate">
+<div class="side"><img class="img-fluid" src="/logo.png"/></div>
+<div class="side back text-center pt-2 px-1 small">
+                                comes with a beard
+                            </div>
+</div>
+</a>
+<h1>
+<a class="text-dark text-decoration-none" href="..">I think ...</a>
+<small class="text-secondary"><small></small></small>
+</h1>
+<nav class="navbar d-block navbar-expand-lg navbar-light bg-light shadow rounded-lg">
+<a class="navbar-brand d-none" href=".." title="">I think ...</a>
+<button aria-controls="plumage-navbar-collapse-1" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#plumage-navbar-collapse-1" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="plumage-navbar-collapse-1">
+<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+<li class="nav-item">
+<a class="nav-link" href="/">
+                                    Home
+                                </a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="../about/">
+                                        About Me
+                                    </a>
+</li>
+</ul>
+</div>
+</nav>
+</div>
+<div class="container mt-5">
+<div class="row">
+<div class="col-md-9">
+<h1>
+<a href="../install-latest-python3-on-centos-7/" rel="bookmark" title="Permalink to Install latest Python 3 on Linux CentOS 7">Install latest Python 3 on Linux CentOS 7</a>
+</h1>
+</div>
+</div>
+<div class="row">
+<div class="col-md-9" id="content" role="main">
+<h2 id="why">Why<a class="headerlink text-decoration-none small pl-2" href="#why" title="Permanent link">¶</a></h2>
+<p>Not all distro created equal. <br/>
+Some are created to join the space race, some are to hold unto the leagcy, some are cutting-edge, some are cutting edge. Some are born to boot-up IoT devices some are to push out heavy graphics.</p>
+<p>That’s the fun (albeit, power) of Linux.</p>
+<p><img alt="CentOS 7 logo" class="noZoom img-fluid border rounded shadow image-process-article-photo" src="https://i.imgur.com/6ZFCdoM.jpg"/></p>
+<p>CentOS 7 is a powerful and stable distro that runs on thousands (probably, millions) production-grade servers.<br/>
+In the matter of stability, it’s a beast. However, it doesn’t ship with Python 3, by default. You can install it via <span class="caps">EPEL</span> repository, or the below simple steps.</p>
+<p>Also, take a note. The Python <strong>2</strong> comes with the system, which is probably 2.7.5, do <strong><span class="caps">NOT</span></strong> mess with it. Many system components rely on that specific version. If you need the latest versions of 2, use <code>virtualenv</code> or <code>pipenv</code>.</p>
+<h3 id="prepare-your-system">Prepare your system<a class="headerlink text-decoration-none small pl-2" href="#prepare-your-system" title="Permanent link">¶</a></h3>
+<p>Start with installing pre-requisite utilities for compilation and development support.</p>
+<div class="highlight pygments-style-monokai rounded shadow-sm mb-3"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>$ sudo yum update <span class="o">&amp;&amp;</span> sudo yum groupinstall -y <span class="s2">"development tools"</span>  
+<span class="linenos" data-linenos="2 "></span>$ sudo yum install -y zlib-devel bzip2-devel openssl-devel ncurses-devel <span class="se">\</span>
+<span class="linenos" data-linenos="3 "></span>       sqlite-devel readline-devel tk-devel gdbm-devel <span class="se">\</span>
+<span class="linenos" data-linenos="4 "></span>       db4-devel libpcap-devel xz-devel expat-devel
+</code></pre></div>
+<h3 id="download-latest-python-source-code-from-pythonorg">Download latest Python source code from Python.org<a class="headerlink text-decoration-none small pl-2" href="#download-latest-python-source-code-from-pythonorg" title="Permanent link">¶</a></h3>
+<div class="highlight pygments-style-monokai rounded shadow-sm mb-3"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>$ wget https://www.python.org/ftp/python/3.6.6/Python-3.6.6.tar.xz
+<span class="linenos" data-linenos="2 "></span>$ tar xf Python-3.6.6.tar.xz
+<span class="linenos" data-linenos="3 "></span>$ <span class="nb">cd</span> Python-3.6.6
+</code></pre></div>
+<h3 id="enable-performance-optimizations-optional-but-highly-recommended">Enable performance optimizations (optional, but highly recommended)<a class="headerlink text-decoration-none small pl-2" href="#enable-performance-optimizations-optional-but-highly-recommended" title="Permanent link">¶</a></h3>
+<div class="highlight pygments-style-monokai rounded shadow-sm mb-3"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>$ ./configure --prefix<span class="o">=</span>/usr/local --enable-shared <span class="nv">LDFLAGS</span><span class="o">=</span><span class="s2">"-Wl,-rpath /usr/local/lib"</span>  
+<span class="linenos" data-linenos="2 "></span>$ ./configure --enable-optimizations
+</code></pre></div>
+<h3 id="build-and-install">Build and install<a class="headerlink text-decoration-none small pl-2" href="#build-and-install" title="Permanent link">¶</a></h3>
+<div class="highlight pygments-style-monokai rounded shadow-sm mb-3"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>$ make
+<span class="linenos" data-linenos="2 "></span>$ sudo make altinstall
+</code></pre></div>
+<p>Now, Python 3.6.6 is ready to be used in your system; located in <code>/usr/local/bin/python3.6</code>
+</p><div class="highlight pygments-style-monokai rounded shadow-sm mb-3"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>$ which python3.6
+<span class="linenos" data-linenos="2 "></span>/usr/local/bin/python3.6
+<span class="linenos" data-linenos="3 "></span>
+<span class="linenos" data-linenos="4 "></span>$ python3.6
+<span class="linenos" data-linenos="5 "></span>Python <span class="m">3</span>.6.6 <span class="o">(</span>default, Jul <span class="m">10</span> <span class="m">2018</span>, <span class="m">14</span>:04:26<span class="o">)</span>
+<span class="linenos" data-linenos="6 "></span><span class="o">[</span>GCC <span class="m">4</span>.8.5 <span class="m">20150623</span> <span class="o">(</span>Red Hat <span class="m">4</span>.8.5-28<span class="o">)]</span> on linux
+<span class="linenos" data-linenos="7 "></span>Type <span class="s2">"help"</span>, <span class="s2">"copyright"</span>, <span class="s2">"credits"</span> or <span class="s2">"license"</span> <span class="k">for</span> more information.
+<span class="linenos" data-linenos="8 "></span>&gt;&gt;&gt;
+</code></pre></div>
+<p>For convenience, you can create a symbolic-link with a shorter name. 
+If you had system-installed Python3 (unlikely), <strong>don’t</strong> do this, as some system-components may depend on that specific older version of Python 3.
+</p><div class="highlight pygments-style-monokai rounded shadow-sm mb-3"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>$ sudo ln -s /usr/local/bin/python3.6 /usr/local/bin/python3
+<span class="linenos" data-linenos="2 "></span>$ python3
+<span class="linenos" data-linenos="3 "></span>Python <span class="m">3</span>.6.6 <span class="o">(</span>default, Jul <span class="m">10</span> <span class="m">2018</span>, <span class="m">14</span>:04:26<span class="o">)</span>
+<span class="linenos" data-linenos="4 "></span><span class="o">[</span>GCC <span class="m">4</span>.8.5 <span class="m">20150623</span> <span class="o">(</span>Red Hat <span class="m">4</span>.8.5-28<span class="o">)]</span> on linux
+<span class="linenos" data-linenos="5 "></span>Type <span class="s2">"help"</span>, <span class="s2">"copyright"</span>, <span class="s2">"credits"</span> or <span class="s2">"license"</span> <span class="k">for</span> more information.
+<span class="linenos" data-linenos="6 "></span>&gt;&gt;&gt;
+</code></pre></div>
+<h2 id="install-wheel-and-pip"><del>Install wheel and pip</del><a class="headerlink text-decoration-none small pl-2" href="#install-wheel-and-pip" title="Permanent link">¶</a></h2>
+<p>You don’t need to, because <code>Python 3.6.6</code> includes these necessary tools included.
+</p><div class="highlight pygments-style-monokai rounded shadow-sm mb-3"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>$ pip3.6 -V
+<span class="linenos" data-linenos="2 "></span>pip <span class="m">10</span>.0.1 from /usr/local/lib/python3.6/site-packages/pip <span class="o">(</span>python <span class="m">3</span>.6<span class="o">)</span>
+<span class="linenos" data-linenos="3 "></span>$ wheel version
+<span class="linenos" data-linenos="4 "></span>wheel <span class="m">0</span>.29.0
+</code></pre></div>
+<h3 class="mt-3">Related content</h3>
+<div class="list-group bg-light text-dark">
+<a class="list-group-item list-group-item-action" href="../python-how-to-generate-all-possible-combinations-or-permutations/">
+<div class="d-flex w-100 justify-content-between">
+<h5>Python - How to Create All Possible Combinations (a.k.a Permutations)</h5>
+<abbr class="small published" title="2014-01-31T00:00:00+06:00">
+                            2014
+                        </abbr>
+</div>
+<small>Let’s say we have a string, or number. And, we want to generate all the combinations of all the characters of the string or the number</small>
+</a>
+<a class="list-group-item list-group-item-action" href="../install-latest-Zsh-on-CentOS/">
+<div class="d-flex w-100 justify-content-between">
+<h5>Install the latest Zsh on CentOS</h5>
+<abbr class="small published" title="2020-10-20T00:00:00+06:00">
+                            2020
+                        </abbr>
+</div>
+<small>If you’re looking forward to install the latest version of Zsh instead of the default old one, here you go.</small>
+</a>
+<a class="list-group-item list-group-item-action" href="../pelican-how-to-make-seo-friendly/">
+<div class="d-flex w-100 justify-content-between">
+<h5>Pelican Static sites - <span class="caps">SEO</span> Optimization</h5>
+<abbr class="small published" title="2017-01-07T00:00:00+06:00">
+                            2017
+                        </abbr>
+</div>
+<small>Usually Pelican static-site generator is not very concerned about SEO of the generated site. Related themes and their templates also don’t take it much seriously. But you shouldn’t loose SEO, right?</small>
+</a>
+</div>
+</div>
+<div class="col-md-3">
+<div class="card bg-light text-dark">
+<ul class="list-group list-group-flush">
+<li class="list-group-item">
+<abbr title="2018-07-07T00:00:00+06:00"><i class="fas fa-calendar"></i> 2018-07-07</abbr>
+</li>
+<li class="list-group-item">
+<a class="badge badge-info" data-toggle="tooltip" href="../category/tech/" rel="tag" title="27 articles in this category">Tech</a>
+<a class="badge badge-secondary" data-toggle="tooltip" href="/tag/linux/" title="5 articles with this tag">Linux</a>
+<a class="badge badge-secondary" data-toggle="tooltip" href="/tag/python/" title="5 articles with this tag">python</a>
+<a class="badge badge-secondary" data-toggle="tooltip" href="/tag/coding/" title="4 articles with this tag">coding</a>
+<a class="badge badge-secondary" data-toggle="tooltip" href="/tag/centos/" title="2 articles with this tag">centos</a>
+<a class="badge badge-secondary" data-toggle="tooltip" href="/tag/software-development/" title="2 articles with this tag">software-development</a>
+<a class="badge badge-secondary" data-toggle="tooltip" href="/tag/centos7/" title="1 article with this tag">centos7</a>
+<a class="badge badge-secondary" data-toggle="tooltip" href="/tag/python3/" title="1 article with this tag">python3</a>
+</li>
+<li class="list-group-item">
+<p>Found a typo? Fix it now:</p>
+<a class="btn btn-info btn-block" href="https://github.com/kmonsoor/blog.kmonsoor.com/edit/live/content/articles/install-latest-python3-on-centos-7.md"><i class="fas fa-edit fa-fw"></i> Edit article on GitHub</a>
+</li>
+<li class="list-group-item">
+<nav class="nav nav-pills nav-fill">
+<a class="nav-link btn btn-outline-primary border-0" href="../ha-setup-for-influxdb/" rel="prev" title="HA(High-Availability) Setup for InfluxDB">
+<span aria-hidden="true">←</span> Older
+                        </a>
+<a class="nav-link btn btn-outline-primary border-0" href="../process-emphasize-on-why-not-how/" rel="next" title="Why to do it, rather than how to do it">
+                            Newer <span aria-hidden="true">→</span>
+</a>
+</nav>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<footer class="container-fluid mt-5 p-4 small">
+<div class="row mx-5">
+<div class="col-md-2">
+<h6>Social</h6>
+<ul class="list-unstyled">
+<li><a href="https://twitter.com/kmonsoor">
+<i class="fab fa-twitter fa-fw"></i>
+    Twitter
+</a></li>
+</ul>
+</div>
+<div class="col-md-2">
+<h6>Professional</h6>
+<ul class="list-unstyled">
+<li><a href="https://stackoverflow.com/users/617185/kmonsoor">
+<i class="fab fa-stack-overflow fa-fw"></i>
+    StackOverflow
+</a></li>
+<li><a href="https://linkedin.com/in/kmonsoor">
+<i class="fab fa-linkedin fa-fw"></i>
+    LinkedIn
+</a></li>
+<li><a href="https://github.com/kmonsoor/">
+<i class="fab fa-github fa-fw"></i>
+    Github
+</a></li>
+</ul>
+</div>
+<div class="col-md-2">
+<h6>Browse content by</h6>
+<ul class="list-unstyled">
+<li><a href="../categories/index.html"><i class="fas fa-th fa-fw"></i> Categories</a></li>
+<li><a href="../archives/index.html"><i class="far fa-calendar-alt fa-fw"></i> Dates</a></li>
+<li><a href="../tags/index.html"><i class="fas fa-tags fa-fw"></i> Tags</a></li>
+</ul>
+</div>
+<div class="col-md-2 text-muted">
+<h6>Copyright notice</h6>
+<p class="small">
+                        © Copyright
+                        2010-2021
+                        Khaled Monsoor.
+                    </p>
+</div>
+<div class="col-md-2 text-muted">
+<h6>Disclaimer</h6>
+<p class="small">
+                            All opinions expressed in this site are my own personal opinions               and are not endorsed by, nor do they represent the opinions of my               previous, current and future employers or any of its affiliates,               partners or customers.
+                    </p>
+</div>
+<div class="col-md-2">
+<h6>Feeds</h6>
+<ul class="list-unstyled small">
+<li>
+<a href="https://blog.kmonsoor.com/feed/atom/index.html">
+<i class="fas fa-atom fa-fw"></i> Latest posts (Atom)
+                                    </a>
+</li>
+<li>
+<a href="https://blog.kmonsoor.com/feed/index.html">
+<i class="fas fa-rss fa-fw"></i> Latest posts (RSS)
+                                    </a>
+</li>
+<li>
+<a href="https://blog.kmonsoor.com/category/tech/feed/atom/index.html">
+<i class="fas fa-atom fa-fw"></i> Category: Tech (Atom)
+                                    </a>
+</li>
+<li>
+<a href="https://blog.kmonsoor.com/category/tech/feed/index.html">
+<i class="fas fa-rss fa-fw"></i> Category: Tech (RSS)
+                                    </a>
+</li>
+</ul>
+</div>
+</div>
+<div class="row mt-3">
+<div class="offset-3 col-6 small text-muted text-center">
+                    Site generated by <a class="text-dark" href="https://getpelican.com">Pelican</a>.<br/>
+<a class="text-dark" href="https://github.com/kdeldycke/plumage">Plumage</a>
+                    theme by <a class="text-dark" href="https://kevin.deldycke.com">Kevin Deldycke</a>.
+                </div>
+<div class="col-3 text-right d-flex flex-column">
+<a class="mt-auto" href="#"><i class="fas fa-arrow-up"></i> Back to top</a>
+</div>
+</div>
+</footer>
+</body>
+</html>

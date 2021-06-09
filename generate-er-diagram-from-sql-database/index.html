@@ -1,14 +1,293 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="canonical" href="https://blog.kmonsoor.com/generate-er-diagram-from-sql-database/"><title>Generate ER diagram from a SQL-based database -- Khaled Monsoor :: Blog</title><meta name="robots" content="nofollow"><meta name="author" content="Khaled Monsoor"><link rel="image_src" href="https://blog.kmonsoor.com/favicon.ico"><meta property="og:image" content="https://blog.kmonsoor.com/favicon.ico"><meta name="description" content="When you are " study&quot;-ing someone else&#x27;s database with 300+ tables. it&#x27;s like spaghetti, but not enjoyable. rather, horrific.&quot;><meta property="og:site_name" content="Khaled Monsoor :: Blog"><meta property="og:type" content="article"><meta property="og:locale" content="en_US"><meta property="og:title" content="Generate ER diagram from a SQL-based database -- Khaled Monsoor :: Blog"><meta property="og:url" content="https://blog.kmonsoor.com/generate-er-diagram-from-sql-database/"><meta property="og:description" content="When you are " study&quot;-ing someone else&#x27;s database with 300+ tables. it&#x27;s like spaghetti, but not enjoyable. rather, horrific.&quot;><meta property="article:published_time" content="2014-12-18 00:00:00+06:00"><meta property="article:modified_time" content="2016-02-07 00:00:00+06:00"><meta name="twitter:site" content="@kmonsoor"><meta name="twitter:creator" content="@kmonsoor"><meta name="twitter:image" content="https://pbs.twimg.com/profile_images/681426835092029440/ZxuFAKOY_400x400.png"><meta name="twitter:card" content="When you are " study&quot;-ing someone else&#x27;s database with 300+ tables. it&#x27;s like spaghetti, but not enjoyable. rather, horrific.&quot;><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script><script defer src="https://blog.kmonsoor.com/theme/js/application.js"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css"><link rel="stylesheet" href="https://blog.kmonsoor.com/theme/css/all.css"><link rel="icon" href="https://blog.kmonsoor.com/favicon.ico" type="image/x-icon"><link rel="shortcut icon" href="https://blog.kmonsoor.com/favicon.ico" type="image/x-icon"><script> window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;ga('create','UA-20431143-1','auto');ga('send','pageview');</script><script async src="https://www.google-analytics.com/analytics.js"></script><link href="https://blog.kmonsoor.com/feed/atom/index.html" type="application/atom+xml" rel="alternate" title="Khaled Monsoor :: Blog - Latest posts - Atom Feed"><link href="https://blog.kmonsoor.com/feed/index.html" type="application/rss+xml" rel="alternate" title="Khaled Monsoor :: Blog - Latest posts - RSS Feed"><link href="https://blog.kmonsoor.com/category/tech/feed/atom/index.html" type="application/atom+xml" rel="alternate" title="Khaled Monsoor :: Blog - Category: Tech - Atom Feed"><link href="https://blog.kmonsoor.com/category/tech/feed/index.html" type="application/rss+xml" rel="alternate" title="Khaled Monsoor :: Blog - Category: Tech - RSS Feed"></head><body><div class="container"><div class="page-header"><a href="https://blog.kmonsoor.com" class="avatar-container pull-left"><div class="avatar "><div class="side"><img src="/logo.png" class="img-responsive"></div></div></a><h1><a href="https://blog.kmonsoor.com">Khaled Monsoor :: Blog</a><small></small></h1></div><nav class="navbar navbar-default"><div class="navbar-header"><button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#plumage-navbar-collapse-1" aria-expanded="false"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a class="navbar-brand" href="https://blog.kmonsoor.com" title>Generate ER diagram from a SQL-based database</a></div><div class="collapse navbar-collapse" id="plumage-navbar-collapse-1"><ul class="nav navbar-nav"><li><a href="/">Home</a></li><li><a href="https://blog.kmonsoor.com/about/">About Me</a></li><li><a href="https://blog.kmonsoor.com/category/language/">Language</a></li><li class="active"><a href="https://blog.kmonsoor.com/category/tech/">Tech <span class="sr-only">(current)</span></a></li><li><a href="https://blog.kmonsoor.com/category/thoughts/">Thoughts</a></li></ul></div></nav></div><div class="container main"><div class="row"><div class=" col-md-9  "><h1><a href="https://blog.kmonsoor.com/generate-er-diagram-from-sql-database/" rel="bookmark" title="Permalink to Generate ER diagram from a SQL-based database">Generate ER diagram from a SQL-based database</a></h1></div></div><div class="row"><div class=" col-md-9 " id="content" role="main"><div><p>When you are "study"-ing (for whatever reason) someone else's database, and the database has more than 20 tables, you are in trouble to understand what goes where.</p><p>Now, imagine a database with 300+ tables. It's like spaghetti, but not enjoyable. Rather, horrific.</p><p>I faced a similar challenge recently with a database of 250+ tables. Yes, i felt like in a deep sh*t. And, started looking for tools which can describe the tables in at least decent ER-diagram. If anything more, better. And, obviously free as my company is not paying.</p><p>Then, I found <a href="http://schemaspy.sourceforge.net/">SchemaSpy</a>, originally authored by <a href="https://sites.google.com/site/johncurrier/">John Currier</a>. It generate a complete in-depth HTML-based description (of course, including clickable ER-diagram) of the database, which you can then browse with your browser. This post is on it's basic usage.</p><p>The output will be kind of like this: <img alt="schemapy output sample" src="https://i.imgur.com/K1yYBID.png"></p><p>It is based on Java technologies, but can work its magic on most of the major database technologies. But, you would need a appropriate JDBC connector for that database.</p><p>Quote from the author:</p><blockquote><p>SchemaSpy uses JDBC's database metadata extraction services to gather the majority of its information, but has to make vendor-specific SQL queries to gather some information such as the SQL associated with a view and the details of check constraints.</p></blockquote><p>In this post, as example, i have shown to use it with PostgreSQL. But, it's not the only one supported. You can use ot with any proper RDBMS system as long as it has a JDBC-connector. Now, to use it, you need these staffs.</p><ul><li><strong>First of all</strong>, your system should have <strong>Java runtime</strong> properly installed. <a href="https://java.com/en/download/manual.jsp">Download from here.</a></li><li><strong>SchemaSpy, which is a .jar file</strong>. <a href="https://sourceforge.net/projects/schemaspy/files/">Get it here</a>. At the time of writing, it was version 5.0.0.</li><li><strong>JDBC connector to PostgreSQL*<em>. Make sure to match your PostgreSQL version. You can <a href="https://jdbc.postgresql.org/download.html">download it from here</a>.<br> You can check your PostgreSQL version by executing: <code>SELECT version();</code> query on </em></strong>psql*** prompt.</li><li>Also, SchemaSpy depends on <strong>GarphViz</strong> to generate the ER-diagrams, so you need to be installed it on your system. Get it from here.(http://www.graphviz.org/Download..php)</li><li>And, of course make sure PostgreSQL instance running &amp; serving the database you are trying to visualize.</li></ul><p>Quoting from the author:</p><blockquote><p>SchemaSpy uses the dot executable from <a href="http://www.graphviz.org/">Graphviz</a> to generate graphical representations of the table/view relationships. This was initially added for people who see things visually. Now the graphical representation of relationships is a fundamental feature of the tool. </p><p>Graphviz is not required to view the output generated by SchemaSpy, but <strong>the dot program should be in your PATH</strong> (not CLASSPATH) when running SchemaSpy or none of the entity relationship diagrams will be generated (or use the <a href="http://schemaspy.sourceforge.net/#gvparam"><code>-gv</code></a> option).</p></blockquote><p>For convenience, I kept the .jar files (JDBC-connector, and SchemaSpy) in my home folder.<br> Now, in my case, my OS is Linux, and database is hosted locally, hence address is <code>127.0.0.1</code>, running <code>PostgreSQL-9.3</code> at port <code>5432</code>. So, i run the command like this:</p><div class="highlight"><pre><span></span> $ java -jar ./schemaSpy_5.0.0.jar -t pgsql -host 127.0.0.1:5432 -db your_database_name \
-                                   -u your_DB_user_name -p your_password -s public \
-                                   -dp ./postgresql-9.3-1102.jdbc3.jar \
-                                   -o output_folder
-</pre></div><p>It may take a little while, depending on the size of the schema of the database.<br> After that, you will find the output folder/directory named <code>output_folder</code>.<br> You'll see some output when the magic is going on, similar to this below.</p><div class="highlight"><pre><span></span>Using database properties: [./schemaSpy_5.0.0.jar]/net/sourceforge/schemaspy/dbTypes/pgsql.properties
-Gathering schema details....................(6sec)
-Writing/graphing summary....................(2sec)
-Writing/diagramming detail..................(31sec)
-Wrote relationship details of 113 tables/views to directory &#39;output&#39; in 41 seconds.
-
-View the results by opening output_folder/index.html
-</pre></div><p>Now, all the generated files are in the <code>output_folder</code>. Start your journey by starting from the <code>index.html</code> in the output folder. Open it by using any browser you want.</p><p>Good luck. :)</p><hr><h2>You may find these interesting</h2><ul><li><a href="https://blog.kmonsoor.com/ubuntu-update-apt-get-server-to-use-fastest-mirror/?utm_source=related_footer&utm_keyword=linux">Ubuntu - Update APT-GET Server to Use Fastest Mirror</a></li><li><a href="https://blog.kmonsoor.com/open-source-as-if-you-gonna-die-tonight/?utm_source=related_footer&utm_keyword=coding">Open Source as-if You Gonna Die Tonight</a></li><li><a href="https://blog.kmonsoor.com/pelican-how-to-make-seo-friendly/?utm_source=related_footer&utm_keyword=python">Pelican Static sites - SEO Optimization</a></li></ul></div></div><div class="col-md-3"><div class="well"><p><abbr title="2014-12-18T00:00:00+06:00"><i class="fa fa-calendar"></i> Dec. 18, 2014</abbr></p><hr><p><a href="https://blog.kmonsoor.com/category/tech/" rel="tag" data-toggle="tooltip" class="label label-info" title="22 articles in this category">Tech</a><a href="/tag/programming/" data-toggle="tooltip" class="label label-default" title="3 articles with this tag">programming</a><a href="/tag/sql/" data-toggle="tooltip" class="label label-default" title="1 article with this tag">sql</a><a href="/tag/db/" data-toggle="tooltip" class="label label-default" title="1 article with this tag">db</a><a href="/tag/dbms/" data-toggle="tooltip" class="label label-default" title="1 article with this tag">dbms</a><a href="/tag/diagram/" data-toggle="tooltip" class="label label-default" title="1 article with this tag">diagram</a><a href="/tag/er-diagram/" data-toggle="tooltip" class="label label-default" title="1 article with this tag">ER-diagram</a><a href="/tag/graphviz/" data-toggle="tooltip" class="label label-default" title="1 article with this tag">graphviz</a><a href="/tag/java/" data-toggle="tooltip" class="label label-default" title="1 article with this tag">java</a><a href="/tag/postgresql/" data-toggle="tooltip" class="label label-default" title="1 article with this tag">postgresql</a><a href="/tag/rdbms/" data-toggle="tooltip" class="label label-default" title="1 article with this tag">rdbms</a><a href="/tag/schema/" data-toggle="tooltip" class="label label-default" title="1 article with this tag">schema</a><a href="/tag/schemaspy/" data-toggle="tooltip" class="label label-default" title="1 article with this tag">schemaspy</a><a href="/tag/visualization/" data-toggle="tooltip" class="label label-default" title="1 article with this tag">visualization</a></p><hr><p>Found a typo ? Want to fix it ?</p><a class="btn btn-info btn-block" href="https://github.com/kmonsoor/blog.kmonsoor.com/edit/live/content/articles/generate-er-diagram-from-sql-database.md"><i class="fa fa-random fa-white fa-fw"></i> Suggest edit on GitHub</a><hr></div></div></div></div><footer class="container"><div class="commentbox"></div></footer><footer class="container-fluid"><div class="container"><div class="row"><div class="col-md-2"><h5>Social</h5><ul class="list-unstyled"><li><a href="https://twitter.com/kmonsoor"><i class="fa fa-twitter"></i> @KhaledMonsoor </a></li><li><a href="http://instagram.com/kmonsoor/"><img src="https://icons.better-idea.org/icon?url=instagram.com&size=16" width="16" height="16" class="icon" alt="instagram.com icon"> kmonsoor </a></li></ul></div><div class="col-md-2"><h5>Professional</h5><ul class="list-unstyled"><li><a href="https://stackoverflow.com/story/kmonsoor"><i class="fa fa-stack-overflow"></i> Careers 2.0 </a></li><li><a href="https://linkedin.com/in/kmonsoor"><i class="fa fa-linkedin-square"></i> LinkedIn </a></li><li><a href="https://github.com/kmonsoor/"><i class="fa fa-github"></i> Github </a></li></ul></div><div class="col-md-2"><h5>Browse content by</h5><ul class="list-unstyled"><li><a href="https://blog.kmonsoor.com/categories/index.html"><i class="fa fa-tags"></i> Categories</a></li><li><a href="https://blog.kmonsoor.com/archives/index.html"><i class="fa fa-calendar"></i> Dates</a></li><li><a href="https://blog.kmonsoor.com/tags/index.html"><i class="fa fa-tag"></i> Tags</a></li></ul></div><div class="col-md-2"><h4><a target="_blank" href="https://paypal.me/kmonsoor/">Support Author</a></h4></div><div class="col-md-2 text-muted"><h5>Copyright notice</h5><p>© Copyright 2010-2020 Khaled Monsoor.</p></div><div class="col-md-2 text-muted"><h5>Disclaimer</h5><p>All opinions expressed in this site are my own personal opinions and are not endorsed by, nor do they represent the opinions of my previous, current and future employers or any of its affiliates, partners or customers.</p></div><div class="span2"><h5 class="pull-right"><a href="#" class="fa fa-arrow-up"> Back to top</a></h5></div></div></div><div class="container"><div class="row span12 muted text-center"> Site generated by <a href="http://getpelican.com"> Pelican</a> with modified <a href="https://github.com/kdeldycke/plumage">Plumage</a> theme. </div></div></footer><script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script><script defer src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script><script defer src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script><script defer src="https://cdnjs.cloudflare.com/ajax/libs/fitvids/1.1.0/jquery.fitvids.min.js"></script><script defer src="https://blog.kmonsoor.com/theme/js/jquery.mglass.js"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css"><script>
-    commentBox('5722781509484544-proj');
-</script></body></html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>    Generate ER diagram from a SQL-based database
+ | I think ...</title>
+<meta content="Khaled Monsoor" name="author"/>
+<meta content="Pelican v4.6.0" name="generator"/>
+<link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css" integrity="sha512-oc9+XSs1H243/FRN9Rw62Fn8EtxjEYWHXRvjS43YtueEewbS6ObfXcJNyohjHqVKFPoXXUxwc+q1K7Dee6vv9g==" rel="stylesheet"/>
+<link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" rel="stylesheet"/>
+<link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" integrity="sha512-+EoPw+Fiwh6eSeRK7zwIKG2MA8i3rV/DGa3tdttQGgWyatG/SkncT53KHQaS5Jh9MNOT3dmFL0FjTY08And/Cw==" rel="stylesheet"/>
+<link href="../theme/css/main.min.css?c3e3f661" rel="stylesheet"/>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-20431143-1"></script>
+<script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-20431143-1');
+    </script>
+<script crossorigin="anonymous" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script crossorigin="anonymous" integrity="sha512-iceXjjbmB2rwoX93Ka6HAHP+B76IY1z0o3h+N1PeDtRSsyeetU3/0QKJqGyPJcX63zysNehggFwMC/bi7dvMig==" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/js/bootstrap.bundle.min.js"></script>
+<script crossorigin="anonymous" integrity="sha512-IsNh5E3eYy3tr/JiX2Yx4vsCujtkhwl7SLqgnwLNgf04Hrt9BT9SXlLlZlWx+OK4ndzAoALhsMNcCmkggjZB1w==" src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+<script crossorigin="anonymous" integrity="sha512-/2sZKAsHDmHNoevKR/xsUKe+Bpf692q4tHNQs9VWWz0ujJ9JBM67iFYbIEdfDV9I2BaodgT5MIg/FTUmUv3oyQ==" src="https://cdnjs.cloudflare.com/ajax/libs/fitvids/1.2.0/jquery.fitvids.min.js"></script>
+<script src="../theme/webassets-external/9c7dcf71957efaca317d5233af56d4f0_jquery.mglass.js"></script>
+<script src="../theme/webassets-external/d9c86f33b63c3c484c04107bdbaa0c73_application.js"></script>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="/site.webmanifest" rel="manifest"/>
+<link color="#5bbad5" href="/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#ffc40d" name="msapplication-TileColor"/>
+<meta content="#ffffff" name="theme-color"/>
+<!-- Feeds -->
+<link href="https://blog.kmonsoor.com/feed/atom/index.html" rel="alternate" title="I think ... - Latest posts - Atom Feed" type="application/atom+xml"/>
+<link href="https://blog.kmonsoor.com/feed/index.html" rel="alternate" title="I think ... - Latest posts - RSS Feed" type="application/rss+xml"/>
+<link href="https://blog.kmonsoor.com/category/tech/feed/atom/index.html" rel="alternate" title="I think ... - Category: Tech - Atom Feed" type="application/atom+xml"/>
+<link href="https://blog.kmonsoor.com/category/tech/feed/index.html" rel="alternate" title="I think ... - Category: Tech - RSS Feed" type="application/rss+xml"/>
+<meta content="sql, db, dbms, diagram, ER-diagram, graphviz, java, postgresql, programming, rdbms, schema, schemaspy, visualization" name="keywords"/>
+<link href="https://blog.kmonsoor.com/generate-er-diagram-from-sql-database/" rel="canonical"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "I think ...", "item": "https://blog.kmonsoor.com"}, {"@type": "ListItem", "position": 2, "name": "Generate er diagram from sql database", "item": "https://blog.kmonsoor.com/generate-er-diagram-from-sql-database"}, {"@type": "ListItem", "position": 3, "name": "Index", "item": "https://blog.kmonsoor.com/generate-er-diagram-from-sql-database/index.html"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "author": {"@type": "Person", "name": "Khaled Monsoor"}, "publisher": {"@type": "Organization", "name": "I think ..."}, "headline": "Generate <span class=\"caps\">ER</span> diagram from a <span class=\"caps\">SQL</span>-based&nbsp;database", "about": "Tech", "datePublished": "2014-12-18 00:00"}</script></head>
+<body class="bg-transparent pt-4">
+<div class="container">
+<a class="avatar-container float-left mx-4" href="..">
+<div class="avatar animate">
+<div class="side"><img class="img-fluid" src="/logo.png"/></div>
+<div class="side back text-center pt-2 px-1 small">
+                                comes with a beard
+                            </div>
+</div>
+</a>
+<h1>
+<a class="text-dark text-decoration-none" href="..">I think ...</a>
+<small class="text-secondary"><small></small></small>
+</h1>
+<nav class="navbar d-block navbar-expand-lg navbar-light bg-light shadow rounded-lg">
+<a class="navbar-brand d-none" href=".." title="">I think ...</a>
+<button aria-controls="plumage-navbar-collapse-1" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#plumage-navbar-collapse-1" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="plumage-navbar-collapse-1">
+<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+<li class="nav-item">
+<a class="nav-link" href="/">
+                                    Home
+                                </a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="../about/">
+                                        About Me
+                                    </a>
+</li>
+</ul>
+</div>
+</nav>
+</div>
+<div class="container mt-5">
+<div class="row">
+<div class="col-md-9">
+<h1>
+<a href="../generate-er-diagram-from-sql-database/" rel="bookmark" title="Permalink to Generate ER diagram from a SQL-based database">Generate <span class="caps">ER</span> diagram from a <span class="caps">SQL</span>-based database</a>
+</h1>
+</div>
+</div>
+<div class="row">
+<div class="col-md-9" id="content" role="main">
+<p>When you are “study”-ing (for whatever reason) someone else’s database, and the database has more than 20 tables, you are in trouble to understand what goes where.</p>
+<p>Now, imagine a database with 300+ tables. It’s like spaghetti, but not enjoyable. Rather, horrific.</p>
+<p>I faced a similar challenge recently with a database of 250+ tables. Yes, i felt like in a deep sh*t. And, started looking for tools which can describe the tables in at least decent <span class="caps">ER</span>-diagram. If anything more, better. And, obviously free as my company is not paying.</p>
+<p>Then, I found <a href="http://schemaspy.sourceforge.net/">SchemaSpy</a>, originally authored by <a href="https://sites.google.com/site/johncurrier/">John Currier</a>. It generate a complete in-depth <span class="caps">HTML</span>-based description (of course, including clickable <span class="caps">ER</span>-diagram) of the database, which you can then browse with your browser. This post is on it’s basic usage.</p>
+<p>The output will be kind of like this:
+<img alt="schemapy output sample" class="img-fluid border rounded shadow image-process-article-photo" src="https://i.imgur.com/K1yYBID.png"/></p>
+<p>It is based on Java technologies, but can work its magic on most of the major database technologies. But, you would need a appropriate <span class="caps">JDBC</span> connector for that database.</p>
+<p>Quote from the author:</p>
+<blockquote class="blockquote border-left border-primary pl-3">
+<p>SchemaSpy uses <span class="caps">JDBC</span>’s database metadata extraction services to gather the majority of its information, but has to make vendor-specific <span class="caps">SQL</span> queries to gather some information such as the <span class="caps">SQL</span> associated with a view and the details of check constraints.</p>
+</blockquote>
+<p>In this post, as example, i have shown to use it with PostgreSQL. But, it’s not the only one supported. You can use ot with any proper <span class="caps">RDBMS</span> system as long as it has a <span class="caps">JDBC</span>-connector.
+ Now, to use it, you need these staffs.</p>
+<ul>
+<li><strong>First of all</strong>, your system should have <strong>Java runtime</strong> properly installed. <a href="https://java.com/en/download/manual.jsp">Download from here.</a></li>
+<li><strong>SchemaSpy, which is a .jar file</strong>. <a href="https://sourceforge.net/projects/schemaspy/files/">Get it here</a>.
+    At the time of writing, it was version 5.0.0.</li>
+<li><strong><span class="caps">JDBC</span> connector to PostgreSQL</strong>. Make sure to match your PostgreSQL version. You can <a href="https://jdbc.postgresql.org/download.html">download it from here</a>.<br/>
+    You can check your PostgreSQL version by executing: <code>SELECT version();</code> query on <strong><em>psql</em></strong> prompt.</li>
+<li>Also, SchemaSpy depends on <strong>GarphViz</strong> to generate the <span class="caps">ER</span>-diagrams, so you need to be installed it on your system. Get it from here.(<a href="http://www.graphviz.org/Download..php">http://www.graphviz.org/Download..php</a>)</li>
+<li>And, of course make sure PostgreSQL instance running <span class="amp">&amp;</span> serving the database you are trying to visualize.</li>
+</ul>
+<p>Quoting from the author:</p>
+<blockquote class="blockquote border-left border-primary pl-3">
+<p>SchemaSpy uses the dot executable from <a href="http://www.graphviz.org/">Graphviz</a> to generate graphical  representations of the table/view relationships. This was initially added for people who see things visually. Now the graphical representation of relationships is a fundamental feature of the tool.  </p>
+<p>Graphviz is not required to view the output generated by SchemaSpy, but <strong>the dot program should be in your <span class="caps">PATH</span></strong> (not <span class="caps">CLASSPATH</span>) when  running SchemaSpy or none of the entity relationship diagrams will be generated (or use the <a href="http://schemaspy.sourceforge.net/#gvparam"><code>-gv</code></a> option).</p>
+</blockquote>
+<p>For convenience, I kept the .jar files (<span class="caps">JDBC</span>-connector, and SchemaSpy) in my home folder.<br/>
+Now, in my case, my <span class="caps">OS</span> is Linux, and database is hosted locally, hence address is <code>127.0.0.1</code>, running <code>PostgreSQL-9.3</code> at port <code>5432</code>.
+So, i run the command like this:</p>
+<div class="highlight pygments-style-monokai rounded shadow-sm mb-3"><pre><span></span><code><span class="linenos" data-linenos="1 "></span> $ java -jar ./schemaSpy_5.0.0.jar -t pgsql -host 127.0.0.1:5432 -db your_database_name \
+<span class="linenos" data-linenos="2 "></span>                                   -u your_DB_user_name -p your_password -s public \
+<span class="linenos" data-linenos="3 "></span>                                   -dp ./postgresql-9.3-1102.jdbc3.jar \
+<span class="linenos" data-linenos="4 "></span>                                   -o output_folder
+</code></pre></div>
+<p>It may take a little while, depending on the size of the schema of the database.<br/>
+After that, you will find the output folder/directory named <code>output_folder</code>.<br/>
+You’ll see some output when the magic is going on, similar to this below.</p>
+<p></p><div class="highlight pygments-style-monokai rounded shadow-sm mb-3"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>Using database properties: [./schemaSpy_5.0.0.jar]/net/sourceforge/schemaspy/dbTypes/pgsql.properties
+<span class="linenos" data-linenos="2 "></span>Gathering schema details....................(6sec)
+<span class="linenos" data-linenos="3 "></span>Writing/graphing summary....................(2sec)
+<span class="linenos" data-linenos="4 "></span>Writing/diagramming detail..................(31sec)
+<span class="linenos" data-linenos="5 "></span>Wrote relationship details of 113 tables/views to directory 'output' in 41 seconds.
+<span class="linenos" data-linenos="6 "></span>
+<span class="linenos" data-linenos="7 "></span>View the results by opening output_folder/index.html
+</code></pre></div>
+Now, all the generated files are in the <code>output_folder</code>.
+Start your journey by starting from the <code>index.html</code> in the output folder. Open it by using any browser you want.
+<p>Good luck. :)</p>
+<hr/>
+<h2 id="you-may-find-these-interesting">You may find these interesting<a class="headerlink text-decoration-none small pl-2" href="#you-may-find-these-interesting" title="Permanent link">¶</a></h2>
+<ul>
+<li><a href="https://blog.kmonsoor.com/ubuntu-update-apt-get-server-to-use-fastest-mirror/?utm_source=related_footer&amp;utm_keyword=linux">Ubuntu - Update <span class="caps">APT</span>-<span class="caps">GET</span> Server to Use Fastest Mirror</a></li>
+<li><a href="https://blog.kmonsoor.com/open-source-as-if-you-gonna-die-tonight/?utm_source=related_footer&amp;utm_keyword=coding">Open Source as-if You Gonna Die Tonight</a></li>
+<li><a href="https://blog.kmonsoor.com/pelican-how-to-make-seo-friendly/?utm_source=related_footer&amp;utm_keyword=python">Pelican Static sites - <span class="caps">SEO</span> Optimization</a></li>
+</ul>
+<h3 class="mt-3">Related content</h3>
+<div class="list-group bg-light text-dark">
+<a class="list-group-item list-group-item-action" href="../seven-deadly-sins-in-python-code/">
+<div class="d-flex w-100 justify-content-between">
+<h5>Se7en Deadly Sins to Do in Python code</h5>
+<abbr class="small published" title="2015-08-10T17:05:00+06:00">
+                            2015
+                        </abbr>
+</div>
+<small>There are a lot of ways someone can make his (or her) Python code extremely difficult for himself and his fellow developers to work with and maintain. However, some are quite destructive by virtue. These ones are in my top-list.</small>
+</a>
+<a class="list-group-item list-group-item-action" href="../R-vs-Python/">
+<div class="d-flex w-100 justify-content-between">
+<h5>R vs Python — A Summary Comparison</h5>
+<abbr class="small published" title="2016-02-08T08:02:00+06:00">
+                            2016
+                        </abbr>
+</div>
+<small>A tabular, objective, comparative summary view between R and Python programming languages. Facts matters.</small>
+</a>
+</div>
+</div>
+<div class="col-md-3">
+<div class="card bg-light text-dark">
+<ul class="list-group list-group-flush">
+<li class="list-group-item">
+<abbr title="2014-12-18T00:00:00+06:00"><i class="fas fa-calendar"></i> 2014-12-18</abbr>
+</li>
+<li class="list-group-item">
+<a class="badge badge-info" data-toggle="tooltip" href="../category/tech/" rel="tag" title="27 articles in this category">Tech</a>
+<a class="badge badge-secondary" data-toggle="tooltip" href="/tag/programming/" title="3 articles with this tag">programming</a>
+<a class="badge badge-secondary" data-toggle="tooltip" href="/tag/db/" title="1 article with this tag">db</a>
+<a class="badge badge-secondary" data-toggle="tooltip" href="/tag/dbms/" title="1 article with this tag">dbms</a>
+<a class="badge badge-secondary" data-toggle="tooltip" href="/tag/diagram/" title="1 article with this tag">diagram</a>
+<a class="badge badge-secondary" data-toggle="tooltip" href="/tag/er-diagram/" title="1 article with this tag">ER-diagram</a>
+<a class="badge badge-secondary" data-toggle="tooltip" href="/tag/graphviz/" title="1 article with this tag">graphviz</a>
+<a class="badge badge-secondary" data-toggle="tooltip" href="/tag/java/" title="1 article with this tag">java</a>
+<a class="badge badge-secondary" data-toggle="tooltip" href="/tag/postgresql/" title="1 article with this tag">postgresql</a>
+<a class="badge badge-secondary" data-toggle="tooltip" href="/tag/rdbms/" title="1 article with this tag">rdbms</a>
+<a class="badge badge-secondary" data-toggle="tooltip" href="/tag/schema/" title="1 article with this tag">schema</a>
+<a class="badge badge-secondary" data-toggle="tooltip" href="/tag/schemaspy/" title="1 article with this tag">schemaspy</a>
+<a class="badge badge-secondary" data-toggle="tooltip" href="/tag/sql/" title="1 article with this tag">sql</a>
+<a class="badge badge-secondary" data-toggle="tooltip" href="/tag/visualization/" title="1 article with this tag">visualization</a>
+</li>
+<li class="list-group-item">
+<p>Found a typo? Fix it now:</p>
+<a class="btn btn-info btn-block" href="https://github.com/kmonsoor/blog.kmonsoor.com/edit/live/content/articles/generate-er-diagram-from-sql-database.md"><i class="fas fa-edit fa-fw"></i> Edit article on GitHub</a>
+</li>
+<li class="list-group-item">
+<nav class="nav nav-pills nav-fill">
+<a class="nav-link btn btn-outline-primary border-0" href="../python-how-to-generate-all-possible-combinations-or-permutations/" rel="prev" title="Python - How to Create All Possible Combinations (a.k.a Permutations)">
+<span aria-hidden="true">←</span> Older
+                        </a>
+<a class="nav-link btn btn-outline-primary border-0" href="../seven-deadly-sins-in-python-code/" rel="next" title="Se7en Deadly Sins to Do in Python code">
+                            Newer <span aria-hidden="true">→</span>
+</a>
+</nav>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<footer class="container-fluid mt-5 p-4 small">
+<div class="row mx-5">
+<div class="col-md-2">
+<h6>Social</h6>
+<ul class="list-unstyled">
+<li><a href="https://twitter.com/kmonsoor">
+<i class="fab fa-twitter fa-fw"></i>
+    Twitter
+</a></li>
+</ul>
+</div>
+<div class="col-md-2">
+<h6>Professional</h6>
+<ul class="list-unstyled">
+<li><a href="https://stackoverflow.com/users/617185/kmonsoor">
+<i class="fab fa-stack-overflow fa-fw"></i>
+    StackOverflow
+</a></li>
+<li><a href="https://linkedin.com/in/kmonsoor">
+<i class="fab fa-linkedin fa-fw"></i>
+    LinkedIn
+</a></li>
+<li><a href="https://github.com/kmonsoor/">
+<i class="fab fa-github fa-fw"></i>
+    Github
+</a></li>
+</ul>
+</div>
+<div class="col-md-2">
+<h6>Browse content by</h6>
+<ul class="list-unstyled">
+<li><a href="../categories/index.html"><i class="fas fa-th fa-fw"></i> Categories</a></li>
+<li><a href="../archives/index.html"><i class="far fa-calendar-alt fa-fw"></i> Dates</a></li>
+<li><a href="../tags/index.html"><i class="fas fa-tags fa-fw"></i> Tags</a></li>
+</ul>
+</div>
+<div class="col-md-2 text-muted">
+<h6>Copyright notice</h6>
+<p class="small">
+                        © Copyright
+                        2010-2021
+                        Khaled Monsoor.
+                    </p>
+</div>
+<div class="col-md-2 text-muted">
+<h6>Disclaimer</h6>
+<p class="small">
+                            All opinions expressed in this site are my own personal opinions               and are not endorsed by, nor do they represent the opinions of my               previous, current and future employers or any of its affiliates,               partners or customers.
+                    </p>
+</div>
+<div class="col-md-2">
+<h6>Feeds</h6>
+<ul class="list-unstyled small">
+<li>
+<a href="https://blog.kmonsoor.com/feed/atom/index.html">
+<i class="fas fa-atom fa-fw"></i> Latest posts (Atom)
+                                    </a>
+</li>
+<li>
+<a href="https://blog.kmonsoor.com/feed/index.html">
+<i class="fas fa-rss fa-fw"></i> Latest posts (RSS)
+                                    </a>
+</li>
+<li>
+<a href="https://blog.kmonsoor.com/category/tech/feed/atom/index.html">
+<i class="fas fa-atom fa-fw"></i> Category: Tech (Atom)
+                                    </a>
+</li>
+<li>
+<a href="https://blog.kmonsoor.com/category/tech/feed/index.html">
+<i class="fas fa-rss fa-fw"></i> Category: Tech (RSS)
+                                    </a>
+</li>
+</ul>
+</div>
+</div>
+<div class="row mt-3">
+<div class="offset-3 col-6 small text-muted text-center">
+                    Site generated by <a class="text-dark" href="https://getpelican.com">Pelican</a>.<br/>
+<a class="text-dark" href="https://github.com/kdeldycke/plumage">Plumage</a>
+                    theme by <a class="text-dark" href="https://kevin.deldycke.com">Kevin Deldycke</a>.
+                </div>
+<div class="col-3 text-right d-flex flex-column">
+<a class="mt-auto" href="#"><i class="fas fa-arrow-up"></i> Back to top</a>
+</div>
+</div>
+</footer>
+</body>
+</html>

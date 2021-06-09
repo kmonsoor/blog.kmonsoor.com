@@ -1,0 +1,135 @@
+html {
+  background: rgb(236, 236, 236) url(/theme/img/fabric_plaid.jpeg);
+  box-shadow: inset 0 1rem 6rem -2rem rgba(0, 0, 0, 0.5);
+}
+
+a {
+  transition: all 0.2s ease-out;
+
+  /* Style title headers anchors produced by Python's Markdown module. See:
+   * https://python-markdown.github.io/extensions/toc/#usage
+   */
+  &.headerlink {
+    visibility: hidden;
+    @each $tag in 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'dt' {
+      #{$tag}:hover > & {
+        visibility: visible !important;
+      }
+    }
+  }
+}
+
+/* Style to support pymdown-extensions' emoji:
+ * https://facelessuser.github.io/pymdown-extensions/extensions/emoji/#default-emoji-generators
+ */
+img.emojione {
+  $size: 1.3rem;
+  height: $size;
+  width: $size;
+}
+
+.avatar-container {
+  $size: 6rem;
+  height: $size;
+  -webkit-perspective: 600;
+  -moz-perspective: 600;
+  -ms-perspective: 600;
+  -o-perspective: 600;
+  perspective: 600;
+  position: relative;
+  width: $size;
+  z-index: 10;
+
+  .avatar {
+    $size: 100%;
+    height: $size;
+    position: absolute;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    width: $size;
+
+    .side {
+      $size: 100%;
+      border: solid 0.2rem white {
+        radius: 1rem;
+      }
+      box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.25);
+      height: $size;
+      overflow: hidden;
+      position: absolute;
+      -webkit-backface-visibility: hidden;
+      -moz-backface-visibility: hidden;
+      -ms-backface-visibility: hidden;
+      -o-backface-visibility: hidden;
+      backface-visibility: hidden;
+      width: $size;
+    }
+
+    .back {
+      background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #eee), color-stop(100%, #ddd));
+      background-image: -webkit-linear-gradient(#eee, #ddd);
+      background-image: -moz-linear-gradient(#eee, #ddd);
+      background-image: -o-linear-gradient(#eee, #ddd);
+      background-image: linear-gradient(#eee, #ddd);
+      -webkit-box-shadow: inset 0 0 1.5rem rgba(0, 0, 0, 0.1);
+      -moz-box-shadow: inset 0 0 1.5rem rgba(0, 0, 0, 0.1);
+      box-shadow: inset 0 0 1.5rem rgba(0, 0, 0, 0.1);
+    }
+
+    .side:hover,
+    .back {
+      border-color: #005580;
+    }
+
+    &.animate:hover,
+    &.animate .back {
+      -webkit-transform: rotateY(180deg);
+      -moz-transform: rotateY(180deg);
+      -ms-transform: rotateY(180deg);
+      -o-transform: rotateY(180deg);
+      transform: rotateY(180deg);
+    }
+  }
+}
+
+h1,
+h2 {
+  text-shadow: 0.1rem 0.1rem 0.1rem #ddd;
+}
+
+/* Typogrify's ampersands */
+span.amp {
+  font-family: cursive;
+}
+
+/* Overrides default border-left 1px width set by Bootstrap:
+ * https://github.com/twbs/bootstrap/blob/bfb773d64be5f3c07628bb6e3f1295fd854c4514/scss/utilities/_borders.scss#L11
+ * https://github.com/twbs/bootstrap/blob/bfb773d64be5f3c07628bb6e3f1295fd854c4514/scss/_variables.scss#L237
+ * */
+blockquote.border-left {
+  border-left-width: thick !important;
+}
+
+.card .corner-banner {
+  font-size: 1rem;
+  position: absolute;
+  right: -4rem;
+  text-align: center;
+  top: 1rem;
+  transform: rotate(30deg);
+  width: 12rem;
+}
+
+footer {
+  background: url(/theme/img/creampaper.jpeg);
+  box-shadow: inset 0 2rem 2rem -2rem rgba(0, 0, 0, 0.5);
+  text-shadow: 0 0.1rem 0.1rem white;
+}
