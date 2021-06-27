@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom"><title>I think ... - Tech</title><link href="https://blog.kmonsoor.com/" rel="alternate"></link><link href="https://blog.kmonsoor.com/category/tech/feed/atom/index.html" rel="self"></link><id>https://blog.kmonsoor.com/</id><updated>2021-06-06T00:00:00+06:00</updated><entry><title>Create a free go-link server “on edge” using Cloudflare Worker KV</title><link href="https://blog.kmonsoor.com/golink-server-using-cloudflare-worker-kv/" rel="alternate"></link><published>2021-06-06T00:00:00+06:00</published><updated>2021-06-06T00:00:00+06:00</updated><author><name>Khaled Monsoor</name></author><id>tag:blog.kmonsoor.com,2021-06-06:/golink-server-using-cloudflare-worker-kv/</id><summary type="html">&lt;p&gt;Among quite a few ways to implement a go-link server (i.e. url-forwarder, short-url server etc.), here I&amp;rsquo;m going to show you how to use free-tier Cloudflare Worker (&amp;amp; &lt;span class="caps"&gt;KV&lt;/span&gt;) to create an in-house, on-edge, &lt;strong&gt;no-webserver&lt;/strong&gt; go-link&amp;nbsp;server.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Among quite a few ways to implement a go-link server (i.e. url-forwarder, short-url server etc.), here I&amp;rsquo;m going to show you how to use free-tier Cloudflare Worker (&amp;amp; &lt;span class="caps"&gt;KV&lt;/span&gt;) to create an in-house, on-edge, &lt;strong&gt;no-webserver&lt;/strong&gt; go-link&amp;nbsp;server.&lt;/p&gt;
-&lt;p&gt;For example, the short-link for this article is &lt;code&gt;go.kmonsoor.com/golink-kv&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;For example, the short-link for this article is &lt;a href="https://go.kmonsoor.com/golink-kv"&gt;go.kmonsoor.com/golink-kv&lt;/a&gt;  &lt;/p&gt;
+&lt;p&gt;&lt;img alt="overall structure" src="https://i.imgur.com/MjIS5gD.png"&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;/latest&lt;/code&gt; (by which I mean &lt;code&gt;go.yourdomain.co/latest&lt;/code&gt;) may point to &lt;code&gt;https://www.yourcompany.com/about/news&lt;/code&gt; which is a public&amp;nbsp;page&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;/hr-help&lt;/code&gt; may point to &lt;code&gt;https://www.company-internal.com/long-link/hr/contact.html&lt;/code&gt; which is company&amp;rsquo;s internal human-resources help&amp;nbsp;portal&lt;/li&gt;
@@ -84,7 +85,7 @@ A bunch of consultancy companies to choose from; you need to just approve the bu
 &lt;blockquote class="twitter-tweet"&gt;&lt;p lang="en" dir="ltr"&gt;&lt;span class="caps"&gt;CTO&lt;/span&gt;: we&amp;#39;re having hard time choosing a cloud provider&lt;br&gt;&amp;#8230;&lt;br&gt;&amp;#8220;say no more, fam, I gotcha &amp;#8230;&amp;#8221; &lt;a href="https://t.co/hR3rMruWWi"&gt;pic.twitter.com/hR3rMruWWi&lt;/a&gt;&lt;/p&gt;&amp;mdash; Khaled Monsoor ✨ (@kmonsoor) &lt;a href="https://twitter.com/kmonsoor/status/1395959443376857088?ref_src=twsrc%5Etfw"&gt;May 22, 2021&lt;/a&gt;&lt;/blockquote&gt;
 &lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;
 
-&lt;p&gt;&lt;em&gt;&lt;span class="caps"&gt;PS&lt;/span&gt;&lt;/em&gt; This post is inspired by a LinkedIn post of mine where I shared about my short experience with the Microsoft Azure &lt;strong&gt;DevOps&lt;/strong&gt;&amp;nbsp;suite&lt;/p&gt;</content><category term="Tech"></category><category term="computing"></category><category term="cloud"></category><category term="2021"></category><category term="AWS"></category><category term="GCP"></category><category term="Azure"></category><category term="Google Cloud"></category><category term="IaaS"></category></entry><entry><title>Personal short-link server using only Caddyserver</title><link href="https://blog.kmonsoor.com/personal-shortlink-server-using-Caddy/" rel="alternate"></link><published>2021-04-16T00:00:00+06:00</published><updated>2021-04-16T00:00:00+06:00</updated><author><name>Khaled Monsoor</name></author><id>tag:blog.kmonsoor.com,2021-04-16:/personal-shortlink-server-using-Caddy/</id><summary type="html">&lt;p&gt;Yeah, there are tons of open-source, full-fledged link-shorteners. But, none were exactly what I wanted. Hence, the minimal approach only utilizing the amazing webserver, &lt;code&gt;Caddy&lt;/code&gt;. Here we go&amp;nbsp;&amp;hellip;&lt;/p&gt;</summary><content type="html">&lt;p&gt;Before I go into any details, please note that I&amp;rsquo;ve used the term &amp;ldquo;shortlink-server&amp;rdquo; instead of &amp;ldquo;url-shortener&amp;rdquo; because the difference is significant for this post. 
+&lt;p&gt;&lt;em&gt;&lt;span class="caps"&gt;PS&lt;/span&gt;&lt;/em&gt; This post is inspired by a LinkedIn post of mine where I shared about my short experience with the Microsoft Azure &lt;strong&gt;DevOps&lt;/strong&gt;&amp;nbsp;suite&lt;/p&gt;</content><category term="Tech"></category><category term="computing"></category><category term="cloud"></category><category term="2021"></category><category term="AWS"></category><category term="GCP"></category><category term="Azure"></category><category term="Google Cloud"></category><category term="IaaS"></category></entry><entry><title>Deploying a short-link aka go-link server using only Caddyserver</title><link href="https://blog.kmonsoor.com/deploying-golink-server-using-Caddy/" rel="alternate"></link><published>2021-04-16T00:00:00+06:00</published><updated>2021-04-16T00:00:00+06:00</updated><author><name>Khaled Monsoor</name></author><id>tag:blog.kmonsoor.com,2021-04-16:/deploying-golink-server-using-Caddy/</id><summary type="html">&lt;p&gt;Yeah, there are tons of open-source, full-fledged link-shorteners. But, none were exactly what I wanted. Hence, the minimal approach only utilizing the amazing webserver, &lt;code&gt;Caddy&lt;/code&gt;. Here we go&amp;nbsp;&amp;hellip;&lt;/p&gt;</summary><content type="html">&lt;p&gt;Before I go into any details, please note that I&amp;rsquo;ve used the term &amp;ldquo;shortlink-server&amp;rdquo; instead of &amp;ldquo;url-shortener&amp;rdquo; because the difference is significant for this post. 
 A url-shortener takes a long url, and gives a short url, then redirects any requests for the shortened link to its long counterpart. On the contrary, shortlink-server takes both the long and short url, then only does the redirect-ion&amp;nbsp;part.&lt;/p&gt;
 &lt;h2 id="backstory"&gt;Backstory&lt;a class="headerlink" href="#backstory" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;If I wanted an amazing, personal url-shortener or &amp;ldquo;go link&amp;rdquo; server, there are many amazing solutions out there, which are not only free or open-source but full-fledged as well for personal or public usage. Rather, I wanted some &amp;ldquo;service&amp;rdquo; that will &amp;ldquo;resolve&amp;rdquo; my personal, short links. I have been using bit.ly for a long time for its customizable &amp;ldquo;short-half&amp;rdquo; part, but the problem with bit.ly is &amp;ndash; for some God-forsaken reason &amp;ndash; blocked by the Bangladeshi govt. So, I needed a replacement to be properly &amp;ldquo;glocal&amp;rdquo;.
@@ -154,7 +155,7 @@ In fact, the documentation of Caddy is excellent, I&amp;rsquo;d better leave tha
 &lt;h2 id="step-4-profit"&gt;Step-4: Profit !&lt;a class="headerlink" href="#step-4-profit" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Yeah, that&amp;rsquo;s it. Now, add some own personal stuff with some cool short-links, and proudly share with the&amp;nbsp;world.&lt;/p&gt;
 &lt;h2 id="whats-next"&gt;What&amp;rsquo;s next ?&lt;a class="headerlink" href="#whats-next" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;I&amp;rsquo;m thinking that given the very low workload my shortlink resolver needs — unless I&amp;rsquo;m becoming an overnight internet sensation — using a server instance only for this purpose is overkill. My next goal is to have the same service using some &amp;ldquo;serverless&amp;rdquo; function or using the &amp;ldquo;&lt;a href="https://developers.cloudflare.com/workers/examples/redirect"&gt;worker on the edge&lt;/a&gt;&amp;rdquo; thing from Cloudflare. Let&amp;rsquo;s see&amp;nbsp;;)&lt;/p&gt;</content><category term="Tech"></category><category term="caddyserver"></category><category term="url-shortener"></category><category term="Caddyfile"></category><category term="web-link"></category></entry><entry><title>How do I Pimp up My Terminal on Linux</title><link href="https://blog.kmonsoor.com/pimp-up-my-terminal/" rel="alternate"></link><published>2021-03-31T00:00:00+06:00</published><updated>2021-03-31T00:00:00+06:00</updated><author><name>Khaled Monsoor</name></author><id>tag:blog.kmonsoor.com,2021-03-31:/pimp-up-my-terminal/</id><summary type="html">&lt;p&gt;How do I pimp up my Linux terminal? A quick trip through Zsh, Oh-my-zsh, and other power tools to make the command-line-based workflow smooth and&amp;nbsp;cool.&lt;/p&gt;</summary><content type="html">&lt;p&gt;The purpose of this post is to be my quick, copy-paste source of the commands that I use to set up my terminal on a new *nix system.
+&lt;p&gt;I&amp;rsquo;m thinking that given the very low workload my shortlink resolver needs — unless I&amp;rsquo;m becoming an overnight internet sensation — using a server instance only for this purpose is overkill. My next goal is to have the same service using some &amp;ldquo;serverless&amp;rdquo; function or using the &amp;ldquo;&lt;a href="https://developers.cloudflare.com/workers/examples/redirect"&gt;worker on the edge&lt;/a&gt;&amp;rdquo; thing from Cloudflare. Let&amp;rsquo;s see&amp;nbsp;;)&lt;/p&gt;</content><category term="Tech"></category><category term="caddy"></category><category term="webserver"></category><category term="url-shortener"></category><category term="Caddyfile"></category><category term="web-link"></category><category term="go-link"></category></entry><entry><title>How do I Pimp up My Terminal on Linux</title><link href="https://blog.kmonsoor.com/pimp-up-my-terminal/" rel="alternate"></link><published>2021-03-31T00:00:00+06:00</published><updated>2021-03-31T00:00:00+06:00</updated><author><name>Khaled Monsoor</name></author><id>tag:blog.kmonsoor.com,2021-03-31:/pimp-up-my-terminal/</id><summary type="html">&lt;p&gt;How do I pimp up my Linux terminal? A quick trip through Zsh, Oh-my-zsh, and other power tools to make the command-line-based workflow smooth and&amp;nbsp;cool.&lt;/p&gt;</summary><content type="html">&lt;p&gt;The purpose of this post is to be my quick, copy-paste source of the commands that I use to set up my terminal on a new *nix system.
 However, if someone else finds it useful, that&amp;rsquo;d be some cherries on&amp;nbsp;top.&lt;/p&gt;
 &lt;p&gt;This command prompt in the below image is the end&amp;nbsp;goal.&lt;/p&gt;
 &lt;p&gt;&lt;img alt="The end goal of this post" src="https://i.imgur.com/YqnBifw.png"&gt;&lt;/p&gt;
@@ -334,11 +335,7 @@ I can’t go into any more detail though&amp;nbsp;;)&lt;/p&gt;
 &lt;li&gt;Please don’t take the number 50M+ literally. The actual number is much higher but should be considered as company secrets ;).&amp;nbsp;Right?&lt;/li&gt;
 &lt;li&gt;This article is &lt;span class="caps"&gt;NOT&lt;/span&gt; a definitive process guide, and I’m not an expert on Agile methodologies. I’m just trying to share my learning from my release experience of 1.75 years. Some stuff might help any other release manager on the other side of the planet. That’s the goal&amp;nbsp;here.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Thanks,&amp;nbsp;y’all.&lt;/p&gt;</content><category term="Tech"></category><category term="release"></category><category term="management"></category><category term="tips"></category></entry><entry><title>Why to do it, rather than how to do it</title><link href="https://blog.kmonsoor.com/process-emphasize-on-why-not-how/" rel="alternate"></link><published>2020-04-26T00:00:00+06:00</published><updated>2020-04-26T00:00:00+06:00</updated><author><name>Khaled Monsoor</name></author><id>tag:blog.kmonsoor.com,2020-04-26:/process-emphasize-on-why-not-how/</id><summary type="html">&lt;p&gt;Focusing on why to do it, rather than how to do&amp;nbsp;it&lt;/p&gt;</summary><content type="html">&lt;p&gt;To make people adopt any process, the most important part of the “preach” or “sell” is why to do it, not how to do it.
-When the audience is inspired enough, they&amp;rsquo;ll be willing to learn the process, optimize the process to fit the goal and most importantly go the extra mile (beyond what&amp;rsquo;s written explicitly) to achieve the objective(s) or maximize the&amp;nbsp;impact.&lt;/p&gt;
-&lt;p&gt;That&amp;rsquo;s why guerrilla warfare works; even in the face of massively disproportionate formal army. Because a formal army has meticulous sets of processes in place, but usually lacks the inspiration part in the right&amp;nbsp;places.&lt;/p&gt;
-&lt;p&gt;As the owner of any process, first of all, you should be solidly inspired. If that’s missing, everything else will fall apart; regardless of how many management consultants worked on it. To ensure that ask yourself the why question. Dig deep enough to content yourself with the answer. Then you’re ready to make and deliver the best version of the how&amp;nbsp;part.&lt;/p&gt;
-&lt;p&gt;If you’re delegating a process to someone else to own, make sure she is satisfied with the answer of why; not just agreed to take over. How do you know? She will dig into the why part and question you about it. She will be eager enough to learn how part and execute&amp;nbsp;accordingly.&lt;/p&gt;</content><category term="Tech"></category><category term="process"></category><category term="communication"></category><category term="organization"></category></entry><entry><title>Install latest Python 3 on Linux CentOS 7</title><link href="https://blog.kmonsoor.com/install-latest-python3-on-centos-7/" rel="alternate"></link><published>2018-07-07T00:00:00+06:00</published><updated>2018-07-07T00:00:00+06:00</updated><author><name>Khaled Monsoor</name></author><id>tag:blog.kmonsoor.com,2018-07-07:/install-latest-python3-on-centos-7/</id><summary type="html">&lt;p&gt;Install the latest and greatest Python 3 on CentOS 7&amp;nbsp;systems&lt;/p&gt;</summary><content type="html">&lt;h2 id="why"&gt;Why&lt;a class="headerlink" href="#why" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Thanks,&amp;nbsp;y’all.&lt;/p&gt;</content><category term="Tech"></category><category term="release"></category><category term="management"></category><category term="tips"></category></entry><entry><title>Install latest Python 3 on Linux CentOS 7</title><link href="https://blog.kmonsoor.com/install-latest-python3-on-centos-7/" rel="alternate"></link><published>2018-07-07T00:00:00+06:00</published><updated>2018-07-07T00:00:00+06:00</updated><author><name>Khaled Monsoor</name></author><id>tag:blog.kmonsoor.com,2018-07-07:/install-latest-python3-on-centos-7/</id><summary type="html">&lt;p&gt;Install the latest and greatest Python 3 on CentOS 7&amp;nbsp;systems&lt;/p&gt;</summary><content type="html">&lt;h2 id="why"&gt;Why&lt;a class="headerlink" href="#why" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Not all distro created equal. &lt;br&gt;
 Some are created to join the space race, some are to hold unto the leagcy, some are cutting-edge, some are cutting edge. Some are born to boot-up IoT devices some are to push out heavy&amp;nbsp;graphics.&lt;/p&gt;
 &lt;p&gt;That&amp;rsquo;s the fun (albeit, power) of&amp;nbsp;Linux.&lt;/p&gt;
@@ -480,4 +477,195 @@ Please bear in mind, this is an &amp;ldquo;in-progress&amp;rdquo; post; prematur
 &lt;p&gt;Winter is a nasty period for cold, not just because of the weather, but because we tend to all stay inside with other humans. More contact and breathing the same air over and over, maximizes the chances that you get some virus particles residing in your respiratory tract, waiting for a chance to&amp;nbsp;strike.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;So, you need to make sure you are somewhere warm, make sure you air the rooms you occupy whenever the outside weather allows, change environments, avoid packed rooms, and always cover up your chest, neck and mouth/nose with warm clothing. Take these precautions and you&amp;rsquo;ll minimize your chances of catching a&amp;nbsp;cold.&lt;/strong&gt;&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;If anyone&amp;rsquo;s interested, original answer was posted on this thread and was the top answer, but it&amp;rsquo;s deleted now : &lt;a href="https://www.reddit.com/r/askscience/comments/7innjm/what_exactly_does_the_cold_virus_do_to_me_to_make/"&gt;https://www.reddit.com/r/askscience/comments/7innjm/what_exactly_does_the_cold_virus_do_to_me_to_make/&lt;/a&gt;&lt;/p&gt;</content><category term="Tech"></category><category term="health"></category><category term="daily-life"></category><category term="common-cold"></category><category term="virus"></category><category term="antibiotic"></category><category term="fever"></category></entry></feed>
+&lt;p&gt;If anyone&amp;rsquo;s interested, original answer was posted on this thread and was the top answer, but it&amp;rsquo;s deleted now : &lt;a href="https://www.reddit.com/r/askscience/comments/7innjm/what_exactly_does_the_cold_virus_do_to_me_to_make/"&gt;https://www.reddit.com/r/askscience/comments/7innjm/what_exactly_does_the_cold_virus_do_to_me_to_make/&lt;/a&gt;&lt;/p&gt;</content><category term="Tech"></category><category term="health"></category><category term="daily-life"></category><category term="common-cold"></category><category term="virus"></category><category term="antibiotic"></category><category term="fever"></category></entry><entry><title>Pelican Static sites - SEO Optimization</title><link href="https://blog.kmonsoor.com/pelican-how-to-make-seo-friendly/" rel="alternate"></link><published>2017-01-07T00:00:00+06:00</published><updated>2017-01-07T00:00:00+06:00</updated><author><name>Khaled Monsoor</name></author><id>tag:blog.kmonsoor.com,2017-01-07:/pelican-how-to-make-seo-friendly/</id><summary type="html">&lt;p&gt;Usually &lt;code&gt;Pelican&lt;/code&gt; static-site generator is not very concerned about &lt;span class="caps"&gt;SEO&lt;/span&gt; of the generated site. Related themes and their templates also don&amp;rsquo;t take it much seriously. But you shouldn&amp;rsquo;t loose &lt;span class="caps"&gt;SEO&lt;/span&gt;,&amp;nbsp;right?&lt;/p&gt;</summary><content type="html">&lt;p&gt;Writing is a hard job, especially it is your hobby beside of your day job. But what&amp;rsquo;s the benefit if nobody reads it just because they couldn&amp;rsquo;t find&amp;nbsp;it.&lt;/p&gt;
+&lt;p&gt;Usually &lt;code&gt;Pelican&lt;/code&gt; &lt;a href="https://github.com/getpelican/pelican"&gt;static-site generator&lt;/a&gt; is not very concerned about &lt;span class="caps"&gt;SEO&lt;/span&gt; of the generated site mainly because it&amp;rsquo;s not that focused on commercial usage. That&amp;rsquo;s what I felt.
+Related themes and their templates also don&amp;rsquo;t take it much seriously. But you shouldn&amp;rsquo;t loose &lt;span class="caps"&gt;SEO&lt;/span&gt; just because you migrated from Wordpress or whatever you were using previously,&amp;nbsp;right?&lt;/p&gt;
+&lt;p&gt;Often times theme-authors focus more on look-n-feel of the theme, but not so much on the &lt;span class="caps"&gt;SEO&lt;/span&gt;&amp;nbsp;concerns.&lt;/p&gt;
+&lt;p&gt;That&amp;rsquo;s this blog about; let&amp;rsquo;s fix&amp;nbsp;that.&lt;/p&gt;
+&lt;h4 id="note-1-about-other-static-site-generators"&gt;Note 1: About other static-site generators&lt;a class="headerlink" href="#note-1-about-other-static-site-generators" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;Although the following discussions &lt;span class="amp"&gt;&amp;amp;&lt;/span&gt; codes mostly are specific to &lt;a href="https://github.com/getpelican/pelican"&gt;Pelican&lt;/a&gt; templates which uses &lt;a href="http://jinja.pocoo.org/"&gt;jinja2&lt;/a&gt; templating language, the concepts and concerns here are applicable to most static-site generators and their&amp;nbsp;themes.&lt;/p&gt;
+&lt;h4 id="note-2-im-in-no-way-an-seo-expert"&gt;Note 2: I&amp;rsquo;m, in no way, an &lt;span class="caps"&gt;SEO&lt;/span&gt; expert&lt;a class="headerlink" href="#note-2-im-in-no-way-an-seo-expert" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;This writeup is just a collection of my findings while correcting my blog&amp;rsquo;s &lt;span class="caps"&gt;SEO&lt;/span&gt; course; fixing the stupid mistakes. Also, this isn&amp;rsquo;t a commercial site. There are lot more and in-depth aspects of &lt;span class="caps"&gt;SEO&lt;/span&gt; optimization other than the following, that can be very important for commercial&amp;nbsp;projects.&lt;/p&gt;
+&lt;h2 id="getting-started"&gt;Getting started&lt;a class="headerlink" href="#getting-started" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id="lookup-for-missing-pieces"&gt;Lookup for missing pieces&lt;a class="headerlink" href="#lookup-for-missing-pieces" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Make sure all the linked resources(links, images, &lt;span class="caps"&gt;CSS&lt;/span&gt; &lt;span class="amp"&gt;&amp;amp;&lt;/span&gt; &lt;span class="caps"&gt;JS&lt;/span&gt; files) that you&amp;rsquo;ve used in your pages are valid. For that check browser&amp;rsquo;s &lt;code&gt;console&lt;/code&gt; in &lt;code&gt;Developers tools&lt;/code&gt; for any errors e.g. unavailable urls, faulty html/css&amp;nbsp;etc.&lt;/p&gt;
+&lt;h3 id="know-the-critical-spots"&gt;Know the critical spots&lt;a class="headerlink" href="#know-the-critical-spots" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;pelicanconf.py&lt;/strong&gt; - It&amp;rsquo;s usually in your root folder of the&amp;nbsp;site.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;base.html&lt;/strong&gt; - It&amp;rsquo;s in the &lt;code&gt;templates&lt;/code&gt; folder of the theme folder that you are using. Changes here will impact all &lt;span class="caps"&gt;HTML&lt;/span&gt; pages generated by&amp;nbsp;Pelican.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;article.html&lt;/strong&gt; - In same folder as &lt;code&gt;base.html&lt;/code&gt;. Changes here will impact only articles&amp;rsquo;&amp;nbsp;pages.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="avoiding-duplication"&gt;Avoiding Duplication&lt;a class="headerlink" href="#avoiding-duplication" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id="avoid-your-source-getting-indexed-by-google"&gt;Avoid your source getting indexed by Google&lt;a class="headerlink" href="#avoid-your-source-getting-indexed-by-google" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;If the source of your blog is not sourced-open, meaning the content is not in a open-sourced repo, this isn&amp;rsquo;t your concern.
+But if it is, it should be a&amp;nbsp;concern.  &lt;/p&gt;
+&lt;p&gt;The reason is that &lt;code&gt;Github.com&lt;/code&gt;(or where your repo is hosted on) is stronger domain than yours, so Google &amp;ldquo;sees&amp;rdquo; that your site-contents (even though it&amp;rsquo;s yours) also is on Github. So, there&amp;rsquo;s a high chance that it&amp;rsquo;ll mark your contents as &amp;ldquo;duplicate&amp;rdquo;. And, duplicate contents gets heavy hammers from Google&amp;rsquo;s &lt;span class="caps"&gt;SEO&lt;/span&gt; point-of-view. Searching any writeup from yours, even it&amp;rsquo;s very unique on Internet, Google search will show both your site and the repo as well, possibly links from your site will be on the lower&amp;nbsp;side.&lt;/p&gt;
+&lt;p&gt;It begs the question how to avoid that. It&amp;rsquo;s not&amp;nbsp;complicated.&lt;/p&gt;
+&lt;p&gt;For example, Github.com&amp;rsquo;s &lt;a href="https://github.com/robots.txt"&gt;robot.txt&lt;/a&gt; allows Google (or any search engine for that matter) to index only the &lt;code&gt;master&lt;/code&gt; branch of any open-source repo. So, if your repo don&amp;rsquo;t have any branch named &lt;code&gt;master&lt;/code&gt;, it won&amp;rsquo;t be indexed. That&amp;rsquo;s it. Rename your &amp;ldquo;master&amp;rdquo; as &amp;ldquo;live&amp;rdquo;, &amp;ldquo;main&amp;rdquo;, &amp;ldquo;production&amp;rdquo; or whatever you feel&amp;nbsp;like.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Create a new&amp;nbsp;&amp;ldquo;master&amp;rdquo;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="linenos" data-linenos="1 "&gt;&lt;/span&gt;$ git checkout -b new-master
+&lt;span class="linenos" data-linenos="2 "&gt;&lt;/span&gt;$ git push -u origin new-master
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ol start="2"&gt;
+&lt;li&gt;Tell Github about new&amp;nbsp;move&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img alt="change repo-settings on Github" src="http://i.imgur.com/wjf6zwul.png"&gt;&lt;/p&gt;
+&lt;ol start="3"&gt;
+&lt;li&gt;Now, delete &lt;code&gt;master&lt;/code&gt; branch from your&amp;nbsp;repo.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="linenos" data-linenos="1 "&gt;&lt;/span&gt;$ git branch -d master
+&lt;span class="linenos" data-linenos="2 "&gt;&lt;/span&gt;$ git push origin :master
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="utilize-relcanonical-link"&gt;Utilize &lt;code&gt;rel="canonical"&lt;/code&gt; link&lt;a class="headerlink" href="#utilize-relcanonical-link" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;This is kind of a must-do for avoiding being marked as duplicate content.
+This will also defend you against automatic content-scraping schemes by always having a pointer to your original&amp;nbsp;source.  &lt;/p&gt;
+&lt;p&gt;To utilize it on Pelican, add or make sure that a &lt;code&gt;&amp;lt;link&amp;gt;&lt;/code&gt; element with the attribute &lt;code&gt;rel="canonical"&lt;/code&gt; to the &lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt; section of your base template named &lt;code&gt;base.html&lt;/code&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="linenos" data-linenos="1 "&gt;&lt;/span&gt;{% if article %}
+&lt;span class="linenos" data-linenos="2 "&gt;&lt;/span&gt;&amp;lt;link rel=&amp;quot;canonical&amp;quot; href=&amp;quot;{{ SITEURL }}/{{ article.url }}&amp;quot;/&amp;gt;
+&lt;span class="linenos" data-linenos="3 "&gt;&lt;/span&gt;{% endif%}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;For example, if you see this page&amp;rsquo;s source (pressing &lt;span class="caps"&gt;CTRL&lt;/span&gt;+u), you should see something&amp;nbsp;like&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="linenos" data-linenos="1 "&gt;&lt;/span&gt;&amp;lt;link rel=&amp;quot;canonical&amp;quot; href=&amp;quot;https://blog.kmonsoor.com/pelican-how-to-make-seo-friendly/&amp;quot;/&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="proper-title-of-each-page"&gt;Proper &lt;strong&gt;&amp;lt; title &amp;gt;&lt;/strong&gt; of each page&lt;a class="headerlink" href="#proper-title-of-each-page" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Every page on your site should have a proper title.
+For search engines, it represents the page. It should concisely reflect a page&amp;rsquo;s content.
+But try to keep it less 60 characters or search-engines may choose to truncate it. Use each characters&amp;nbsp;wisely.&lt;/p&gt;
+&lt;p&gt;It may look like this in your &lt;code&gt;base.html&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="linenos" data-linenos="1 "&gt;&lt;/span&gt;{% if article %}
+&lt;span class="linenos" data-linenos="2 "&gt;&lt;/span&gt;&amp;lt;title&amp;gt;{{ article.title }} -- {{ TAGLINE }}&amp;lt;/title&amp;gt;
+&lt;span class="linenos" data-linenos="3 "&gt;&lt;/span&gt;{% else %}
+&lt;span class="linenos" data-linenos="4 "&gt;&lt;/span&gt;&amp;lt;title&amp;gt;{{ TAGLINE }}&amp;lt;/title&amp;gt;
+&lt;span class="linenos" data-linenos="5 "&gt;&lt;/span&gt;{% endif%}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+The &lt;strong&gt;else&lt;/strong&gt; clause here is to ensure that non-article pages also get a title, even it&amp;rsquo;s just your &lt;strong&gt;tagline&lt;/strong&gt; defined in &lt;code&gt;pelicanconf.py&lt;/code&gt;.&lt;/p&gt;
+&lt;h3 id="meta-descriptions"&gt;Meta descriptions&lt;a class="headerlink" href="#meta-descriptions" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Include a meta-description to be added on each page of your site.
+ Though it may don&amp;rsquo;t directly hit &lt;span class="caps"&gt;SEO&lt;/span&gt; ranking, but it appears as a snippet on the search page.
+ So, user should get a proper glimpse of what your page gonna talk about.
+ Make sure your theme uses Pelican&amp;rsquo;s &lt;code&gt;summary&lt;/code&gt;-tagged text for this purpose. Else, ensure it yourself by editing &lt;code&gt;base.html&lt;/code&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="linenos" data-linenos="1 "&gt;&lt;/span&gt;{% if article and article.summary %}
+&lt;span class="linenos" data-linenos="2 "&gt;&lt;/span&gt;&amp;lt;meta name=&amp;quot;description&amp;quot; content=&amp;quot;{{ article.summary|striptags }}&amp;quot;/&amp;gt;
+&lt;span class="linenos" data-linenos="3 "&gt;&lt;/span&gt;{% else %}
+&lt;span class="linenos" data-linenos="4 "&gt;&lt;/span&gt;&amp;lt;meta name=&amp;quot;description&amp;quot; content=&amp;quot;{{ SITE_SUMMARY }}&amp;quot;/&amp;gt;
+&lt;span class="linenos" data-linenos="5 "&gt;&lt;/span&gt;{% endif%}  
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="use-search-console-extensively"&gt;Use &lt;code&gt;search-console&lt;/code&gt; extensively&lt;a class="headerlink" href="#use-search-console-extensively" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Google&amp;rsquo;s &lt;a href="https://www.google.com/webmasters/tools/home"&gt;Search-console, previously known as webmaster-tools&lt;/a&gt; is your friend. Utilize it as far as you can&amp;nbsp;go.&lt;/p&gt;
+&lt;h4 id="extensively-use-pagespeed-insights"&gt;Extensively use &lt;a href="https://developers.google.com/speed/pagespeed/insights/"&gt;PageSpeed Insights&lt;/a&gt;&lt;a class="headerlink" href="#extensively-use-pagespeed-insights" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;To understand where are current bottlenecks of your site, this tools gives quite a lot insights. Address those&amp;nbsp;one-by-one.&lt;/p&gt;
+&lt;h4 id="set-preferred-version-of-your-site"&gt;Set preferred version of your site&lt;a class="headerlink" href="#set-preferred-version-of-your-site" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;If you have &lt;code&gt;www&lt;/code&gt;, &lt;code&gt;http&lt;/code&gt; and &lt;code&gt;https&lt;/code&gt; versions of your site, tell Google here which one is preferred. It&amp;rsquo;s only applicable to your domain-root. Once applied and Google re-indexed your site, all the search-results from your site will show that preferred version of your&amp;nbsp;site.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="setting preference for www or non-www version" src="http://i.imgur.com/51JY1oel.png"&gt;&lt;/p&gt;
+&lt;p&gt;You have to add and do it same both for &lt;code&gt;http&lt;/code&gt; and &lt;code&gt;https&lt;/code&gt; version of your site, if you have&amp;nbsp;both.&lt;/p&gt;
+&lt;p&gt;If you have both, &lt;strong&gt;either&lt;/strong&gt; you can use a javascript-code snippet in the &lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt; of &lt;code&gt;base.html&lt;/code&gt; to redirect any &lt;code&gt;http&lt;/code&gt; page to its &lt;code&gt;https&lt;/code&gt; counterpart.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="linenos" data-linenos="1 "&gt;&lt;/span&gt;&amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt;
+&lt;span class="linenos" data-linenos="2 "&gt;&lt;/span&gt;  var host = &amp;quot;your-site.com&amp;quot;;
+&lt;span class="linenos" data-linenos="3 "&gt;&lt;/span&gt;  if ((host == window.location.host) &amp;amp;&amp;amp; (window.location.protocol != &amp;quot;https:&amp;quot;))
+&lt;span class="linenos" data-linenos="4 "&gt;&lt;/span&gt;    window.location.protocol = &amp;quot;https&amp;quot;;
+&lt;span class="linenos" data-linenos="5 "&gt;&lt;/span&gt;&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;or&lt;/strong&gt;, if your site is served through &lt;span class="caps"&gt;NGINX&lt;/span&gt; or Apache, you can do it through site&amp;rsquo;s &lt;code&gt;.htaccess&lt;/code&gt; file, by adding the&amp;nbsp;following.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="linenos" data-linenos="1 "&gt;&lt;/span&gt;RewriteEngine On
+&lt;span class="linenos" data-linenos="2 "&gt;&lt;/span&gt;RewriteCond %{HTTPS} !on
+&lt;span class="linenos" data-linenos="3 "&gt;&lt;/span&gt;RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Or&lt;/strong&gt;, if you are using CloudFlare &lt;span class="caps"&gt;CDN&lt;/span&gt;, you can create a page-rule for that as I have shown&amp;nbsp;below.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="always-https by CloudFlare page-rules" src="http://i.imgur.com/9ISFbtvm.png"&gt;&lt;/p&gt;
+&lt;h4 id="check-index-status"&gt;Check index-status&lt;a class="headerlink" href="#check-index-status" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;Once in a while Check for Google&amp;rsquo;s index status of your site on the &lt;code&gt;search-console&lt;/code&gt;. Look for error messages or&amp;nbsp;suggestions.&lt;/p&gt;
+&lt;p&gt;After every major change in your site&amp;rsquo;s structure, make sure Google bots &amp;ldquo;know&amp;rdquo; about it. You can somewhat expedite the process by &lt;a href="https://www.google.com/webmasters/tools/submit-url"&gt;manually submitting&lt;/a&gt; your&amp;nbsp;site.&lt;/p&gt;
+&lt;h3 id="include-opengraph-data"&gt;Include &lt;code&gt;OpenGraph&lt;/code&gt; data&lt;a class="headerlink" href="#include-opengraph-data" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Make sure each of your pages is including proper &lt;a href="http://ogp.me/"&gt;OpenGraph&lt;/a&gt; tags, e.g. &lt;code&gt;og:title&lt;/code&gt;, &lt;code&gt;og:content&lt;/code&gt; etc., in your&amp;nbsp;template.&lt;/p&gt;
+&lt;p&gt;Though, OpenGraph originated from facebook Inc., these tags are now widely used by other social engines, even by Google+. In absence of Twitter tags, Twitter also uses these &lt;code&gt;og&lt;/code&gt; tags. Try to include both &lt;code&gt;og:&lt;/code&gt; and &lt;code&gt;twitter:&lt;/code&gt; tags. Proper data in these tags makes your article cleanly-sharable in these social&amp;nbsp;sites.&lt;/p&gt;
+&lt;p&gt;The below snippet that &lt;a href="https://github.com/kmonsoor/blog.kmonsoor.com/blob/pelican-how-to-make-seo-friendly/plumage/templates/base.html"&gt;I use myself&lt;/a&gt; can serve as a starting&amp;nbsp;point.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="linenos" data-linenos=" 1 "&gt;&lt;/span&gt;&amp;lt;!-- OpenGraph protocol tags: http://ogp.me/ --&amp;gt;
+&lt;span class="linenos" data-linenos=" 2 "&gt;&lt;/span&gt;&amp;lt;!-- originally adopted to be used for: https://blog.kmonsoor.com --&amp;gt;
+&lt;span class="linenos" data-linenos=" 3 "&gt;&lt;/span&gt;&amp;lt;meta property=&amp;quot;og:site_name&amp;quot; content=&amp;quot;{{ SITENAME }}&amp;quot; /&amp;gt;
+&lt;span class="linenos" data-linenos=" 4 "&gt;&lt;/span&gt;&amp;lt;meta property=&amp;quot;og:type&amp;quot; content=&amp;quot;article&amp;quot; /&amp;gt;
+&lt;span class="linenos" data-linenos=" 5 "&gt;&lt;/span&gt;{% if article and article.title %}    
+&lt;span class="linenos" data-linenos=" 6 "&gt;&lt;/span&gt;&amp;lt;meta property=&amp;quot;og:title&amp;quot; content=&amp;quot;{{ article.title }} -- {{ TAGLINE }}&amp;quot; /&amp;gt;
+&lt;span class="linenos" data-linenos=" 7 "&gt;&lt;/span&gt;&amp;lt;meta property=&amp;quot;og:url&amp;quot; content=&amp;quot;{{ SITEURL }}/{{ article.url }}&amp;quot; /&amp;gt;
+&lt;span class="linenos" data-linenos=" 8 "&gt;&lt;/span&gt;{% endif%}
+&lt;span class="linenos" data-linenos=" 9 "&gt;&lt;/span&gt;{% if article and article.summary %}
+&lt;span class="linenos" data-linenos="10 "&gt;&lt;/span&gt;&amp;lt;meta property=&amp;quot;og:description&amp;quot; content=&amp;quot;{{ article.summary|striptags }}&amp;quot; /&amp;gt;
+&lt;span class="linenos" data-linenos="11 "&gt;&lt;/span&gt;{% else %}
+&lt;span class="linenos" data-linenos="12 "&gt;&lt;/span&gt;&amp;lt;meta name=&amp;quot;og:description&amp;quot; content=&amp;quot;{{ SITE_SUMMARY }}&amp;quot;/&amp;gt;
+&lt;span class="linenos" data-linenos="13 "&gt;&lt;/span&gt;{% endif%}
+&lt;span class="linenos" data-linenos="14 "&gt;&lt;/span&gt;{% if article and article.date %}
+&lt;span class="linenos" data-linenos="15 "&gt;&lt;/span&gt;&amp;lt;meta property=&amp;quot;article:published_time&amp;quot; content=&amp;quot;{{ article.date }}&amp;quot; /&amp;gt;
+&lt;span class="linenos" data-linenos="16 "&gt;&lt;/span&gt;{% endif%}
+&lt;span class="linenos" data-linenos="17 "&gt;&lt;/span&gt;{% if article and article.modified %}
+&lt;span class="linenos" data-linenos="18 "&gt;&lt;/span&gt;&amp;lt;meta property=&amp;quot;article:modified_time&amp;quot; content=&amp;quot;{{ article.modified }}&amp;quot; /&amp;gt;
+&lt;span class="linenos" data-linenos="19 "&gt;&lt;/span&gt;{% endif%}
+&lt;span class="linenos" data-linenos="20 "&gt;&lt;/span&gt;&amp;lt;!-- End of OpenGraph protocol tags --&amp;gt;
+&lt;span class="linenos" data-linenos="21 "&gt;&lt;/span&gt;
+&lt;span class="linenos" data-linenos="22 "&gt;&lt;/span&gt;{% if TWITTER_USERNAME %}
+&lt;span class="linenos" data-linenos="23 "&gt;&lt;/span&gt;&amp;lt;meta name=&amp;quot;twitter:site&amp;quot; content=&amp;quot;@{{ TWITTER_USERNAME }}&amp;quot; /&amp;gt;
+&lt;span class="linenos" data-linenos="24 "&gt;&lt;/span&gt;&amp;lt;meta name=&amp;quot;twitter:creator&amp;quot; content=&amp;quot;@{{ TWITTER_USERNAME }}&amp;quot; /&amp;gt;
+&lt;span class="linenos" data-linenos="25 "&gt;&lt;/span&gt;{% endif%}
+&lt;span class="linenos" data-linenos="26 "&gt;&lt;/span&gt;&amp;lt;meta name=&amp;quot;twitter:image&amp;quot; content=&amp;quot;INSERT-YOUR-TWITTER-IMAGE-LINK&amp;quot; /&amp;gt;
+&lt;span class="linenos" data-linenos="27 "&gt;&lt;/span&gt;{% if article and article.summary %}
+&lt;span class="linenos" data-linenos="28 "&gt;&lt;/span&gt;&amp;lt;meta name=&amp;quot;twitter:card&amp;quot; content=&amp;quot;{{ article.summary|striptags }}&amp;quot; /&amp;gt;
+&lt;span class="linenos" data-linenos="29 "&gt;&lt;/span&gt;{% else %}
+&lt;span class="linenos" data-linenos="30 "&gt;&lt;/span&gt;&amp;lt;meta name=&amp;quot;twitter:card&amp;quot; content=&amp;quot;{{ SITE_SUMMARY }}&amp;quot;/&amp;gt;
+&lt;span class="linenos" data-linenos="31 "&gt;&lt;/span&gt;{% endif%}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h4 id="notes"&gt;Notes&lt;a class="headerlink" href="#notes" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Grab your own Twitter&amp;rsquo;s avatar link do the&amp;nbsp;following:&lt;/li&gt;
+&lt;li&gt;Go to your Twitter profile&amp;nbsp;page&lt;/li&gt;
+&lt;li&gt;Right-click on your profile&amp;nbsp;picture&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Select &amp;ldquo;Copy image address&amp;rdquo; / &amp;ldquo;Copy image&amp;nbsp;link&amp;rdquo;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;For &lt;code&gt;OpenGraph&lt;/code&gt; tags you may also consider to use &lt;a href="https://github.com/whiskyechobravo/pelican-open_graph/tree/master"&gt;pelican-opengraph&lt;/a&gt;&amp;nbsp;plugin.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;For all these to work properly, make sure &lt;code&gt;SITEURL&lt;/code&gt;, &lt;code&gt;TAGLINE&lt;/code&gt;, &lt;code&gt;SITE_SUMMARY&lt;/code&gt;, &lt;code&gt;TWITTER_USERNAME&lt;/code&gt; are properly defined in your &lt;code&gt;pelicanconf.py&lt;/code&gt; alongwith in &lt;code&gt;publishconf.py&lt;/code&gt; files. Please remember that definitions in &lt;code&gt;publishconf.py&lt;/code&gt; only apply when you using &lt;code&gt;make publish&lt;/code&gt; command.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="loading-performance"&gt;Loading Performance&lt;a class="headerlink" href="#loading-performance" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;h4 id="compress-everything"&gt;Compress everything&lt;a class="headerlink" href="#compress-everything" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;PageSpeed impacts &lt;span class="caps"&gt;SEO&lt;/span&gt; directly. Google punishes slow-site especially when search is made on a mobile device. Mobile-optimized sites will definitely rank higher on searches from&amp;nbsp;mobile-devices.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;So, make sure all static files are compressed. If not, compress your themes theme&amp;rsquo;s &lt;span class="caps"&gt;JS&lt;/span&gt;, &lt;span class="caps"&gt;CSS&lt;/span&gt; files yourself to a &lt;em&gt;.min.&lt;/em&gt; version and then replace those in the template files of the&amp;nbsp;theme.&lt;/p&gt;
+&lt;p&gt;Or, better to use &lt;a href="https://github.com/getpelican/pelican-plugins/tree/master/gzip_cache"&gt;gzip_cache&lt;/a&gt; for gzipping all the &lt;span class="caps"&gt;HTML&lt;/span&gt; files statically, also and &lt;a href="https://github.com/getpelican/pelican-plugins/tree/master/yuicompressor"&gt;yuicompressor&lt;/a&gt; plugin for compressing &lt;span class="caps"&gt;JS&lt;/span&gt; &lt;span class="amp"&gt;&amp;amp;&lt;/span&gt; &lt;span class="caps"&gt;CSS&lt;/span&gt; files for Pelican. Those will make sure that, upon build, everything is&amp;nbsp;compressed.&lt;/p&gt;
+&lt;h4 id="utilize-cdn-if-you-can"&gt;Utilize &lt;span class="caps"&gt;CDN&lt;/span&gt; if you can&lt;a class="headerlink" href="#utilize-cdn-if-you-can" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Use &lt;span class="caps"&gt;CDN&lt;/span&gt;-ed versions of common libraries(e.g. jQuery, Bootstrap etc.) rather than hosting your own copy, unless your theme actively modified it. Look it up on &lt;a href="cdnjs.cloudflare.com"&gt;CloudFlare cdnjs&lt;/a&gt;,  &lt;a href="https://cdnjs.com"&gt;cdnjs&lt;/a&gt;, or on &lt;a href="https://www.jsdelivr.com"&gt;jsdelivr&lt;/a&gt; etc. and use those&amp;nbsp;links.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Try to use a &lt;span class="caps"&gt;CDN&lt;/span&gt; for edge-distribution of your site. I only know of CloudFlare that provide this service for free for a single site. There might be others. &lt;span class="caps"&gt;CF&lt;/span&gt; also make managing &lt;span class="caps"&gt;DNS&lt;/span&gt; configuration little&amp;nbsp;breezy.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="engage-commenting"&gt;Engage commenting&lt;a class="headerlink" href="#engage-commenting" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;While serving a static site, integrating a commenting-system looks a little far-fetched. However, blogs without proper commenting system feels kinda lame sometimes. Of course, &lt;span class="caps"&gt;YMMV&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;But, it&amp;rsquo;s not difficult; easily can be done by systems like &lt;a href="https://disqus.com/"&gt;Disqus&lt;/a&gt; etc. I&amp;rsquo;m not affiliated with them, by the&amp;nbsp;way.&lt;/p&gt;
+&lt;h3 id="host-images-separately"&gt;Host images separately&lt;a class="headerlink" href="#host-images-separately" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Host all the images separately that you&amp;rsquo;ve used in your articles. Use image-specific hosting e.g. imgur.com, imgpile.com, UltraIMG.com, postimage.org&amp;nbsp;etc.&lt;/p&gt;
+&lt;p&gt;But, why? Because, these services provide couple of benefits besides being&amp;nbsp;free.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Firstly, while loading the page, browser can parallelize loading from this hosts rather than your original blog&amp;nbsp;hosts.&lt;/li&gt;
+&lt;li&gt;More often than not, these services use own &lt;span class="caps"&gt;CDN&lt;/span&gt;.&lt;/li&gt;
+&lt;li&gt;Often these services resize your uploaded images automatically to be used in different contexts, which enables you to choose the best-fit size on the fly but without doing it by&amp;nbsp;hand.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="other-tips"&gt;Other tips&lt;a class="headerlink" href="#other-tips" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id="name-your-images-properly"&gt;Name your images properly&lt;a class="headerlink" href="#name-your-images-properly" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Because search-engines index images too. With proper names, images becomes relevant with the topic, hence potential to draw&amp;nbsp;traffic.&lt;/p&gt;
+&lt;h3 id="use-google-keyword-planner"&gt;Use Google Keyword planner&lt;a class="headerlink" href="#use-google-keyword-planner" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Even if you are not willing to blow money on ads, it will immensely help you to find out more searched for&amp;nbsp;keywords.&lt;/p&gt;
+&lt;h3 id="page-headers-controversial"&gt;Page-headers (controversial)&lt;a class="headerlink" href="#page-headers-controversial" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Don&amp;rsquo;t use multiple 1&lt;sup&gt;st&lt;/sup&gt;-level headers &lt;code&gt;H1&lt;/code&gt; style. The main title link probably already have used it once. Look it up.
+  So, avoid it anymore, meaning avoid underlined-style(&lt;code&gt;=======&lt;/code&gt;) or hash-style(single &amp;lsquo;#&amp;rsquo;) headers in your markdown&amp;nbsp;files.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;However, 2&lt;sup&gt;nd&lt;/sup&gt;-level &lt;code&gt;H2&lt;/code&gt; tags can be (read &amp;lsquo;should be&amp;rsquo;) used multiple times. In case of markdown files, that&amp;rsquo;s &lt;code&gt;---------&lt;/code&gt; underlines, or line starting with&amp;nbsp;double-hash(&amp;lsquo;##&amp;rsquo;).&lt;/p&gt;
+&lt;h3 id="and-theres-lot-more"&gt;And, there&amp;rsquo;s lot more &amp;hellip; ;)&lt;a class="headerlink" href="#and-theres-lot-more" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;As I&amp;rsquo;ll gain more insights, I hope to grow this post. For now, this is a work-in-progress.&lt;br&gt;
+Thanks for reading down so far. Adios&amp;nbsp;!&lt;/p&gt;</content><category term="Tech"></category><category term="pelican"></category><category term="python"></category><category term="static-site"></category><category term="seo-friendly"></category></entry></feed>

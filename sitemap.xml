@@ -5,28 +5,28 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://blog.kmonsoor.com/</loc>
-<lastmod>2021-06-09T12:12:07-00:00</lastmod>
+<lastmod>2021-06-27T13:28:44-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.4</priority>
 </url>
 
 <url>
 <loc>https://blog.kmonsoor.com/tags.html</loc>
-<lastmod>2021-06-09T12:12:07-00:00</lastmod>
+<lastmod>2021-06-27T13:28:44-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.4</priority>
 </url>
 
 <url>
 <loc>https://blog.kmonsoor.com/categories.html</loc>
-<lastmod>2021-06-09T12:12:07-00:00</lastmod>
+<lastmod>2021-06-27T13:28:44-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.4</priority>
 </url>
 
 <url>
 <loc>https://blog.kmonsoor.com/archives.html</loc>
-<lastmod>2021-06-09T12:12:07-00:00</lastmod>
+<lastmod>2021-06-27T13:28:44-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.4</priority>
 </url>
@@ -41,217 +41,224 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://blog.kmonsoor.com/golink-server-using-cloudflare-worker-kv/</loc>
 <lastmod>2021-06-06T00:00:00+06:00</lastmod>
-<changefreq>monthly</changefreq>
+<changefreq>weekly</changefreq>
 <priority>0.8</priority>
 </url>
 
 <url>
 <loc>https://blog.kmonsoor.com/TLDR-what-cloud-to-use-2021/</loc>
 <lastmod>2021-05-22T00:00:00+06:00</lastmod>
-<changefreq>monthly</changefreq>
+<changefreq>weekly</changefreq>
 <priority>0.8</priority>
 </url>
 
 <url>
-<loc>https://blog.kmonsoor.com/personal-shortlink-server-using-Caddy/</loc>
+<loc>https://blog.kmonsoor.com/deploying-golink-server-using-Caddy/</loc>
 <lastmod>2021-04-16T00:00:00+06:00</lastmod>
-<changefreq>monthly</changefreq>
+<changefreq>weekly</changefreq>
 <priority>0.8</priority>
 </url>
 
 <url>
 <loc>https://blog.kmonsoor.com/pimp-up-my-terminal/</loc>
 <lastmod>2021-03-31T00:00:00+06:00</lastmod>
-<changefreq>monthly</changefreq>
+<changefreq>weekly</changefreq>
 <priority>0.8</priority>
 </url>
 
 <url>
 <loc>https://blog.kmonsoor.com/install-latest-Zsh-on-CentOS/</loc>
 <lastmod>2020-10-20T00:00:00+06:00</lastmod>
-<changefreq>monthly</changefreq>
+<changefreq>weekly</changefreq>
 <priority>0.8</priority>
 </url>
 
 <url>
 <loc>https://blog.kmonsoor.com/some-tips-on-managing-apps-release/</loc>
 <lastmod>2020-08-22T12:12:00+06:00</lastmod>
-<changefreq>monthly</changefreq>
+<changefreq>weekly</changefreq>
+<priority>0.8</priority>
+</url>
+
+<url>
+<loc>https://blog.kmonsoor.com/Porqué-hacerlo-en-vez-de-cómo-hacerlo/</loc>
+<lastmod>2020-05-26T00:00:00+06:00</lastmod>
+<changefreq>weekly</changefreq>
 <priority>0.8</priority>
 </url>
 
 <url>
 <loc>https://blog.kmonsoor.com/process-emphasize-on-why-not-how/</loc>
 <lastmod>2020-04-26T00:00:00+06:00</lastmod>
-<changefreq>monthly</changefreq>
+<changefreq>weekly</changefreq>
 <priority>0.8</priority>
 </url>
 
 <url>
 <loc>https://blog.kmonsoor.com/install-latest-python3-on-centos-7/</loc>
 <lastmod>2018-07-07T00:00:00+06:00</lastmod>
-<changefreq>monthly</changefreq>
+<changefreq>weekly</changefreq>
 <priority>0.8</priority>
 </url>
 
 <url>
 <loc>https://blog.kmonsoor.com/ha-setup-for-influxdb/</loc>
 <lastmod>2018-01-18T00:00:00+06:00</lastmod>
-<changefreq>monthly</changefreq>
+<changefreq>weekly</changefreq>
 <priority>0.8</priority>
 </url>
 
 <url>
 <loc>https://blog.kmonsoor.com/what-happens-when-you-catch-cold/</loc>
 <lastmod>2017-12-11T00:00:00+06:00</lastmod>
-<changefreq>monthly</changefreq>
+<changefreq>weekly</changefreq>
 <priority>0.8</priority>
 </url>
 
 <url>
 <loc>https://blog.kmonsoor.com/pelican-how-to-make-seo-friendly/</loc>
 <lastmod>2017-01-07T00:00:00+06:00</lastmod>
-<changefreq>monthly</changefreq>
+<changefreq>weekly</changefreq>
 <priority>0.8</priority>
 </url>
 
 <url>
 <loc>https://blog.kmonsoor.com/ubuntu-update-apt-get-server-to-use-fastest-mirror/</loc>
 <lastmod>2016-10-10T00:00:00+06:00</lastmod>
-<changefreq>monthly</changefreq>
+<changefreq>weekly</changefreq>
 <priority>0.8</priority>
 </url>
 
 <url>
 <loc>https://blog.kmonsoor.com/a-near-perfect-day-of-a-muslim-Professional/</loc>
 <lastmod>2016-05-10T00:00:00+06:00</lastmod>
-<changefreq>monthly</changefreq>
+<changefreq>weekly</changefreq>
 <priority>0.8</priority>
 </url>
 
 <url>
 <loc>https://blog.kmonsoor.com/running-etherpad-on-windows/</loc>
 <lastmod>2016-04-22T00:00:00+06:00</lastmod>
-<changefreq>monthly</changefreq>
+<changefreq>weekly</changefreq>
 <priority>0.8</priority>
 </url>
 
 <url>
 <loc>https://blog.kmonsoor.com/license-of-this-blog/</loc>
 <lastmod>2016-02-22T00:00:00+06:00</lastmod>
-<changefreq>monthly</changefreq>
+<changefreq>weekly</changefreq>
 <priority>0.8</priority>
 </url>
 
 <url>
 <loc>https://blog.kmonsoor.com/R-vs-Python/</loc>
 <lastmod>2016-02-08T08:02:00+06:00</lastmod>
-<changefreq>monthly</changefreq>
+<changefreq>weekly</changefreq>
 <priority>0.8</priority>
 </url>
 
 <url>
 <loc>https://blog.kmonsoor.com/open-source-as-if-you-gonna-die-tonight/</loc>
 <lastmod>2015-12-23T00:00:00+06:00</lastmod>
-<changefreq>monthly</changefreq>
+<changefreq>weekly</changefreq>
 <priority>0.8</priority>
 </url>
 
 <url>
 <loc>https://blog.kmonsoor.com/pelican-create-a-prefilled-markdown-post/</loc>
 <lastmod>2015-12-21T00:44:00+06:00</lastmod>
-<changefreq>monthly</changefreq>
+<changefreq>weekly</changefreq>
 <priority>0.8</priority>
 </url>
 
 <url>
 <loc>https://blog.kmonsoor.com/top-bangladeshi-stackoverflow-rockstars/</loc>
 <lastmod>2015-12-21T22:40:00+06:00</lastmod>
-<changefreq>monthly</changefreq>
+<changefreq>weekly</changefreq>
 <priority>0.8</priority>
 </url>
 
 <url>
 <loc>https://blog.kmonsoor.com/seven-deadly-sins-in-python-code/</loc>
 <lastmod>2015-11-21T00:05:00+06:00</lastmod>
-<changefreq>monthly</changefreq>
+<changefreq>weekly</changefreq>
 <priority>0.8</priority>
 </url>
 
 <url>
 <loc>https://blog.kmonsoor.com/generate-er-diagram-from-sql-database/</loc>
 <lastmod>2016-02-07T00:00:00+06:00</lastmod>
-<changefreq>monthly</changefreq>
+<changefreq>weekly</changefreq>
 <priority>0.8</priority>
 </url>
 
 <url>
 <loc>https://blog.kmonsoor.com/python-how-to-generate-all-possible-combinations-or-permutations/</loc>
 <lastmod>2014-01-31T00:00:00+06:00</lastmod>
-<changefreq>monthly</changefreq>
+<changefreq>weekly</changefreq>
 <priority>0.8</priority>
 </url>
 
 <url>
 <loc>https://blog.kmonsoor.com/bangla-font-design-characters-flow/</loc>
 <lastmod>2013-08-22T00:00:00+06:00</lastmod>
-<changefreq>monthly</changefreq>
+<changefreq>weekly</changefreq>
 <priority>0.8</priority>
 </url>
 
 <url>
 <loc>https://blog.kmonsoor.com/increase-virtual-disk-size-in-virtualbox-windows/</loc>
 <lastmod>2012-05-26T08:02:00+06:00</lastmod>
-<changefreq>monthly</changefreq>
+<changefreq>weekly</changefreq>
 <priority>0.8</priority>
 </url>
 
 <url>
 <loc>https://blog.kmonsoor.com/korean-to-bangla-transliteration/</loc>
 <lastmod>2012-04-23T23:45:00+06:00</lastmod>
-<changefreq>monthly</changefreq>
+<changefreq>weekly</changefreq>
 <priority>0.8</priority>
 </url>
 
 <url>
 <loc>https://blog.kmonsoor.com/uninstall-ie-9/</loc>
 <lastmod>2012-02-01T01:55:00+06:00</lastmod>
-<changefreq>monthly</changefreq>
+<changefreq>weekly</changefreq>
 <priority>0.8</priority>
 </url>
 
 <url>
 <loc>https://blog.kmonsoor.com/convert-windows-7-k-to-en/</loc>
 <lastmod>2012-01-29T12:48:00+06:00</lastmod>
-<changefreq>monthly</changefreq>
+<changefreq>weekly</changefreq>
 <priority>0.8</priority>
 </url>
 
 <url>
 <loc>https://blog.kmonsoor.com/install-english-language-on-microsoft-office-2007-2010/</loc>
 <lastmod>2012-01-19T13:49:00+06:00</lastmod>
-<changefreq>monthly</changefreq>
+<changefreq>weekly</changefreq>
 <priority>0.8</priority>
 </url>
 
 <url>
 <loc>https://blog.kmonsoor.com/what-is-the-next-big/</loc>
 <lastmod>2011-02-24T00:00:00+06:00</lastmod>
-<changefreq>monthly</changefreq>
+<changefreq>weekly</changefreq>
 <priority>0.8</priority>
 </url>
 
 <url>
 <loc>https://blog.kmonsoor.com/install-and-use-unafold-mfold-rpm-package-in-ubuntu/</loc>
 <lastmod>2011-02-17T00:00:00+06:00</lastmod>
-<changefreq>monthly</changefreq>
+<changefreq>weekly</changefreq>
 <priority>0.8</priority>
 </url>
 
 <url>
 <loc>https://blog.kmonsoor.com/my-statement-of-purposesop-for-bioinformatics-program/</loc>
 <lastmod>2010-11-17T00:00:00+06:00</lastmod>
-<changefreq>monthly</changefreq>
+<changefreq>weekly</changefreq>
 <priority>0.8</priority>
 </url>
 
@@ -271,7 +278,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://blog.kmonsoor.com/category/thoughts/</loc>
-<lastmod>2016-05-10T00:00:00+06:02</lastmod>
+<lastmod>2020-05-26T00:00:00+06:02</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.4</priority>
 </url>
@@ -396,7 +403,14 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>https://blog.kmonsoor.com/tag/caddyserver/</loc>
+<loc>https://blog.kmonsoor.com/tag/caddy/</loc>
+<lastmod>2021-04-16T00:00:00+06:02</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.4</priority>
+</url>
+
+<url>
+<loc>https://blog.kmonsoor.com/tag/webserver/</loc>
 <lastmod>2021-04-16T00:00:00+06:02</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.4</priority>
@@ -502,21 +516,35 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://blog.kmonsoor.com/tag/process/</loc>
-<lastmod>2020-04-26T00:00:00+06:02</lastmod>
+<lastmod>2020-05-26T00:00:00+06:02</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.4</priority>
 </url>
 
 <url>
 <loc>https://blog.kmonsoor.com/tag/communication/</loc>
-<lastmod>2020-04-26T00:00:00+06:02</lastmod>
+<lastmod>2020-05-26T00:00:00+06:02</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.4</priority>
 </url>
 
 <url>
 <loc>https://blog.kmonsoor.com/tag/organization/</loc>
-<lastmod>2020-04-26T00:00:00+06:02</lastmod>
+<lastmod>2020-05-26T00:00:00+06:02</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.4</priority>
+</url>
+
+<url>
+<loc>https://blog.kmonsoor.com/tag/thoughts/</loc>
+<lastmod>2020-05-26T00:00:00+06:02</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.4</priority>
+</url>
+
+<url>
+<loc>https://blog.kmonsoor.com/tag/spanish/</loc>
+<lastmod>2020-05-26T00:00:00+06:02</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.4</priority>
 </url>
@@ -1551,13 +1579,6 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>https://blog.kmonsoor.com/tag/spanish/</loc>
-<lastmod>2012-01-19T13:49:00+06:02</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.4</priority>
-</url>
-
-<url>
 <loc>https://blog.kmonsoor.com/tag/swedish/</loc>
 <lastmod>2012-01-19T13:49:00+06:02</lastmod>
 <changefreq>daily</changefreq>
@@ -1594,13 +1615,6 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://blog.kmonsoor.com/tag/silly/</loc>
-<lastmod>2011-02-24T00:00:00+06:02</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.4</priority>
-</url>
-
-<url>
-<loc>https://blog.kmonsoor.com/tag/thoughts/</loc>
 <lastmod>2011-02-24T00:00:00+06:02</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.4</priority>
