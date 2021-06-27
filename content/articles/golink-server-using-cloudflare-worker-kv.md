@@ -1,15 +1,19 @@
 ---
-Title: Creating a free short-link server "on edge" using Cloudflare KV with Worker
+Title: Create a free go-link server "on edge" using Cloudflare Worker KV
 Date: 2021-06-06
 Tags: cloud, computing, url-shortener, url-forwarder, Cloudflare, Cloudflare Worker, Cloudflare KV, Workers KV, on edge, free, go-link
 Slug: golink-server-using-cloudflare-worker-kv
 Status: Published
+Image: https://i.imgur.com/MjIS5gDl.png
 Summary: Among quite a few ways to implement a go-link server (i.e. url-forwarder, short-url server etc.), here I'm going to show you how to use free-tier Cloudflare Worker (& KV) to create an in-house, on-edge, **no-webserver** go-link server.
+Description: I'm going to show you how to use free-tier Cloudflare Worker (& KV) to create an in-house, on-edge, **no-webserver** go-link server (a.k.a short-url server).
 ---
 
 Among quite a few ways to implement a go-link server (i.e. url-forwarder, short-url server etc.), here I'm going to show you how to use free-tier Cloudflare Worker (& KV) to create an in-house, on-edge, **no-webserver** go-link server.
 
-For example, the short-link for this article is `go.kmonsoor.com/golink-kv`
+For example, the short-link for this article is [go.kmonsoor.com/golink-kv](https://go.kmonsoor.com/golink-kv)  
+
+![overall structure](https://i.imgur.com/MjIS5gD.png)
 
 * `/latest` (by which I mean `go.yourdomain.co/latest`) may point to `https://www.yourcompany.com/about/news` which is a public page
 * `/hr-help` may point to `https://www.company-internal.com/long-link/hr/contact.html` which is company's internal human-resources help portal
