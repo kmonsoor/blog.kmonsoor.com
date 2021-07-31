@@ -83,7 +83,7 @@ Once done, it should look like ...
 # Pointing a DNS record to the Worker
 Finally, we need to point a DNS record that'll redirect all requests to your re-soutign sub-domain (e.g. `go.your-domain.com`) to the Cloudflare Worker that we just created.
 
-According to the Cloudflare docs, the DNNS record must be an AAAA record, pointing to the IPv6 address `100:`. The "Name" here is the "sub-domain" part of your choice which is better be short to serve our goal here.  
+According to the Cloudflare docs, the DNNS record must be an AAAA record, pointing to the IPv6 address `100::`. The "Name" here is the "sub-domain" part of your choice which is better be short to serve our goal here.  
   
 ![Pointing a DNS record to it](https://i.imgur.com/62bk7pe.png)
 
