@@ -154,7 +154,7 @@
 <img alt="created webworker" class="img-fluid border rounded shadow image-process-article-photo" src="https://i.imgur.com/XSdKB56.png"/></p>
 <h1 id="pointing-a-dns-record-to-the-worker">Pointing a <span class="caps">DNS</span> record to the Worker<a class="headerlink text-decoration-none small pl-2" href="#pointing-a-dns-record-to-the-worker" title="Permanent link">¶</a></h1>
 <p>Finally, we need to point a <span class="caps">DNS</span> record that’ll redirect all requests to your re-soutign sub-domain (e.g. <code>go.your-domain.com</code>) to the Cloudflare Worker that we just created.</p>
-<p>According to the Cloudflare docs, the <span class="caps">DNNS</span> record must be an <span class="caps">AAAA</span> record, pointing to the IPv6 address <code>100:</code>. The “Name” here is the “sub-domain” part of your choice which is better be short to serve our goal here.  </p>
+<p>According to the Cloudflare docs, the <span class="caps">DNNS</span> record must be an <span class="caps">AAAA</span> record, pointing to the IPv6 address <code>100::</code>. The “Name” here is the “sub-domain” part of your choice which is better be short to serve our goal here.  </p>
 <p><img alt="Pointing a DNS record to it" class="img-fluid border rounded shadow image-process-article-photo" src="https://i.imgur.com/62bk7pe.png"/></p>
 <p>Voila ! Now, test some of the short-urls that you’ve mapped via the <span class="caps">KV</span>. Enjoy !
 Watch out for the target usage though <a href="https://developers.cloudflare.com/workers/platform/limits#worker-limits">against the limit</a>.  </p>
