@@ -9,7 +9,7 @@ Status: published
 
 Hello there! Welcome to my little corner on the internet.
 
-I am Khaled, born & brought up in Dhaka, Bangladesh. Currently living in the Lion city, Singapore.
+I am Khaled, born & brought up in Dhaka, Bangladesh. Currently living an expat life.
 I am a techie, photographer, humanitarian, Muslim, traveler, and a blogger.
 I love to share my experience, knowledge, love, criticism, passion, idea, and feelings.
 

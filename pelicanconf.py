@@ -1,25 +1,91 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*- #
-from __future__ import unicode_literals
+
+# Theme
+import plumage
+THEME = plumage.get_path()
+
+# SITESUBTITLE = "jack of N trades, master of X"
+CODE_STYLE = "monokai"
+TIPUE_SEARCH = False
 
 # Site settings.
 AUTHOR = 'Khaled Monsoor'
 AUTHOR_EMAIL = 'k@kmonsoor.com'
-SITENAME = 'Khaled Monsoor :: Blog'
-TAGLINE = 'khaled monsoor says ...'
+SITENAME = 'I think ...'
+# TAGLINE = 'khaled monsoor says ...'
 SITE_SUMMARY = "Khaled Monsoor here. I usually write about programming, system-design, Islam, life, travel or just personal thoughts ... "
 
 SITEURL = 'https://blog.kmonsoor.com'
 DEFAULT_DATE_FORMAT = '%Y-%m-%d'
 TIMEZONE = 'Asia/Dhaka'
-
 DEFAULT_LANG = u'en'
-DELETE_OUTPUT_DIRECTORY = True
+MARKDOWN = {
+    "extension_configs": {
+        # https://python-markdown.github.io/extensions/#officially-supported-extensions
+        "markdown.extensions.abbr": {},
+        # Example of admonition use at:
+        # https://github.com/kdeldycke/kevin-deldycke-blog/blob/main/content/posts/python-ultimate-regular-expression-to-catch-html-tags.md
+        "markdown.extensions.admonition": {},
+        "markdown.extensions.attr_list": {},
+        "markdown.extensions.def_list": {},
+        "markdown.extensions.footnotes": {},
+        "markdown.extensions.md_in_html": {},
+        "markdown.extensions.meta": {},
+        # Allow numbered lists to not start with 1. Used in following article:
+        # https://kevin.deldycke.com/2016/12/falsehoods-programmers-believe-about-falsehoods-lists/
+        "markdown.extensions.sane_lists": {},
+        "markdown.extensions.smarty": {},
+        "markdown.extensions.tables": {},
+        "markdown.extensions.toc": {
+            "permalink": True,
+        },
+        "mdx_video": {},
+        # https://facelessuser.github.io/pymdown-extensions/
+        "pymdownx.betterem": {},
+        "pymdownx.caret": {},
+        "pymdownx.emoji": {},
+        "pymdownx.keys": {},
+        "pymdownx.magiclink": {},
+        "pymdownx.smartsymbols": {},
+    },
+    "output_format": "html5",
+}
 
+TYPOGRIFY = True
+
+# Code block renderers.
+SUPERFENCES = True
+if SUPERFENCES:
+    code_config = {
+        "pymdownx.highlight": {
+            "linenums": True,
+            "linenums_style": "pymdownx-inline",
+        },
+        "pymdownx.superfences": {
+            # No need for magic indention-based code blocks: all ours are
+            # delimited by fences anyway.
+            "disable_indented_code_blocks": True,
+        },
+    }
+else:
+    code_config = {
+        "markdown.extensions.codehilite": {
+            "linenums": True,
+            "linenos": "inline",
+            "linespans": "coderow",
+            "lineanchors": "L",
+            "anchorlinenos": True,
+            "wrapcode": True,
+        },
+        "markdown.extensions.fenced_code": {},
+    }
+MARKDOWN["extension_configs"].update(code_config)
+
+
+DELETE_OUTPUT_DIRECTORY = True
 TWITTER_USERNAME = 'kmonsoor'
 GITHUB_URL = 'https://github.com/kmonsoor/'
-# DISQUS_SITENAME = 'kmonsoor'
-
 
 LINKS_WIDGET_NAME = "Professional"
 LINKS = (
@@ -36,14 +102,14 @@ SOCIAL = (
 )
 
 # Analytics
-# GOOGLE_ANALYTICS = 'UA-20431143-1'
+GOOGLE_ANALYTICS = 'UA-20431143-1'
+COMMENTBOX_PROJECT = '5722781509484544-proj'
+PINTEREST_VERIFICATION_ID = '8b5dd0090347e2d6ff8beeb1cb8a2f3e'
 # GOOGLE_ANALYTICS_PROPERTY = 'auto'
 # GOOGLE_TAG_MANAGER_ID = 'GTM-M3VHWXC'
-PINTEREST_VERIFICATION_ID = '8b5dd0090347e2d6ff8beeb1cb8a2f3e'
 
 
-
-# Content path.
+# Content paths
 PATH = 'content'
 PAGE_PATHS = ['pages']
 ARTICLE_PATHS = ['articles']
@@ -66,17 +132,8 @@ PAGE_URL = '{slug}/'
 PAGE_SAVE_AS = '{slug}/index.html'
 PAGE_LANG_SAVE_AS = False
 
-TAG_URL = 'tag/{slug}/'
-TAG_SAVE_AS = 'tag/{slug}/index.html'
-TAGS_URL = 'tags/'
-TAGS_SAVE_AS = None
-
-CATEGORY_URL = 'category/{slug}/'
-CATEGORY_SAVE_AS = 'category/{slug}/index.html'
-
 # Tags, categories and archives are Direct Templates, so they don't have a
 # <NAME>_URL option.
-TAGS_SAVE_AS = 'tags/index.html'
 TAG_URL = 'tag/{slug}/'
 TAG_SAVE_AS = TAG_URL + 'index.html'
 CATEGORY_URL = 'category/{slug}/'
@@ -93,9 +150,6 @@ FEED_ALL_ATOM = 'feeds/all.atom.xml'
 CATEGORY_FEED_ATOM = 'feeds/{slug}.atom.xml'
 TRANSLATION_FEED_ATOM = None
 
-# Theme
-THEME = 'plumage'
-
 DEFAULT_PAGINATION = 7
 DEFAULT_ORPHANS = 2
 
@@ -105,41 +159,9 @@ DISCLAIMER = 'All opinions expressed in this site are my own personal opinions \
               previous, current and future employers or any of its affiliates, \
               partners or customers.'
 
-# Plugin
-PLUGIN_PATHS = ['plugins']
-PLUGINS = ['gzip_cache',
-           'sitemap',
-           'minify',
-           ]
-
-MINIFY = {
-    'remove_comments': True,
-    'remove_all_empty_space': True,
-    'remove_optional_attribute_quotes': False
-}
-
 # Do not publish articles set in the future
 WITH_FUTURE_DATES = False
 
-# for highlighting code-segments
-# PYGMENTS_RST_OPTIONS = {'cssclass': 'codehilite', 'linenos': 'table'}
-# MD_EXTENSIONS = ['codehilite(noclasses=True, pygments_style=native)',
-#                  # 'mdx_video',
-#                  'extra',
-#                  ]
-
-MARKDOWN = {
-    'extension_configs': {
-        'markdown.extensions.codehilite': {'css_class': 'highlight'},
-        'markdown.extensions.toc': {
-            # 'permalink': 'true'
-            },
-        'markdown.extensions.extra': {},
-        'markdown.extensions.meta': {},
-    },
-    'output_format': 'html5',
-    'lazy_ol': False,  # See: https://pythonhosted.org/Markdown/reference.html#lazy_ol
-}
 
 DIRECT_TEMPLATES = ['index', 'tags',
                     'categories',
@@ -152,10 +174,11 @@ AUTHORS_SAVE_AS = False
 
 # Deactivate localization
 ARTICLE_LANG_SAVE_AS = None
+DRAFT_LANG_SAVE_AS = None
 PAGE_LANG_SAVE_AS = None
 
-FEED_RSS = 'feed/index.html'
-FEED_ATOM = 'feed/atom/index.html'
+FEED_RSS = "feed/index.html"
+FEED_ATOM = "feed/atom/index.html"
 FEED_ALL_RSS = None
 FEED_ALL_ATOM = None
 TRANSLATION_FEED_RSS = None
@@ -171,9 +194,9 @@ CATEGORY_FEED_ATOM = 'category/{slug}/feed/atom/index.html'
 FEED_MAX_ITEMS = 10
 USE_FOLDER_AS_CATEGORY = False
 DEFAULT_CATEGORY = 'Tech'
-DEFAULT_DATE_FORMAT = '%b. %d, %Y'
 REVERSE_ARCHIVE_ORDER = True
 DISPLAY_PAGES_ON_MENU = True
+DISPLAY_CATEGORIES_ON_MENU = True
 
 # Sitemap.
 SITEMAP = {
@@ -184,7 +207,7 @@ SITEMAP = {
         'pages': 0.5,
     },
     'changefreqs': {
-        'articles': 'monthly',
+        'articles': 'weekly',
         'indexes': 'daily',
         'pages': 'monthly',
     }
@@ -194,11 +217,14 @@ SITEMAP = {
 IMAGE_PATH = "images/"
 THUMBNAIL_DIR = "images/"
 SITE_THUMBNAIL = "/logo.png"
-THUMBNAIL_SIZES = {'thumbnail': '462x?', }
-DEFAULT_TEMPLATE = """<a href="{url}" class="zoomable" title="{filename}">
-<img src="{thumbnail}" alt="{filename}"></a>"""
+SITE_THUMBNAIL_TEXT = "comes with a beard"
 
-ARTICLE_EDIT_LINK = "https://github.com/kmonsoor/blog.kmonsoor.com/edit/live/content/articles"
+
+ARTICLE_EDIT_LINK = (
+    "https://github.com/kmonsoor/blog.kmonsoor.com/edit/live/content/articles/"
+    "%(slug)s.md"
+)
+
 
 MENUITEMS = (
     ('Home', '/'),
@@ -207,8 +233,25 @@ MENUITEMS = (
     #  ('About', '/about/'),
 )
 
-TIPUE_SEARCH = False
 # can be useful in development, but set to False when you're ready to publish
 RELATIVE_URLS = True
 
-COMMENTBOX_PROJECT = '5722781509484544-proj'
+# Plugins
+
+PLUGINS = [
+    "pelican.plugins.seo",
+    "pelican.plugins.sitemap",
+    "pelican.plugins.similar_posts",
+    "pelican.plugins.neighbors",
+    "pelican.plugins.webassets"
+]
+
+# pelican.plugins.seo
+SEO_REPORT = True
+SEO_ENHANCER = True
+SEO_ENHANCER_OPEN_GRAPH = True
+SEO_ENHANCER_TWITTER_CARDS = True
+
+
+# pelican.plugins.similar_posts
+SIMILAR_POSTS_MAX_COUNT = 3

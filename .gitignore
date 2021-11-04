@@ -16,3 +16,6 @@ local/
 pip-selfcheck.json
 .DS_Store
 .vscode/
+__pycache__/
+requirements.txt.bak
+seo_report.html
