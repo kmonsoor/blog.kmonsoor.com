@@ -6,11 +6,11 @@
 <title>    Deploying a short-link aka go-link server using only Caddyserver
  | I think ...</title>
 <meta content="Khaled Monsoor" name="author"/>
-<meta content="Pelican v4.6.0" name="generator"/>
-<link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css" integrity="sha512-oc9+XSs1H243/FRN9Rw62Fn8EtxjEYWHXRvjS43YtueEewbS6ObfXcJNyohjHqVKFPoXXUxwc+q1K7Dee6vv9g==" rel="stylesheet"/>
-<link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" rel="stylesheet"/>
+<meta content="Pelican v4.7.1" name="generator"/>
+<link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" rel="stylesheet"/>
+<link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" rel="stylesheet"/>
 <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" integrity="sha512-+EoPw+Fiwh6eSeRK7zwIKG2MA8i3rV/DGa3tdttQGgWyatG/SkncT53KHQaS5Jh9MNOT3dmFL0FjTY08And/Cw==" rel="stylesheet"/>
-<link href="../theme/css/main.min.css?3fd22780" rel="stylesheet"/>
+<link href="https://blog.kmonsoor.com/theme/css/main.min.css?50c14995" rel="stylesheet"/>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-20431143-1"></script>
 <script>
       window.dataLayer = window.dataLayer || [];
@@ -18,11 +18,11 @@
       gtag('js', new Date());
       gtag('config', 'UA-20431143-1');
     </script>
-<script crossorigin="anonymous" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script crossorigin="anonymous" integrity="sha512-iceXjjbmB2rwoX93Ka6HAHP+B76IY1z0o3h+N1PeDtRSsyeetU3/0QKJqGyPJcX63zysNehggFwMC/bi7dvMig==" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/js/bootstrap.bundle.min.js"></script>
+<script crossorigin="anonymous" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script crossorigin="anonymous" integrity="sha512-wV7Yj1alIZDqZFCUQJy85VN+qvEIly93fIQAN7iqDFCPEucLCeNFz4r35FCo9s6WrpdDQPi80xbljXB8Bjtvcg==" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.bundle.min.js"></script>
 <script crossorigin="anonymous" integrity="sha512-IsNh5E3eYy3tr/JiX2Yx4vsCujtkhwl7SLqgnwLNgf04Hrt9BT9SXlLlZlWx+OK4ndzAoALhsMNcCmkggjZB1w==" src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
 <script crossorigin="anonymous" integrity="sha512-/2sZKAsHDmHNoevKR/xsUKe+Bpf692q4tHNQs9VWWz0ujJ9JBM67iFYbIEdfDV9I2BaodgT5MIg/FTUmUv3oyQ==" src="https://cdnjs.cloudflare.com/ajax/libs/fitvids/1.2.0/jquery.fitvids.min.js"></script>
-<script src="../theme/js/main.min.js?86e1c044"></script>
+<script src="https://blog.kmonsoor.com/theme/js/main.min.js?86e1c044"></script>
 <link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
 <link href="/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
 <link href="/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
@@ -39,7 +39,7 @@
 <link href="https://blog.kmonsoor.com/deploying-golink-server-using-Caddy/" rel="canonical"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "I think ...", "item": "https://blog.kmonsoor.com"}, {"@type": "ListItem", "position": 2, "name": "Deploying golink server using caddy", "item": "https://blog.kmonsoor.com/deploying-golink-server-using-Caddy"}, {"@type": "ListItem", "position": 3, "name": "Index", "item": "https://blog.kmonsoor.com/deploying-golink-server-using-Caddy/index.html"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "author": {"@type": "Person", "name": "Khaled Monsoor"}, "publisher": {"@type": "Organization", "name": "I think ..."}, "headline": "Deploying a short-link aka go-link server using only&nbsp;Caddyserver", "about": "Tech", "datePublished": "2021-04-16 00:00"}</script></head>
 <body class="bg-transparent pt-4">
 <div class="container">
-<a class="avatar-container float-left mx-4" href="..">
+<a class="avatar-container float-left mx-4" href="https://blog.kmonsoor.com">
 <div class="avatar animate">
 <div class="side"><img class="img-fluid" src="/logo.png"/></div>
 <div class="side back text-center pt-2 px-1 small">
@@ -48,11 +48,11 @@
 </div>
 </a>
 <h1>
-<a class="text-dark text-decoration-none" href="..">I think ...</a>
+<a class="text-dark text-decoration-none" href="https://blog.kmonsoor.com">I think ...</a>
 <small class="text-secondary"><small></small></small>
 </h1>
 <nav class="navbar d-block navbar-expand-lg navbar-light bg-light shadow rounded-lg">
-<a class="navbar-brand d-none" href=".." title="">I think ...</a>
+<a class="navbar-brand d-none" href="https://blog.kmonsoor.com" title="">I think ...</a>
 <button aria-controls="plumage-navbar-collapse-1" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#plumage-navbar-collapse-1" data-toggle="collapse" type="button">
 <span class="navbar-toggler-icon"></span>
 </button>
@@ -64,22 +64,22 @@
                                 </a>
 </li>
 <li class="nav-item">
-<a class="nav-link" href="../about/">
+<a class="nav-link" href="https://blog.kmonsoor.com/about/">
                                         About Me
                                     </a>
 </li>
 <li class="nav-item">
-<a class="nav-link" href="../category/language/">
+<a class="nav-link" href="https://blog.kmonsoor.com/category/language/">
                                         Language
                                     </a>
 </li>
 <li class="nav-item">
-<a class="nav-link" href="../category/tech/">
+<a class="nav-link" href="https://blog.kmonsoor.com/category/tech/">
                                         Tech
 <span class="sr-only">(current)</span> </a>
 </li>
 <li class="nav-item">
-<a class="nav-link" href="../category/thoughts/">
+<a class="nav-link" href="https://blog.kmonsoor.com/category/thoughts/">
                                         Thoughts
                                     </a>
 </li>
@@ -91,7 +91,7 @@
 <div class="row">
 <div class="col-md-9">
 <h1>
-<a href="../deploying-golink-server-using-Caddy/" rel="bookmark" title="Permalink to Deploying a short-link aka go-link server using only Caddyserver">Deploying a short-link aka go-link server using only Caddyserver</a>
+<a href="https://blog.kmonsoor.com/deploying-golink-server-using-Caddy/" rel="bookmark" title="Permalink to Deploying a short-link aka go-link server using only Caddyserver">Deploying a short-link aka go-link server using only Caddyserver</a>
 </h1>
 </div>
 </div>
@@ -103,7 +103,7 @@ A url-shortener takes a long url, and gives a short url, then redirects any requ
 <p>If I wanted an amazing, personal url-shortener or “go link” server, there are many amazing solutions out there, which are not only free or open-source but full-fledged as well for personal or public usage. Rather, I wanted some “service” that will “resolve” my personal, short links. I have been using bit.ly for a long time for its customizable “short-half” part, but the problem with bit.ly is – for some God-forsaken reason – blocked by the Bangladeshi govt. So, I needed a replacement to be properly “glocal”.
 There are many free (unbranded) and commercial (branded) options as well, but I wanted something that will be resolved via my hosted service (and personal domain) and as cheap as possible. So, basically solution for a poor nerd :D</p>
 <p>Before jumped into this solution, I tried (deployed <span class="amp">&amp;</span> tested) few others myself, mainly <a href="https://github.com/kellegous/go">kellegous/go</a>, <a href="kutt.it">kutt.it</a> and <a href="https://github.com/adamyi/golinks">adamyi/golinks</a>. But, all of them “too featureful” for my needs. </p>
-<p><img alt="Simple, on-prem short-link server using Caddy webserver" class="img-fluid border rounded shadow image-process-article-photo" src="https://i.imgur.com/4nZbnUE.png"/></p>
+<p><img alt="Simple, on-prem short-link server using Caddy webserver" class="img-fluid border rounded shadow" src="https://i.imgur.com/4nZbnUE.png"/></p>
 <p>What I wanted is to be able to:</p>
 <ul>
 <li>resolve only my custom shortlinks (hence, no need for url-shortener)</li>
@@ -131,7 +131,7 @@ There are many free (unbranded) and commercial (branded) options as well, but I 
 <p>Depending on your host <span class="caps">OS</span> (mine is Ubuntu 20.04 <span class="caps">LTS</span>), you need to install the <code>Caddy</code> webserver. While there are some hacky solutions to run, I think running Caddy as a background server is the simplest to manage.
 In fact, the documentation of Caddy is excellent, I’d better leave that part to you. </p>
 <p>After running with the default config(<code>Caddyfile</code>) which is in Ubuntu’s case located as <code>/etc/caddy/Caddyfile</code>, it should have a status somewhat like the below image. Please note that, in many cases, if running without <code>sudo</code> Caddy cannot attach itself with the <span class="caps">SSL</span> port (<code>:443</code>) which is necessary for serving <code>https://</code>.  So, check for that error message in the “status” log.</p>
-<p><img alt="Caddy service on Ubuntu" class="img-fluid border rounded shadow image-process-article-photo" src="https://i.imgur.com/cfS5nvZ.png?1"/></p>
+<p><img alt="Caddy service on Ubuntu" class="img-fluid border rounded shadow" src="https://i.imgur.com/cfS5nvZ.png?1"/></p>
 <p><em><strong><span class="caps">P.S.</span></strong> By the way, want your console and command prompt to look 🚀 like mine? Here’s the guide: <a href="https://blog.kmonsoor.com/pimp-up-my-terminal/">How do I pimp up my terminal on Linux</a></em></p>
 <h2 id="step-3-tell-caddy-your-short-links-to-redirect">Step-3: Tell Caddy your short-links to redirect<a class="headerlink text-decoration-none small pl-2" href="#step-3-tell-caddy-your-short-links-to-redirect" title="Permanent link">¶</a></h2>
 <p>Now, it’s time to configure Caddy to actually do the job.</p>
@@ -170,7 +170,7 @@ In fact, the documentation of Caddy is excellent, I’d better leave that part t
 <p>I’m thinking that given the very low workload my shortlink resolver needs — unless I’m becoming an overnight internet sensation — using a server instance only for this purpose is overkill. My next goal is to have the same service using some “serverless” function or using the “<a href="https://developers.cloudflare.com/workers/examples/redirect">worker on the edge</a>” thing from Cloudflare. Let’s see ;)</p>
 <h3 class="mt-3">Related content</h3>
 <div class="list-group bg-light text-dark">
-<a class="list-group-item list-group-item-action" href="../golink-server-using-cloudflare-worker-kv/">
+<a class="list-group-item list-group-item-action" href="https://blog.kmonsoor.com/golink-server-using-cloudflare-worker-kv/">
 <div class="d-flex w-100 justify-content-between">
 <h5>Create a free go-link server “on edge” using Cloudflare Worker <span class="caps">KV</span></h5>
 <abbr class="small published" title="2021-06-06T00:00:00+06:00">
@@ -188,7 +188,7 @@ In fact, the documentation of Caddy is excellent, I’d better leave that part t
 <abbr title="2021-04-16T00:00:00+06:00"><i class="fas fa-calendar"></i> 2021-04-16</abbr>
 </li>
 <li class="list-group-item">
-<a class="badge badge-info" data-toggle="tooltip" href="../category/tech/" rel="tag" title="26 articles in this category">Tech</a>
+<a class="badge badge-info" data-toggle="tooltip" href="https://blog.kmonsoor.com/category/tech/" rel="tag" title="26 articles in this category">Tech</a>
 <a class="badge badge-secondary" data-toggle="tooltip" href="/tag/go-link/" title="2 articles with this tag">go-link</a>
 <a class="badge badge-secondary" data-toggle="tooltip" href="/tag/url-shortener/" title="2 articles with this tag">url-shortener</a>
 <a class="badge badge-secondary" data-toggle="tooltip" href="/tag/caddy/" title="1 article with this tag">caddy</a>
@@ -202,10 +202,10 @@ In fact, the documentation of Caddy is excellent, I’d better leave that part t
 </li>
 <li class="list-group-item">
 <nav class="nav nav-pills nav-fill">
-<a class="nav-link btn btn-outline-primary border-0" href="../pimp-up-my-terminal/" rel="prev" title="How do I Pimp up My Terminal on Linux">
+<a class="nav-link btn btn-outline-primary border-0" href="https://blog.kmonsoor.com/pimp-up-my-terminal/" rel="prev" title="How do I Pimp up My Terminal on Linux">
 <span aria-hidden="true">←</span> Older
                         </a>
-<a class="nav-link btn btn-outline-primary border-0" href="../TLDR-what-cloud-to-use-2021/" rel="next" title="TL;DR what cloud provider to use in 2021">
+<a class="nav-link btn btn-outline-primary border-0" href="https://blog.kmonsoor.com/TLDR-what-cloud-to-use-2021/" rel="next" title="TL;DR what cloud provider to use in 2021">
                             Newer <span aria-hidden="true">→</span>
 </a>
 </nav>
@@ -246,9 +246,9 @@ In fact, the documentation of Caddy is excellent, I’d better leave that part t
 <div class="col-md-2">
 <h6>Browse content by</h6>
 <ul class="list-unstyled">
-<li><a href="../categories/index.html"><i class="fas fa-th fa-fw"></i> Categories</a></li>
-<li><a href="../archives/index.html"><i class="far fa-calendar-alt fa-fw"></i> Dates</a></li>
-<li><a href="../tags/index.html"><i class="fas fa-tags fa-fw"></i> Tags</a></li>
+<li><a href="https://blog.kmonsoor.com/categories/index.html"><i class="fas fa-th fa-fw"></i> Categories</a></li>
+<li><a href="https://blog.kmonsoor.com/archives/index.html"><i class="far fa-calendar-alt fa-fw"></i> Dates</a></li>
+<li><a href="https://blog.kmonsoor.com/tags/index.html"><i class="fas fa-tags fa-fw"></i> Tags</a></li>
 </ul>
 </div>
 <div class="col-md-2 text-muted">
