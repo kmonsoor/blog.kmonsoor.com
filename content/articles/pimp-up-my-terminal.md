@@ -1,7 +1,7 @@
 ---
 Title: How do I Pimp up My Terminal on Linux
 Date: 2021-03-31
-Tags: computing, Linux, terminal, CLI, Zsh, "Oh My Zsh", macOS
+Tags: computing, Linux, Ubuntu, terminal, CLI, Zsh, "Oh My Zsh", shell
 Slug: pimp-up-my-terminal
 Status: Published
 Summary: How do I pimp up my Linux terminal? A quick trip through Zsh, Oh-my-zsh, and other power tools to make the command-line-based workflow smooth and cool.
