@@ -3,6 +3,7 @@ Title: HA(High-Availability) Setup for InfluxDB
 Date: 2018-01-18
 Tags: Linux, influxdb, influx-relay, haproxy, monitoring, computing, time-series, database, open-source, reliability, architecture 
 Slug: ha-setup-for-influxdb
+Image: https://i.imgur.com/0IdYOYnl.jpg
 Status: Published
 Summary: Create a robust, highly-available, time-series InfluxDB cluster with the community(free) version of it
 ---
@@ -15,7 +16,9 @@ Summary: Create a robust, highly-available, time-series InfluxDB cluster with th
 
 Currently, from version 0.9, you cannot create an InfluxDB cluster from the open-sourced free edition. Only commercially available InfluxDB Enterprise can do that for now. That stirred up the early-adopter enthusiast users, especially for their usage in professional setups. They complained that InfluxData, the company behind InfluxDB, is trying to milk the OSS solution for profit.
 
-I can't blame the InfluxData guys much, as they gotta pay their bills too. So far, we — the users of open-source systems — couldn't show much promise about the financial realities of the projects. Continuing development of OSS future by only depending on donations, patrons, or enterprise sponsorship is far too rare and unpredictable, even for the projects that many successful organizations heavily rely on.
+![Archiving isn't easy ... tobias-fischer-PkbZahEG2Ng](https://i.imgur.com/0IdYOYnl.jpg)
+
+I can't blame the InfluxData guys much, as they got to pay their bills too. So far, we — the users of open-source systems — couldn't show much promise about the financial realities of the projects. Continuing development of OSS products, by only depending on donations, patrons, or enterprise sponsorship, is far too rare and unpredictable, even for the projects that many successful organizations heavily rely on.
 
 Anyways, InfluxDB then promised and later introduced `Influx Relay` as a complimentary consolation for missing HA parts of InfluxDB. You can get the details here and here about that. 
 
@@ -39,13 +42,13 @@ Here were my trade-offs.
 
 ### Write
 
-From a birds' eye view, I decided to use two instances to run parallelly, hosting InfluxDB on them independently and then send exactly same data over to them for storing. This scheme mostly looks like [RAID-1 systems](https://en.wikipedia.org/wiki/Standard_RAID_levels#RAID_1).
+From a birds' eye view, I decided to use two server instances to run parallelly, hosting InfluxDB on them independently and then sending the same data over to them for storing. This scheme mostly looks like [RAID-1 systems](https://en.wikipedia.org/wiki/Standard_RAID_levels#RAID_1).
 
 ![Overall architecture](https://i.imgur.com/ZKYIyOd.png)
 
 That brings up a couple of challenges.
 
- * None of the agents I used on the sender side could multiplex output. Meaning, they were able to send data to a single destination, not multiple. 
+ * None of the agents I used on the sender side could multiplex output. That means, they were able to send data to a single destination, not multiple. 
     On the Windows front, I've used `Telegraf` which is able randomly to switch between pre-listed destinations, but NOT multiple at-once.  
     In the case of Linux hosts, I used `Netdata` which is excellent in its own right, but unable to send stats to multiple destinations.  
   Here comes `Influx-relay`. It can receive time-series data-stream from hosts on a TCP or UDP port, buffer for a while, and then re-send those received and buffered data to multiple receive ends which can either be an InfluxDB instance or another listening Influx-relay instances.  
@@ -53,8 +56,8 @@ That brings up a couple of challenges.
 
  * Now that I partially multiplexed the output, my hosts (senders) still are able to send to one destination. So, I need a proxy as well as a load-balancer. For a while, I was torn between NGINX and HAProxy. Both were new to me.  
  
-  However, for a couple of reasons, I went for HAProxy.  Firstly, I have no need for HTTP session management. Secondly, as I wanted to keep my UDP for later, HAProxy was perfectly capable of that.  
-  NGINX has the support recently, maturity was a concern. Also, configuring NGINX seems little intimating (which I know not so true). Last but not least, and for what its worth, out-of-the-box, HAProxy's stat page carries much more in-depth information than that of free-version of NGINX.  
+  However, for a couple of reasons, I went for HAProxy.  Firstly, I don't need HTTP session management. Secondly, as I wanted to keep my UDP for later, HAProxy was perfectly capable of that.  
+  NGINX has the support recently, but the maturity was a concern. Also, configuring NGINX seems a little intimidating (which I know might not be so true). Last but not least, and for what it's worth, out-of-the-box, HAProxy's stat page carries much more in-depth information than that of free-version of NGINX.  
   Upon receiving the stats stream, HAProxy was supposed to send that to different Influx-relays in a load-balanced fashion.
   
   
@@ -62,7 +65,7 @@ So, here's my rough plan.
 
     collector-agent --> HAProxy --> (50/50 load-balanced) --> Influx-relay --> (multiplexed)  -->  2 InfluxDB instances
 
-Now, each of the received data is to go to both the InfluxDB, or at least one in case of failure (or, overload) of any the relays or Influx instances.  
+Now, each one of the received data is to go to both of the InfluxDB instances, or at least to one in case of failure (or, overload per se) of any the relays or Influx instances.  
 Also, I have chosen to keep Influx-relays deployed as Dockerized and kept HAProxy and InfluxDB instances running as native services. Of course, you can Dockerize HAProxy and InfluxDB, too.  
 
 ### Read
