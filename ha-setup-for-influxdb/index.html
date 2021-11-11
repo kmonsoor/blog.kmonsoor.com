@@ -36,7 +36,7 @@
 <link href="https://blog.kmonsoor.com/category/tech/feed/atom/index.html" rel="alternate" title="I think ... - Category: Tech - Atom Feed" type="application/atom+xml"/>
 <link href="https://blog.kmonsoor.com/category/tech/feed/index.html" rel="alternate" title="I think ... - Category: Tech - RSS Feed" type="application/rss+xml"/>
 <meta content="Linux, influxdb, influx-relay, haproxy, monitoring, computing, time-series, database, open-source, reliability, architecture" name="keywords"/>
-<link href="https://blog.kmonsoor.com/ha-setup-for-influxdb/" rel="canonical"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "I think ...", "item": "https://blog.kmonsoor.com"}, {"@type": "ListItem", "position": 2, "name": "Ha setup for influxdb", "item": "https://blog.kmonsoor.com/ha-setup-for-influxdb"}, {"@type": "ListItem", "position": 3, "name": "Index", "item": "https://blog.kmonsoor.com/ha-setup-for-influxdb/index.html"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "author": {"@type": "Person", "name": "Khaled Monsoor"}, "publisher": {"@type": "Organization", "name": "I think ..."}, "headline": "<span class=\"caps\">HA</span>(High-Availability) Setup for&nbsp;InfluxDB", "about": "Tech", "datePublished": "2018-01-18 00:00"}</script></head>
+<link href="https://blog.kmonsoor.com/ha-setup-for-influxdb/" rel="canonical"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "I think ...", "item": "https://blog.kmonsoor.com"}, {"@type": "ListItem", "position": 2, "name": "Ha setup for influxdb", "item": "https://blog.kmonsoor.com/ha-setup-for-influxdb"}, {"@type": "ListItem", "position": 3, "name": "Index", "item": "https://blog.kmonsoor.com/ha-setup-for-influxdb/index.html"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "author": {"@type": "Person", "name": "Khaled Monsoor"}, "publisher": {"@type": "Organization", "name": "I think ..."}, "headline": "<span class=\"caps\">HA</span>(High-Availability) Setup for&nbsp;InfluxDB", "about": "Tech", "datePublished": "2018-01-18 00:00", "image": "https://i.imgur.com/0IdYOYnl.jpg"}</script></head>
 <body class="bg-transparent pt-4">
 <div class="container">
 <a class="avatar-container float-left mx-4" href="https://blog.kmonsoor.com">
@@ -101,7 +101,8 @@
 <em>Since I have written this article, all the components used in this below architecture have gone through many updates and releases. While the general premise involving <code>influxdb-relay</code> and the multiplexing might still hold, please sync up with the latest release docs before jumping into some serious system design.</em></p>
 <hr/>
 <p>Currently, from version 0.9, you cannot create an InfluxDB cluster from the open-sourced free edition. Only commercially available InfluxDB Enterprise can do that for now. That stirred up the early-adopter enthusiast users, especially for their usage in professional setups. They complained that InfluxData, the company behind InfluxDB, is trying to milk the <span class="caps">OSS</span> solution for profit.</p>
-<p>I can’t blame the InfluxData guys much, as they gotta pay their bills too. So far, we — the users of open-source systems — couldn’t show much promise about the financial realities of the projects. Continuing development of <span class="caps">OSS</span> future by only depending on donations, patrons, or enterprise sponsorship is far too rare and unpredictable, even for the projects that many successful organizations heavily rely on.</p>
+<p><img alt="Archiving isn't easy ... tobias-fischer-PkbZahEG2Ng" class="img-fluid border rounded shadow" src="https://i.imgur.com/0IdYOYnl.jpg"/></p>
+<p>I can’t blame the InfluxData guys much, as they got to pay their bills too. So far, we — the users of open-source systems — couldn’t show much promise about the financial realities of the projects. Continuing development of <span class="caps">OSS</span> products, by only depending on donations, patrons, or enterprise sponsorship, is far too rare and unpredictable, even for the projects that many successful organizations heavily rely on.</p>
 <p>Anyways, InfluxDB then promised and later introduced <code>Influx Relay</code> as a complimentary consolation for missing <span class="caps">HA</span> parts of InfluxDB. You can get the details here and here about that. </p>
 <h2 id="premise">Premise<a class="headerlink text-decoration-none small pl-2" href="#premise" title="Permanent link">¶</a></h2>
 <p>For my needs, I have to try to create a reliable <span class="caps">HA</span>(High-Availability) setup from available free options, hence InfluxDB and the relay. It’s quite a bit far from an InfluxDB-cluster in terms of robustness or ease of setup, but it’s got the job done, at least for me.</p>
@@ -115,12 +116,12 @@
 </ul>
 <h2 id="overall-design">Overall Design<a class="headerlink text-decoration-none small pl-2" href="#overall-design" title="Permanent link">¶</a></h2>
 <h3 id="write">Write<a class="headerlink text-decoration-none small pl-2" href="#write" title="Permanent link">¶</a></h3>
-<p>From a birds’ eye view, I decided to use two instances to run parallelly, hosting InfluxDB on them independently and then send exactly same data over to them for storing. This scheme mostly looks like <a href="https://en.wikipedia.org/wiki/Standard_RAID_levels#RAID_1"><span class="caps">RAID</span>-1 systems</a>.</p>
+<p>From a birds’ eye view, I decided to use two server instances to run parallelly, hosting InfluxDB on them independently and then sending the same data over to them for storing. This scheme mostly looks like <a href="https://en.wikipedia.org/wiki/Standard_RAID_levels#RAID_1"><span class="caps">RAID</span>-1 systems</a>.</p>
 <p><img alt="Overall architecture" class="img-fluid border rounded shadow" src="https://i.imgur.com/ZKYIyOd.png"/></p>
 <p>That brings up a couple of challenges.</p>
 <ul>
 <li>
-<p>None of the agents I used on the sender side could multiplex output. Meaning, they were able to send data to a single destination, not multiple. 
+<p>None of the agents I used on the sender side could multiplex output. That means, they were able to send data to a single destination, not multiple. 
     On the Windows front, I’ve used <code>Telegraf</code> which is able randomly to switch between pre-listed destinations, but <span class="caps">NOT</span> multiple at-once.<br/>
     In the case of Linux hosts, I used <code>Netdata</code> which is excellent in its own right, but unable to send stats to multiple destinations.<br/>
   Here comes <code>Influx-relay</code>. It can receive time-series data-stream from hosts on a <span class="caps">TCP</span> or <span class="caps">UDP</span> port, buffer for a while, and then re-send those received and buffered data to multiple receive ends which can either be an InfluxDB instance or another listening Influx-relay instances.<br/>
@@ -130,12 +131,12 @@
 <p>Now that I partially multiplexed the output, my hosts (senders) still are able to send to one destination. So, I need a proxy as well as a load-balancer. For a while, I was torn between <span class="caps">NGINX</span> and HAProxy. Both were new to me.  </p>
 </li>
 </ul>
-<p>However, for a couple of reasons, I went for HAProxy.  Firstly, I have no need for <span class="caps">HTTP</span> session management. Secondly, as I wanted to keep my <span class="caps">UDP</span> for later, HAProxy was perfectly capable of that.<br/>
-<span class="caps">NGINX</span> has the support recently, maturity was a concern. Also, configuring <span class="caps">NGINX</span> seems little intimating (which I know not so true). Last but not least, and for what its worth, out-of-the-box, HAProxy’s stat page carries much more in-depth information than that of free-version of <span class="caps">NGINX</span>.<br/>
+<p>However, for a couple of reasons, I went for HAProxy.  Firstly, I don’t need <span class="caps">HTTP</span> session management. Secondly, as I wanted to keep my <span class="caps">UDP</span> for later, HAProxy was perfectly capable of that.<br/>
+<span class="caps">NGINX</span> has the support recently, but the maturity was a concern. Also, configuring <span class="caps">NGINX</span> seems a little intimidating (which I know might not be so true). Last but not least, and for what it’s worth, out-of-the-box, HAProxy’s stat page carries much more in-depth information than that of free-version of <span class="caps">NGINX</span>.<br/>
   Upon receiving the stats stream, HAProxy was supposed to send that to different Influx-relays in a load-balanced fashion.</p>
 <p>So, here’s my rough plan. </p>
 <p>collector-agent → HAProxy → (50/50 load-balanced) → Influx-relay → (multiplexed)  →  2 InfluxDB instances</p>
-<p>Now, each of the received data is to go to both the InfluxDB, or at least one in case of failure (or, overload) of any the relays or Influx instances.  
+<p>Now, each one of the received data is to go to both of the InfluxDB instances, or at least to one in case of failure (or, overload per se) of any the relays or Influx instances.  
 Also, I have chosen to keep Influx-relays deployed as Dockerized and kept HAProxy and InfluxDB instances running as native services. Of course, you can Dockerize HAProxy and InfluxDB, too.  </p>
 <h3 id="read">Read<a class="headerlink text-decoration-none small pl-2" href="#read" title="Permanent link">¶</a></h3>
 <p>As I’ve already noted in the section that reading the data, meaning to fetch data to visualize on Grafana end, will happen rarely and sporadically; only to investigate alarms or any other client-side performance issues.  </p>
