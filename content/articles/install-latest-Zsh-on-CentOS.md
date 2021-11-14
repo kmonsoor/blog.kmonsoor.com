@@ -21,19 +21,22 @@ We'll be following these steps:
 # Install the pre-requisites
 We need GCC (C++ compiler) and other related stuffs for building Zsh from the source code.  
 
-```bash
+```shell-session
 $ sudo yum groupinstall "Development tools"  
 $ sudo yum install ncurses-devel
 ```
 
 Now, check if GCC is installed properly, by  
-`$ gcc -v`  
+```shell-session
+$ gcc -v
+```  
 
 # Download the latest source
 Now, we gonna get the latest code of Zsh.  
 Please update the link (in the shown command) with the latest by checking [this web-folder](https://www.zsh.org/pub/).  
 Don't forget to update the filename as well, if needed.
-```bash
+
+```shell-session
 $ cd /usr/local/src
 $ sudo curl -L https://www.zsh.org/pub/zsh-5.8.tar.xz \
 -o zsh-5.8.tar.xz
@@ -42,7 +45,7 @@ $ sudo curl -L https://www.zsh.org/pub/zsh-5.8.tar.xz \
 # Build & Install
 Unzip the file, "dig in" to the folder, and build & install from the source.   
 
-```bash
+```shell-session
 $ sudo tar -xf zsh-5.8.tar.xz
 $ cd zsh-5.8
 $ sudo ./configure && sudo make && sudo make install
@@ -51,20 +54,20 @@ $ sudo ./configure && sudo make && sudo make install
 # Final steps
  Add Zsh to the login shells by adding '/usr/local/bin/zsh' on the last line of the config file, `/etc/shells`  
 
-```bash 
+```shell-session
 $ sudo -e /etc/shells
 # Please don't forget to replace 'kmonsoor' with your username
 $ sudo chsh kmonsoor
 ```
 
 Update the system's default symlink to the new Zsh version.  
-```bash
+```shell-session
 $ sudo ln -sf /usr/local/bin/zsh /bin/zsh
 $ zsh --version
 ``` 
 
 It's always a good habit to clean up after doing stuffs.  ;)
-```bash
+```shell-session
 $ sudo make clean
 ```
   
