@@ -114,37 +114,38 @@ Easy peasy !! </p>
 </div>
 <h1 id="install-the-pre-requisites">Install the pre-requisites<a class="headerlink text-decoration-none small pl-2" href="#install-the-pre-requisites" title="Permanent link">¶</a></h1>
 <p>We need <span class="caps">GCC</span> (C++ compiler) and other related stuffs for building Zsh from the source code.  </p>
-<div class="highlight pygments-style-monokai rounded shadow-sm mb-3"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>$ sudo yum groupinstall <span class="s2">"Development tools"</span>  
-<span class="linenos" data-linenos="2 "></span>$ sudo yum install ncurses-devel
+<div class="highlight pygments-style-monokai rounded shadow-sm mb-3"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="gp">$ </span>sudo yum groupinstall <span class="s2">"Development tools"</span>  
+<span class="linenos" data-linenos="2 "></span><span class="gp">$ </span>sudo yum install ncurses-devel
 </code></pre></div>
 <p>Now, check if <span class="caps">GCC</span> is installed properly, by<br/>
-<code>$ gcc -v</code> </p>
+</p><div class="highlight pygments-style-monokai rounded shadow-sm mb-3"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="gp">$ </span>gcc -v
+</code></pre></div>
 <h1 id="download-the-latest-source">Download the latest source<a class="headerlink text-decoration-none small pl-2" href="#download-the-latest-source" title="Permanent link">¶</a></h1>
 <p>Now, we gonna get the latest code of Zsh.<br/>
 Please update the link (in the shown command) with the latest by checking <a href="https://www.zsh.org/pub/">this web-folder</a>.<br/>
-Don’t forget to update the filename as well, if needed.
-</p><div class="highlight pygments-style-monokai rounded shadow-sm mb-3"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>$ <span class="nb">cd</span> /usr/local/src
-<span class="linenos" data-linenos="2 "></span>$ sudo curl -L https://www.zsh.org/pub/zsh-5.8.tar.xz <span class="se">\</span>
+Don’t forget to update the filename as well, if needed.</p>
+<div class="highlight pygments-style-monokai rounded shadow-sm mb-3"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="gp">$ </span><span class="nb">cd</span> /usr/local/src
+<span class="linenos" data-linenos="2 "></span><span class="gp">$ </span>sudo curl -L https://www.zsh.org/pub/zsh-5.8.tar.xz <span class="se">\</span>
 <span class="linenos" data-linenos="3 "></span>-o zsh-5.8.tar.xz
 </code></pre></div>
 <h1 id="build-install">Build <span class="amp">&amp;</span> Install<a class="headerlink text-decoration-none small pl-2" href="#build-install" title="Permanent link">¶</a></h1>
 <p>Unzip the file, “dig in” to the folder, and build <span class="amp">&amp;</span> install from the source.   </p>
-<div class="highlight pygments-style-monokai rounded shadow-sm mb-3"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>$ sudo tar -xf zsh-5.8.tar.xz
-<span class="linenos" data-linenos="2 "></span>$ <span class="nb">cd</span> zsh-5.8
-<span class="linenos" data-linenos="3 "></span>$ sudo ./configure <span class="o">&amp;&amp;</span> sudo make <span class="o">&amp;&amp;</span> sudo make install
+<div class="highlight pygments-style-monokai rounded shadow-sm mb-3"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="gp">$ </span>sudo tar -xf zsh-5.8.tar.xz
+<span class="linenos" data-linenos="2 "></span><span class="gp">$ </span><span class="nb">cd</span> zsh-5.8
+<span class="linenos" data-linenos="3 "></span><span class="gp">$ </span>sudo ./configure <span class="o">&amp;&amp;</span> sudo make <span class="o">&amp;&amp;</span> sudo make install
 </code></pre></div>
 <h1 id="final-steps">Final steps<a class="headerlink text-decoration-none small pl-2" href="#final-steps" title="Permanent link">¶</a></h1>
 <p>Add Zsh to the login shells by adding ‘/usr/local/bin/zsh’ on the last line of the config file, <code>/etc/shells</code> </p>
-<div class="highlight pygments-style-monokai rounded shadow-sm mb-3"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>$ sudo -e /etc/shells
-<span class="linenos" data-linenos="2 "></span><span class="c1"># Please don't forget to replace 'kmonsoor' with your username</span>
-<span class="linenos" data-linenos="3 "></span>$ sudo chsh kmonsoor
+<div class="highlight pygments-style-monokai rounded shadow-sm mb-3"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="gp">$ </span>sudo -e /etc/shells
+<span class="linenos" data-linenos="2 "></span><span class="gp"># </span>Please don<span class="s1">'t forget to replace '</span>kmonsoor<span class="err">'</span> with your username
+<span class="linenos" data-linenos="3 "></span><span class="gp">$ </span>sudo chsh kmonsoor
 </code></pre></div>
 <p>Update the system’s default symlink to the new Zsh version.<br/>
-</p><div class="highlight pygments-style-monokai rounded shadow-sm mb-3"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>$ sudo ln -sf /usr/local/bin/zsh /bin/zsh
-<span class="linenos" data-linenos="2 "></span>$ zsh --version
+</p><div class="highlight pygments-style-monokai rounded shadow-sm mb-3"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="gp">$ </span>sudo ln -sf /usr/local/bin/zsh /bin/zsh
+<span class="linenos" data-linenos="2 "></span><span class="gp">$ </span>zsh --version
 </code></pre></div>
 <p>It’s always a good habit to clean up after doing stuffs.  ;)
-</p><div class="highlight pygments-style-monokai rounded shadow-sm mb-3"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>$ sudo make clean
+</p><div class="highlight pygments-style-monokai rounded shadow-sm mb-3"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="gp">$ </span>sudo make clean
 </code></pre></div>
 <p><img alt="voila" class="img-fluid border rounded shadow" src="https://i.imgur.com/BEFIOXf.jpg"/></p>
 <h1 id="related">Related<a class="headerlink text-decoration-none small pl-2" href="#related" title="Permanent link">¶</a></h1>

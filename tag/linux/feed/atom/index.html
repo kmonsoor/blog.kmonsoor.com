@@ -63,37 +63,38 @@ Easy peasy&amp;nbsp;!! &lt;/p&gt;
 &lt;/div&gt;
 &lt;h1 id="install-the-pre-requisites"&gt;Install the pre-requisites&lt;a class="headerlink" href="#install-the-pre-requisites" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;We need &lt;span class="caps"&gt;GCC&lt;/span&gt; (C++ compiler) and other related stuffs for building Zsh from the source&amp;nbsp;code.  &lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="linenos" data-linenos="1 "&gt;&lt;/span&gt;$ sudo yum groupinstall &lt;span class="s2"&gt;&amp;quot;Development tools&amp;quot;&lt;/span&gt;  
-&lt;span class="linenos" data-linenos="2 "&gt;&lt;/span&gt;$ sudo yum install ncurses-devel
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="linenos" data-linenos="1 "&gt;&lt;/span&gt;&lt;span class="gp"&gt;$ &lt;/span&gt;sudo yum groupinstall &lt;span class="s2"&gt;&amp;quot;Development tools&amp;quot;&lt;/span&gt;  
+&lt;span class="linenos" data-linenos="2 "&gt;&lt;/span&gt;&lt;span class="gp"&gt;$ &lt;/span&gt;sudo yum install ncurses-devel
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Now, check if &lt;span class="caps"&gt;GCC&lt;/span&gt; is installed properly, by&lt;br&gt;
-&lt;code&gt;$ gcc -v&lt;/code&gt;  &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="linenos" data-linenos="1 "&gt;&lt;/span&gt;&lt;span class="gp"&gt;$ &lt;/span&gt;gcc -v
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
 &lt;h1 id="download-the-latest-source"&gt;Download the latest source&lt;a class="headerlink" href="#download-the-latest-source" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;Now, we gonna get the latest code of Zsh.&lt;br&gt;
 Please update the link (in the shown command) with the latest by checking &lt;a href="https://www.zsh.org/pub/"&gt;this web-folder&lt;/a&gt;.&lt;br&gt;
-Don&amp;rsquo;t forget to update the filename as well, if needed.
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="linenos" data-linenos="1 "&gt;&lt;/span&gt;$ &lt;span class="nb"&gt;cd&lt;/span&gt; /usr/local/src
-&lt;span class="linenos" data-linenos="2 "&gt;&lt;/span&gt;$ sudo curl -L https://www.zsh.org/pub/zsh-5.8.tar.xz &lt;span class="se"&gt;\&lt;/span&gt;
+Don&amp;rsquo;t forget to update the filename as well, if&amp;nbsp;needed.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="linenos" data-linenos="1 "&gt;&lt;/span&gt;&lt;span class="gp"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; /usr/local/src
+&lt;span class="linenos" data-linenos="2 "&gt;&lt;/span&gt;&lt;span class="gp"&gt;$ &lt;/span&gt;sudo curl -L https://www.zsh.org/pub/zsh-5.8.tar.xz &lt;span class="se"&gt;\&lt;/span&gt;
 &lt;span class="linenos" data-linenos="3 "&gt;&lt;/span&gt;-o zsh-5.8.tar.xz
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h1 id="build-install"&gt;Build &lt;span class="amp"&gt;&amp;amp;&lt;/span&gt; Install&lt;a class="headerlink" href="#build-install" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;Unzip the file, &amp;ldquo;dig in&amp;rdquo; to the folder, and build &lt;span class="amp"&gt;&amp;amp;&lt;/span&gt; install from the&amp;nbsp;source.   &lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="linenos" data-linenos="1 "&gt;&lt;/span&gt;$ sudo tar -xf zsh-5.8.tar.xz
-&lt;span class="linenos" data-linenos="2 "&gt;&lt;/span&gt;$ &lt;span class="nb"&gt;cd&lt;/span&gt; zsh-5.8
-&lt;span class="linenos" data-linenos="3 "&gt;&lt;/span&gt;$ sudo ./configure &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; sudo make &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; sudo make install
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="linenos" data-linenos="1 "&gt;&lt;/span&gt;&lt;span class="gp"&gt;$ &lt;/span&gt;sudo tar -xf zsh-5.8.tar.xz
+&lt;span class="linenos" data-linenos="2 "&gt;&lt;/span&gt;&lt;span class="gp"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; zsh-5.8
+&lt;span class="linenos" data-linenos="3 "&gt;&lt;/span&gt;&lt;span class="gp"&gt;$ &lt;/span&gt;sudo ./configure &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; sudo make &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; sudo make install
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h1 id="final-steps"&gt;Final steps&lt;a class="headerlink" href="#final-steps" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;Add Zsh to the login shells by adding &amp;lsquo;/usr/local/bin/zsh&amp;rsquo; on the last line of the config file, &lt;code&gt;/etc/shells&lt;/code&gt;  &lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="linenos" data-linenos="1 "&gt;&lt;/span&gt;$ sudo -e /etc/shells
-&lt;span class="linenos" data-linenos="2 "&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Please don&amp;#39;t forget to replace &amp;#39;kmonsoor&amp;#39; with your username&lt;/span&gt;
-&lt;span class="linenos" data-linenos="3 "&gt;&lt;/span&gt;$ sudo chsh kmonsoor
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="linenos" data-linenos="1 "&gt;&lt;/span&gt;&lt;span class="gp"&gt;$ &lt;/span&gt;sudo -e /etc/shells
+&lt;span class="linenos" data-linenos="2 "&gt;&lt;/span&gt;&lt;span class="gp"&gt;# &lt;/span&gt;Please don&lt;span class="s1"&gt;&amp;#39;t forget to replace &amp;#39;&lt;/span&gt;kmonsoor&lt;span class="err"&gt;&amp;#39;&lt;/span&gt; with your username
+&lt;span class="linenos" data-linenos="3 "&gt;&lt;/span&gt;&lt;span class="gp"&gt;$ &lt;/span&gt;sudo chsh kmonsoor
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Update the system&amp;rsquo;s default symlink to the new Zsh version.&lt;br&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="linenos" data-linenos="1 "&gt;&lt;/span&gt;$ sudo ln -sf /usr/local/bin/zsh /bin/zsh
-&lt;span class="linenos" data-linenos="2 "&gt;&lt;/span&gt;$ zsh --version
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="linenos" data-linenos="1 "&gt;&lt;/span&gt;&lt;span class="gp"&gt;$ &lt;/span&gt;sudo ln -sf /usr/local/bin/zsh /bin/zsh
+&lt;span class="linenos" data-linenos="2 "&gt;&lt;/span&gt;&lt;span class="gp"&gt;$ &lt;/span&gt;zsh --version
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
 &lt;p&gt;It&amp;rsquo;s always a good habit to clean up after doing stuffs.  ;)
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="linenos" data-linenos="1 "&gt;&lt;/span&gt;$ sudo make clean
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="linenos" data-linenos="1 "&gt;&lt;/span&gt;&lt;span class="gp"&gt;$ &lt;/span&gt;sudo make clean
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img alt="voila" src="https://i.imgur.com/BEFIOXf.jpg"&gt;&lt;/p&gt;
 &lt;h1 id="related"&gt;Related&lt;a class="headerlink" href="#related" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h1&gt;
