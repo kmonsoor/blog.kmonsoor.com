@@ -4,7 +4,7 @@ Date: 2016-10-10
 Tags:  ubuntu, mirror, apt-get, update, upgrade, fastest, server, apt-select
 Slug:  ubuntu-update-apt-get-server-to-use-fastest-mirror
 Summary:  Updating Ubuntu from it's default server takes too damn long. Give it a 10x boost.
-Version: 1.0.0
+Version: 1.1.0
 Status: Published
 ---
 
@@ -27,19 +27,23 @@ I use a handy tool for this purpose to point me to the fastest server FOR ME. It
 
 To install it, i found this method most hassle-free. You may also try `pip install` method described on the repo's README file.
 
-    $ git clone https://github.com/jblakeman/apt-select.git
+```shell-session
+$ git clone https://github.com/jblakeman/apt-select.git
+```
 
 That's it. Now to execute it, just run the "main" Python file.
 
-    $ cd apt-select
-    $ ./apt-select.py -c -t 3 -m one-week-behind
+```{.shell-session hl_lines="2"}
+$ cd apt-select
+$ ./apt-select.py -c -t 3 -m one-week-behind
+```
 
 We are choosing here the best 3 mirrors(due to `-t 3`) which are at most `one week behind` from the main Ubuntu server. For general purposes, that's good enough.
 
 It will choose one using the latency & ping time, and also show servers' bandwidth. Then the tool asks you to select new mirror from the `3` options came up. Usually, stick to the top option, hence `1`. 
 For example in my case, it shows:
 
-```
+```{.shell-session hl_lines="1"}
 [khaled:~] $ apt-select -c -t 3 -m one-week-behind
 Getting list of mirrors...done.
 Testing latency to mirror(s)
@@ -67,24 +71,29 @@ Choose a mirror (1 - 3)
 New config file saved to /home/khaled/sources.list
 ```
 
-Then the tool prepares a new `sources.list` file to replace the system's one with.
+Then, the tool prepares a new `sources.list` file to replace the system's one with.
 
 Now, replace the file with the new one which will be now used by the `apt-get *` commands. As it overwrites a system config file, you need to do with `sudo`.
 
-    $ sudo mv /etc/apt/sources.list /etc/apt/sources.list.backup && sudo mv sources.list /etc/apt/
+```shell-session
+$ sudo mv /etc/apt/sources.list /etc/apt/sources.list.backup && sudo mv sources.list /etc/apt/
+```
 
 That's it. Now, all you update/upgrade will be fetched from the newly selected mirror.
 
 However, I highly recommend to run `update` once right away.
 
-    $ sudo apt-get update
-    
-Also, if you want, run `upgrade`:
-    
-    sudo apt-get upgrade
+```shell-session
+$ sudo apt-get update
+```
+
+Then, only if you want, run `upgrade`:
+
+```shell-session    
+$ sudo apt-get upgrade
+```
 
 --------------------------
-
 ## You may also like
  * [Open Source as-if You Gonna Die Tonight](https://blog.kmonsoor.com/open-source-as-if-you-gonna-die-tonight/?utm_source=related_footer&utm_keyword=coding)
  * [Pelican Static sites - SEO Optimization](https://blog.kmonsoor.com/pelican-how-to-make-seo-friendly/?utm_source=related_footer&utm_keyword=python)
