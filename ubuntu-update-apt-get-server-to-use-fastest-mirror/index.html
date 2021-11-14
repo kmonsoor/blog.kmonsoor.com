@@ -109,47 +109,52 @@
 <h2 id="so-what-else-do-we-have">so, what else do we have ?<a class="headerlink text-decoration-none small pl-2" href="#so-what-else-do-we-have" title="Permanent link">¶</a></h2>
 <p>I use a handy tool for this purpose to point me to the fastest server <span class="caps">FOR</span> <span class="caps">ME</span>. It’s <a href="https://github.com/jblakeman/apt-select">apt-select</a>.</p>
 <p>To install it, i found this method most hassle-free. You may also try <code>pip install</code> method described on the repo’s <span class="caps">README</span> file.</p>
-<p>$ git clone <a href="https://github.com/jblakeman/apt-select.git">https://github.com/jblakeman/apt-select.git</a></p>
+<div class="highlight pygments-style-monokai rounded shadow-sm mb-3"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="gp">$ </span>git clone https://github.com/jblakeman/apt-select.git
+</code></pre></div>
 <p>That’s it. Now to execute it, just run the “main” Python file.</p>
-<p>$ cd apt-select
-    $ ./apt-select.py -c -t 3 -m one-week-behind</p>
+<div class="highlight pygments-style-monokai rounded shadow-sm mb-3"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="gp">$ </span><span class="nb">cd</span> apt-select
+<span class="hll"><span class="linenos" data-linenos="2 "></span><span class="gp">$ </span>./apt-select.py -c -t <span class="m">3</span> -m one-week-behind
+</span></code></pre></div>
 <p>We are choosing here the best 3 mirrors(due to <code>-t 3</code>) which are at most <code>one week behind</code> from the main Ubuntu server. For general purposes, that’s good enough.</p>
 <p>It will choose one using the latency <span class="amp">&amp;</span> ping time, and also show servers’ bandwidth. Then the tool asks you to select new mirror from the <code>3</code> options came up. Usually, stick to the top option, hence <code>1</code>. 
 For example in my case, it shows:</p>
-<div class="highlight pygments-style-monokai rounded shadow-sm mb-3"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span>[khaled:~] $ apt-select -c -t 3 -m one-week-behind
-<span class="linenos" data-linenos=" 2 "></span>Getting list of mirrors...done.
-<span class="linenos" data-linenos=" 3 "></span>Testing latency to mirror(s)
-<span class="linenos" data-linenos=" 4 "></span>[3/3] 100%
-<span class="linenos" data-linenos=" 5 "></span>Getting list of launchpad URLs...done.
-<span class="linenos" data-linenos=" 6 "></span>Looking up 3 status(es)
-<span class="linenos" data-linenos=" 7 "></span>[3/3] 100%
-<span class="linenos" data-linenos=" 8 "></span>1. mirror.dhakacom.com (current)
-<span class="linenos" data-linenos=" 9 "></span>    Latency: 1.89 ms
-<span class="linenos" data-linenos="10 "></span>    Org:     dhakaCom Limited
-<span class="linenos" data-linenos="11 "></span>    Status:  Up to date
-<span class="linenos" data-linenos="12 "></span>    Speed:   1 Gbps
-<span class="linenos" data-linenos="13 "></span>2. mirror.dhakacom.com
-<span class="linenos" data-linenos="14 "></span>    Latency: 1.96 ms
-<span class="linenos" data-linenos="15 "></span>    Org:     dhakaCom Limited
-<span class="linenos" data-linenos="16 "></span>    Status:  Up to date
-<span class="linenos" data-linenos="17 "></span>    Speed:   1 Gbps
-<span class="linenos" data-linenos="18 "></span>3. archive.ubuntu.com
-<span class="linenos" data-linenos="19 "></span>    Latency: 205.23 ms
-<span class="linenos" data-linenos="20 "></span>    Org:     Canonical Ltd.
-<span class="linenos" data-linenos="21 "></span>    Status:  Up to date
-<span class="linenos" data-linenos="22 "></span>    Speed:   100 Mbps
-<span class="linenos" data-linenos="23 "></span>Choose a mirror (1 - 3)
-<span class="linenos" data-linenos="24 "></span>'q' to quit 1
-<span class="linenos" data-linenos="25 "></span>New config file saved to /home/khaled/sources.list
+<div class="highlight pygments-style-monokai rounded shadow-sm mb-3"><pre><span></span><code><span class="hll"><span class="linenos" data-linenos=" 1 "></span><span class="gp">[khaled:~] $ </span>apt-select -c -t <span class="m">3</span> -m one-week-behind
+</span><span class="linenos" data-linenos=" 2 "></span><span class="go">Getting list of mirrors...done.</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="go">Testing latency to mirror(s)</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="go">[3/3] 100%</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="go">Getting list of launchpad URLs...done.</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="go">Looking up 3 status(es)</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="go">[3/3] 100%</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="go">1. mirror.dhakacom.com (current)</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="go">    Latency: 1.89 ms</span>
+<span class="linenos" data-linenos="10 "></span><span class="go">    Org:     dhakaCom Limited</span>
+<span class="linenos" data-linenos="11 "></span><span class="go">    Status:  Up to date</span>
+<span class="linenos" data-linenos="12 "></span><span class="go">    Speed:   1 Gbps</span>
+<span class="linenos" data-linenos="13 "></span><span class="go">2. mirror.dhakacom.com</span>
+<span class="linenos" data-linenos="14 "></span><span class="go">    Latency: 1.96 ms</span>
+<span class="linenos" data-linenos="15 "></span><span class="go">    Org:     dhakaCom Limited</span>
+<span class="linenos" data-linenos="16 "></span><span class="go">    Status:  Up to date</span>
+<span class="linenos" data-linenos="17 "></span><span class="go">    Speed:   1 Gbps</span>
+<span class="linenos" data-linenos="18 "></span><span class="go">3. archive.ubuntu.com</span>
+<span class="linenos" data-linenos="19 "></span><span class="go">    Latency: 205.23 ms</span>
+<span class="linenos" data-linenos="20 "></span><span class="go">    Org:     Canonical Ltd.</span>
+<span class="linenos" data-linenos="21 "></span><span class="go">    Status:  Up to date</span>
+<span class="linenos" data-linenos="22 "></span><span class="go">    Speed:   100 Mbps</span>
+<span class="linenos" data-linenos="23 "></span><span class="go">Choose a mirror (1 - 3)</span>
+<span class="linenos" data-linenos="24 "></span><span class="go">'q' to quit 1</span>
+<span class="linenos" data-linenos="25 "></span><span class="go">New config file saved to /home/khaled/sources.list</span>
 </code></pre></div>
-<p>Then the tool prepares a new <code>sources.list</code> file to replace the system’s one with.</p>
+<p>Then, the tool prepares a new <code>sources.list</code> file to replace the system’s one with.</p>
 <p>Now, replace the file with the new one which will be now used by the <code>apt-get *</code> commands. As it overwrites a system config file, you need to do with <code>sudo</code>.</p>
-<p>$ sudo mv /etc/apt/sources.list /etc/apt/sources.list.backup &amp;&amp; sudo mv sources.list /etc/apt/</p>
+<div class="highlight pygments-style-monokai rounded shadow-sm mb-3"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="gp">$ </span>sudo mv /etc/apt/sources.list /etc/apt/sources.list.backup <span class="o">&amp;&amp;</span> sudo mv sources.list /etc/apt/
+</code></pre></div>
 <p>That’s it. Now, all you update/upgrade will be fetched from the newly selected mirror.</p>
 <p>However, I highly recommend to run <code>update</code> once right away.</p>
-<p>$ sudo apt-get update</p>
-<p>Also, if you want, run <code>upgrade</code>:</p>
-<p>sudo apt-get upgrade</p>
+<div class="highlight pygments-style-monokai rounded shadow-sm mb-3"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="gp">$ </span>sudo apt-get update
+</code></pre></div>
+<p>Then, only if you want, run <code>upgrade</code>:</p>
+<div class="highlight pygments-style-monokai rounded shadow-sm mb-3"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="gp">$ </span>sudo apt-get upgrade
+</code></pre></div>
 <hr/>
 <h2 id="you-may-also-like">You may also like<a class="headerlink text-decoration-none small pl-2" href="#you-may-also-like" title="Permanent link">¶</a></h2>
 <ul>
