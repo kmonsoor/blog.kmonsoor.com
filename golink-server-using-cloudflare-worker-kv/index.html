@@ -97,16 +97,16 @@
 </div>
 <div class="row">
 <div class="col-md-9" id="content" role="main">
-<p>Among quite a few ways to implement a go-link server (i.e. url-forwarder, short-url server etc.), here I’m going to show you how to use free-tier Cloudflare Worker (&amp; <span class="caps">KV</span>) to create an in-house, on-edge, <strong>no-webserver</strong> go-link server.</p>
+<p>Among quite a few ways to implement a go-link server (i.e., url-forwarder, short-url server, etc.), I’m going to show you how to use free-tier Cloudflare Worker (&amp; <span class="caps">KV</span>) to create an in-house, on-edge, <strong>no-webserver</strong> go-link server.</p>
 <p>For example, the short-link for this article is <a href="https://go.kmonsoor.com/golink-kv">go.kmonsoor.com/golink-kv</a> </p>
 <p><img alt="overall structure" class="img-fluid border rounded shadow" src="https://i.imgur.com/MjIS5gD.png"/></p>
 <ul>
 <li><code>/latest</code> (by which I mean <code>go.yourdomain.co/latest</code>) may point to <code>https://www.yourcompany.com/about/news</code> which is a public page</li>
-<li><code>/hr-help</code> may point to <code>https://www.company-internal.com/long-link/hr/contact.html</code> which is company’s internal human-resources help portal</li>
+<li><code>/hr-help</code> may point to <code>https://www.company-internal.com/long-link/hr/contact.html</code>, which is company’s internal human-resources help portal</li>
 <li><code>/cnypromo</code> may point to <code>https://shop.yourcompany.com/sales/promotions/?marketing-promo=2021-cny</code> which is a temporary sales promotions page targeting the shoppers during the Chinese new year of 2021.</li>
 </ul>
-<p>Please note that using the setup and the code below, it’ll be possible resolve shortlinks via a <strong>single</strong> sub-domain, e.g. <code>go.your-domain.co</code>. However, it’s totally possible (with some modification of the code) to resolve/re-direct via <em>any number of domains</em> (your own, of course) towards any other public or private <span class="caps">URL</span>, and all sorts of novelties. However, for brevity’s sake, I’m going to discuss the first one, single sub-domain usecase.</p>
-<p>To setup a go-link server or short-<span class="caps">URL</span> resolver via a proper <span class="caps">KV</span>+Worker combination, we’ll go through these steps:</p>
+<p>Please note that using the setup and the code below, it’ll be possible to resolve short-links via a <strong>single</strong> sub-domain, e.g., <code>go.your-domain.co</code>. However, it’s possible (with some modification of the code) to resolve/redirect via <em>any number of domains</em> (your own, of course) towards any other public or private <span class="caps">URL</span>, and all sorts of novelties. However, for brevity’s sake, I will discuss the first one, a single sub-domain usecase.</p>
+<p>To set up a go-link server or short-<span class="caps">URL</span> resolver via a proper <span class="caps">KV</span>+Worker combination, we’ll go through these steps:</p>
 <div class="toc">
 <ul>
 <li><a href="#pre-requisites">Pre-requisites</a></li>
@@ -121,28 +121,28 @@
 </div>
 <h1 id="pre-requisites">Pre-requisites<a class="headerlink text-decoration-none small pl-2" href="#pre-requisites" title="Permanent link">¶</a></h1>
 <ul>
-<li>The <span class="caps">DNS</span> resolver for the <strong>root</strong> domain (in the example below, <em><code>kmonsoor.com</code></em>) needs to be Cloudflare. Because the core of the solution, the “worker”, runs on the nearest (from the user) edge of Cloudflare using a common <span class="caps">KV</span> (“key, value”) list.</li>
+<li>The <span class="caps">DNS</span> resolver for the <strong>root</strong> domain (in the example below, <em><code>kmonsoor.com</code></em>) needs to be Cloudflare. Because the core of the solution, the “worker”, runs on the nearest (from the user) edge of Cloudflare using a standard <span class="caps">KV</span> (“key, value”) list.</li>
 <li>Write permission to the <span class="caps">DNS</span> configuration as you’d need to add a new <span class="caps">AAAA</span> <span class="caps">DNS</span> record.</li>
-<li>Some knowledge of Javascript(<span class="caps">ES6</span>), as we gonna write the worker in that language.</li>
+<li>Some knowledge of Javascript(<code>ES6</code>), as we are going to write the “worker” in that language.</li>
 </ul>
 <h1 id="create-the-short-link-map-as-a-kv">Create the short-link map as a <span class="caps">KV</span><a class="headerlink text-decoration-none small pl-2" href="#create-the-short-link-map-as-a-kv" title="Permanent link">¶</a></h1>
-<p>We’ll start the setup by creating the short-link map, the list between the short-link segments that you (or, someone in your org) define and the actual URLs they needed to point to.</p>
+<p>We’ll start the setup by creating the short-link map, the list between the short-link segments that you (or someone in your org) define, and the actual URLs they need to point to.</p>
 <p>Find the <span class="caps">KV</span> stuff in the <code>Workers</code> section. From the screenshot, please ignore the “Route” section for now.  </p>
 <p><img alt="Find the KV stuff in the Workers section" class="img-fluid border rounded shadow" src="https://i.imgur.com/b2Rk45u.png"/></p>
 <ul>
-<li>you’d need to create a Worker <span class="caps">KV</span> “Namespace”. Name the namespace as you seem fit. I named it <code>REDIRECTS</code> (in all caps just as convention, not required). </li>
-<li>List the short-links <span class="amp">&amp;</span> their respective target URLs. From the examples in the intro, the keys <code>latest</code>, <code>hr-help</code>, <code>cnypromo</code> etc. would be in as the “key”, and the target full links as the respective “value”.</li>
-<li>Remember <span class="caps">NOT</span> to start the short part with ‘/’. In the code, it’ll be taken care of.</li>
+<li>you’d need to create a Worker <span class="caps">KV</span> “Namespace”. Name the namespace as you seem fit. I named it <code>REDIRECTS</code> (in all caps just as a convention, not required). </li>
+<li>List the short links <span class="amp">&amp;</span> their respective target URLs. From the examples in the intro, the keys <code>latest</code>, <code>hr-help</code>, <code>cnypromo</code> etc. would be in as the “key”, and the target full links as the respective “value”.</li>
+<li>Remember <span class="caps">NOT</span> to start the short part with ‘/’. It’ll be taken care of in the code.</li>
 </ul>
 <p><img alt="Create the short-link map as a KV" class="img-fluid border rounded shadow" src="https://i.imgur.com/jkC8bSr.png"/></p>
-<p>Once you’ve listed all your desired (short-link, target-link) combinations, now we have a <span class="caps">KV</span> on CLoudflare. However, it’s not referencable from your Worker code, not yet. Hence the next step.</p>
+<p>Once you’ve listed all your desired (short-link, target-link) combinations, now we have a <span class="caps">KV</span> on Cloudflare. However, it’s not referencable from your Worker code, not yet. Hence the next step.</p>
 <h1 id="mapping-a-kv-to-a-worker-variable">Mapping a <span class="caps">KV</span> to a Worker variable<a class="headerlink text-decoration-none small pl-2" href="#mapping-a-kv-to-a-worker-variable" title="Permanent link">¶</a></h1>
-<p>Now, we gonna map the previously created <span class="caps">KV</span> to a variable that can be referenced from our Workeer code. Please note that though I used diffrent names, but it can be same as well. Also note that a single <span class="caps">KV</span> can be accessed by multiple workers, and vice versa, a single Worker can reference multiple KVs.</p>
+<p>Now, we will map the previously created <span class="caps">KV</span> to a variable that can be referenced from our Worker code. Please note that though I used different names, it can be the same as well. Also, note that multiple Workers can access a single <span class="caps">KV</span>, and vice versa is also true; a single Worker can reference multiple KVs.</p>
 <p><img alt="Mapping a KV to a Worker variable" class="img-fluid border rounded shadow" src="https://i.imgur.com/lb7G9si.png"/></p>
 <h1 id="handling-a-route-with-webworker">Handling a route with webworker<a class="headerlink text-decoration-none small pl-2" href="#handling-a-route-with-webworker" title="Permanent link">¶</a></h1>
 <p><img alt="Handling a route with webworker" class="img-fluid border rounded shadow" src="https://i.imgur.com/KohHRfR.png"/></p>
 <h1 id="create-the-worker">Create the Worker<a class="headerlink text-decoration-none small pl-2" href="#create-the-worker" title="Permanent link">¶</a></h1>
-<p>Now, we going to write Workercode that runs on V8-runtime on an nearest(from the requesting user) edge location of Cloudflare to complete its functionality and deliver it to the user. Tn this case, that would be to redirect user’s requested address to the mapped one by you, in the <span class="caps">KV</span> namespace above.</p>
+<p>Now, we will write Worker-code that runs on <code>V8</code> runtime on the nearest (from the requesting user) “edge” location of Cloudflare, to execute the code and deliver the result(s) to the user. In this case, that would be to redirect user-requested address to the mapped one (by you, in the <span class="caps">KV</span> namespace above).</p>
 <p><img alt="Creating a worker" class="img-fluid border rounded shadow" src="https://i.imgur.com/eNfZNyN.png"/></p>
 <p>The code editor looks like this:  </p>
 <p><img alt="The code editor for Cloudflare worker" class="img-fluid border rounded shadow" src="https://i.imgur.com/pb9AE9v.png"/></p>
@@ -154,17 +154,17 @@
 <img alt="created webworker" class="img-fluid border rounded shadow" src="https://i.imgur.com/XSdKB56.png"/></p>
 <h1 id="pointing-a-dns-record-to-the-worker">Pointing a <span class="caps">DNS</span> record to the Worker<a class="headerlink text-decoration-none small pl-2" href="#pointing-a-dns-record-to-the-worker" title="Permanent link">¶</a></h1>
 <p>Finally, we need to point a <span class="caps">DNS</span> record that’ll redirect all requests to your re-soutign sub-domain (e.g. <code>go.your-domain.com</code>) to the Cloudflare Worker that we just created.</p>
-<p>According to the Cloudflare docs, the <span class="caps">DNNS</span> record must be an <span class="caps">AAAA</span> record, pointing to the IPv6 address <code>100::</code>. The “Name” here is the “sub-domain” part of your choice which is better be short to serve our goal here.  </p>
+<p>According to the Cloudflare docs, the <span class="caps">DNNS</span> record must be an <span class="caps">AAAA</span> record, pointing to the IPv6 address <code>100::</code>. The “Name” here is the “sub-domain” part of your choice, which is better be short, to rightfully serve our goal here.  </p>
 <p><img alt="Pointing a DNS record to it" class="img-fluid border rounded shadow" src="https://i.imgur.com/62bk7pe.png"/></p>
 <p>Voila ! Now, test some of the short-urls that you’ve mapped via the <span class="caps">KV</span>. Enjoy !
-Watch out for the target usage though <a href="https://developers.cloudflare.com/workers/platform/limits#worker-limits">against the limit</a>.  </p>
-<p>I think you’ll be fine, unnless you’re some kind of celebrity ;)</p>
+Watch out for the target usage though. <a href="https://developers.cloudflare.com/workers/platform/limits#worker-limits">Here’s the limit</a>.  </p>
+<p>I think you’ll be fine, unless you’re some celebrity ;)</p>
 <h1 id="next-step">Next step<a class="headerlink text-decoration-none small pl-2" href="#next-step" title="Permanent link">¶</a></h1>
-<p>As the next next step, I’m thinking to create a generic <code>Go/Link</code> resolver browser extension. Then, someone can set their own default domain or company domain of choice as short-domain host. In that case, entering just <code>go/hr-help</code> on the browser will take to <code>https://www.company-internal.com/.../hr/contact.html</code> that we have discussed at the beginning (remember the example case of an internal human resources help portal?).</p>
+<p>As the next step, I’m thinking to create a generic <code>Go/Link</code> resolver browser extension. Then, someone can set their own default domain or company domain of choice as short-domain host. In that case, entering just <code>go/hr-help</code> on the browser will take to <code>https://www.company-internal.com/.../hr/contact.html</code> that we have discussed at the beginning (remember the example case of an internal human resources help portal?).</p>
 <h1 id="related">Related<a class="headerlink text-decoration-none small pl-2" href="#related" title="Permanent link">¶</a></h1>
-<ul>
-<li>If you want to do this url-direction <strong>on your own webserver, but only using webserver</strong>, try this: <a href="https://blog.kmonsoor.com/personal-shortlink-server-using-Caddy/">Personal short-link server using only Caddyserver</a></li>
-</ul>
+<p>If you want to do this url-direction <strong>on your server, but only using webserver</strong>, try this: <a href="https://blog.kmonsoor.com/personal-shortlink-server-using-Caddy/">Personal short-link server using only Caddyserver</a></p>
+<hr/>
+<p>If you find this post helpful, you can show your support <a href="https://www.patreon.com/kmonsoor">through Patreon</a> or by <a href="https://ko-fi.com/kmonsoor">buying me a coffee</a>. <em>Thanks!</em></p>
 <h3 class="mt-3">Related content</h3>
 <div class="list-group bg-light text-dark">
 <a class="list-group-item list-group-item-action" href="https://blog.kmonsoor.com/deploying-golink-server-using-Caddy/">
@@ -174,7 +174,7 @@ Watch out for the target usage though <a href="https://developers.cloudflare.com
                             2021
                         </abbr>
 </div>
-<small>Yeah, there are tons of open-source, full-fledged link-shorteners. But, none were exactly what I wanted. Hence, the minimal approach only utilizing the amazing webserver, Caddy. Here we go …</small>
+<small>Yeah, there are tons of open-source, full-fledged link-shorteners. But, none were exactly what I wanted. Hence, the minimal approach only by utilizing an amazing webserver, Caddy. Here we go …</small>
 </a>
 <a class="list-group-item list-group-item-action" href="https://blog.kmonsoor.com/TLDR-what-cloud-to-use-2021/">
 <div class="d-flex w-100 justify-content-between">

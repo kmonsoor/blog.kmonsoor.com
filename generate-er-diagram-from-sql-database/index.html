@@ -35,8 +35,8 @@
 <link href="https://blog.kmonsoor.com/feed/index.html" rel="alternate" title="I think ... - Latest posts - RSS Feed" type="application/rss+xml"/>
 <link href="https://blog.kmonsoor.com/category/tech/feed/atom/index.html" rel="alternate" title="I think ... - Category: Tech - Atom Feed" type="application/atom+xml"/>
 <link href="https://blog.kmonsoor.com/category/tech/feed/index.html" rel="alternate" title="I think ... - Category: Tech - RSS Feed" type="application/rss+xml"/>
-<meta content="sql, db, dbms, diagram, ER-diagram, graphviz, java, postgresql, programming, rdbms, schema, schemaspy, visualization" name="keywords"/>
-<link href="https://blog.kmonsoor.com/generate-er-diagram-from-sql-database/" rel="canonical"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "I think ...", "item": "https://blog.kmonsoor.com"}, {"@type": "ListItem", "position": 2, "name": "Generate er diagram from sql database", "item": "https://blog.kmonsoor.com/generate-er-diagram-from-sql-database"}, {"@type": "ListItem", "position": 3, "name": "Index", "item": "https://blog.kmonsoor.com/generate-er-diagram-from-sql-database/index.html"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "author": {"@type": "Person", "name": "Khaled Monsoor"}, "publisher": {"@type": "Organization", "name": "I think ..."}, "headline": "Generate <span class=\"caps\">ER</span> diagram from a <span class=\"caps\">SQL</span>-based&nbsp;database", "about": "Tech", "datePublished": "2014-12-18 00:00"}</script></head>
+<meta content="database, sql, dbms, ER-diagram, graphviz, java, postgresql, programming, RDBMS, schema, schemaspy, visualization" name="keywords"/>
+<link href="https://blog.kmonsoor.com/generate-er-diagram-from-sql-database/" rel="canonical"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "I think ...", "item": "https://blog.kmonsoor.com"}, {"@type": "ListItem", "position": 2, "name": "Generate er diagram from sql database", "item": "https://blog.kmonsoor.com/generate-er-diagram-from-sql-database"}, {"@type": "ListItem", "position": 3, "name": "Index", "item": "https://blog.kmonsoor.com/generate-er-diagram-from-sql-database/index.html"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "author": {"@type": "Person", "name": "Khaled Monsoor"}, "publisher": {"@type": "Organization", "name": "I think ..."}, "headline": "Generate <span class=\"caps\">ER</span> diagram from a <span class=\"caps\">SQL</span>-based&nbsp;database", "about": "Tech", "datePublished": "2014-12-18 00:00", "image": "https://i.imgur.com/6nv64Vd.png"}</script></head>
 <body class="bg-transparent pt-4">
 <div class="container">
 <a class="avatar-container float-left mx-4" href="https://blog.kmonsoor.com">
@@ -97,36 +97,36 @@
 </div>
 <div class="row">
 <div class="col-md-9" id="content" role="main">
-<p>When you are “study”-ing (for whatever reason) someone else’s database, and the database has more than 20 tables, you are in trouble to understand what goes where.</p>
-<p>Now, imagine a database with 300+ tables. It’s like spaghetti, but not enjoyable. Rather, horrific.</p>
-<p>I faced a similar challenge recently with a database of 250+ tables. Yes, i felt like in a deep sh*t. And, started looking for tools which can describe the tables in at least decent <span class="caps">ER</span>-diagram. If anything more, better. And, obviously free as my company is not paying.</p>
-<p>Then, I found <a href="http://schemaspy.sourceforge.net/">SchemaSpy</a>, originally authored by <a href="https://sites.google.com/site/johncurrier/">John Currier</a>. It generate a complete in-depth <span class="caps">HTML</span>-based description (of course, including clickable <span class="caps">ER</span>-diagram) of the database, which you can then browse with your browser. This post is on it’s basic usage.</p>
+<p>When you are “study”-ing (for whatever reason) someone else’s database, and the database has more than 20 tables, you might be in trouble to understand what’s going where.</p>
+<p>Now, imagine a database with 300+ tables. It’s like spaghetti, just not as enjoyable.</p>
+<p>I faced a similar challenge recently with a database of 250+ tables. Yes, I felt like in a deep sh*t. And, I started looking for tools that can describe the tables, or at least a decent <span class="caps">ER</span> diagram. If anything more, better. And, preferably free.</p>
+<p>Then, I found <a href="http://schemaspy.sourceforge.net/">SchemaSpy</a>, originally authored by <a href="https://sites.google.com/site/johncurrier/">John Currier</a>. It generates a complete in-depth <span class="caps">HTML</span>-based description (of course, including clickable <span class="caps">ER</span>-diagram) of the database, which you can then browse with your browser. This post is about its primary usage.</p>
 <p>The output will be kind of like this:
 <img alt="schemapy output sample" class="img-fluid border rounded shadow" src="https://i.imgur.com/K1yYBID.png"/></p>
-<p>It is based on Java technologies, but can work its magic on most of the major database technologies. But, you would need a appropriate <span class="caps">JDBC</span> connector for that database.</p>
+<p>It is based on Java, but it can work its magic on most of the major database products. However, it would require an appropriate <span class="caps">JDBC</span> connector for that database.</p>
 <p>Quote from the author:</p>
 <blockquote class="blockquote border-left border-primary pl-3">
-<p>SchemaSpy uses <span class="caps">JDBC</span>’s database metadata extraction services to gather the majority of its information, but has to make vendor-specific <span class="caps">SQL</span> queries to gather some information such as the <span class="caps">SQL</span> associated with a view and the details of check constraints.</p>
+<p><code>SchemaSpy</code> uses <span class="caps">JDBC</span>’s database metadata extraction services to gather the majority of its information but has to make vendor-specific <span class="caps">SQL</span> queries to gather some information such as the <span class="caps">SQL</span> associated with a view and the details of check constraints.</p>
 </blockquote>
-<p>In this post, as example, i have shown to use it with PostgreSQL. But, it’s not the only one supported. You can use ot with any proper <span class="caps">RDBMS</span> system as long as it has a <span class="caps">JDBC</span>-connector.
- Now, to use it, you need these staffs.</p>
+<p>In this post, as an example, I have shown how to use it with PostgreSQL. But, it’s not the only one that’s supported. You can use it with any proper <span class="caps">RDBMS</span> system as long as it has a <span class="caps">JDBC</span>-connector.
+ Now, to use it, you need to get these stuffs.</p>
 <ul>
-<li><strong>First of all</strong>, your system should have <strong>Java runtime</strong> properly installed. <a href="https://java.com/en/download/manual.jsp">Download from here.</a></li>
+<li><strong>First of all</strong>, your system should have <strong>Java runtime</strong> properly installed. <a href="https://adoptopenjdk.net/">Download from here.</a></li>
 <li><strong>SchemaSpy, which is a .jar file</strong>. <a href="https://sourceforge.net/projects/schemaspy/files/">Get it here</a>.
     At the time of writing, it was version 5.0.0.</li>
 <li><strong><span class="caps">JDBC</span> connector to PostgreSQL</strong>. Make sure to match your PostgreSQL version. You can <a href="https://jdbc.postgresql.org/download.html">download it from here</a>.<br/>
     You can check your PostgreSQL version by executing: <code>SELECT version();</code> query on <strong><em>psql</em></strong> prompt.</li>
-<li>Also, SchemaSpy depends on <strong>GarphViz</strong> to generate the <span class="caps">ER</span>-diagrams, so you need to be installed it on your system. Get it from here.(<a href="http://www.graphviz.org/Download..php">http://www.graphviz.org/Download..php</a>)</li>
-<li>And, of course make sure PostgreSQL instance running <span class="amp">&amp;</span> serving the database you are trying to visualize.</li>
+<li>Also, SchemaSpy depends on <strong>GarphViz</strong> to generate the <span class="caps">ER</span> diagrams, so you need to be installed it on your system. Get it from here.(<a href="http://www.graphviz.org/Download..php">http://www.graphviz.org/Download..php</a>)</li>
+<li>And, of course, make sure the target database instance is running <span class="amp">&amp;</span> serving the database you are trying to visualize.</li>
 </ul>
 <p>Quoting from the author:</p>
 <blockquote class="blockquote border-left border-primary pl-3">
-<p>SchemaSpy uses the dot executable from <a href="http://www.graphviz.org/">Graphviz</a> to generate graphical  representations of the table/view relationships. This was initially added for people who see things visually. Now the graphical representation of relationships is a fundamental feature of the tool.  </p>
-<p>Graphviz is not required to view the output generated by SchemaSpy, but <strong>the dot program should be in your <span class="caps">PATH</span></strong> (not <span class="caps">CLASSPATH</span>) when  running SchemaSpy or none of the entity relationship diagrams will be generated (or use the <a href="http://schemaspy.sourceforge.net/#gvparam"><code>-gv</code></a> option).</p>
+<p>SchemaSpy uses the dot executable from <a href="http://www.graphviz.org/">Graphviz</a> to generate graphical representations of the table/view relationships. The visual representation of the connections is a fundamental feature of the tool.  </p>
+<p>Graphviz is not required to view the output generated by SchemaSpy, but <strong>the dot program should be in your <span class="caps">PATH</span></strong> (not <span class="caps">CLASSPATH</span>) when running SchemaSpy, or none of the entity-relationship diagrams will be generated. Or, maybe <a href="http://schemaspy.sourceforge.net/#gvparam">use the <code>-gv</code></a> option).</p>
 </blockquote>
-<p>For convenience, I kept the .jar files (<span class="caps">JDBC</span>-connector, and SchemaSpy) in my home folder.<br/>
-Now, in my case, my <span class="caps">OS</span> is Linux, and database is hosted locally, hence address is <code>127.0.0.1</code>, running <code>PostgreSQL-9.3</code> at port <code>5432</code>.
-So, i run the command like this:</p>
+<p>I kept the .jar files (both the <span class="caps">JDBC</span>-connector and the <code>SchemaSpy</code>) in my home folder for convenience.<br/>
+Now, in my case, my <span class="caps">OS</span> is Linux, and the database is hosted locally; hence address is <code>127.0.0.1</code>, running <code>PostgreSQL-9.3</code> at port <code>5432</code>.
+So, I run the command like this:</p>
 <div class="highlight pygments-style-monokai rounded shadow-sm mb-3"><pre><span></span><code><span class="linenos" data-linenos="1 "></span> $ java -jar ./schemaSpy_5.0.0.jar -t pgsql -host 127.0.0.1:5432 -db your_database_name \
 <span class="linenos" data-linenos="2 "></span>                                   -u your_DB_user_name -p your_password -s public \
 <span class="linenos" data-linenos="3 "></span>                                   -dp ./postgresql-9.3-1102.jdbc3.jar \
@@ -135,7 +135,7 @@ So, i run the command like this:</p>
 <p>It may take a little while, depending on the size of the schema of the database.<br/>
 After that, you will find the output folder/directory named <code>output_folder</code>.<br/>
 You’ll see some output when the magic is going on, similar to this below.</p>
-<p></p><div class="highlight pygments-style-monokai rounded shadow-sm mb-3"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>Using database properties: [./schemaSpy_5.0.0.jar]/net/sourceforge/schemaspy/dbTypes/pgsql.properties
+<div class="highlight pygments-style-monokai rounded shadow-sm mb-3"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>Using database properties: [./schemaSpy_5.0.0.jar]/net/sourceforge/schemaspy/dbTypes/pgsql.properties
 <span class="linenos" data-linenos="2 "></span>Gathering schema details....................(6sec)
 <span class="linenos" data-linenos="3 "></span>Writing/graphing summary....................(2sec)
 <span class="linenos" data-linenos="4 "></span>Writing/diagramming detail..................(31sec)
@@ -143,16 +143,11 @@ You’ll see some output when the magic is going on, similar to this below.</p>
 <span class="linenos" data-linenos="6 "></span>
 <span class="linenos" data-linenos="7 "></span>View the results by opening output_folder/index.html
 </code></pre></div>
-Now, all the generated files are in the <code>output_folder</code>.
-Start your journey by starting from the <code>index.html</code> in the output folder. Open it by using any browser you want.
+<p>Now, all the generated files are in the <code>output_folder</code>.
+Start your journey by starting from the <code>index.html</code> in the output folder. Open it by using any browser.</p>
 <p>Good luck. :)</p>
 <hr/>
-<h2 id="you-may-find-these-interesting">You may find these interesting<a class="headerlink text-decoration-none small pl-2" href="#you-may-find-these-interesting" title="Permanent link">¶</a></h2>
-<ul>
-<li><a href="https://blog.kmonsoor.com/ubuntu-update-apt-get-server-to-use-fastest-mirror/?utm_source=related_footer&amp;utm_keyword=linux">Ubuntu - Update <span class="caps">APT</span>-<span class="caps">GET</span> Server to Use Fastest Mirror</a></li>
-<li><a href="https://blog.kmonsoor.com/open-source-as-if-you-gonna-die-tonight/?utm_source=related_footer&amp;utm_keyword=coding">Open Source as-if You Gonna Die Tonight</a></li>
-<li><a href="https://blog.kmonsoor.com/pelican-how-to-make-seo-friendly/?utm_source=related_footer&amp;utm_keyword=python">Pelican Static sites - <span class="caps">SEO</span> Optimization</a></li>
-</ul>
+<p>If you find this post helpful, you can show your support <a href="https://www.patreon.com/kmonsoor">through Patreon</a> or by <a href="https://ko-fi.com/kmonsoor">buying me a coffee</a>. <em>Thanks!</em></p>
 </div>
 <div class="col-md-3">
 <div class="card bg-light text-dark">
@@ -163,14 +158,13 @@ Start your journey by starting from the <code>index.html</code> in the output fo
 <li class="list-group-item">
 <a class="badge badge-info" data-toggle="tooltip" href="https://blog.kmonsoor.com/category/tech/" rel="tag" title="26 articles in this category">Tech</a>
 <a class="badge badge-secondary" data-toggle="tooltip" href="/tag/programming/" title="3 articles with this tag">programming</a>
-<a class="badge badge-secondary" data-toggle="tooltip" href="/tag/db/" title="1 article with this tag">db</a>
+<a class="badge badge-secondary" data-toggle="tooltip" href="/tag/database/" title="2 articles with this tag">database</a>
 <a class="badge badge-secondary" data-toggle="tooltip" href="/tag/dbms/" title="1 article with this tag">dbms</a>
-<a class="badge badge-secondary" data-toggle="tooltip" href="/tag/diagram/" title="1 article with this tag">diagram</a>
 <a class="badge badge-secondary" data-toggle="tooltip" href="/tag/er-diagram/" title="1 article with this tag">ER-diagram</a>
 <a class="badge badge-secondary" data-toggle="tooltip" href="/tag/graphviz/" title="1 article with this tag">graphviz</a>
 <a class="badge badge-secondary" data-toggle="tooltip" href="/tag/java/" title="1 article with this tag">java</a>
 <a class="badge badge-secondary" data-toggle="tooltip" href="/tag/postgresql/" title="1 article with this tag">postgresql</a>
-<a class="badge badge-secondary" data-toggle="tooltip" href="/tag/rdbms/" title="1 article with this tag">rdbms</a>
+<a class="badge badge-secondary" data-toggle="tooltip" href="/tag/rdbms/" title="1 article with this tag">RDBMS</a>
 <a class="badge badge-secondary" data-toggle="tooltip" href="/tag/schema/" title="1 article with this tag">schema</a>
 <a class="badge badge-secondary" data-toggle="tooltip" href="/tag/schemaspy/" title="1 article with this tag">schemaspy</a>
 <a class="badge badge-secondary" data-toggle="tooltip" href="/tag/sql/" title="1 article with this tag">sql</a>

@@ -5,28 +5,28 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://blog.kmonsoor.com/</loc>
-<lastmod>2021-11-15T00:46:59-00:00</lastmod>
+<lastmod>2021-11-15T21:48:47-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.4</priority>
 </url>
 
 <url>
 <loc>https://blog.kmonsoor.com/tags.html</loc>
-<lastmod>2021-11-15T00:46:59-00:00</lastmod>
+<lastmod>2021-11-15T21:48:47-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.4</priority>
 </url>
 
 <url>
 <loc>https://blog.kmonsoor.com/categories.html</loc>
-<lastmod>2021-11-15T00:46:59-00:00</lastmod>
+<lastmod>2021-11-15T21:48:47-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.4</priority>
 </url>
 
 <url>
 <loc>https://blog.kmonsoor.com/archives.html</loc>
-<lastmod>2021-11-15T00:46:59-00:00</lastmod>
+<lastmod>2021-11-15T21:48:47-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.4</priority>
 </url>
@@ -187,7 +187,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://blog.kmonsoor.com/generate-er-diagram-from-sql-database/</loc>
-<lastmod>2016-02-07T00:00:00+06:00</lastmod>
+<lastmod>2014-12-18T00:00:00+06:00</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.8</priority>
 </url>
@@ -1069,84 +1069,70 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://blog.kmonsoor.com/tag/sql/</loc>
-<lastmod>2016-02-07T00:00:00+06:02</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.4</priority>
-</url>
-
-<url>
-<loc>https://blog.kmonsoor.com/tag/db/</loc>
-<lastmod>2016-02-07T00:00:00+06:02</lastmod>
+<lastmod>2014-12-18T00:00:00+06:02</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.4</priority>
 </url>
 
 <url>
 <loc>https://blog.kmonsoor.com/tag/dbms/</loc>
-<lastmod>2016-02-07T00:00:00+06:02</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.4</priority>
-</url>
-
-<url>
-<loc>https://blog.kmonsoor.com/tag/diagram/</loc>
-<lastmod>2016-02-07T00:00:00+06:02</lastmod>
+<lastmod>2014-12-18T00:00:00+06:02</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.4</priority>
 </url>
 
 <url>
 <loc>https://blog.kmonsoor.com/tag/er-diagram/</loc>
-<lastmod>2016-02-07T00:00:00+06:02</lastmod>
+<lastmod>2014-12-18T00:00:00+06:02</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.4</priority>
 </url>
 
 <url>
 <loc>https://blog.kmonsoor.com/tag/graphviz/</loc>
-<lastmod>2016-02-07T00:00:00+06:02</lastmod>
+<lastmod>2014-12-18T00:00:00+06:02</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.4</priority>
 </url>
 
 <url>
 <loc>https://blog.kmonsoor.com/tag/java/</loc>
-<lastmod>2016-02-07T00:00:00+06:02</lastmod>
+<lastmod>2014-12-18T00:00:00+06:02</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.4</priority>
 </url>
 
 <url>
 <loc>https://blog.kmonsoor.com/tag/postgresql/</loc>
-<lastmod>2016-02-07T00:00:00+06:02</lastmod>
+<lastmod>2014-12-18T00:00:00+06:02</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.4</priority>
 </url>
 
 <url>
 <loc>https://blog.kmonsoor.com/tag/rdbms/</loc>
-<lastmod>2016-02-07T00:00:00+06:02</lastmod>
+<lastmod>2014-12-18T00:00:00+06:02</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.4</priority>
 </url>
 
 <url>
 <loc>https://blog.kmonsoor.com/tag/schema/</loc>
-<lastmod>2016-02-07T00:00:00+06:02</lastmod>
+<lastmod>2014-12-18T00:00:00+06:02</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.4</priority>
 </url>
 
 <url>
 <loc>https://blog.kmonsoor.com/tag/schemaspy/</loc>
-<lastmod>2016-02-07T00:00:00+06:02</lastmod>
+<lastmod>2014-12-18T00:00:00+06:02</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.4</priority>
 </url>
 
 <url>
 <loc>https://blog.kmonsoor.com/tag/visualization/</loc>
-<lastmod>2016-02-07T00:00:00+06:02</lastmod>
+<lastmod>2014-12-18T00:00:00+06:02</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.4</priority>
 </url>

@@ -97,12 +97,12 @@
 </div>
 <div class="row">
 <div class="col-md-9" id="content" role="main">
-<p>Before I go into any details, please note that I’ve used the term “shortlink-server” instead of “url-shortener” because the difference is significant for this post. 
-A url-shortener takes a long url, and gives a short url, then redirects any requests for the shortened link to its long counterpart. On the contrary, shortlink-server takes both the long and short url, then only does the redirect-ion part.</p>
+<p>Before I go into any details, please note that I’ve used the term “shortlink-server” instead of “url-shortener” because the difference is significant for this post.
+A url-shortener takes a long url, and gives a short url, then redirects any requests for the shortened link to its longer counterpart. On the contrary, shortlink-server takes both the long and short url as inputs, then only does the redirect-ion part.</p>
 <h2 id="backstory">Backstory<a class="headerlink text-decoration-none small pl-2" href="#backstory" title="Permanent link">¶</a></h2>
-<p>If I wanted an amazing, personal url-shortener or “go link” server, there are many amazing solutions out there, which are not only free or open-source but full-fledged as well for personal or public usage. Rather, I wanted some “service” that will “resolve” my personal, short links. I have been using bit.ly for a long time for its customizable “short-half” part, but the problem with bit.ly is – for some God-forsaken reason – blocked by the Bangladeshi govt. So, I needed a replacement to be properly “glocal”.
-There are many free (unbranded) and commercial (branded) options as well, but I wanted something that will be resolved via my hosted service (and personal domain) and as cheap as possible. So, basically solution for a poor nerd :D</p>
-<p>Before jumped into this solution, I tried (deployed <span class="amp">&amp;</span> tested) few others myself, mainly <a href="https://github.com/kellegous/go">kellegous/go</a>, <a href="kutt.it">kutt.it</a> and <a href="https://github.com/adamyi/golinks">adamyi/golinks</a>. But, all of them “too featureful” for my needs. </p>
+<p>If I wanted a fantastic, personal url-shortener or “go link” server, there are many excellent solutions out there, which are not only free or open-source but full-fledged as well for personal or public usage. Instead, I wanted some “service” that would “resolve” my personal, short links. I have been using bit.ly for a long time for its customizable “short-half” part, but the problem with bit.ly is – for some God-forsaken reason – blocked by the Bangladeshi govt. So, I needed a replacement to be appropriately “glocal”.
+There are many free (unbranded) and commercial (branded) options as well, but I wanted something that would be resolved via my hosted service (and personal domain) and as cheap as possible. So, basically solution for a poor nerd :D</p>
+<p>Before jumped into this solution, I tried (deployed <span class="amp">&amp;</span> tested) few others myself, mainly <a href="https://github.com/kellegous/go">kellegous/go</a>, <a href="kutt.it">kutt.it</a> and <a href="https://github.com/adamyi/golinks">adamyi/golinks</a>. But, all of them “too featureful” for my needs.</p>
 <p><img alt="Simple, on-prem short-link server using Caddy webserver" class="img-fluid border rounded shadow" src="https://i.imgur.com/4nZbnUE.png"/></p>
 <p>What I wanted is to be able to:</p>
 <ul>
@@ -114,29 +114,27 @@ There are many free (unbranded) and commercial (branded) options as well, but I 
 <p>I believe <span class="caps">NGINX</span>, currently the most popular webserver, has some kind of similar mechanism as well. But, I’m not an expert, and once I was genuinely intimidated by its config file syntax. <span class="caps">YMMV</span>.</p>
 <h2 id="what-you-gonna-need">What you gonna need?<a class="headerlink text-decoration-none small pl-2" href="#what-you-gonna-need" title="Permanent link">¶</a></h2>
 <ul>
-<li>your own domain which will be the root of the shortlinks. While sub-domained <span class="caps">URL</span> like <code>go.yourname.com/*</code> is quite common, if you have some short domain, like you.co/*, only for this purpose, that’s fine as well.</li>
-<li>A webhost server or public-facing instance with its own, <strong>public</strong> IPv4 address.</li>
+<li>your own domain which will be the root of the shortlinks. While sub-domained <span class="caps">URL</span> like <code>go.company-name.com/*</code> is quite common, if you have some short domain, like you.co/*, only for this purpose, that’s fine as well.</li>
+<li>A web-host server or public-facing instance with its own, <strong>public IPv4 address</strong>.</li>
 <li>working knowledge of Linux</li>
 </ul>
 <h2 id="step-1-point-your-subdomain-to-the-right-place">Step-1: Point your subdomain to the right place<a class="headerlink text-decoration-none small pl-2" href="#step-1-point-your-subdomain-to-the-right-place" title="Permanent link">¶</a></h2>
 <ul>
-<li>Find out what’s the <strong>puplic IPv4 address</strong> of your instance that’ll act as the webserver. It’s usually on the cloud management dashboard.<ul>
+<li>Find out what’s the <strong>puplic IPv4 address</strong> of your instance that’ll act as the webserver. It’s usually on the cloud management dashboard.</li>
 <li>make sure that, regardless of your cloud architecture (e.g. <span class="caps">VPC</span>, subnet, firewall etc.), the <span class="caps">SSL</span> port (<code>:443</code>) of the instance is reachable from the public internet.</li>
+<li>now go to your domain name registrar (or, <span class="caps">DNS</span> management provider which in my case is Cloudflare). There, you need to point shortlink subdomain (<code>go.</code>)to the webserver’s <span class="caps">I.P.</span> address. In <span class="caps">DNS</span> terms, you’ll be creating a <span class="caps">CNAME</span> entry on the domain’s nameserver table.</li>
 </ul>
-</li>
-<li>now go to your domain name registrar (or, <span class="caps">DNS</span> management provider which in my case is Cloudflare). There, you need to point shortlink subdomain (<code>go.</code>)to the webserver’s <span class="caps">IP</span> address.</li>
-</ul>
-<p>Actually, you can do this step at the last. But for some reason, I prefer it to do first. Because sometimes, <a href="https://blog.cloudflare.com/never-deal-with-dns-propagation-again/"><span class="caps">DNS</span> propagation</a> takes some time. But, once my webservice is up and running, I like to see the result instantaneously. ;)</p>
-<h2 id="step-2-install-caddy-the-mighty-webserver">Step-2: Install Caddy, the mighty webserver<a class="headerlink text-decoration-none small pl-2" href="#step-2-install-caddy-the-mighty-webserver" title="Permanent link">¶</a></h2>
-<p>Depending on your host <span class="caps">OS</span> (mine is Ubuntu 20.04 <span class="caps">LTS</span>), you need to install the <code>Caddy</code> webserver. While there are some hacky solutions to run, I think running Caddy as a background server is the simplest to manage.
-In fact, the documentation of Caddy is excellent, I’d better leave that part to you. </p>
-<p>After running with the default config(<code>Caddyfile</code>) which is in Ubuntu’s case located as <code>/etc/caddy/Caddyfile</code>, it should have a status somewhat like the below image. Please note that, in many cases, if running without <code>sudo</code> Caddy cannot attach itself with the <span class="caps">SSL</span> port (<code>:443</code>) which is necessary for serving <code>https://</code>.  So, check for that error message in the “status” log.</p>
+<p>You can do this step as the last one. But for some reason, I prefer it to do first. Because sometimes, <a href="https://blog.cloudflare.com/never-deal-with-dns-propagation-again/"><span class="caps">DNS</span> propagation</a> takes some time. But, once my web service is up and running, I like to see the result instantaneously. ;)</p>
+<h2 id="step-2-install-caddy-a-mighty-webserver">Step-2: Install Caddy, a mighty webserver<a class="headerlink text-decoration-none small pl-2" href="#step-2-install-caddy-a-mighty-webserver" title="Permanent link">¶</a></h2>
+<p>Depending on your host <span class="caps">OS</span> (Ubuntu 20.04 <span class="caps">LTS</span> in my case), you need to <a href="https://caddyserver.com/docs/install">install the <code>Caddy</code> webserver</a>. While there are some hacky solutions to run, I think running <code>Caddy</code> as a background service is the simplest to manage.
+In fact, the documentation of Caddy is excellent, so I’d better leave that part to you.</p>
+<p>After running with the default config(<code>Caddyfile</code>), (in Ubuntu’s case, located as <code>/etc/caddy/Caddyfile</code>), it should show a status somewhat like the below image. Please note that, in many cases, if running without <code>sudo</code>, Caddy cannot attach itself with the <span class="caps">SSL</span> port (<code>:443</code>), which is necessary for serving <code>https://</code>.  So, check for that error message in the “status” log.</p>
 <p><img alt="Caddy service on Ubuntu" class="img-fluid border rounded shadow" src="https://i.imgur.com/cfS5nvZ.png?1"/></p>
-<p><em><strong><span class="caps">P.S.</span></strong> By the way, want your console and command prompt to look 🚀 like mine? Here’s the guide: <a href="https://blog.kmonsoor.com/pimp-up-my-terminal/">How do I pimp up my terminal on Linux</a></em></p>
+<p><em><strong><span class="caps">PS</span>:</strong> By the way, want your console and command prompt to look 🚀 like mine? Here’s the guide: <a href="https://blog.kmonsoor.com/pimp-up-my-terminal/">How do I pimp up my terminal on Linux</a></em></p>
 <h2 id="step-3-tell-caddy-your-short-links-to-redirect">Step-3: Tell Caddy your short-links to redirect<a class="headerlink text-decoration-none small pl-2" href="#step-3-tell-caddy-your-short-links-to-redirect" title="Permanent link">¶</a></h2>
 <p>Now, it’s time to configure Caddy to actually do the job.</p>
-<p>Caddy has its native <code>redir</code> <span class="dquo">“</span>directive” to redirect incoming web-request from one to another. While the <code>map</code> directive is relatively new, it makes the config file i.e. Caddyfile look elegant in case you have (or, will have in the long run) a long list of short-links.</p>
-<p>Here’s mine which is working …  </p>
+<p>Caddy has its native <code>redir</code> <span class="dquo">“</span>directive” to redirect incoming web-request from one to another. While the <code>map</code> directive is relatively new, it makes the config file, i.e., Caddyfile, look elegant in case you have (or will have in the long run) a long list of short-links.</p>
+<p>Here’s mine, which is working nicely …  </p>
 <div class="highlight pygments-style-monokai rounded shadow-sm mb-3"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span># /etc/caddy/Caddyfile
 <span class="linenos" data-linenos=" 2 "></span>
 <span class="linenos" data-linenos=" 3 "></span>go.kmonsoor.com {   # replace it your web-url root
@@ -164,10 +162,13 @@ In fact, the documentation of Caddy is excellent, I’d better leave that part t
 <span class="linenos" data-linenos="25 "></span>}
 </code></pre></div>
 <p>Note: Don’t forget to restart the <code>caddy</code> service to let the new config to take effect.</p>
-<h2 id="step-4-profit">Step-4: Profit !<a class="headerlink text-decoration-none small pl-2" href="#step-4-profit" title="Permanent link">¶</a></h2>
+<h2 id="step-4-profit">Step-4: Profit<a class="headerlink text-decoration-none small pl-2" href="#step-4-profit" title="Permanent link">¶</a></h2>
 <p>Yeah, that’s it. Now, add some own personal stuff with some cool short-links, and proudly share with the world.</p>
 <h2 id="whats-next">What’s next ?<a class="headerlink text-decoration-none small pl-2" href="#whats-next" title="Permanent link">¶</a></h2>
 <p>I’m thinking that given the very low workload my shortlink resolver needs — unless I’m becoming an overnight internet sensation — using a server instance only for this purpose is overkill. My next goal is to have the same service using some “serverless” function or using the “<a href="https://developers.cloudflare.com/workers/examples/redirect">worker on the edge</a>” thing from Cloudflare. Let’s see ;)</p>
+<p><strong>Update</strong> Now, actually done it. Here is the link: <a href="https://blog.kmonsoor.com/golink-server-using-cloudflare-worker-kv/">Free short-link server “on edge” using Cloudflare Worker <span class="caps">K.V.</span></a></p>
+<hr/>
+<p>If you find this post helpful, you can show your support <a href="https://www.patreon.com/kmonsoor">through Patreon</a> or by <a href="https://ko-fi.com/kmonsoor">buying me a coffee</a>. <em>Thanks!</em></p>
 <h3 class="mt-3">Related content</h3>
 <div class="list-group bg-light text-dark">
 <a class="list-group-item list-group-item-action" href="https://blog.kmonsoor.com/golink-server-using-cloudflare-worker-kv/">
@@ -177,7 +178,7 @@ In fact, the documentation of Caddy is excellent, I’d better leave that part t
                             2021
                         </abbr>
 </div>
-<small>Among quite a few ways to implement a go-link server (i.e. url-forwarder, short-url server etc.), here I’m going to show you how to use free-tier Cloudflare Worker (&amp; KV) to create an in-house, on-edge, no-webserver go-link server.</small>
+<small>Among quite a few ways to implement a go-link server (i.e., url-forwarder, short-url server, etc.), I will show how to use free-tier Cloudflare Worker (&amp; KV) to create an in-house, on-edge, no-webserver go-link server.</small>
 </a>
 </div>
 </div>
