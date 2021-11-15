@@ -1,7 +1,7 @@
 ---
-Title: How do I Pimp up My Terminal on Linux
+Title: Pimping up My Linux Terminal
 Date: 2021-03-31
-Tags: computing, Linux, Ubuntu, terminal, CLI, Zsh, "Oh My Zsh", shell
+Tags: Linux, Ubuntu, terminal, CLI, Zsh, "Oh My Zsh", shell, powerlevel10k
 Slug: pimp-up-my-terminal
 Status: Published
 Summary: How do I pimp up my Linux terminal? A quick trip through Zsh, Oh-my-zsh, and other power tools to make the command-line-based workflow smooth and cool.
@@ -12,21 +12,21 @@ However, if someone else finds it useful, that'd be some cherries on top.
 
 This command prompt in the below image is the end goal.
 
-![The end goal of this post](https://i.imgur.com/YqnBifw.png)
+![The end goal of this post](https://i.imgur.com/oZahIog.png)
 
-Assuming I'm on a standard Linux machine with Ubuntu and I have CLI access. For other Linux distros or *MacOS*, some commands might be slightly different.
+Assuming, I'm on a standard pc/server with Ubuntu Linux and I have CLI access with `sudo`. For other Linux distros or *MacOS*, some commands might be slightly different.
 
 Step-1: Confirm that Zsh is up-to-date
 --------------------------------------
-While on some Linux systems, Zsh is present by default, on some it's not the case. So, let's make sure about it.
+While on most of the Linux systems Zsh is present by default, on others that's not the case. So, let's make sure about it.
 
-```
+```shell-session
 $ sudo apt install zsh
 ```
 
-Confirm the version. Oh-my-zsh recommends Zsh to be `5.0.8` or higher.
+Confirm the version. `Oh-my-zsh` recommends Zsh to be `5.0.8` or higher.
 
-```
+```shell-session
 $ zsh --version
 zsh 5.8 (x86_64-ubuntu-linux-gnu)
 ```
@@ -39,7 +39,7 @@ Step-2: Install Oh-my-zsh, the fun "configuration" framework
 ------------------------------------------------------------
 Install directly from the source.
 
-```
+```shell-session
 $ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
@@ -59,7 +59,7 @@ I love the powerful Zsh theme `powerlevel10k`. More on [why this theme](https://
 
 Let's install it on top of `oh-my-zsh`.
 
-```
+```shell-session
 $ git clone --depth=1 \
   https://github.com/romkatv/powerlevel10k.git \
   ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
@@ -73,7 +73,7 @@ Step-4: Make sure the prompt looks like as you want
 ---------------------------------------------------
 In this step, I'm gonna bring in my already open-sourced Zsh config file aka `.zshrc`. 
 
-```
+```shell-session
 # deleting the current one & get my personal one from GitHub
 $ rm .zshrc
 $
@@ -87,7 +87,7 @@ Otherwise, once the `powerlevel10k` theme will run for the first time by Zsh, a 
 
 Now is the time to enable the changes by restarting Zsh and enjoy the new config and the powerful prompt.
 
-```
+```shell-session
 $ exec zsh
 ```
 
@@ -96,7 +96,7 @@ Optional
 --------
 Also, I usually install this very useful, but external plugin `fast-syntax-highlighting` for oh-my-zsh.
 
-```
+```shell-session
 $ git clone https://github.com/zdharma/fast-syntax-highlighting.git \
   ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/fast-syntax-highlighting
 ```
