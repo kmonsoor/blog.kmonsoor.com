@@ -4,6 +4,7 @@ Date: 2017-12-11
 Tags: health, daily-life, common-cold, virus, antibiotic, fever
 Slug: what-happens-when-you-catch-cold
 Status: Published
+Category: Others
 Summary: What happens when you catch cold ? Learn the amazing mechanisms in-depth, human body goes through to fight it off and win. 
 ---
 
