@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>I think ... - shell</title><link href="https://blog.kmonsoor.com/" rel="alternate"></link><link href="https://blog.kmonsoor.com/tag/shell/feed/atom/index.html" rel="self"></link><id>https://blog.kmonsoor.com/</id><updated>2021-03-31T00:00:00+06:00</updated><entry><title>How do I Pimp up My Terminal on Linux</title><link href="https://blog.kmonsoor.com/pimp-up-my-terminal/" rel="alternate"></link><published>2021-03-31T00:00:00+06:00</published><updated>2021-03-31T00:00:00+06:00</updated><author><name>Khaled Monsoor</name></author><id>tag:blog.kmonsoor.com,2021-03-31:/pimp-up-my-terminal/</id><summary type="html">&lt;p&gt;How do I pimp up my Linux terminal? A quick trip through Zsh, Oh-my-zsh, and other power tools to make the command-line-based workflow smooth and&amp;nbsp;cool.&lt;/p&gt;</summary><content type="html">&lt;p&gt;The purpose of this post is to be my quick, copy-paste source of the commands that I use to set up my terminal on a new *nix system.
+<feed xmlns="http://www.w3.org/2005/Atom"><title>I think ... - shell</title><link href="https://blog.kmonsoor.com/" rel="alternate"></link><link href="https://blog.kmonsoor.com/tag/shell/feed/atom/index.html" rel="self"></link><id>https://blog.kmonsoor.com/</id><updated>2021-03-31T00:00:00+06:00</updated><entry><title>Pimping up My Linux Terminal</title><link href="https://blog.kmonsoor.com/pimp-up-my-terminal/" rel="alternate"></link><published>2021-03-31T00:00:00+06:00</published><updated>2021-03-31T00:00:00+06:00</updated><author><name>Khaled Monsoor</name></author><id>tag:blog.kmonsoor.com,2021-03-31:/pimp-up-my-terminal/</id><summary type="html">&lt;p&gt;How do I pimp up my Linux terminal? A quick trip through Zsh, Oh-my-zsh, and other power tools to make the command-line-based workflow smooth and&amp;nbsp;cool.&lt;/p&gt;</summary><content type="html">&lt;p&gt;The purpose of this post is to be my quick, copy-paste source of the commands that I use to set up my terminal on a new *nix system.
 However, if someone else finds it useful, that&amp;rsquo;d be some cherries on&amp;nbsp;top.&lt;/p&gt;
 &lt;p&gt;This command prompt in the below image is the end&amp;nbsp;goal.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="The end goal of this post" src="https://i.imgur.com/YqnBifw.png"&gt;&lt;/p&gt;
-&lt;p&gt;Assuming I&amp;rsquo;m on a standard Linux machine with Ubuntu and I have &lt;span class="caps"&gt;CLI&lt;/span&gt; access. For other Linux distros or &lt;em&gt;MacOS&lt;/em&gt;, some commands might be slightly&amp;nbsp;different.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="The end goal of this post" src="https://i.imgur.com/oZahIog.png"&gt;&lt;/p&gt;
+&lt;p&gt;Assuming, I&amp;rsquo;m on a standard pc/server with Ubuntu Linux and I have &lt;span class="caps"&gt;CLI&lt;/span&gt; access with &lt;code&gt;sudo&lt;/code&gt;. For other Linux distros or &lt;em&gt;MacOS&lt;/em&gt;, some commands might be slightly&amp;nbsp;different.&lt;/p&gt;
 &lt;h2 id="step-1-confirm-that-zsh-is-up-to-date"&gt;Step-1: Confirm that Zsh is up-to-date&lt;a class="headerlink" href="#step-1-confirm-that-zsh-is-up-to-date" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;While on some Linux systems, Zsh is present by default, on some it&amp;rsquo;s not the case. So, let&amp;rsquo;s make sure about&amp;nbsp;it.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="linenos" data-linenos="1 "&gt;&lt;/span&gt;$ sudo apt install zsh
+&lt;p&gt;While on most of the Linux systems Zsh is present by default, on others that&amp;rsquo;s not the case. So, let&amp;rsquo;s make sure about&amp;nbsp;it.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="linenos" data-linenos="1 "&gt;&lt;/span&gt;&lt;span class="gp"&gt;$ &lt;/span&gt;sudo apt install zsh
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Confirm the version. Oh-my-zsh recommends Zsh to be &lt;code&gt;5.0.8&lt;/code&gt; or&amp;nbsp;higher.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="linenos" data-linenos="1 "&gt;&lt;/span&gt;$ zsh --version
-&lt;span class="linenos" data-linenos="2 "&gt;&lt;/span&gt;zsh 5.8 (x86_64-ubuntu-linux-gnu)
+&lt;p&gt;Confirm the version. &lt;code&gt;Oh-my-zsh&lt;/code&gt; recommends Zsh to be &lt;code&gt;5.0.8&lt;/code&gt; or&amp;nbsp;higher.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="linenos" data-linenos="1 "&gt;&lt;/span&gt;&lt;span class="gp"&gt;$ &lt;/span&gt;zsh --version
+&lt;span class="linenos" data-linenos="2 "&gt;&lt;/span&gt;&lt;span class="go"&gt;zsh 5.8 (x86_64-ubuntu-linux-gnu)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Also, you gotta make sure that &lt;code&gt;git&lt;/code&gt; (recommended v2.4.11 or higher) is also installed on the&amp;nbsp;system.&lt;/p&gt;
 &lt;h2 id="step-2-install-oh-my-zsh-the-fun-configuration-framework"&gt;Step-2: Install Oh-my-zsh, the fun &amp;ldquo;configuration&amp;rdquo; framework&lt;a class="headerlink" href="#step-2-install-oh-my-zsh-the-fun-configuration-framework" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Install directly from the&amp;nbsp;source.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="linenos" data-linenos="1 "&gt;&lt;/span&gt;$ sh -c &amp;quot;$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&amp;quot;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="linenos" data-linenos="1 "&gt;&lt;/span&gt;&lt;span class="gp"&gt;$ &lt;/span&gt;sh -c &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh&lt;span class="k"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;In the last step of this installation, it will ask to set Zsh as &lt;span class="caps"&gt;THE&lt;/span&gt; shell. Go&amp;nbsp;ahead.&lt;/p&gt;
 &lt;p&gt;Now we have the default prompt from &lt;code&gt;Oh-my-zsh&lt;/code&gt;. &lt;/p&gt;
@@ -24,26 +24,26 @@ However, if someone else finds it useful, that&amp;rsquo;d be some cherries on&a
 &lt;h2 id="step-3-install-powerlevel10k-a-powerful-prompt-theme"&gt;Step-3: Install &lt;code&gt;powerlevel10k&lt;/code&gt;, a powerful prompt theme&lt;a class="headerlink" href="#step-3-install-powerlevel10k-a-powerful-prompt-theme" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;I love the powerful Zsh theme &lt;code&gt;powerlevel10k&lt;/code&gt;. More on &lt;a href="https://github.com/romkatv/powerlevel10k#features"&gt;why this theme&lt;/a&gt; is&amp;nbsp;awesome.&lt;/p&gt;
 &lt;p&gt;Let&amp;rsquo;s install it on top of &lt;code&gt;oh-my-zsh&lt;/code&gt;.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="linenos" data-linenos="1 "&gt;&lt;/span&gt;$ git clone --depth=1 \
-&lt;span class="linenos" data-linenos="2 "&gt;&lt;/span&gt;  https://github.com/romkatv/powerlevel10k.git \
-&lt;span class="linenos" data-linenos="3 "&gt;&lt;/span&gt;  ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="linenos" data-linenos="1 "&gt;&lt;/span&gt;&lt;span class="gp"&gt;$ &lt;/span&gt;git clone --depth&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+&lt;span class="linenos" data-linenos="2 "&gt;&lt;/span&gt;  https://github.com/romkatv/powerlevel10k.git &lt;span class="se"&gt;\&lt;/span&gt;
+&lt;span class="linenos" data-linenos="3 "&gt;&lt;/span&gt;&lt;span class="gp"&gt;  $&lt;/span&gt;&lt;span class="o"&gt;{&lt;/span&gt;ZSH_CUSTOM:-&lt;span class="nv"&gt;$HOME&lt;/span&gt;/.oh-my-zsh/custom&lt;span class="o"&gt;}&lt;/span&gt;/themes/powerlevel10k
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Now, gotta set &lt;code&gt;ZSH_THEME="powerlevel10k/powerlevel10k"&lt;/code&gt; in &lt;code&gt;~/.zshrc&lt;/code&gt; by adding that manually in the&amp;nbsp;file.&lt;/p&gt;
 &lt;h2 id="step-4-make-sure-the-prompt-looks-like-as-you-want"&gt;Step-4: Make sure the prompt looks like as you want&lt;a class="headerlink" href="#step-4-make-sure-the-prompt-looks-like-as-you-want" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;In this step, I&amp;rsquo;m gonna bring in my already open-sourced Zsh config file aka &lt;code&gt;.zshrc&lt;/code&gt;. &lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="linenos" data-linenos="1 "&gt;&lt;/span&gt;# deleting the current one &amp;amp; get my personal one from GitHub
-&lt;span class="linenos" data-linenos="2 "&gt;&lt;/span&gt;$ rm .zshrc
-&lt;span class="linenos" data-linenos="3 "&gt;&lt;/span&gt;$
-&lt;span class="linenos" data-linenos="4 "&gt;&lt;/span&gt;$ wget https://raw.githubusercontent.com/kmonsoor/dot-files/master/.zshrc
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="linenos" data-linenos="1 "&gt;&lt;/span&gt;&lt;span class="gp"&gt;# &lt;/span&gt;deleting the current one &lt;span class="p"&gt;&amp;amp;&lt;/span&gt; get my personal one from GitHub
+&lt;span class="linenos" data-linenos="2 "&gt;&lt;/span&gt;&lt;span class="gp"&gt;$ &lt;/span&gt;rm .zshrc
+&lt;span class="linenos" data-linenos="3 "&gt;&lt;/span&gt;&lt;span class="gp"&gt;$&lt;/span&gt;
+&lt;span class="linenos" data-linenos="4 "&gt;&lt;/span&gt;&lt;span class="gp"&gt;$ &lt;/span&gt;wget https://raw.githubusercontent.com/kmonsoor/dot-files/master/.zshrc
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;I kept the powerlevel10k configs as comments so that Zsh doesn&amp;rsquo;t complain if I use the config file early.
 Have to set &lt;code&gt;ZSH_THEME="powerlevel10k/powerlevel10k"&lt;/code&gt; in the &lt;code&gt;~/.zshrc&lt;/code&gt; as&amp;nbsp;well.&lt;/p&gt;
 &lt;p&gt;Otherwise, once the &lt;code&gt;powerlevel10k&lt;/code&gt; theme will run for the first time by Zsh, a very friendly step-by-step prompt will run you through towards a desirable prompt for you. Also, whenever you want, you can invoke the config-wizard by executing &lt;code&gt;p10k configure&lt;/code&gt; on the&amp;nbsp;shell.&lt;/p&gt;
 &lt;p&gt;Now is the time to enable the changes by restarting Zsh and enjoy the new config and the powerful&amp;nbsp;prompt.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="linenos" data-linenos="1 "&gt;&lt;/span&gt;$ exec zsh
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="linenos" data-linenos="1 "&gt;&lt;/span&gt;&lt;span class="gp"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;exec&lt;/span&gt; zsh
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2 id="optional"&gt;Optional&lt;a class="headerlink" href="#optional" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Also, I usually install this very useful, but external plugin &lt;code&gt;fast-syntax-highlighting&lt;/code&gt; for&amp;nbsp;oh-my-zsh.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="linenos" data-linenos="1 "&gt;&lt;/span&gt;$ git clone https://github.com/zdharma/fast-syntax-highlighting.git \
-&lt;span class="linenos" data-linenos="2 "&gt;&lt;/span&gt;  ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/fast-syntax-highlighting
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="Tech"></category><category term="computing"></category><category term="Linux"></category><category term="Ubuntu"></category><category term="terminal"></category><category term="CLI"></category><category term="Zsh"></category><category term='"Oh My Zsh"'></category><category term="shell"></category></entry></feed>
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="linenos" data-linenos="1 "&gt;&lt;/span&gt;&lt;span class="gp"&gt;$ &lt;/span&gt;git clone https://github.com/zdharma/fast-syntax-highlighting.git &lt;span class="se"&gt;\&lt;/span&gt;
+&lt;span class="linenos" data-linenos="2 "&gt;&lt;/span&gt;&lt;span class="gp"&gt;  $&lt;/span&gt;&lt;span class="o"&gt;{&lt;/span&gt;ZSH_CUSTOM:-&lt;span class="nv"&gt;$HOME&lt;/span&gt;/.oh-my-zsh/custom&lt;span class="o"&gt;}&lt;/span&gt;/plugins/fast-syntax-highlighting
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="Tech"></category><category term="Linux"></category><category term="Ubuntu"></category><category term="terminal"></category><category term="CLI"></category><category term="Zsh"></category><category term='"Oh My Zsh"'></category><category term="shell"></category><category term="powerlevel10k"></category></entry></feed>

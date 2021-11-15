@@ -3,7 +3,7 @@
 <meta charset="utf-8"/>
 <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>    How do I Pimp up My Terminal on Linux
+<title>    Pimping up My Linux Terminal
  | I think ...</title>
 <meta content="Khaled Monsoor" name="author"/>
 <meta content="Pelican v4.7.1" name="generator"/>
@@ -35,8 +35,8 @@
 <link href="https://blog.kmonsoor.com/feed/index.html" rel="alternate" title="I think ... - Latest posts - RSS Feed" type="application/rss+xml"/>
 <link href="https://blog.kmonsoor.com/category/tech/feed/atom/index.html" rel="alternate" title="I think ... - Category: Tech - Atom Feed" type="application/atom+xml"/>
 <link href="https://blog.kmonsoor.com/category/tech/feed/index.html" rel="alternate" title="I think ... - Category: Tech - RSS Feed" type="application/rss+xml"/>
-<meta content='computing, Linux, Ubuntu, terminal, CLI, Zsh, "Oh My Zsh", shell' name="keywords"/>
-<link href="https://blog.kmonsoor.com/pimp-up-my-terminal/" rel="canonical"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "I think ...", "item": "https://blog.kmonsoor.com"}, {"@type": "ListItem", "position": 2, "name": "Pimp up my terminal", "item": "https://blog.kmonsoor.com/pimp-up-my-terminal"}, {"@type": "ListItem", "position": 3, "name": "Index", "item": "https://blog.kmonsoor.com/pimp-up-my-terminal/index.html"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "author": {"@type": "Person", "name": "Khaled Monsoor"}, "publisher": {"@type": "Organization", "name": "I think ..."}, "headline": "How do I Pimp up My Terminal on&nbsp;Linux", "about": "Tech", "datePublished": "2021-03-31 00:00"}</script></head>
+<meta content='Linux, Ubuntu, terminal, CLI, Zsh, "Oh My Zsh", shell, powerlevel10k' name="keywords"/>
+<link href="https://blog.kmonsoor.com/pimp-up-my-terminal/" rel="canonical"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "I think ...", "item": "https://blog.kmonsoor.com"}, {"@type": "ListItem", "position": 2, "name": "Pimp up my terminal", "item": "https://blog.kmonsoor.com/pimp-up-my-terminal"}, {"@type": "ListItem", "position": 3, "name": "Index", "item": "https://blog.kmonsoor.com/pimp-up-my-terminal/index.html"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "author": {"@type": "Person", "name": "Khaled Monsoor"}, "publisher": {"@type": "Organization", "name": "I think ..."}, "headline": "Pimping up My Linux&nbsp;Terminal", "about": "Tech", "datePublished": "2021-03-31 00:00"}</script></head>
 <body class="bg-transparent pt-4">
 <div class="container">
 <a class="avatar-container float-left mx-4" href="https://blog.kmonsoor.com">
@@ -91,7 +91,7 @@
 <div class="row">
 <div class="col-md-9">
 <h1>
-<a href="https://blog.kmonsoor.com/pimp-up-my-terminal/" rel="bookmark" title="Permalink to How do I Pimp up My Terminal on Linux">How do I Pimp up My Terminal on Linux</a>
+<a href="https://blog.kmonsoor.com/pimp-up-my-terminal/" rel="bookmark" title="Permalink to Pimping up My Linux Terminal">Pimping up My Linux Terminal</a>
 </h1>
 </div>
 </div>
@@ -100,20 +100,20 @@
 <p>The purpose of this post is to be my quick, copy-paste source of the commands that I use to set up my terminal on a new *nix system.
 However, if someone else finds it useful, that’d be some cherries on top.</p>
 <p>This command prompt in the below image is the end goal.</p>
-<p><img alt="The end goal of this post" class="img-fluid border rounded shadow" src="https://i.imgur.com/YqnBifw.png"/></p>
-<p>Assuming I’m on a standard Linux machine with Ubuntu and I have <span class="caps">CLI</span> access. For other Linux distros or <em>MacOS</em>, some commands might be slightly different.</p>
+<p><img alt="The end goal of this post" class="img-fluid border rounded shadow" src="https://i.imgur.com/oZahIog.png"/></p>
+<p>Assuming, I’m on a standard pc/server with Ubuntu Linux and I have <span class="caps">CLI</span> access with <code>sudo</code>. For other Linux distros or <em>MacOS</em>, some commands might be slightly different.</p>
 <h2 id="step-1-confirm-that-zsh-is-up-to-date">Step-1: Confirm that Zsh is up-to-date<a class="headerlink text-decoration-none small pl-2" href="#step-1-confirm-that-zsh-is-up-to-date" title="Permanent link">¶</a></h2>
-<p>While on some Linux systems, Zsh is present by default, on some it’s not the case. So, let’s make sure about it.</p>
-<div class="highlight pygments-style-monokai rounded shadow-sm mb-3"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>$ sudo apt install zsh
+<p>While on most of the Linux systems Zsh is present by default, on others that’s not the case. So, let’s make sure about it.</p>
+<div class="highlight pygments-style-monokai rounded shadow-sm mb-3"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="gp">$ </span>sudo apt install zsh
 </code></pre></div>
-<p>Confirm the version. Oh-my-zsh recommends Zsh to be <code>5.0.8</code> or higher.</p>
-<div class="highlight pygments-style-monokai rounded shadow-sm mb-3"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>$ zsh --version
-<span class="linenos" data-linenos="2 "></span>zsh 5.8 (x86_64-ubuntu-linux-gnu)
+<p>Confirm the version. <code>Oh-my-zsh</code> recommends Zsh to be <code>5.0.8</code> or higher.</p>
+<div class="highlight pygments-style-monokai rounded shadow-sm mb-3"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="gp">$ </span>zsh --version
+<span class="linenos" data-linenos="2 "></span><span class="go">zsh 5.8 (x86_64-ubuntu-linux-gnu)</span>
 </code></pre></div>
 <p>Also, you gotta make sure that <code>git</code> (recommended v2.4.11 or higher) is also installed on the system.</p>
 <h2 id="step-2-install-oh-my-zsh-the-fun-configuration-framework">Step-2: Install Oh-my-zsh, the fun “configuration” framework<a class="headerlink text-decoration-none small pl-2" href="#step-2-install-oh-my-zsh-the-fun-configuration-framework" title="Permanent link">¶</a></h2>
 <p>Install directly from the source.</p>
-<div class="highlight pygments-style-monokai rounded shadow-sm mb-3"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>$ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+<div class="highlight pygments-style-monokai rounded shadow-sm mb-3"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="gp">$ </span>sh -c <span class="s2">"</span><span class="k">$(</span>curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh<span class="k">)</span><span class="s2">"</span>
 </code></pre></div>
 <p>In the last step of this installation, it will ask to set Zsh as <span class="caps">THE</span> shell. Go ahead.</p>
 <p>Now we have the default prompt from <code>Oh-my-zsh</code>. </p>
@@ -122,28 +122,28 @@ However, if someone else finds it useful, that’d be some cherries on top.</p>
 <h2 id="step-3-install-powerlevel10k-a-powerful-prompt-theme">Step-3: Install <code>powerlevel10k</code>, a powerful prompt theme<a class="headerlink text-decoration-none small pl-2" href="#step-3-install-powerlevel10k-a-powerful-prompt-theme" title="Permanent link">¶</a></h2>
 <p>I love the powerful Zsh theme <code>powerlevel10k</code>. More on <a href="https://github.com/romkatv/powerlevel10k#features">why this theme</a> is awesome.</p>
 <p>Let’s install it on top of <code>oh-my-zsh</code>.</p>
-<div class="highlight pygments-style-monokai rounded shadow-sm mb-3"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>$ git clone --depth=1 \
-<span class="linenos" data-linenos="2 "></span>  https://github.com/romkatv/powerlevel10k.git \
-<span class="linenos" data-linenos="3 "></span>  ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+<div class="highlight pygments-style-monokai rounded shadow-sm mb-3"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="gp">$ </span>git clone --depth<span class="o">=</span><span class="m">1</span> <span class="se">\</span>
+<span class="linenos" data-linenos="2 "></span>  https://github.com/romkatv/powerlevel10k.git <span class="se">\</span>
+<span class="linenos" data-linenos="3 "></span><span class="gp">  $</span><span class="o">{</span>ZSH_CUSTOM:-<span class="nv">$HOME</span>/.oh-my-zsh/custom<span class="o">}</span>/themes/powerlevel10k
 </code></pre></div>
 <p>Now, gotta set <code>ZSH_THEME="powerlevel10k/powerlevel10k"</code> in <code>~/.zshrc</code> by adding that manually in the file.</p>
 <h2 id="step-4-make-sure-the-prompt-looks-like-as-you-want">Step-4: Make sure the prompt looks like as you want<a class="headerlink text-decoration-none small pl-2" href="#step-4-make-sure-the-prompt-looks-like-as-you-want" title="Permanent link">¶</a></h2>
 <p>In this step, I’m gonna bring in my already open-sourced Zsh config file aka <code>.zshrc</code>. </p>
-<div class="highlight pygments-style-monokai rounded shadow-sm mb-3"><pre><span></span><code><span class="linenos" data-linenos="1 "></span># deleting the current one &amp; get my personal one from GitHub
-<span class="linenos" data-linenos="2 "></span>$ rm .zshrc
-<span class="linenos" data-linenos="3 "></span>$
-<span class="linenos" data-linenos="4 "></span>$ wget https://raw.githubusercontent.com/kmonsoor/dot-files/master/.zshrc
+<div class="highlight pygments-style-monokai rounded shadow-sm mb-3"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="gp"># </span>deleting the current one <span class="p">&amp;</span> get my personal one from GitHub
+<span class="linenos" data-linenos="2 "></span><span class="gp">$ </span>rm .zshrc
+<span class="linenos" data-linenos="3 "></span><span class="gp">$</span>
+<span class="linenos" data-linenos="4 "></span><span class="gp">$ </span>wget https://raw.githubusercontent.com/kmonsoor/dot-files/master/.zshrc
 </code></pre></div>
 <p>I kept the powerlevel10k configs as comments so that Zsh doesn’t complain if I use the config file early.
 Have to set <code>ZSH_THEME="powerlevel10k/powerlevel10k"</code> in the <code>~/.zshrc</code> as well.</p>
 <p>Otherwise, once the <code>powerlevel10k</code> theme will run for the first time by Zsh, a very friendly step-by-step prompt will run you through towards a desirable prompt for you. Also, whenever you want, you can invoke the config-wizard by executing <code>p10k configure</code> on the shell.</p>
 <p>Now is the time to enable the changes by restarting Zsh and enjoy the new config and the powerful prompt.</p>
-<div class="highlight pygments-style-monokai rounded shadow-sm mb-3"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>$ exec zsh
+<div class="highlight pygments-style-monokai rounded shadow-sm mb-3"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="gp">$ </span><span class="nb">exec</span> zsh
 </code></pre></div>
 <h2 id="optional">Optional<a class="headerlink text-decoration-none small pl-2" href="#optional" title="Permanent link">¶</a></h2>
 <p>Also, I usually install this very useful, but external plugin <code>fast-syntax-highlighting</code> for oh-my-zsh.</p>
-<div class="highlight pygments-style-monokai rounded shadow-sm mb-3"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>$ git clone https://github.com/zdharma/fast-syntax-highlighting.git \
-<span class="linenos" data-linenos="2 "></span>  ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/fast-syntax-highlighting
+<div class="highlight pygments-style-monokai rounded shadow-sm mb-3"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="gp">$ </span>git clone https://github.com/zdharma/fast-syntax-highlighting.git <span class="se">\</span>
+<span class="linenos" data-linenos="2 "></span><span class="gp">  $</span><span class="o">{</span>ZSH_CUSTOM:-<span class="nv">$HOME</span>/.oh-my-zsh/custom<span class="o">}</span>/plugins/fast-syntax-highlighting
 </code></pre></div>
 </div>
 <div class="col-md-3">
@@ -154,12 +154,12 @@ Have to set <code>ZSH_THEME="powerlevel10k/powerlevel10k"</code> in the <code>~/
 </li>
 <li class="list-group-item">
 <a class="badge badge-info" data-toggle="tooltip" href="https://blog.kmonsoor.com/category/tech/" rel="tag" title="26 articles in this category">Tech</a>
-<a class="badge badge-secondary" data-toggle="tooltip" href="/tag/computing/" title="5 articles with this tag">computing</a>
 <a class="badge badge-secondary" data-toggle="tooltip" href="/tag/linux/" title="5 articles with this tag">Linux</a>
 <a class="badge badge-secondary" data-toggle="tooltip" href="/tag/ubuntu/" title="4 articles with this tag">Ubuntu</a>
 <a class="badge badge-secondary" data-toggle="tooltip" href="/tag/zsh/" title="2 articles with this tag">Zsh</a>
 <a class="badge badge-secondary" data-toggle="tooltip" href="/tag/oh-my-zsh/" title="1 article with this tag">"Oh My Zsh"</a>
 <a class="badge badge-secondary" data-toggle="tooltip" href="/tag/cli/" title="1 article with this tag">CLI</a>
+<a class="badge badge-secondary" data-toggle="tooltip" href="/tag/powerlevel10k/" title="1 article with this tag">powerlevel10k</a>
 <a class="badge badge-secondary" data-toggle="tooltip" href="/tag/shell/" title="1 article with this tag">shell</a>
 <a class="badge badge-secondary" data-toggle="tooltip" href="/tag/terminal/" title="1 article with this tag">terminal</a>
 </li>
