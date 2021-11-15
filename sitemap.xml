@@ -5,28 +5,28 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://blog.kmonsoor.com/</loc>
-<lastmod>2021-11-15T00:28:55-00:00</lastmod>
+<lastmod>2021-11-15T00:46:59-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.4</priority>
 </url>
 
 <url>
 <loc>https://blog.kmonsoor.com/tags.html</loc>
-<lastmod>2021-11-15T00:28:55-00:00</lastmod>
+<lastmod>2021-11-15T00:46:59-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.4</priority>
 </url>
 
 <url>
 <loc>https://blog.kmonsoor.com/categories.html</loc>
-<lastmod>2021-11-15T00:28:55-00:00</lastmod>
+<lastmod>2021-11-15T00:46:59-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.4</priority>
 </url>
 
 <url>
 <loc>https://blog.kmonsoor.com/archives.html</loc>
-<lastmod>2021-11-15T00:28:55-00:00</lastmod>
+<lastmod>2021-11-15T00:46:59-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.4</priority>
 </url>
@@ -1671,6 +1671,20 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://blog.kmonsoor.com/tag/package/</loc>
+<lastmod>2011-02-17T00:00:00+06:02</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.4</priority>
+</url>
+
+<url>
+<loc>https://blog.kmonsoor.com/tag/apt/</loc>
+<lastmod>2011-02-17T00:00:00+06:02</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.4</priority>
+</url>
+
+<url>
+<loc>https://blog.kmonsoor.com/tag/rpm/</loc>
 <lastmod>2011-02-17T00:00:00+06:02</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.4</priority>

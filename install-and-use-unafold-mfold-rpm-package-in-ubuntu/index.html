@@ -3,7 +3,7 @@
 <meta charset="utf-8"/>
 <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>    How to install and use UNAFold or mfold rpm package in Ubuntu
+<title>    How to install and use `UNAFold` / `mfold` RPM package on Ubuntu
  | I think ...</title>
 <meta content="Khaled Monsoor" name="author"/>
 <meta content="Pelican v4.7.1" name="generator"/>
@@ -35,8 +35,8 @@
 <link href="https://blog.kmonsoor.com/feed/index.html" rel="alternate" title="I think ... - Latest posts - RSS Feed" type="application/rss+xml"/>
 <link href="https://blog.kmonsoor.com/category/tech/feed/atom/index.html" rel="alternate" title="I think ... - Category: Tech - Atom Feed" type="application/atom+xml"/>
 <link href="https://blog.kmonsoor.com/category/tech/feed/index.html" rel="alternate" title="I think ... - Category: Tech - RSS Feed" type="application/rss+xml"/>
-<meta content="bioinformatics, algorithm, ubuntu, package" name="keywords"/>
-<link href="https://blog.kmonsoor.com/install-and-use-unafold-mfold-rpm-package-in-ubuntu/" rel="canonical"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "I think ...", "item": "https://blog.kmonsoor.com"}, {"@type": "ListItem", "position": 2, "name": "Install and use unafold mfold rpm package in ubuntu", "item": "https://blog.kmonsoor.com/install-and-use-unafold-mfold-rpm-package-in-ubuntu"}, {"@type": "ListItem", "position": 3, "name": "Index", "item": "https://blog.kmonsoor.com/install-and-use-unafold-mfold-rpm-package-in-ubuntu/index.html"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "author": {"@type": "Person", "name": "Khaled Monsoor"}, "publisher": {"@type": "Organization", "name": "I think ..."}, "headline": "How to install and use UNAFold or mfold rpm package in&nbsp;Ubuntu", "about": "Tech", "datePublished": "2011-02-17 00:00"}</script></head>
+<meta content="bioinformatics, algorithm, ubuntu, package, APT, RPM" name="keywords"/>
+<link href="https://blog.kmonsoor.com/install-and-use-unafold-mfold-rpm-package-in-ubuntu/" rel="canonical"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "I think ...", "item": "https://blog.kmonsoor.com"}, {"@type": "ListItem", "position": 2, "name": "Install and use unafold mfold rpm package in ubuntu", "item": "https://blog.kmonsoor.com/install-and-use-unafold-mfold-rpm-package-in-ubuntu"}, {"@type": "ListItem", "position": 3, "name": "Index", "item": "https://blog.kmonsoor.com/install-and-use-unafold-mfold-rpm-package-in-ubuntu/index.html"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "author": {"@type": "Person", "name": "Khaled Monsoor"}, "publisher": {"@type": "Organization", "name": "I think ..."}, "headline": "How to install and use `UNAFold` / `mfold` <span class=\"caps\">RPM</span> package on&nbsp;Ubuntu", "about": "Tech", "datePublished": "2011-02-17 00:00"}</script></head>
 <body class="bg-transparent pt-4">
 <div class="container">
 <a class="avatar-container float-left mx-4" href="https://blog.kmonsoor.com">
@@ -91,39 +91,32 @@
 <div class="row">
 <div class="col-md-9">
 <h1>
-<a href="https://blog.kmonsoor.com/install-and-use-unafold-mfold-rpm-package-in-ubuntu/" rel="bookmark" title="Permalink to How to install and use UNAFold or mfold rpm package in Ubuntu">How to install and use UNAFold or mfold rpm package in Ubuntu</a>
+<a href="https://blog.kmonsoor.com/install-and-use-unafold-mfold-rpm-package-in-ubuntu/" rel="bookmark" title="Permalink to How to install and use `UNAFold` / `mfold` RPM package on Ubuntu">How to install and use `UNAFold` / `mfold` <span class="caps">RPM</span> package on Ubuntu</a>
 </h1>
 </div>
 </div>
 <div class="row">
 <div class="col-md-9" id="content" role="main">
-<p>[Please note that this post has been written quite a while ago. After that, it’s not been updated.]</p>
+<p>[Please note that this post has been written quite a while ago. After that, it hasn’t been updated much.]</p>
 <p>I failed to install UNAFold/mfold in Ubuntu 10.10 as the supplied binary package was in rpm (RedHat) format.</p>
 <p><code>Ubuntu 10.10</code> can’t use rpm files to install software directly.</p>
-<p>After doing some online resource, I found that it is possible to convert rpm files to deb(Debian) format by using another app, named <code>alien</code>.</p>
-<p>But <code>alien</code> isn’t installed by default. So I used the command,</p>
-<p>$sudo apt-get install alien</p>
-<p>then checked the installation by command:</p>
-<p>$alien</p>
+<p>After doing some digging, I found that it is possible to convert rpm files to deb(Debian) format by using another app, named <code>alien</code>.</p>
+<p>But <code>alien</code> isn’t installed on Ubuntu by default. So I used the command,</p>
+<div class="highlight pygments-style-monokai rounded shadow-sm mb-3"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="gp">$ </span>sudo apt-get install alien
+</code></pre></div>
+<p>then check the installation:</p>
+<div class="highlight pygments-style-monokai rounded shadow-sm mb-3"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="gp">$ </span>alien
+</code></pre></div>
 <p>if it goes okay, now to simply convert the UNAFold package:</p>
-<p>$sudo alien ~/Downloads/unafold-3.8-1.i386.rpm</p>
+<div class="highlight pygments-style-monokai rounded shadow-sm mb-3"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="gp">$</span>sudo alien ~/Downloads/unafold-3.8-1.i386.rpm
+</code></pre></div>
 <p>the converted one is named like <code>unafold_3.8-2_i386.deb</code></p>
 <p>Now use this new package for installation</p>
-<p>$sudo dpkg -i unafold_3.8-2_i386.deb</p>
+<div class="highlight pygments-style-monokai rounded shadow-sm mb-3"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="gp">$ </span>sudo dpkg -i unafold_3.8-2_i386.deb
+</code></pre></div>
 <p>after installation, you should be able to run the *.pl scripts with appropriate input, like:</p>
-<p>$perl /usr/bin/UNAFold.pl ~/s1.seq</p>
-<h3 class="mt-3">Related content</h3>
-<div class="list-group bg-light text-dark">
-<a class="list-group-item list-group-item-action" href="https://blog.kmonsoor.com/increase-virtual-disk-size-in-virtualbox-windows/">
-<div class="d-flex w-100 justify-content-between">
-<h5>Increase virtual-disk size in VirtualBox on Windows 7</h5>
-<abbr class="small published" title="2012-05-26T08:02:00+06:00">
-                            2012
-                        </abbr>
-</div>
-<small>Stuck with your small virtual disk partition for VirtualBox? I also stuck with same problem; researched many forums, and here is the gist. Find out how.</small>
-</a>
-</div>
+<div class="highlight pygments-style-monokai rounded shadow-sm mb-3"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="gp">$ </span>perl /usr/bin/UNAFold.pl  ~/s1.seq
+</code></pre></div>
 </div>
 <div class="col-md-3">
 <div class="card bg-light text-dark">
@@ -135,8 +128,10 @@
 <a class="badge badge-info" data-toggle="tooltip" href="https://blog.kmonsoor.com/category/tech/" rel="tag" title="26 articles in this category">Tech</a>
 <a class="badge badge-secondary" data-toggle="tooltip" href="/tag/ubuntu/" title="4 articles with this tag">Ubuntu</a>
 <a class="badge badge-secondary" data-toggle="tooltip" href="/tag/algorithm/" title="1 article with this tag">algorithm</a>
+<a class="badge badge-secondary" data-toggle="tooltip" href="/tag/apt/" title="1 article with this tag">APT</a>
 <a class="badge badge-secondary" data-toggle="tooltip" href="/tag/bioinformatics/" title="1 article with this tag">bioinformatics</a>
 <a class="badge badge-secondary" data-toggle="tooltip" href="/tag/package/" title="1 article with this tag">package</a>
+<a class="badge badge-secondary" data-toggle="tooltip" href="/tag/rpm/" title="1 article with this tag">RPM</a>
 </li>
 <li class="list-group-item">
 <p>Found a typo? Fix it now:</p>
