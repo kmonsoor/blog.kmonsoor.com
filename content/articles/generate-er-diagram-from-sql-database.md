@@ -1,56 +1,54 @@
 ---
 Title: Generate ER diagram from a SQL-based database
-Date: 2014-12-18
-Modified: 2016-02-07
-Category: Tech
-Tags: sql, db, dbms, diagram, ER-diagram, graphviz, java, postgresql, programming, rdbms, schema, schemaspy, visualization
 Slug: generate-er-diagram-from-sql-database
 Status: published
+Category: Tech
+Date: 2014-12-18
+Updated: 2021-11-11
+Image: https://i.imgur.com/6nv64Vd.png
+Tags: database, sql, dbms, ER-diagram, graphviz, java, postgresql, programming, RDBMS, schema, schemaspy, visualization
 Summary: When you are "study"-ing someone else's database with 300+ tables. It's like spaghetti, but not enjoyable. Rather, horrific.
 ---
 
-When you are "study"-ing (for whatever reason) someone else's database, and the database has more than 20 tables, you are in trouble to understand what goes where.
+When you are "study"-ing (for whatever reason) someone else's database, and the database has more than 20 tables, you might be in trouble to understand what's going where.
 
-Now, imagine a database with 300+ tables. It's like spaghetti, but not enjoyable. Rather, horrific.
+Now, imagine a database with 300+ tables. It's like spaghetti, just not as enjoyable.
 
-I faced a similar challenge recently with a database of 250+ tables. Yes, i felt like in a deep sh\*t. And, started looking for tools which can describe the tables in at least decent ER-diagram. If anything more, better. And, obviously free as my company is not paying.
+I faced a similar challenge recently with a database of 250+ tables. Yes, I felt like in a deep sh\*t. And, I started looking for tools that can describe the tables, or at least a decent ER diagram. If anything more, better. And, preferably free.
 
-Then, I found [SchemaSpy](http://schemaspy.sourceforge.net/), originally authored by [John Currier](https://sites.google.com/site/johncurrier/). It generate a complete in-depth HTML-based description (of course, including clickable ER-diagram) of the database, which you can then browse with your browser. This post is on it's basic usage.
+Then, I found [SchemaSpy](http://schemaspy.sourceforge.net/), originally authored by [John Currier](https://sites.google.com/site/johncurrier/). It generates a complete in-depth HTML-based description (of course, including clickable ER-diagram) of the database, which you can then browse with your browser. This post is about its primary usage.
 
 The output will be kind of like this:
 ![schemapy output sample](https://i.imgur.com/K1yYBID.png)
 
-It is based on Java technologies, but can work its magic on most of the major database technologies. But, you would need a appropriate JDBC connector for that database.
+It is based on Java, but it can work its magic on most of the major database products. However, it would require an appropriate JDBC connector for that database.
 
 Quote from the author:
 
-> SchemaSpy uses JDBC's database metadata extraction services to gather the majority of its information, but has to make vendor-specific SQL queries to gather some information such as the SQL associated with a view and the details of check constraints.
+> `SchemaSpy` uses JDBC's database metadata extraction services to gather the majority of its information but has to make vendor-specific SQL queries to gather some information such as the SQL associated with a view and the details of check constraints.
+  
+ In this post, as an example, I have shown how to use it with PostgreSQL. But, it's not the only one that's supported. You can use it with any proper RDBMS system as long as it has a JDBC-connector.
+ Now, to use it, you need to get these stuffs.
 
-
- In this post, as example, i have shown to use it with PostgreSQL. But, it's not the only one supported. You can use ot with any proper RDBMS system as long as it has a JDBC-connector.
- Now, to use it, you need these staffs.
-
- *  **First of all**, your system should have **Java runtime** properly installed. [Download from here.](https://java.com/en/download/manual.jsp)
- *  **SchemaSpy, which is a .jar file**. [Get it here](https://sourceforge.net/projects/schemaspy/files/).
+* **First of all**, your system should have **Java runtime** properly installed. [Download from here.](https://adoptopenjdk.net/)
+* **SchemaSpy, which is a .jar file**. [Get it here](https://sourceforge.net/projects/schemaspy/files/).
     At the time of writing, it was version 5.0.0.
- *  **JDBC connector to PostgreSQL**. Make sure to match your PostgreSQL version. You can [download it from here](https://jdbc.postgresql.org/download.html).  
+* **JDBC connector to PostgreSQL**. Make sure to match your PostgreSQL version. You can [download it from here](https://jdbc.postgresql.org/download.html).  
     You can check your PostgreSQL version by executing: `SELECT version();` query on ***psql*** prompt.
- *  Also, SchemaSpy depends on **GarphViz** to generate the ER-diagrams, so you need to be installed it on your system. Get it from here.(http://www.graphviz.org/Download..php)
- *  And, of course make sure PostgreSQL instance running & serving the database you are trying to visualize.
-
+* Also, SchemaSpy depends on **GarphViz** to generate the ER diagrams, so you need to be installed it on your system. Get it from here.(<http://www.graphviz.org/Download..php>)
+* And, of course, make sure the target database instance is running & serving the database you are trying to visualize.
 
 Quoting from the author:
 
-> SchemaSpy uses the dot executable from [Graphviz](http://www.graphviz.org/) to generate graphical  representations of the table/view relationships. This was initially added for people who see things visually. Now the graphical representation of relationships is a fundamental feature of the tool.  
+> SchemaSpy uses the dot executable from [Graphviz](http://www.graphviz.org/) to generate graphical representations of the table/view relationships. The visual representation of the connections is a fundamental feature of the tool.  
 
-> Graphviz is not required to view the output generated by SchemaSpy, but **the dot program should be in your PATH** (not CLASSPATH) when  running SchemaSpy or none of the entity relationship diagrams will be generated (or use the [`-gv`](http://schemaspy.sourceforge.net/#gvparam) option).
+> Graphviz is not required to view the output generated by SchemaSpy, but **the dot program should be in your PATH** (not CLASSPATH) when running SchemaSpy, or none of the entity-relationship diagrams will be generated. Or, maybe [use the `-gv`](http://schemaspy.sourceforge.net/#gvparam) option).
 
+I kept the .jar files (both the JDBC-connector and the `SchemaSpy`) in my home folder for convenience.  
+Now, in my case, my OS is Linux, and the database is hosted locally; hence address is `127.0.0.1`, running `PostgreSQL-9.3` at port `5432`.
+So, I run the command like this:
 
-For convenience, I kept the .jar files (JDBC-connector, and SchemaSpy) in my home folder.  
-Now, in my case, my OS is Linux, and database is hosted locally, hence address is `127.0.0.1`, running `PostgreSQL-9.3` at port `5432`.
-So, i run the command like this:
-
-```
+```bash-session
  $ java -jar ./schemaSpy_5.0.0.jar -t pgsql -host 127.0.0.1:5432 -db your_database_name \
                                    -u your_DB_user_name -p your_password -s public \
                                    -dp ./postgresql-9.3-1102.jdbc3.jar \
@@ -61,7 +59,7 @@ It may take a little while, depending on the size of the schema of the database.
 After that, you will find the output folder/directory named `output_folder`.  
 You'll see some output when the magic is going on, similar to this below.
 
-```
+```bash-session
 Using database properties: [./schemaSpy_5.0.0.jar]/net/sourceforge/schemaspy/dbTypes/pgsql.properties
 Gathering schema details....................(6sec)
 Writing/graphing summary....................(2sec)
@@ -70,15 +68,11 @@ Wrote relationship details of 113 tables/views to directory 'output' in 41 secon
 
 View the results by opening output_folder/index.html
 ```
+
 Now, all the generated files are in the `output_folder`.
-Start your journey by starting from the `index.html` in the output folder. Open it by using any browser you want.
+Start your journey by starting from the `index.html` in the output folder. Open it by using any browser.
 
 Good luck. :)
 
-----------------------------
-
-## You may find these interesting
-
- * [Ubuntu - Update APT-GET Server to Use Fastest Mirror](https://blog.kmonsoor.com/ubuntu-update-apt-get-server-to-use-fastest-mirror/?utm_source=related_footer&utm_keyword=linux)
- * [Open Source as-if You Gonna Die Tonight](https://blog.kmonsoor.com/open-source-as-if-you-gonna-die-tonight/?utm_source=related_footer&utm_keyword=coding)
- * [Pelican Static sites - SEO Optimization](https://blog.kmonsoor.com/pelican-how-to-make-seo-friendly/?utm_source=related_footer&utm_keyword=python)
+---
+If you find this post helpful, you can show your support [through Patreon](https://www.patreon.com/kmonsoor) or by [buying me a coffee](https://ko-fi.com/kmonsoor). *Thanks!*
