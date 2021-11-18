@@ -35,7 +35,7 @@
 <link href="https://blog.kmonsoor.com/feed/index.html" rel="alternate" title="I think ... - Latest posts - RSS Feed" type="application/rss+xml"/>
 <link href="https://blog.kmonsoor.com/category/tech/feed/atom/index.html" rel="alternate" title="I think ... - Category: Tech - Atom Feed" type="application/atom+xml"/>
 <link href="https://blog.kmonsoor.com/category/tech/feed/index.html" rel="alternate" title="I think ... - Category: Tech - RSS Feed" type="application/rss+xml"/>
-<meta content="zsh, centos, linux, upgrade, server" name="keywords"/>
+<meta content="Linux, zsh, CentOS, upgrade, server, shell" name="keywords"/>
 <link href="https://blog.kmonsoor.com/install-latest-Zsh-on-CentOS/" rel="canonical"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "I think ...", "item": "https://blog.kmonsoor.com"}, {"@type": "ListItem", "position": 2, "name": "Install latest zsh on centos", "item": "https://blog.kmonsoor.com/install-latest-Zsh-on-CentOS"}, {"@type": "ListItem", "position": 3, "name": "Index", "item": "https://blog.kmonsoor.com/install-latest-Zsh-on-CentOS/index.html"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "author": {"@type": "Person", "name": "Khaled Monsoor"}, "publisher": {"@type": "Organization", "name": "I think ..."}, "headline": "Install the latest Zsh on&nbsp;CentOS", "about": "Tech", "datePublished": "2020-10-20 00:00"}</script></head>
 <body class="bg-transparent pt-4">
 <div class="container">
@@ -102,11 +102,10 @@
 </div>
 <div class="row">
 <div class="col-md-9" id="content" role="main">
-<p>As the <strong>default</strong> Zsh on CentOS is usually a older version, many cool stuffs are not possible on this Zsh, like installing 
-<a href="https://ohmyz.sh/">oh-my-zsh</a> or using <a href="https://github.com/romkatv/powerlevel10k">powerlevel10k</a> cool prompt system, it’s understandable 
-if you’d like to have the latest Zsh on board. <br/>
+<p>As the <strong>default</strong> Zsh on CentOS is usually an older version, many cool things are not possible on this version of Zsh, like installing 
+<a href="https://ohmyz.sh/">oh-my-zsh</a> or using awesome <a href="https://github.com/romkatv/powerlevel10k">powerlevel10k</a> prompt system, it’s understandable if you’d like to have the latest Zsh on your system.
 Easy peasy !! </p>
-<p><strong>Note</strong>: Please remember to remove the “sudo” from the commands if you are already in “root” or sudo-er mode  </p>
+<p><strong>Note</strong>: Please remember to remove the <code>sudo</code> from the commands if you are already in “root” or sudo-er mode  </p>
 <p>We’ll be following these steps:</p>
 <div class="toc">
 <ul>
@@ -135,15 +134,14 @@ Don’t forget to update the filename as well, if needed.</p>
 </code></pre></div>
 <h1 id="build-install">Build <span class="amp">&amp;</span> Install<a class="headerlink text-decoration-none small pl-2" href="#build-install" title="Permanent link">¶</a></h1>
 <p>Unzip the file, “dig in” to the folder, and build <span class="amp">&amp;</span> install from the source.   </p>
-<div class="highlight pygments-style-monokai rounded shadow-sm mb-3"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="gp">$ </span>sudo tar -xf zsh-5.8.tar.xz
+<div class="highlight pygments-style-monokai rounded shadow-sm mb-3"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="gp">$ </span>sudo tar -xf zsh-5.8.tar.xz  <span class="c1"># the actual version of the downloaded file might be different</span>
 <span class="linenos" data-linenos="2 "></span><span class="gp">$ </span><span class="nb">cd</span> zsh-5.8
 <span class="linenos" data-linenos="3 "></span><span class="gp">$ </span>sudo ./configure <span class="o">&amp;&amp;</span> sudo make <span class="o">&amp;&amp;</span> sudo make install
 </code></pre></div>
 <h1 id="final-steps">Final steps<a class="headerlink text-decoration-none small pl-2" href="#final-steps" title="Permanent link">¶</a></h1>
 <p>Add Zsh to the login shells by adding ‘/usr/local/bin/zsh’ on the last line of the config file, <code>/etc/shells</code> </p>
 <div class="highlight pygments-style-monokai rounded shadow-sm mb-3"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="gp">$ </span>sudo -e /etc/shells
-<span class="linenos" data-linenos="2 "></span><span class="gp"># </span>Please don<span class="s1">'t forget to replace '</span>kmonsoor<span class="err">'</span> with your username
-<span class="linenos" data-linenos="3 "></span><span class="gp">$ </span>sudo chsh kmonsoor
+<span class="linenos" data-linenos="2 "></span><span class="gp">$ </span>sudo chsh <span class="nv">$USER</span>
 </code></pre></div>
 <p>Update the system’s default symlink to the new Zsh version.<br/>
 </p><div class="highlight pygments-style-monokai rounded shadow-sm mb-3"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="gp">$ </span>sudo ln -sf /usr/local/bin/zsh /bin/zsh
@@ -152,10 +150,13 @@ Don’t forget to update the filename as well, if needed.</p>
 <p>It’s always a good habit to clean up after doing stuffs.  ;)
 </p><div class="highlight pygments-style-monokai rounded shadow-sm mb-3"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="gp">$ </span>sudo make clean
 </code></pre></div>
-<p><img alt="voila" class="img-fluid border rounded shadow" src="https://i.imgur.com/BEFIOXf.jpg"/></p>
+<p>That’s it !</p>
+<p><img alt="voila" class="noZoom img-fluid border rounded shadow" src="https://i.imgur.com/BEFIOXfm.jpg"/></p>
 <h1 id="related">Related<a class="headerlink text-decoration-none small pl-2" href="#related" title="Permanent link">¶</a></h1>
 <p>Want to have a super, cool-looking command shell? Gotcha, fam. 
-Check out my blog on <strong><a href="https://blog.kmonsoor.com/pimp-up-my-terminal/">How do I Pimp up My Terminal on Linux</a></strong>.</p>
+Check out my blog on <strong><a href="https://blog.kmonsoor.com/pimp-up-my-terminal/">Pimping up My Linux Terminal</a></strong>.</p>
+<hr/>
+<p>If you find this post helpful, you can show your support <a href="https://www.patreon.com/kmonsoor">through Patreon</a> or <a href="https://paypal.me/KhaledMonsoor/">Paypal</a> or by <a href="https://ko-fi.com/kmonsoor">buying me a coffee</a>. <em>Thanks!</em></p>
 <div class="commentbox"></div>
 <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
 <script>commentBox('5722781509484544-proj')</script>
@@ -169,8 +170,9 @@ Check out my blog on <strong><a href="https://blog.kmonsoor.com/pimp-up-my-termi
 <li class="list-group-item">
 <a class="badge badge-info" data-toggle="tooltip" href="https://blog.kmonsoor.com/category/tech/" rel="tag" title="25 articles in this category">Tech</a>
 <a class="badge badge-secondary" data-toggle="tooltip" href="/tag/linux/" title="5 articles with this tag">Linux</a>
-<a class="badge badge-secondary" data-toggle="tooltip" href="/tag/centos/" title="2 articles with this tag">centos</a>
+<a class="badge badge-secondary" data-toggle="tooltip" href="/tag/centos/" title="2 articles with this tag">CentOS</a>
 <a class="badge badge-secondary" data-toggle="tooltip" href="/tag/server/" title="2 articles with this tag">server</a>
+<a class="badge badge-secondary" data-toggle="tooltip" href="/tag/shell/" title="2 articles with this tag">shell</a>
 <a class="badge badge-secondary" data-toggle="tooltip" href="/tag/upgrade/" title="2 articles with this tag">upgrade</a>
 <a class="badge badge-secondary" data-toggle="tooltip" href="/tag/zsh/" title="2 articles with this tag">Zsh</a>
 </li>
