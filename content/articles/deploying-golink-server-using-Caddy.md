@@ -112,4 +112,4 @@ I'm thinking that given the very low workload my shortlink resolver needs — un
 **Update** Now, actually done it. Here is the link: [Free short-link server "on edge" using Cloudflare Worker K.V.](https://blog.kmonsoor.com/golink-server-using-cloudflare-worker-kv/)
 
 ---
-If you find this post helpful, you can show your support [through Patreon](https://www.patreon.com/kmonsoor) or by [buying me a coffee](https://ko-fi.com/kmonsoor). *Thanks!*
+If you find this post helpful, you can show your support [through Patreon](https://www.patreon.com/kmonsoor) or [Paypal](https://paypal.me/KhaledMonsoor/) or by [buying me a coffee](https://ko-fi.com/kmonsoor). *Thanks!*
