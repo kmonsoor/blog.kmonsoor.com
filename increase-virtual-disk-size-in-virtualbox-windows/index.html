@@ -35,7 +35,7 @@
 <link href="https://blog.kmonsoor.com/feed/index.html" rel="alternate" title="I think ... - Latest posts - RSS Feed" type="application/rss+xml"/>
 <link href="https://blog.kmonsoor.com/category/tech/feed/atom/index.html" rel="alternate" title="I think ... - Category: Tech - Atom Feed" type="application/atom+xml"/>
 <link href="https://blog.kmonsoor.com/category/tech/feed/index.html" rel="alternate" title="I think ... - Category: Tech - RSS Feed" type="application/rss+xml"/>
-<meta content="virtualbox, vpc, ubuntu, linux, windows, storage" name="keywords"/>
+<meta content="virtualbox, vpc, ubuntu, Linux, windows, storage" name="keywords"/>
 <link href="https://blog.kmonsoor.com/increase-virtual-disk-size-in-virtualbox-windows/" rel="canonical"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "I think ...", "item": "https://blog.kmonsoor.com"}, {"@type": "ListItem", "position": 2, "name": "Increase virtual disk size in virtualbox windows", "item": "https://blog.kmonsoor.com/increase-virtual-disk-size-in-virtualbox-windows"}, {"@type": "ListItem", "position": 3, "name": "Index", "item": "https://blog.kmonsoor.com/increase-virtual-disk-size-in-virtualbox-windows/index.html"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "author": {"@type": "Person", "name": "Khaled Monsoor"}, "publisher": {"@type": "Organization", "name": "I think ..."}, "headline": "Increase virtual-disk size in VirtualBox on Windows&nbsp;7", "about": "Tech", "datePublished": "2012-05-26 08:02"}</script></head>
 <body class="bg-transparent pt-4">
 <div class="container">
@@ -102,46 +102,48 @@
 </div>
 <div class="row">
 <div class="col-md-9" id="content" role="main">
-<p>Stuck with your small virtual disk partition for VirtualBox? You created for some testing <span class="amp">&amp;</span> practicing, now it needs space. I also stuck with same problem; researched many forums, and here is the gist.</p>
-<p>[Note: This procedure won’t work for <span class="caps">VM</span> with snapshots. So, please take note about your system beforehand.]</p>
+<p>Are you stuck with your small virtual disk partition for VirtualBox? You created the partition for some testing <span class="amp">&amp;</span> practicing, now it needs more space. I was also stuck with the same problem; so I researched many forums, and here is the gist.</p>
+<p>[Note: This procedure won’t work for <span class="caps">VM</span> with snapshots. So, please take note the fact about your system beforehand.]</p>
 <ul>
 <li>Download <a href="http://gparted.org/download.php">Gparted</a>, disk manager for Linux. It’ll come as an <span class="caps">ISO</span> file.</li>
 <li>Boot into your guest <span class="caps">OS</span>, check,  with df command,  which partition you need to grow. Take note of that specific mounted <span class="caps">HD</span>, such as /dev/hdb/sda3</li>
 <li>Take backup of your existing data, as I <span class="caps">WILL</span> <span class="caps">NOT</span> <span class="caps">TAKE</span> <span class="caps">ANY</span> <span class="caps">RESPONSIBILITY</span> <span class="caps">IF</span> <span class="caps">YOU</span> <span class="caps">DAMAGE</span> <span class="caps">YOUR</span> <span class="caps">DATA</span>.</li>
 <li>In host <span class="caps">OS</span>, Goto the command prompt by running, cmd.exe</li>
 <li>Navigate to the Virtualbox installation folder</li>
-<li>Execute command:</li>
+<li>Execute the command:</li>
 </ul>
-<p><code>VBoxManage modifyhd X:\yourVM_DiskPath_InHost\yourVM_Disk.vdi  --resize 40960</code></p>
+<div class="highlight pygments-style-monokai rounded shadow-sm mb-3"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="go">C:\ VBoxManage modifyhd X:\yourVM_DiskPath_InHost\yourVM_Disk.vdi  --resize 40960</span>
+</code></pre></div>
 <p>you will see progress as below:</p>
 <p><img alt="10% ... 20% .. .. 100%" class="img-fluid border rounded shadow" src="http://i.imgur.com/iYORelg.png"/></p>
-<p>If you fail with message like</p>
+<p>If you fail with a message like thid</p>
 <blockquote class="blockquote border-left border-primary pl-3">
 <p><span class="dquo">“</span>VBoxManage.exe: error: Resize hard disk operation for this format is not implemented yet!”</p>
 </blockquote>
-<p>you need to use this tool <a href="https://forums.virtualbox.org/download/file.php?id=7579">CloneVDI.exe</a> from this VirtualBox forum-post. If using this tool, remember to check “Increase virtual drive size to ” with your desired size.</p>
+<p>Now, you need this tool <a href="https://forums.virtualbox.org/download/file.php?id=7579">CloneVDI.exe</a> from this VirtualBox forum-post. If you’re using this tool, remember to check “Increase virtual drive size to ” with your desired size.</p>
 <p><img alt="VDI_tool" class="img-fluid border rounded shadow" src="http://i.imgur.com/YB49ZVk.png"/></p>
 <ul>
 <li>Now, Load the <span class="caps">ISO</span> file to the <span class="caps">CD</span>/<span class="caps">DVD</span> drive of your virtual Linux.</li>
 </ul>
 <p><img alt="GParted.iso loaded on IDE Primary Master" class="img-fluid border rounded shadow" src="http://i.imgur.com/UKyPkl8.png"/></p>
 <ul>
-<li>Boot the Guest <span class="caps">OS</span>; from the boot menu, select <span class="caps">CD</span>/<span class="caps">DVD</span> drive, then it will be booted in GParted tiny <span class="caps">OS</span>. Now the PartitionManager tool will come up automatically, like below:</li>
+<li>Boot the Guest <span class="caps">OS</span>; from the boot menu, select <span class="caps">CD</span>/<span class="caps">DVD</span> drive, then it will boot in GParted tiny <span class="caps">OS</span>. Now the PartitionManager tool will come up automatically, like below:</li>
 </ul>
 <p><img alt="Gparted partition-manager" class="img-fluid border rounded shadow" src="http://i.imgur.com/aK9kAtK.jpg"/></p>
 <ul>
-<li>Now “shrink/Grow” or “Move” your desired partion, but be careful. Don’t rename any of them. Be careful about your data.</li>
-<li>Don’t worry, unless you clicked Apply, nothing has happened really. When you are done with moving and resizing, you have to click <code>Apply</code> to commit the change</li>
+<li>Now “shrink/Grow” or “Move” your desired partition, but be careful. Don’t rename any of them. Be careful about your data.</li>
+<li>Don’t worry, unless you clicked Apply, nothing has actually took place. When you are done with moving and resizing, you have to click <strong><code>Apply</code></strong> to commit the change</li>
 </ul>
 <p><img alt="just before applying" class="img-fluid border rounded shadow" src="http://i.imgur.com/wUMCHVQ.jpg"/></p>
 <ul>
-<li>when completed, close Gparted, and then shutdown the <span class="caps">OS</span></li>
+<li>Once completed, close Gparted, and then shutdown the <span class="caps">OS</span></li>
 <li>Unload the <span class="caps">ISO</span> aka virtual <span class="caps">CD</span> from virtual <span class="caps">OS</span></li>
 <li>Boot into the virtual <span class="caps">OS</span> again</li>
-<li>Now, check that if the desired partition grew or not by df command</li>
+<li>Now, check that if the desired partition grew or not by using the <code>df</code> command</li>
 </ul>
-<p>Thanks for visiting my blog. If it just helped it, please feel free to “Like” or “share”.  Also, your suggestion or comment would be greatly inspiring.</p>
-<p>You may also like to encourage me by <a href="https://paypal.me/KhaledMonsoor/">buying me a coffee</a>.</p>
+<p>Thanks for visiting my blog. If it just helped you, please feel free to “Like” or “share”.  Also, your suggestion or comment would be great as well.</p>
+<hr/>
+<p>If you find this post helpful, you can show your support <a href="https://www.patreon.com/kmonsoor">through Patreon</a> or <a href="https://paypal.me/KhaledMonsoor/">Paypal</a> or by <a href="https://ko-fi.com/kmonsoor">buying me a coffee</a>. <em>Thanks!</em></p>
 <div class="commentbox"></div>
 <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
 <script>commentBox('5722781509484544-proj')</script>
