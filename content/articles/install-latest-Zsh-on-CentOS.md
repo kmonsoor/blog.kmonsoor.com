@@ -1,18 +1,18 @@
 ---
 Title: Install the latest Zsh on CentOS
 Date: 2020-10-20
-Tags: zsh, centos, linux, upgrade, server
+Updated: 2021-11-11
+Tags: Linux, zsh, CentOS, upgrade, server, shell
 Slug: install-latest-Zsh-on-CentOS
 Status: Published
-Summary: If you're looking forward to install the latest version of Zsh instead of the default old one, here you go.
+Summary: If you're trying to install the latest version of Zsh instead of the default old one, here you go.
 ---
 
-As the **default** Zsh on CentOS is usually a older version, many cool stuffs are not possible on this Zsh, like installing 
-[oh-my-zsh](https://ohmyz.sh/) or using [powerlevel10k](https://github.com/romkatv/powerlevel10k) cool prompt system, it's understandable 
-if you'd like to have the latest Zsh on board.   
+As the **default** Zsh on CentOS is usually an older version, many cool things are not possible on this version of Zsh, like installing 
+[oh-my-zsh](https://ohmyz.sh/) or using awesome [powerlevel10k](https://github.com/romkatv/powerlevel10k) prompt system, it's understandable if you'd like to have the latest Zsh on your system.
 Easy peasy !! 
 
-**Note**: Please remember to remove the "sudo" from the commands if you are already in "root" or sudo-er mode  
+**Note**: Please remember to remove the `sudo` from the commands if you are already in "root" or sudo-er mode  
 
 We'll be following these steps:
 
@@ -46,7 +46,7 @@ $ sudo curl -L https://www.zsh.org/pub/zsh-5.8.tar.xz \
 Unzip the file, "dig in" to the folder, and build & install from the source.   
 
 ```shell-session
-$ sudo tar -xf zsh-5.8.tar.xz
+$ sudo tar -xf zsh-5.8.tar.xz  # the actual version of the downloaded file might be different
 $ cd zsh-5.8
 $ sudo ./configure && sudo make && sudo make install
 ```
@@ -56,8 +56,7 @@ $ sudo ./configure && sudo make && sudo make install
 
 ```shell-session
 $ sudo -e /etc/shells
-# Please don't forget to replace 'kmonsoor' with your username
-$ sudo chsh kmonsoor
+$ sudo chsh $USER
 ```
 
 Update the system's default symlink to the new Zsh version.  
@@ -70,9 +69,14 @@ It's always a good habit to clean up after doing stuffs.  ;)
 ```shell-session
 $ sudo make clean
 ```
-  
-![voila](https://i.imgur.com/BEFIOXf.jpg)
+
+That's it !
+
+![voila](https://i.imgur.com/BEFIOXfm.jpg){: .noZoom}
 
 # Related
 Want to have a super, cool-looking command shell? Gotcha, fam. 
-Check out my blog on **[How do I Pimp up My Terminal on Linux](https://blog.kmonsoor.com/pimp-up-my-terminal/)**.
+Check out my blog on **[Pimping up My Linux Terminal](https://blog.kmonsoor.com/pimp-up-my-terminal/)**.
+
+---
+If you find this post helpful, you can show your support [through Patreon](https://www.patreon.com/kmonsoor) or [Paypal](https://paypal.me/KhaledMonsoor/) or by [buying me a coffee](https://ko-fi.com/kmonsoor). *Thanks!*
