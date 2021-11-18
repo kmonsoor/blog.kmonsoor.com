@@ -18,4 +18,8 @@ ARTICLE_EXCLUDES = ['drafts', ]
 
 # Following items are often useful when publishing
 
-# DISQUS_SITENAME = 'kmonsoor'
+
+# Analytics
+GOOGLE_ANALYTICS = 'G-B3VL9K9558'
+COMMENTBOX_PROJECT = '5722781509484544-proj'
+PINTEREST_VERIFICATION_ID = '8b5dd0090347e2d6ff8beeb1cb8a2f3e'

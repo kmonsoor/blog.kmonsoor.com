@@ -11,9 +11,9 @@ TIPUE_SEARCH = False
 
 # Site settings.
 AUTHOR = 'Khaled Monsoor'
-AUTHOR_EMAIL = 'k@kmonsoor.com'
+AUTHOR_EMAIL = 'oss@kmonsoor.com'
 SITENAME = 'I think ...'
-# TAGLINE = 'khaled monsoor says ...'
+TAGLINE = 'my public notebook'
 SITE_SUMMARY = "Khaled Monsoor here. I usually write about programming, system-design, Islam, life, travel or just personal thoughts ... "
 
 SITEURL = 'https://blog.kmonsoor.com'
@@ -100,13 +100,6 @@ SOCIAL = (
     ('Twitter', "https://twitter.com/kmonsoor"),
     # ("Photos", "https://photos.kmonsoor.com"),
 )
-
-# Analytics
-GOOGLE_ANALYTICS = 'UA-20431143-1'
-COMMENTBOX_PROJECT = '5722781509484544-proj'
-PINTEREST_VERIFICATION_ID = '8b5dd0090347e2d6ff8beeb1cb8a2f3e'
-# GOOGLE_ANALYTICS_PROPERTY = 'auto'
-# GOOGLE_TAG_MANAGER_ID = 'GTM-M3VHWXC'
 
 
 # Content paths
@@ -255,4 +248,4 @@ SEO_ENHANCER_TWITTER_CARDS = True
 
 # pelican.plugins.similar_posts
 SIMILAR_POSTS_MAX_COUNT = 5
-SIMILAR_POSTS_MIN_SCORE = 0.1
+SIMILAR_POSTS_MIN_SCORE = 0.7
