@@ -375,7 +375,7 @@ pyquery = "^1.4.3"
 type = "git"
 url = "https://github.com/kmonsoor/plumage.git"
 reference = "develop"
-resolved_reference = "d640cf9f1bd61141c698571be81a08d7a858b699"
+resolved_reference = "cb0bb826508f7e1ecc7bbdf936884fe9fa8c460e"
 
 [[package]]
 name = "pygments"
