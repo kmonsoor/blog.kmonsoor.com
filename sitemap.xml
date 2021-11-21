@@ -5,28 +5,28 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://blog.kmonsoor.com/</loc>
-<lastmod>2021-11-20T04:16:26-00:00</lastmod>
+<lastmod>2021-11-21T21:57:56-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.4</priority>
 </url>
 
 <url>
 <loc>https://blog.kmonsoor.com/tags.html</loc>
-<lastmod>2021-11-20T04:16:26-00:00</lastmod>
+<lastmod>2021-11-21T21:57:56-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.4</priority>
 </url>
 
 <url>
 <loc>https://blog.kmonsoor.com/categories.html</loc>
-<lastmod>2021-11-20T04:16:26-00:00</lastmod>
+<lastmod>2021-11-21T21:57:56-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.4</priority>
 </url>
 
 <url>
 <loc>https://blog.kmonsoor.com/archives.html</loc>
-<lastmod>2021-11-20T04:16:26-00:00</lastmod>
+<lastmod>2021-11-21T21:57:56-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.4</priority>
 </url>
@@ -36,6 +36,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <lastmod>2014-12-31T23:59:00+06:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://blog.kmonsoor.com/investments-with-the-biggest-roi/</loc>
+<lastmod>2021-11-22T00:00:00+06:00</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.8</priority>
 </url>
 
 <url>
@@ -285,7 +292,35 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://blog.kmonsoor.com/category/thoughts/</loc>
-<lastmod>2020-05-26T00:00:00+06:02</lastmod>
+<lastmod>2021-11-22T00:00:00+06:02</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.4</priority>
+</url>
+
+<url>
+<loc>https://blog.kmonsoor.com/tag/thoughts/</loc>
+<lastmod>2021-11-22T00:00:00+06:02</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.4</priority>
+</url>
+
+<url>
+<loc>https://blog.kmonsoor.com/tag/investing/</loc>
+<lastmod>2021-11-22T00:00:00+06:02</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.4</priority>
+</url>
+
+<url>
+<loc>https://blog.kmonsoor.com/tag/self-care/</loc>
+<lastmod>2021-11-22T00:00:00+06:02</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.4</priority>
+</url>
+
+<url>
+<loc>https://blog.kmonsoor.com/tag/happiness/</loc>
+<lastmod>2021-11-22T00:00:00+06:02</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.4</priority>
 </url>
@@ -551,13 +586,6 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://blog.kmonsoor.com/tag/organization/</loc>
-<lastmod>2020-05-26T00:00:00+06:02</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.4</priority>
-</url>
-
-<url>
-<loc>https://blog.kmonsoor.com/tag/thoughts/</loc>
 <lastmod>2020-05-26T00:00:00+06:02</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.4</priority>
