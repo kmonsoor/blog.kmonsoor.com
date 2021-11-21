@@ -31,4 +31,4 @@ This investment is good to go after you have started taking care of the previous
 Now, re-invest the saved time in something more productive. When you have a lot of time to spare, you can do more.
 
 
-Be productive, be happy. Then, please share it.
+Be productive, be happy. Then, please share the happiness with others.
