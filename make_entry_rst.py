@@ -1,3 +1,6 @@
+#!/usr/env python3
+# -*- coding: utf-8 -*- #
+
 ## source: http://nafiulis.me/making-a-static-blog-with-pelican.html#writing-content
 import sys
 from datetime import datetime

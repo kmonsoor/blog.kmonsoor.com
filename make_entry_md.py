@@ -1,6 +1,9 @@
-﻿"""
-author:  Khaled Monsoor <k@kmonsoor.com>
-modified: 09-Dec-2015
+﻿#!/usr/bin/env python3
+# -*- coding: utf-8 -*- #
+
+"""
+author:  Khaled Monsoor <oss@kmonsoor.com>
+modified: 19-Nov-2021
 license: The MIT License
 """
 
