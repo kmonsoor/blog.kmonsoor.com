@@ -5,28 +5,28 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://blog.kmonsoor.com/</loc>
-<lastmod>2021-11-25T01:26:58-00:00</lastmod>
+<lastmod>2021-11-25T22:15:59-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.4</priority>
 </url>
 
 <url>
 <loc>https://blog.kmonsoor.com/tags.html</loc>
-<lastmod>2021-11-25T01:26:58-00:00</lastmod>
+<lastmod>2021-11-25T22:15:59-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.4</priority>
 </url>
 
 <url>
 <loc>https://blog.kmonsoor.com/categories.html</loc>
-<lastmod>2021-11-25T01:26:58-00:00</lastmod>
+<lastmod>2021-11-25T22:15:59-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.4</priority>
 </url>
 
 <url>
 <loc>https://blog.kmonsoor.com/archives.html</loc>
-<lastmod>2021-11-25T01:26:58-00:00</lastmod>
+<lastmod>2021-11-25T22:15:59-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.4</priority>
 </url>
@@ -348,6 +348,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://blog.kmonsoor.com/tag/bykhyaa/</loc>
+<lastmod>2021-11-25T00:00:00+06:02</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.4</priority>
+</url>
+
+<url>
+<loc>https://blog.kmonsoor.com/tag/sohoz-banglay/</loc>
 <lastmod>2021-11-25T00:00:00+06:02</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.4</priority>
