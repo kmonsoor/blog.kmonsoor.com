@@ -28,3 +28,8 @@ Summary: ইংরেজি ভাষায় বেশ কিছু শব্দ,
 **২.**  
 *দুখু মিয়া* : My dad got sick. What's the silver lining in that, Asha? ("আমার বাবা অসুস্থ।  আশা, এতে ভালো কি থাকতে পারে?")  
 *আশা* : Of course, there is. For example, this situation is going to make you more responsible. ("অবশ্যই আছে। যেমন: এই পরিস্থিতিতে তুমি আরও দায়িত্বশীল হয়ে উঠবে।")
+
+---
+যদি লেখাটি শেয়ার করতে চান, ব্রাউজারের লিংকটি শেয়ার করতে পারেন, অথবা নিচের ইমেজটি ডাউনলোড করেও শেয়ার করতে পারেন। ধন্যবাদ !
+
+![what silver-lining means in easy Bengali](https://i.imgur.com/C86jng8h.png)
