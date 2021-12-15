@@ -5,28 +5,28 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://blog.kmonsoor.com/</loc>
-<lastmod>2021-12-01T20:32:55-00:00</lastmod>
+<lastmod>2021-12-15T01:45:05-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.4</priority>
 </url>
 
 <url>
 <loc>https://blog.kmonsoor.com/tags.html</loc>
-<lastmod>2021-12-01T20:32:55-00:00</lastmod>
+<lastmod>2021-12-15T01:45:05-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.4</priority>
 </url>
 
 <url>
 <loc>https://blog.kmonsoor.com/categories.html</loc>
-<lastmod>2021-12-01T20:32:55-00:00</lastmod>
+<lastmod>2021-12-15T01:45:05-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.4</priority>
 </url>
 
 <url>
 <loc>https://blog.kmonsoor.com/archives.html</loc>
-<lastmod>2021-12-01T20:32:55-00:00</lastmod>
+<lastmod>2021-12-15T01:45:05-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.4</priority>
 </url>
@@ -36,6 +36,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <lastmod>2014-12-31T23:59:00+06:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://blog.kmonsoor.com/সহজ-বাংলায়-vice-versa-মানে/</loc>
+<lastmod>2021-12-15T07:30:00+06:00</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.8</priority>
 </url>
 
 <url>
@@ -285,7 +292,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://blog.kmonsoor.com/category/language/</loc>
-<lastmod>2021-12-02T01:30:00+06:02</lastmod>
+<lastmod>2021-12-15T07:30:00+06:02</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.4</priority>
 </url>
@@ -313,55 +320,55 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://blog.kmonsoor.com/tag/language/</loc>
-<lastmod>2021-12-02T01:30:00+06:02</lastmod>
+<lastmod>2021-12-15T07:30:00+06:02</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.4</priority>
 </url>
 
 <url>
 <loc>https://blog.kmonsoor.com/tag/bangla/</loc>
-<lastmod>2021-12-02T01:30:00+06:02</lastmod>
+<lastmod>2021-12-15T07:30:00+06:02</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.4</priority>
 </url>
 
 <url>
 <loc>https://blog.kmonsoor.com/tag/english/</loc>
-<lastmod>2021-12-02T01:30:00+06:02</lastmod>
+<lastmod>2021-12-15T07:30:00+06:02</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.4</priority>
 </url>
 
 <url>
 <loc>https://blog.kmonsoor.com/tag/simple-explanation/</loc>
-<lastmod>2021-12-02T01:30:00+06:02</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.4</priority>
-</url>
-
-<url>
-<loc>https://blog.kmonsoor.com/tag/silver-lining/</loc>
-<lastmod>2021-12-02T01:30:00+06:02</lastmod>
+<lastmod>2021-12-15T07:30:00+06:02</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.4</priority>
 </url>
 
 <url>
 <loc>https://blog.kmonsoor.com/tag/shj-bhaassaay/</loc>
-<lastmod>2021-12-02T01:30:00+06:02</lastmod>
+<lastmod>2021-12-15T07:30:00+06:02</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.4</priority>
 </url>
 
 <url>
 <loc>https://blog.kmonsoor.com/tag/bykhyaa/</loc>
-<lastmod>2021-12-02T01:30:00+06:02</lastmod>
+<lastmod>2021-12-15T07:30:00+06:02</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.4</priority>
 </url>
 
 <url>
 <loc>https://blog.kmonsoor.com/tag/sohoz-banglay/</loc>
+<lastmod>2021-12-15T07:30:00+06:02</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.4</priority>
+</url>
+
+<url>
+<loc>https://blog.kmonsoor.com/tag/silver-lining/</loc>
 <lastmod>2021-12-02T01:30:00+06:02</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.4</priority>
