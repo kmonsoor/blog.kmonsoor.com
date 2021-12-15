@@ -6,7 +6,7 @@ Category:  Language
 Tags: Language, Bangla, English, Simple explanation, silver lining, সহজ ভাষায়, ব্যখ্যা, sohoz-banglay
 Slug: সহজ-বাংলায়-silver-lining-এর-মানে
 status: Published
-Summary: ইংরেজি ভাষায় বেশ কিছু শব্দ, বাক্য কিংবা বাগধারা ব্যবহার করা হয়, যেটার বাংলা ভাষায় এক শব্দে কোনও অনুবাদ নেই। বা থাকলেও সাধারণ মানুষের জন্য খুব খটমটে। এরকম একটি concept বা ধারণা হোল "silver lining" যেটি ল্যাটিন ভাষা থেকে এসেছে। ...
+Summary: ইংরেজি ভাষায় বেশ কিছু শব্দ, বাক্য কিংবা বাগধারা ব্যবহার করা হয়, যেটার বাংলা ভাষায় এক শব্দে কোনও অনুবাদ নেই। বা থাকলেও সাধারণ মানুষের জন্য খুব খটমটে। এরকম একটি concept বা ধারণা হোল "silver lining"। ...
 ---
 
 “Silver lining”
