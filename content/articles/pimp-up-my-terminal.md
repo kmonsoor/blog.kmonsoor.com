@@ -94,9 +94,11 @@ $ exec zsh
 
 Optional
 --------
-Also, I usually install this very useful, but external plugin `fast-syntax-highlighting` for oh-my-zsh.
+Also, I usually install this very useful, but external plugin `zsh-syntax-highlighting` for oh-my-zsh.
 
 ```shell-session
-$ git clone https://github.com/zdharma/fast-syntax-highlighting.git \
-  ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/fast-syntax-highlighting
+$ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 ```
+Don't forget to activate the plugin by including it in ~/.zshrc. For that, add `zsh-syntax-highlighting` inside the list of other plugins.
+
+plugins=( plugin_a plugin_b zsh-syntax-highlighting)
