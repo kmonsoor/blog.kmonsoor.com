@@ -146,10 +146,11 @@ Have to set <code>ZSH_THEME="powerlevel10k/powerlevel10k"</code> in the <code>~/
 <div class="highlight pygments-style-monokai rounded shadow-sm mb-3"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="gp">$ </span><span class="nb">exec</span> zsh
 </code></pre></div>
 <h2 id="optional">Optional<a class="headerlink text-decoration-none small pl-2" href="#optional" title="Permanent link">¶</a></h2>
-<p>Also, I usually install this very useful, but external plugin <code>fast-syntax-highlighting</code> for oh-my-zsh.</p>
-<div class="highlight pygments-style-monokai rounded shadow-sm mb-3"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="gp">$ </span>git clone https://github.com/zdharma/fast-syntax-highlighting.git <span class="se">\</span>
-<span class="linenos" data-linenos="2 "></span><span class="gp">  $</span><span class="o">{</span>ZSH_CUSTOM:-<span class="nv">$HOME</span>/.oh-my-zsh/custom<span class="o">}</span>/plugins/fast-syntax-highlighting
+<p>Also, I usually install this very useful, but external plugin <code>zsh-syntax-highlighting</code> for oh-my-zsh.</p>
+<p></p><div class="highlight pygments-style-monokai rounded shadow-sm mb-3"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="gp">$ </span>git clone https://github.com/zsh-users/zsh-syntax-highlighting.git <span class="si">${</span><span class="nv">ZSH_CUSTOM</span><span class="k">:-</span><span class="p">~/.oh-my-zsh/custom</span><span class="si">}</span>/plugins/zsh-syntax-highlighting
 </code></pre></div>
+Don’t forget to activate the plugin by including it in ~/.zshrc. For that, add <code>zsh-syntax-highlighting</code> inside the list of other plugins.
+<p>plugins=( plugin_a plugin_b zsh-syntax-highlighting)</p>
 <div class="commentbox"></div>
 <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
 <script>commentBox('5722781509484544-proj')</script>
