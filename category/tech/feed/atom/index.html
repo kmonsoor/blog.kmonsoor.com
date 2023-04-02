@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>I think ... - Tech</title><link href="https://blog.kmonsoor.com/" rel="alternate"></link><link href="https://blog.kmonsoor.com/category/tech/feed/atom/index.html" rel="self"></link><id>https://blog.kmonsoor.com/</id><updated>2021-06-06T00:00:00+06:00</updated><entry><title>Create a free go-link server “on edge” using Cloudflare Worker KV</title><link href="https://blog.kmonsoor.com/golink-server-using-cloudflare-worker-kv/" rel="alternate"></link><published>2021-06-06T00:00:00+06:00</published><updated>2021-06-06T00:00:00+06:00</updated><author><name>Khaled Monsoor</name></author><id>tag:blog.kmonsoor.com,2021-06-06:/golink-server-using-cloudflare-worker-kv/</id><summary type="html">&lt;p&gt;Among quite a few ways to implement a go-link server (i.e., url-forwarder, short-url server, etc.), I will show how to use free-tier Cloudflare Worker (&amp;amp; &lt;span class="caps"&gt;KV&lt;/span&gt;) to create an in-house, on-edge, &lt;strong&gt;no-webserver&lt;/strong&gt; go-link&amp;nbsp;server.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Among quite a few ways to implement a go-link server (i.e., url-forwarder, short-url server, etc.), I&amp;rsquo;m going to show you how to use free-tier Cloudflare Worker (&amp;amp; &lt;span class="caps"&gt;KV&lt;/span&gt;) to create an in-house, on-edge, &lt;strong&gt;no-webserver&lt;/strong&gt; go-link&amp;nbsp;server.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>I think ... - Tech</title><link href="https://blog.kmonsoor.com/" rel="alternate"></link><link href="https://blog.kmonsoor.com/category/tech/feed/atom/index.html" rel="self"></link><id>https://blog.kmonsoor.com/</id><updated>2023-03-14T00:00:00+06:00</updated><entry><title>Control vs Agency - The chosen path</title><link href="https://blog.kmonsoor.com/control-vs-agency-the-chosen-path/" rel="alternate"></link><published>2023-03-14T00:00:00+06:00</published><updated>2023-03-14T00:00:00+06:00</updated><author><name>Khaled Monsoor</name></author><id>tag:blog.kmonsoor.com,2023-03-14:/control-vs-agency-the-chosen-path/</id><summary type="html">&lt;p&gt;Control vs Agency - The chosen&amp;nbsp;path&lt;/p&gt;</summary><content type="html">&lt;p&gt;Most things are completely out of your control, but you have control over your action about them.&lt;br&gt;
+The second part is called &amp;ldquo;having&amp;nbsp;agency&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;You can&amp;rsquo;t stop the sun from rising, but you can always get a pair of&amp;nbsp;sunglasses.&lt;/p&gt;
+&lt;p&gt;You can&amp;rsquo;t do anything when it&amp;rsquo;s raining outside, but you can take an umbrella with you.&lt;br&gt;
+You have &amp;ldquo;zero&amp;rdquo; control over the economy, but have control over your spending &lt;span class="amp"&gt;&amp;amp;&lt;/span&gt; saving habits.&lt;br&gt;
+You don&amp;rsquo;t know when your heart gonna stop, but can try to eat healthy and do&amp;nbsp;exercise.  &lt;/p&gt;
+&lt;p&gt;You can&amp;rsquo;t tell when your employer is going to fire you, but can always prepare for the next interview.&lt;br&gt;
+You can&amp;rsquo;t make someone like you, but you can always love yourself and become the best version of&amp;nbsp;yourself.  &lt;/p&gt;
+&lt;p&gt;Focusing on the first will make you feel hopeless and frustrated. Every time.&lt;br&gt;
+Focusing on the second will make you feel fulfilled and grounded. Every&amp;nbsp;time.  &lt;/p&gt;
+&lt;p&gt;You have to choose over the other.&lt;br&gt;
+In the end, this is the decision that will define&amp;nbsp;you.  &lt;/p&gt;
+&lt;p&gt;Choose&amp;nbsp;wisely.&lt;/p&gt;</content><category term="Tech"></category><category term="life"></category><category term="philosophy"></category><category term="control"></category></entry><entry><title>Create a free go-link server “on edge” using Cloudflare Worker KV</title><link href="https://blog.kmonsoor.com/golink-server-using-cloudflare-worker-kv/" rel="alternate"></link><published>2021-06-06T00:00:00+06:00</published><updated>2021-06-06T00:00:00+06:00</updated><author><name>Khaled Monsoor</name></author><id>tag:blog.kmonsoor.com,2021-06-06:/golink-server-using-cloudflare-worker-kv/</id><summary type="html">&lt;p&gt;Among quite a few ways to implement a go-link server (i.e., url-forwarder, short-url server, etc.), I will show how to use free-tier Cloudflare Worker (&amp;amp; &lt;span class="caps"&gt;KV&lt;/span&gt;) to create an in-house, on-edge, &lt;strong&gt;no-webserver&lt;/strong&gt; go-link&amp;nbsp;server.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Among quite a few ways to implement a go-link server (i.e., url-forwarder, short-url server, etc.), I&amp;rsquo;m going to show you how to use free-tier Cloudflare Worker (&amp;amp; &lt;span class="caps"&gt;KV&lt;/span&gt;) to create an in-house, on-edge, &lt;strong&gt;no-webserver&lt;/strong&gt; go-link&amp;nbsp;server.&lt;/p&gt;
 &lt;p&gt;For example, the short-link for this article is &lt;a href="https://go.kmonsoor.com/golink-kv"&gt;go.kmonsoor.com/golink-kv&lt;/a&gt;  &lt;/p&gt;
 &lt;p&gt;&lt;img alt="overall structure" src="https://i.imgur.com/MjIS5gD.png"&gt;&lt;/p&gt;
 &lt;ul&gt;
@@ -636,68 +648,4 @@ The &lt;strong&gt;else&lt;/strong&gt; clause here is to ensure that non-article 
 &lt;p&gt;However, 2&lt;sup&gt;nd&lt;/sup&gt;-level &lt;code&gt;H2&lt;/code&gt; tags can be (read &amp;lsquo;should be&amp;rsquo;) used multiple times. In case of markdown files, that&amp;rsquo;s &lt;code&gt;---------&lt;/code&gt; underlines, or line starting with&amp;nbsp;double-hash(&amp;lsquo;##&amp;rsquo;).&lt;/p&gt;
 &lt;h3 id="and-theres-lot-more"&gt;And, there&amp;rsquo;s lot more &amp;hellip; ;)&lt;a class="headerlink" href="#and-theres-lot-more" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;As I&amp;rsquo;ll gain more insights, I hope to grow this post. For now, this is a work-in-progress.&lt;br&gt;
-Thanks for reading down so far. Adios&amp;nbsp;!&lt;/p&gt;</content><category term="Tech"></category><category term="pelican"></category><category term="python"></category><category term="static-site"></category><category term="seo-friendly"></category></entry><entry><title>Ubuntu - Update APT-GET Server to Use Fastest Mirror</title><link href="https://blog.kmonsoor.com/ubuntu-update-apt-get-server-to-use-fastest-mirror/" rel="alternate"></link><published>2016-10-10T00:00:00+06:00</published><updated>2016-10-10T00:00:00+06:00</updated><author><name>Khaled Monsoor</name></author><id>tag:blog.kmonsoor.com,2016-10-10:/ubuntu-update-apt-get-server-to-use-fastest-mirror/</id><summary type="html">&lt;p&gt;Updating Ubuntu from it&amp;rsquo;s default server takes too damn long. Give it a 10x&amp;nbsp;boost.&lt;/p&gt;</summary><content type="html">&lt;h2 id="prelude"&gt;Prelude&lt;a class="headerlink" href="#prelude" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;By default, Ubuntu sets the update server pointing to its own (&lt;a href="http://archive.ubuntu.com"&gt;http://archive.ubuntu.com&lt;/a&gt;). It is the safest bet for Ubuntu. But, that&amp;rsquo;s not the case for users, especially who are outside &lt;span class="caps"&gt;USA&lt;/span&gt;. To make it smoother as well as distribute the load, Ubuntu also provides a list of mirror sites. You can find the official mirror list &lt;a href="https://launchpad.net/ubuntu/+archivemirrors"&gt;here&lt;/a&gt;. &lt;/p&gt;
-&lt;p&gt;However, it needs some&amp;nbsp;configuration.&lt;/p&gt;
-&lt;h2 id="on-gui"&gt;On &lt;span class="caps"&gt;GUI&lt;/span&gt;&lt;a class="headerlink" href="#on-gui" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Yes, you can do the selection on Ubuntu using its &lt;span class="caps"&gt;GUI&lt;/span&gt; tool. But, the problem is it don&amp;rsquo;t always work as you&amp;nbsp;want.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;It works on geolocation, giving me the local server, which is waaaayy slower where I am. The network temporal distance is the important factor here, not spatial distance (&lt;a href="http://askubuntu.com/a/9035/113604"&gt;http://askubuntu.com/a/9035/113604&lt;/a&gt;)&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img alt="Ubuntu-select-update-server-GUI" src="http://i.imgur.com/sCWr0zrl.png"&gt;&lt;/p&gt;
-&lt;h2 id="so-what-else-do-we-have"&gt;so, what else do we have ?&lt;a class="headerlink" href="#so-what-else-do-we-have" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;I use a handy tool for this purpose to point me to the fastest server &lt;span class="caps"&gt;FOR&lt;/span&gt; &lt;span class="caps"&gt;ME&lt;/span&gt;. It&amp;rsquo;s &lt;a href="https://github.com/jblakeman/apt-select"&gt;apt-select&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;To install it, i found this method most hassle-free. You may also try &lt;code&gt;pip install&lt;/code&gt; method described on the repo&amp;rsquo;s &lt;span class="caps"&gt;README&lt;/span&gt;&amp;nbsp;file.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="linenos" data-linenos="1 "&gt;&lt;/span&gt;&lt;span class="gp"&gt;$ &lt;/span&gt;git clone https://github.com/jblakeman/apt-select.git
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;That&amp;rsquo;s it. Now to execute it, just run the &amp;ldquo;main&amp;rdquo; Python&amp;nbsp;file.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="linenos" data-linenos="1 "&gt;&lt;/span&gt;&lt;span class="gp"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; apt-select
-&lt;span class="hll"&gt;&lt;span class="linenos" data-linenos="2 "&gt;&lt;/span&gt;&lt;span class="gp"&gt;$ &lt;/span&gt;./apt-select.py -c -t &lt;span class="m"&gt;3&lt;/span&gt; -m one-week-behind
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;We are choosing here the best 3 mirrors(due to &lt;code&gt;-t 3&lt;/code&gt;) which are at most &lt;code&gt;one week behind&lt;/code&gt; from the main Ubuntu server. For general purposes, that&amp;rsquo;s good&amp;nbsp;enough.&lt;/p&gt;
-&lt;p&gt;It will choose one using the latency &lt;span class="amp"&gt;&amp;amp;&lt;/span&gt; ping time, and also show servers&amp;rsquo; bandwidth. Then the tool asks you to select new mirror from the &lt;code&gt;3&lt;/code&gt; options came up. Usually, stick to the top option, hence &lt;code&gt;1&lt;/code&gt;. 
-For example in my case, it&amp;nbsp;shows:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="hll"&gt;&lt;span class="linenos" data-linenos=" 1 "&gt;&lt;/span&gt;&lt;span class="gp"&gt;[khaled:~] $ &lt;/span&gt;apt-select -c -t &lt;span class="m"&gt;3&lt;/span&gt; -m one-week-behind
-&lt;/span&gt;&lt;span class="linenos" data-linenos=" 2 "&gt;&lt;/span&gt;&lt;span class="go"&gt;Getting list of mirrors...done.&lt;/span&gt;
-&lt;span class="linenos" data-linenos=" 3 "&gt;&lt;/span&gt;&lt;span class="go"&gt;Testing latency to mirror(s)&lt;/span&gt;
-&lt;span class="linenos" data-linenos=" 4 "&gt;&lt;/span&gt;&lt;span class="go"&gt;[3/3] 100%&lt;/span&gt;
-&lt;span class="linenos" data-linenos=" 5 "&gt;&lt;/span&gt;&lt;span class="go"&gt;Getting list of launchpad URLs...done.&lt;/span&gt;
-&lt;span class="linenos" data-linenos=" 6 "&gt;&lt;/span&gt;&lt;span class="go"&gt;Looking up 3 status(es)&lt;/span&gt;
-&lt;span class="linenos" data-linenos=" 7 "&gt;&lt;/span&gt;&lt;span class="go"&gt;[3/3] 100%&lt;/span&gt;
-&lt;span class="linenos" data-linenos=" 8 "&gt;&lt;/span&gt;&lt;span class="go"&gt;1. mirror.dhakacom.com (current)&lt;/span&gt;
-&lt;span class="linenos" data-linenos=" 9 "&gt;&lt;/span&gt;&lt;span class="go"&gt;    Latency: 1.89 ms&lt;/span&gt;
-&lt;span class="linenos" data-linenos="10 "&gt;&lt;/span&gt;&lt;span class="go"&gt;    Org:     dhakaCom Limited&lt;/span&gt;
-&lt;span class="linenos" data-linenos="11 "&gt;&lt;/span&gt;&lt;span class="go"&gt;    Status:  Up to date&lt;/span&gt;
-&lt;span class="linenos" data-linenos="12 "&gt;&lt;/span&gt;&lt;span class="go"&gt;    Speed:   1 Gbps&lt;/span&gt;
-&lt;span class="linenos" data-linenos="13 "&gt;&lt;/span&gt;&lt;span class="go"&gt;2. mirror.dhakacom.com&lt;/span&gt;
-&lt;span class="linenos" data-linenos="14 "&gt;&lt;/span&gt;&lt;span class="go"&gt;    Latency: 1.96 ms&lt;/span&gt;
-&lt;span class="linenos" data-linenos="15 "&gt;&lt;/span&gt;&lt;span class="go"&gt;    Org:     dhakaCom Limited&lt;/span&gt;
-&lt;span class="linenos" data-linenos="16 "&gt;&lt;/span&gt;&lt;span class="go"&gt;    Status:  Up to date&lt;/span&gt;
-&lt;span class="linenos" data-linenos="17 "&gt;&lt;/span&gt;&lt;span class="go"&gt;    Speed:   1 Gbps&lt;/span&gt;
-&lt;span class="linenos" data-linenos="18 "&gt;&lt;/span&gt;&lt;span class="go"&gt;3. archive.ubuntu.com&lt;/span&gt;
-&lt;span class="linenos" data-linenos="19 "&gt;&lt;/span&gt;&lt;span class="go"&gt;    Latency: 205.23 ms&lt;/span&gt;
-&lt;span class="linenos" data-linenos="20 "&gt;&lt;/span&gt;&lt;span class="go"&gt;    Org:     Canonical Ltd.&lt;/span&gt;
-&lt;span class="linenos" data-linenos="21 "&gt;&lt;/span&gt;&lt;span class="go"&gt;    Status:  Up to date&lt;/span&gt;
-&lt;span class="linenos" data-linenos="22 "&gt;&lt;/span&gt;&lt;span class="go"&gt;    Speed:   100 Mbps&lt;/span&gt;
-&lt;span class="linenos" data-linenos="23 "&gt;&lt;/span&gt;&lt;span class="go"&gt;Choose a mirror (1 - 3)&lt;/span&gt;
-&lt;span class="linenos" data-linenos="24 "&gt;&lt;/span&gt;&lt;span class="go"&gt;&amp;#39;q&amp;#39; to quit 1&lt;/span&gt;
-&lt;span class="linenos" data-linenos="25 "&gt;&lt;/span&gt;&lt;span class="go"&gt;New config file saved to /home/khaled/sources.list&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Then, the tool prepares a new &lt;code&gt;sources.list&lt;/code&gt; file to replace the system&amp;rsquo;s one&amp;nbsp;with.&lt;/p&gt;
-&lt;p&gt;Now, replace the file with the new one which will be now used by the &lt;code&gt;apt-get *&lt;/code&gt; commands. As it overwrites a system config file, you need to do with &lt;code&gt;sudo&lt;/code&gt;.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="linenos" data-linenos="1 "&gt;&lt;/span&gt;&lt;span class="gp"&gt;$ &lt;/span&gt;sudo mv /etc/apt/sources.list /etc/apt/sources.list.backup &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; sudo mv sources.list /etc/apt/
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;That&amp;rsquo;s it. Now, all you update/upgrade will be fetched from the newly selected&amp;nbsp;mirror.&lt;/p&gt;
-&lt;p&gt;However, I highly recommend to run &lt;code&gt;update&lt;/code&gt; once right&amp;nbsp;away.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="linenos" data-linenos="1 "&gt;&lt;/span&gt;&lt;span class="gp"&gt;$ &lt;/span&gt;sudo apt-get update
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Then, only if you want, run &lt;code&gt;upgrade&lt;/code&gt;:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="linenos" data-linenos="1 "&gt;&lt;/span&gt;&lt;span class="gp"&gt;$ &lt;/span&gt;sudo apt-get upgrade
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;hr&gt;
-&lt;h2 id="you-may-also-like"&gt;You may also like&lt;a class="headerlink" href="#you-may-also-like" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://blog.kmonsoor.com/open-source-as-if-you-gonna-die-tonight/?utm_source=related_footer&amp;amp;utm_keyword=coding"&gt;Open Source as-if You Gonna Die&amp;nbsp;Tonight&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://blog.kmonsoor.com/pelican-how-to-make-seo-friendly/?utm_source=related_footer&amp;amp;utm_keyword=python"&gt;Pelican Static sites - &lt;span class="caps"&gt;SEO&lt;/span&gt;&amp;nbsp;Optimization&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://blog.kmonsoor.com/generate-er-diagram-from-sql-database/?utm_source=related_footer&amp;amp;utm_keyword=coding"&gt;Generate &lt;span class="caps"&gt;ER&lt;/span&gt; diagram from a &lt;span class="caps"&gt;SQL&lt;/span&gt;-based&amp;nbsp;database&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="Tech"></category><category term="ubuntu"></category><category term="mirror"></category><category term="apt-get"></category><category term="update"></category><category term="upgrade"></category><category term="fastest"></category><category term="server"></category><category term="apt-select"></category></entry></feed>
+Thanks for reading down so far. Adios&amp;nbsp;!&lt;/p&gt;</content><category term="Tech"></category><category term="pelican"></category><category term="python"></category><category term="static-site"></category><category term="seo-friendly"></category></entry></feed>
