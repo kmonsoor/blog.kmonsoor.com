@@ -3,7 +3,7 @@ Title: Control vs Agency - The chosen path
 Date: 2023-03-14
 Tags: life, philosophy, control
 Slug: control-vs-agency-the-chosen-path
-Status: Draft
+Status: Published
 Summary: Control vs Agency - The chosen path
 ---
 
