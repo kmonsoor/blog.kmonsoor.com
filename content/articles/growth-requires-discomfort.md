@@ -4,7 +4,7 @@ Date: 2023-04-12
 Category: Thoughts
 Tags: life, philosophy, growth
 Slug: growth-requires-discomfort
-Status: Draft
+Status: Published
 Summary: Growth requires discomfort. Do you have what it takes to go through it?
 ---
 
