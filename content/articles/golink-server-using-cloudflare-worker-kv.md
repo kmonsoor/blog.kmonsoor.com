@@ -98,7 +98,7 @@ I think you'll be fine, unless you're some celebrity ;)
 As the next step, I'm thinking to create a generic `Go/Link` resolver browser extension. Then, someone can set their own default domain or company domain of choice as short-domain host. In that case, entering just `go/hr-help` on the browser will take to `https://www.company-internal.com/.../hr/contact.html` that we have discussed at the beginning (remember the example case of an internal human resources help portal?).
 
 # Related
-If you want to do this url-direction **on your server, but only using webserver**, try this: [Personal short-link server using only Caddyserver](https://blog.kmonsoor.com/personal-shortlink-server-using-Caddy/)
+If you want to do this url-direction **on your server, but only using webserver**, try this: [Personal short-link server using only Caddyserver](https://go.kmonsoor.com/golink-caddy)
 
 ---
 If you find this post helpful, you can show your support [through Patreon](https://www.patreon.com/kmonsoor) or by [buying me a coffee](https://ko-fi.com/kmonsoor). *Thanks!*
