@@ -12,7 +12,7 @@ repository = 'https://github.com/kmonsoor/blog.kmonsoor.com'
 "Funding" = "https://github.com//kmonsoor/blog.kmonsoor.com"
 
 [tool.poetry.dependencies]
-python = "3.11.*"
+python = "3.9.*"
 
 pelican = {extras = ["Markdown"], version = "^4.6.0"}
 pelican-image-process = "^2.1.3"
