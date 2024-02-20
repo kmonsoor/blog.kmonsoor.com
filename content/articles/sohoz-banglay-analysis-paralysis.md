@@ -4,8 +4,8 @@ Date: 2024-02-22
 Tags: computing, daily-life, communication
 Category: Thoughts
 Slug: সহজ-বাংলায়-analysis-paralysis
-Status: Draft
-Summary: A Great summary
+Status: Published
+Summary: Analysis paralysis মানে টা কি
 ---
 
 ছোটবেলায় মা খালাদের দেখতাম গাউসিয়া মার্কেটে একবার না গেলে রোজার ঈদের শপিং পরিপূর্ণ হতো না।
