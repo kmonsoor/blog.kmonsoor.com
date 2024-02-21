@@ -5,28 +5,28 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://blog.kmonsoor.com/</loc>
-<lastmod>2024-02-20T08:11:33-00:00</lastmod>
+<lastmod>2024-02-21T11:51:57-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.4</priority>
 </url>
 
 <url>
 <loc>https://blog.kmonsoor.com/tags.html</loc>
-<lastmod>2024-02-20T08:11:33-00:00</lastmod>
+<lastmod>2024-02-21T11:51:57-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.4</priority>
 </url>
 
 <url>
 <loc>https://blog.kmonsoor.com/categories.html</loc>
-<lastmod>2024-02-20T08:11:33-00:00</lastmod>
+<lastmod>2024-02-21T11:51:57-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.4</priority>
 </url>
 
 <url>
 <loc>https://blog.kmonsoor.com/archives.html</loc>
-<lastmod>2024-02-20T08:11:33-00:00</lastmod>
+<lastmod>2024-02-21T11:51:57-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.4</priority>
 </url>
@@ -36,6 +36,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <lastmod>2014-12-31T23:59:00+06:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://blog.kmonsoor.com/sohoz-banglay-scalability-example-1-bn/</loc>
+<lastmod>2024-01-22T00:00:00+06:00</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.8</priority>
 </url>
 
 <url>
@@ -327,7 +334,63 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://blog.kmonsoor.com/category/thoughts/</loc>
-<lastmod>2023-04-12T00:00:00+06:02</lastmod>
+<lastmod>2024-01-22T00:00:00+06:02</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.4</priority>
+</url>
+
+<url>
+<loc>https://blog.kmonsoor.com/tag/computing/</loc>
+<lastmod>2024-01-22T00:00:00+06:02</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.4</priority>
+</url>
+
+<url>
+<loc>https://blog.kmonsoor.com/tag/daily-life/</loc>
+<lastmod>2024-01-22T00:00:00+06:02</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.4</priority>
+</url>
+
+<url>
+<loc>https://blog.kmonsoor.com/tag/communication/</loc>
+<lastmod>2024-01-22T00:00:00+06:02</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.4</priority>
+</url>
+
+<url>
+<loc>https://blog.kmonsoor.com/tag/bangla/</loc>
+<lastmod>2024-01-22T00:00:00+06:02</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.4</priority>
+</url>
+
+<url>
+<loc>https://blog.kmonsoor.com/tag/simple-explanations/</loc>
+<lastmod>2024-01-22T00:00:00+06:02</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.4</priority>
+</url>
+
+<url>
+<loc>https://blog.kmonsoor.com/tag/shj-bhaassaay/</loc>
+<lastmod>2024-01-22T00:00:00+06:02</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.4</priority>
+</url>
+
+<url>
+<loc>https://blog.kmonsoor.com/tag/bykhyaa/</loc>
+<lastmod>2024-01-22T00:00:00+06:02</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.4</priority>
+</url>
+
+<url>
+<loc>https://blog.kmonsoor.com/tag/sohoz-banglay/</loc>
+<lastmod>2024-01-22T00:00:00+06:02</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.4</priority>
 </url>
@@ -368,13 +431,6 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>https://blog.kmonsoor.com/tag/bangla/</loc>
-<lastmod>2021-12-15T07:30:00+06:02</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.4</priority>
-</url>
-
-<url>
 <loc>https://blog.kmonsoor.com/tag/english/</loc>
 <lastmod>2021-12-15T07:30:00+06:02</lastmod>
 <changefreq>daily</changefreq>
@@ -383,27 +439,6 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://blog.kmonsoor.com/tag/simple-explanation/</loc>
-<lastmod>2021-12-15T07:30:00+06:02</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.4</priority>
-</url>
-
-<url>
-<loc>https://blog.kmonsoor.com/tag/shj-bhaassaay/</loc>
-<lastmod>2021-12-15T07:30:00+06:02</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.4</priority>
-</url>
-
-<url>
-<loc>https://blog.kmonsoor.com/tag/bykhyaa/</loc>
-<lastmod>2021-12-15T07:30:00+06:02</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.4</priority>
-</url>
-
-<url>
-<loc>https://blog.kmonsoor.com/tag/sohoz-banglay/</loc>
 <lastmod>2021-12-15T07:30:00+06:02</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.4</priority>
@@ -453,13 +488,6 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://blog.kmonsoor.com/tag/cloud/</loc>
-<lastmod>2021-06-06T00:00:00+06:02</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.4</priority>
-</url>
-
-<url>
-<loc>https://blog.kmonsoor.com/tag/computing/</loc>
 <lastmod>2021-06-06T00:00:00+06:02</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.4</priority>
@@ -704,13 +732,6 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>https://blog.kmonsoor.com/tag/communication/</loc>
-<lastmod>2020-05-26T00:00:00+06:02</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.4</priority>
-</url>
-
-<url>
 <loc>https://blog.kmonsoor.com/tag/organization/</loc>
 <lastmod>2020-05-26T00:00:00+06:02</lastmod>
 <changefreq>daily</changefreq>
@@ -824,13 +845,6 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://blog.kmonsoor.com/tag/health/</loc>
-<lastmod>2017-12-11T00:00:00+06:02</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.4</priority>
-</url>
-
-<url>
-<loc>https://blog.kmonsoor.com/tag/daily-life/</loc>
 <lastmod>2017-12-11T00:00:00+06:02</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.4</priority>

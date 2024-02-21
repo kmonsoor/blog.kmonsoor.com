@@ -1,0 +1,249 @@
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>    সহজ বাংলায় Scalability এর একটা উদাহরণ
+ | I think ...</title>
+<meta content="Khaled Monsoor" name="author"/>
+<meta content="Pelican v4.7.1" name="generator"/>
+<link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" rel="stylesheet"/>
+<link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" rel="stylesheet"/>
+<link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" integrity="sha512-+EoPw+Fiwh6eSeRK7zwIKG2MA8i3rV/DGa3tdttQGgWyatG/SkncT53KHQaS5Jh9MNOT3dmFL0FjTY08And/Cw==" rel="stylesheet"/>
+<link href="https://blog.kmonsoor.com/theme/css/main.min.css?e802d679" rel="stylesheet"/>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-B3VL9K9558"></script>
+<script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-B3VL9K9558');
+    </script>
+<script crossorigin="anonymous" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script crossorigin="anonymous" integrity="sha512-wV7Yj1alIZDqZFCUQJy85VN+qvEIly93fIQAN7iqDFCPEucLCeNFz4r35FCo9s6WrpdDQPi80xbljXB8Bjtvcg==" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.bundle.min.js"></script>
+<script crossorigin="anonymous" integrity="sha512-IsNh5E3eYy3tr/JiX2Yx4vsCujtkhwl7SLqgnwLNgf04Hrt9BT9SXlLlZlWx+OK4ndzAoALhsMNcCmkggjZB1w==" src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+<script crossorigin="anonymous" integrity="sha512-/2sZKAsHDmHNoevKR/xsUKe+Bpf692q4tHNQs9VWWz0ujJ9JBM67iFYbIEdfDV9I2BaodgT5MIg/FTUmUv3oyQ==" src="https://cdnjs.cloudflare.com/ajax/libs/fitvids/1.2.0/jquery.fitvids.min.js"></script>
+<script src="https://blog.kmonsoor.com/theme/js/main.min.js?86e1c044"></script>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="/site.webmanifest" rel="manifest"/>
+<link color="#5bbad5" href="/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#ffc40d" name="msapplication-TileColor"/>
+<meta content="#ffffff" name="theme-color"/>
+<!-- Feeds -->
+<link href="https://blog.kmonsoor.com/feed/atom/index.html" rel="alternate" title="I think ... - Latest posts - Atom Feed" type="application/atom+xml"/>
+<link href="https://blog.kmonsoor.com/feed/index.html" rel="alternate" title="I think ... - Latest posts - RSS Feed" type="application/rss+xml"/>
+<link href="https://blog.kmonsoor.com/category/thoughts/feed/atom/index.html" rel="alternate" title="I think ... - Category: Thoughts - Atom Feed" type="application/atom+xml"/>
+<link href="https://blog.kmonsoor.com/category/thoughts/feed/index.html" rel="alternate" title="I think ... - Category: Thoughts - RSS Feed" type="application/rss+xml"/>
+<meta content="computing, daily-life, communication, Bangla, Simple explanations, সহজ ভাষায়, ব্যখ্যা, sohoz-banglay" name="keywords"/>
+<link href="https://blog.kmonsoor.com/sohoz-banglay-scalability-example-1-bn/" rel="canonical"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "I think ...", "item": "https://blog.kmonsoor.com"}, {"@type": "ListItem", "position": 2, "name": "Sohoz banglay scalability example 1 bn", "item": "https://blog.kmonsoor.com/sohoz-banglay-scalability-example-1-bn"}, {"@type": "ListItem", "position": 3, "name": "Index", "item": "https://blog.kmonsoor.com/sohoz-banglay-scalability-example-1-bn/index.html"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "author": {"@type": "Person", "name": "Khaled Monsoor"}, "publisher": {"@type": "Organization", "name": "I think ..."}, "headline": "সহজ বাংলায় Scalability এর একটা&nbsp;উদাহরণ", "about": "Thoughts", "datePublished": "2024-01-22 00:00"}</script></head>
+<body class="bg-transparent pt-4">
+<div class="container">
+<a class="avatar-container float-left mx-4" href="https://blog.kmonsoor.com">
+<div class="avatar animate">
+<div class="side"><img class="img-fluid" src="/logo.png"/></div>
+<div class="side back text-center pt-2 px-1 small">
+                                comes with a beard
+                            </div>
+</div>
+</a>
+<h1>
+<a class="text-dark text-decoration-none" href="https://blog.kmonsoor.com">I think ...</a>
+<small class="text-secondary"><small></small></small>
+</h1>
+<nav class="navbar d-block navbar-expand-lg navbar-light bg-light shadow rounded-lg">
+<a class="navbar-brand d-none" href="https://blog.kmonsoor.com" title="">I think ...</a>
+<button aria-controls="plumage-navbar-collapse-1" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#plumage-navbar-collapse-1" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="plumage-navbar-collapse-1">
+<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+<li class="nav-item">
+<a class="nav-link" href="/">
+                                    Home
+                                </a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://blog.kmonsoor.com/about/">
+                                        About Me
+                                    </a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://blog.kmonsoor.com/category/language/">
+                                        Language
+                                    </a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://blog.kmonsoor.com/category/others/">
+                                        Others
+                                    </a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://blog.kmonsoor.com/category/tech/">
+                                        Tech
+                                    </a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://blog.kmonsoor.com/category/thoughts/">
+                                        Thoughts
+<span class="sr-only">(current)</span> </a>
+</li>
+</ul>
+</div>
+</nav>
+</div>
+<div class="container mt-5">
+<div class="row">
+<div class="col-md-9">
+<h1>
+<a href="https://blog.kmonsoor.com/sohoz-banglay-scalability-example-1-bn/" rel="bookmark" title="Permalink to সহজ বাংলায় Scalability এর একটা উদাহরণ">সহজ বাংলায় Scalability এর একটা উদাহরণ</a>
+</h1>
+</div>
+</div>
+<div class="row">
+<div class="col-md-9" id="content" role="main">
+<p>সিঙ্গাপুরের Grab এ থাকতে আমার একবার বস ছিল অরুণ নামের এক ইন্ডিয়ান।</p>
+<p>জয়েনের কিছুদিন পরে, বসের কাছে কমপ্লেন গেলো যে খালেদ এই কাজ টা এমনে করে না, অমনে করে। বস আমাকে উইকলি মিটিং এ জিজ্ঞেস করলো, অমনে করো কেনো? আমি বললাম, এই এই কারণে অমনে করি।
+সে আমাকে এক কথায় উত্তর দিলো যেটা আমার কানে এখনও বাজে। সে বলছিল, “তোমার উদ্দেশ্যটা ভালো, কিন্তু এটা scalable না”।
+বেশি ব্যাখ্যা করা লাগে নাই, কারণ হোল আমরা দুজনেই জানতাম যে আমার ২৫+ টা টীমের সাথে কাজ করা লাগে, আমি যেভাবে আগাচ্ছিলাম, সেভাবে পাঁচ সাতটা টীমের সাথে হয়তো কাজ ম্যানেজ করা যেতো, কিন্তু ২৫ টা না।</p>
+<p>আমাদের দেশের আইটি সেক্টরের বিভিন্ন উদ্যোগেও আমি এই ব্যপারটা খেয়াল করি খুব বেশি রকম, “উদ্দেশ্যটা ভালো, কিন্তু scalable না”
+কি দেখে হঠাত এই কথা মনে আসলো সেইটা বলি।</p>
+<p>ব্র্যাক ব্যাংক একটা মেইল পাঠিয়েছে, সিস্টেম মেইনটেনেন্সে সার্ভিস কিছুক্ষণ বন্ধ থাকবে এইটা হোল বিষয়। ইমেইলে বডিতে কোন টেক্সট নাই, খালি একটা ইমেজ। ভালো কথা। টেক্সট অনেকে পড়তে চায় না, ইমেজ দিলে খেয়াল করে পরবে। অনেকের মোবাইলে বাংলা ঠিকমতো দেখায় না, সেটাও একটা বিষয়। তো “উদ্দেশ্যটা ভালো”।
+কিন্তু সাধারণ এই ইমেজ এর সাইজ ৩ মেগাবাইট (ধরেন, ৩০০০ কিলোবাইট), যেই ইমেজটা ৫০ কিলোবাইট হলেও একই লেখা প্রায় একই রকম দেখা যেতো। পার্থক্যটা খালি চোখে ধরা কঠিন। মানে প্রয়োজনের তুলনায় ৬০ গুন বড়।
+এখন আসেন scalability বিবেচনা করি । </p>
+<p>ব্র্যাক ব্যাংক এর কাস্টমারের সংখ্যা যদি হয় ৫ লক্ষ, এই একটা মেইল পাঠাতে ব্যাংকের মেইল সার্ভার (edm. bracbank .com) থেকে “Data Out” ট্রাফিক জেনারেট হয়েছে (৩ মেগাবাইট x ৫,০০,০০০) = ১৫০০ গিগাবাইট।
+আর ইমেজটার সাইজ যদি হতো ৫০ কিলোবাইট, এই একই কাজটা হয়ে যেতো ২৬ গিগাবাইট মতো ডাটা ট্রাফিকে, মানে ৬০ ভাগের এক ভাগ, আর পুরো ব্যাচ ইমেইল পাঠানো শেষ হতো ৬০ গুন দ্রুত।</p>
+<p>এখন বলতে পারেন, ব্যাংকের টাকা আছে খরচ করুক। সেটা এক কথা, কিন্তু আরেকটা সাইড ভাবেন।</p>
+<p>বাংলাদেশের বেশির ভাগ মানুষ ইন্টারনেট চালায় মোবাইলে। অর্থাৎ, এই গুরুত্বপূর্ণ ইমেইল টা দেখতে যে ৩ মেগাবাইট বাড়তি খরচটা হোল, ধরেন ১০০০ গিগাবাইট, এর বড় একটা অংশ গেলো মোবাইল কোম্পানিগুলার পকেটে। 
+আবার, বাংলাদেশের বেশির ভাগ জায়গাতে ইন্টারনেটের যে অবস্থা, এই মেইল লোড হতে সময় নিবে ১০ সেকেন্ড, যেটা কিনা এক সেকেন্ডএর ও কম সময়ে করা যেতো।</p>
+<p>এবার ধরেন, ইমেজটার সাইজ হোল ১০ মেগাবাইট, ৩ মেগাবাইটের বদলে। কি সমস্যা?
+“scalable না”, এই আরকি।</p>
+<div class="commentbox"></div>
+<script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
+<script>commentBox('5722781509484544-proj')</script>
+</div>
+<div class="col-md-3">
+<div class="card bg-light text-dark">
+<ul class="list-group list-group-flush">
+<li class="list-group-item">
+<abbr title="2024-01-22T00:00:00+06:00"><i class="fas fa-calendar"></i> 2024-01-22</abbr>
+</li>
+<li class="list-group-item">
+<a class="badge badge-info" data-toggle="tooltip" href="https://blog.kmonsoor.com/category/thoughts/" rel="tag" title="8 articles in this category">Thoughts</a>
+<a class="badge badge-secondary" data-toggle="tooltip" href="/tag/bangla/" title="7 articles with this tag">Bangla</a>
+<a class="badge badge-secondary" data-toggle="tooltip" href="/tag/computing/" title="5 articles with this tag">computing</a>
+<a class="badge badge-secondary" data-toggle="tooltip" href="/tag/communication/" title="4 articles with this tag">communication</a>
+<a class="badge badge-secondary" data-toggle="tooltip" href="/tag/sohoz-banglay/" title="4 articles with this tag">sohoz-banglay</a>
+<a class="badge badge-secondary" data-toggle="tooltip" href="/tag/bykhyaa/" title="4 articles with this tag">ব্যখ্যা</a>
+<a class="badge badge-secondary" data-toggle="tooltip" href="/tag/shj-bhaassaay/" title="4 articles with this tag">সহজ ভাষায়</a>
+<a class="badge badge-secondary" data-toggle="tooltip" href="/tag/daily-life/" title="3 articles with this tag">daily-life</a>
+<a class="badge badge-secondary" data-toggle="tooltip" href="/tag/simple-explanations/" title="1 article with this tag">Simple explanations</a>
+</li>
+<li class="list-group-item">
+<p>Found a typo? Fix it now:</p>
+<a class="btn btn-info btn-block" href="https://github.com/kmonsoor/blog.kmonsoor.com/edit/live/content/articles/sohoz-banglay-scalability-example-1-bn.md"><i class="fas fa-edit fa-fw"></i> Edit article on GitHub</a>
+</li>
+<li class="list-group-item">
+<nav class="nav nav-pills nav-fill">
+<a class="nav-link btn btn-outline-primary border-0" href="https://blog.kmonsoor.com/growth-requires-discomfort/" rel="prev" title="Growth requires discomfort">
+<span aria-hidden="true">←</span> Older
+                        </a>
+<a class="nav-link btn btn-outline-primary border-0 disabled" rel="next">
+                            Newer <span aria-hidden="true">→</span>
+</a>
+</nav>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<footer class="container-fluid mt-5 p-4 small">
+<div class="row mx-5">
+<div class="col-md-2">
+<h6>Social</h6>
+<ul class="list-unstyled">
+<li><a href="https://twitter.com/kmonsoor">
+<i class="fab fa-twitter fa-fw"></i>
+    Twitter
+</a></li>
+</ul>
+</div>
+<div class="col-md-2">
+<h6>Professional</h6>
+<ul class="list-unstyled">
+<li><a href="https://stackoverflow.com/users/617185/kmonsoor">
+<i class="fab fa-stack-overflow fa-fw"></i>
+    StackOverflow
+</a></li>
+<li><a href="https://linkedin.com/in/kmonsoor">
+<i class="fab fa-linkedin fa-fw"></i>
+    LinkedIn
+</a></li>
+<li><a href="https://github.com/kmonsoor/">
+<i class="fab fa-github fa-fw"></i>
+    Github
+</a></li>
+</ul>
+</div>
+<div class="col-md-2">
+<h6>Browse content by</h6>
+<ul class="list-unstyled">
+<li><a href="https://blog.kmonsoor.com/categories/index.html"><i class="fas fa-th fa-fw"></i> Categories</a></li>
+<li><a href="https://blog.kmonsoor.com/archives/index.html"><i class="far fa-calendar-alt fa-fw"></i> Dates</a></li>
+<li><a href="https://blog.kmonsoor.com/tags/index.html"><i class="fas fa-tags fa-fw"></i> Tags</a></li>
+</ul>
+</div>
+<div class="col-md-2 text-muted">
+<h6>Copyright notice</h6>
+<p class="small">
+                        © Copyright
+                        2010-2024
+                        Khaled Monsoor.
+                    </p>
+</div>
+<div class="col-md-2 text-muted">
+<h6>Disclaimer</h6>
+<p class="small">
+                            All opinions expressed in this site are my own personal opinions               and are not endorsed by, nor do they represent the opinions of my               previous, current and future employers or any of its affiliates,               partners or customers.
+                    </p>
+</div>
+<div class="col-md-2">
+<h6>Feeds</h6>
+<ul class="list-unstyled small">
+<li>
+<a href="https://blog.kmonsoor.com/feed/atom/index.html">
+<i class="fas fa-atom fa-fw"></i> Latest posts (Atom)
+                                    </a>
+</li>
+<li>
+<a href="https://blog.kmonsoor.com/feed/index.html">
+<i class="fas fa-rss fa-fw"></i> Latest posts (RSS)
+                                    </a>
+</li>
+<li>
+<a href="https://blog.kmonsoor.com/category/thoughts/feed/atom/index.html">
+<i class="fas fa-atom fa-fw"></i> Category: Thoughts (Atom)
+                                    </a>
+</li>
+<li>
+<a href="https://blog.kmonsoor.com/category/thoughts/feed/index.html">
+<i class="fas fa-rss fa-fw"></i> Category: Thoughts (RSS)
+                                    </a>
+</li>
+</ul>
+</div>
+</div>
+<div class="row mt-3">
+<div class="offset-3 col-6 small text-muted text-center">
+                    Site generated by <a class="text-dark" href="https://getpelican.com">Pelican</a>.<br/>
+<a class="text-dark" href="https://github.com/kdeldycke/plumage">Plumage</a>
+                    theme by <a class="text-dark" href="https://kevin.deldycke.com">Kevin Deldycke</a>.
+                </div>
+<div class="col-3 text-right d-flex flex-column">
+<a class="mt-auto" href="#"><i class="fas fa-arrow-up"></i> Back to top</a>
+</div>
+</div>
+</footer>
+</body>
+</html>
