@@ -9,7 +9,7 @@ Status: Published
 Summary: Analysis paralysis মানে টা কি? আমারও কি এই অসুখটা আছে?
 ---
 
-Share-link: go.kmonsoor.com/analysis-paralysis-bn
+**Self-link**:  [go.kmonsoor.com/analysis-paralysis-bn](http://go.kmonsoor.com/analysis-paralysis-bn)
 
 ছোটবেলায় মা খালাদের দেখতাম গাউসিয়া মার্কেটে একবার না গেলে রোজার ঈদের শপিং পরিপূর্ণ হতো না।
 সাথে গেলে দিন শেষে, ৩/৪ ঘণ্টা মার্কেটে প্রচণ্ড ঘুরাঘুরির পরে একটা কোন আইসক্রিম (বাজারে তখন নতুন) জুটতো :)
