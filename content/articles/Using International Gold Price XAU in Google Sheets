@@ -1,0 +1,49 @@
+---
+Title: The Great Title
+Date: 2025-10-22
+Tags: finance, tracking, Google-sheets
+Category: Tech
+Slug: using-intl-gold-price-XAU-in-Google-Sheets
+Status: published
+Summary: How to use the international gold Price index, XAU, in Google Sheets
+---
+
+# Using International Gold Price XAU in Google Sheets
+
+We're using a 3rt-party price provider, Gold API, for this example.  
+**Please note** that I'm not affiliated with the company in any shape or form. Please use their service using your own discretion.
+Also, they have a monthly, free quota of 100 API hits only, so this won't be very useful for any serious application. This will fit personal finance, hobby projects etc.
+
+## 1. Create an account to get your API-key, YOUR_API_KEY.
+It will look like `goldapi-u6i1randomcharso5l9k3-io`. This is what you need 
+
+## 2. Access Google Apps Script
+
+Open your Google Sheet where you are going to use the gold-price.
+In the menu bar, go to `Extensions > Apps Script`. This will open a new browser tab with the `script editor`.
+
+In the script editor, you will see a file named `Code.gs` with a default function. 
+Replace all the existing code with the following script.
+
+```
+function GOLD_API_XAUUSD() {
+
+  url = "https://www.goldapi.io/api/XAU/USD";
+  headers = {
+    'x-access-token': 'INSERT_YOUR_OWN_KEY'
+  };
+
+  const response = UrlFetchApp.fetch(url, { method: 'GET', muteHttpExceptions: true, headers: headers });
+  const json = JSON.parse(response.getContentText());
+
+  // console.info(json);
+  price_xau = json['price']; // uncomment this to get XAU:USD price
+  price_gram_usd = json['price_gram_24k'];
+  // console.info(price_xau, price_gram_usd);  // uncomment this to get XAU:USD price
+  return price_gram_usd;  // // uncomment this to get XAU:USD per gram price
+}
+```
+
+Save the script.
+
+3. Now, go back to the Google Sheet, and you should be able to use `GOLD_API_XAUUSD()` function anywhere in the Sheet.
