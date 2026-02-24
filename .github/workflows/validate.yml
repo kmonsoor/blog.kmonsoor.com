@@ -10,7 +10,7 @@ on:
 jobs:
   validate:
     name: Validate the Pull-request
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-24.04
 
     steps:
     # - name: update system
@@ -30,7 +30,7 @@ jobs:
     - uses: Gr1N/setup-poetry@v8
       with:
         poetry-version: 1.2.2
-    - uses: actions/cache@v2
+    - uses: actions/cache@v4
       with:
         path: ~/.cache/pypoetry/virtualenvs
         key: ${{ runner.os }}-poetry-${{ hashFiles('poetry.lock') }}
