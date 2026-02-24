@@ -1,7 +1,7 @@
 ---
 Title: About Me
 Date: 2014-12-31 23:59
-Updated: 2020-04-24 11:59
+Updated: 2026-03-24 05:59
 Slug: about
 Status: published
 ---
@@ -13,11 +13,9 @@ I am Khaled, born & brought up in Dhaka, Bangladesh. Currently living an expat l
 I am a techie, photographer, humanitarian, Muslim, traveler, and a blogger.
 I love to share my experience, knowledge, love, criticism, passion, idea, and feelings.
 
-In general, my online pseudonym is `kmonsoor`. Also on [Twitter](https://twitter.com/kmonsoor).
-
-Currently, I work for Grab Singapore, as a Technical Program Manager, [since 2018](http://linkedin.com/in/kmonsoor/).
+Currently, I work for Google Cloud Platform, as a Technical Solutions Engineer for the Database products.
+Previously, I worked for Grab Singapore from 2018 to 2020, as a Technical Program Manager.
 Previously, I was a full-stack software engineer and were working for [Augmedix Inc.](http://www.augmedix.com/) as a R&D engineer. i love simplicity of Python, articulacy of JS, and raw power of C. An data-science enthusiast.
-I created & manage the biggest Facebook group of [data-science enthusiasts of Bangladesh](https://www.facebook.com/groups/BigDataBangladesh) and [mechanical keyboard enthusiasts of Bangladesh](https://www.facebook.com/groups/BDMKB)
 
 For any query, please feel free to send email to: `k (at) kmonsoor (dot) com`
 
@@ -25,11 +23,8 @@ For any query, please feel free to send email to: `k (at) kmonsoor (dot) com`
 
 ## Profiles
 ### StackExchange
-[kmonsoor](https://stackexchange.com/users/306439/kmonsoor)  
-![stackExchange profile](https://stackexchange.com/users/flair/306439.png){: .noZoom}
-
-### Python libraries
- * [My Python libraries on PyPI](https://pypi.org/user/kmonsoor/)
+* [StackExchange](https://stackexchange.com/users/306439/kmonsoor)
+* [LinkedIn](http://linkedin.com/in/kmonsoor/)
 
 ------------
 
@@ -43,3 +38,12 @@ For any query, please feel free to send email to: `k (at) kmonsoor (dot) com`
 * [Airports You Wouldn’t Mind Being Stuck In For Hours - Incheon](http://world-warotter.com/archives/10435)
 * [10 Surprising facts about Bhutan - 6: no traffic lights](http://travelscapism.com/10-facts-bhutan/)
 * [Linux Best Practices and Tips by Toptal Developers](https://www.toptal.com/linux/tips-and-practices)
+
+## Podcasts
+* [নটর ডেম টু গুগল | Unfiltered Ambition](https://www.youtube.com/watch?v=Ff1H_dqdrGg) - [Language: mostly Bangla] [year: 2025]
+
+## Projects
+
+* [BDT.Today](https://bdt.today/) - A simple currency-conversion micro-site
+* [BigDataBangladesh](https://www.facebook.com/groups/BigDataBangladesh) - Facebook group for Data-science enthusiasts of Bangladesh
+* [BDMKB](https://www.facebook.com/groups/BDMKB) - Facebook group for mechanical keyboard enthusiasts of Bangladesh

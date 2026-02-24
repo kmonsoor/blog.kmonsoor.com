@@ -32,3 +32,10 @@ from itertools import permutations
 ```
 
 Python is fun. Isn't it?
+
+**WARNING**
+
+Although powerful & "fun looking", try not to use it in some production environment or coding interview unless the length of the input string is extremely low, like <= 10.
+Over 12, you might crash the runtime, or get an timedOut error.
+
+Because, the time-complexity of this function is O(N!), meaning if N=10, it gonna generate more than 3.6 million items. However, calling the `permutations` function will return a generator object, not a list of all possible pemutations.
