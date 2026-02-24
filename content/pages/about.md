@@ -45,5 +45,5 @@ For any query, please feel free to send email to: `k (at) kmonsoor (dot) com`
 ## Projects
 
 * [BDT.Today](https://bdt.today/) - A simple currency-conversion micro-site
-* [Data-science enthusiasts of Bangladesh](https://www.facebook.com/groups/BigDataBangladesh)
-* [Mechanical keyboard enthusiasts of Bangladesh](https://www.facebook.com/groups/BDMKB)
+* [BigDataBangladesh](https://www.facebook.com/groups/BigDataBangladesh) - Facebook group for Data-science enthusiasts of Bangladesh
+* [BDMKB](https://www.facebook.com/groups/BDMKB) - Facebook group for mechanical keyboard enthusiasts of Bangladesh
