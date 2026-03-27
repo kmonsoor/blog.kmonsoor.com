@@ -393,7 +393,7 @@ markdown = ">=2.2"
 
 [[package]]
 name = "numpy"
-version = "1.21.4"
+version = "1.22.0"
 description = "NumPy is the fundamental package for array computing with Python."
 category = "main"
 optional = false
